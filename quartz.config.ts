@@ -91,6 +91,7 @@ const config: QuartzConfig = {
 				},
 			}),
 			Plugin.FigureCaptions(),
+			Plugin.RunPythonPlugin(),
     ],
     filters: [Plugin.RemoveDrafts()],
     emitters: [

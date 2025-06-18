@@ -17,7 +17,7 @@ where $\operatorname{Bias}(\hat{\theta}) = \mathbb{E}[\hat{\theta}] - \theta$ is
 
 We will also touch on [[Evaluating an Estimator#Asymptotic Normality]] for certain estimators.
 
-```python
+```python-r
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -64,7 +64,7 @@ Again, the MSE is a constant w.r.t $n$.
 
 We plot the histogram of $\hat{\theta}^{(k)}$ for different $k$ values to see how the distribution changes with sample size.
 
-```python
+```python-r
 def k_sample_estimator(sample,k):
     assert k <= len(sample), "k must be less than or equal to the sample size"
     return 2 * np.mean(sample[:k], axis=0)
@@ -110,7 +110,7 @@ $$
 
 We compare the MSE and histogram of the moment estimator with $\hat{\theta}^{(2)}$:
 
-```python
+```python-r
 def moment_estimator(sample):
 		return 2 * np.mean(sample, axis=0)
 
@@ -197,7 +197,7 @@ Thus, we can say that $\hat{\theta}^{(\mathrm{MLE})} = \max_{i}X _i$ is a better
 
 We compare the MLE with previous estimators.
 
-```python
+```python-r
 def mle_estimator(sample):
     return np.max(sample, axis=0)
 
@@ -239,7 +239,7 @@ $$
 \operatorname{MSE}(\hat{\theta}^{(\mathrm{UMVUE})}) = \operatorname{Var}\left( \frac{n+1}{n}\hat{\theta}^{(\mathrm{MLE})} \right) = \left( \frac{n+1}{n} \right)^{2}\operatorname{Var}(\hat{\theta}^{(\mathrm{MLE})}) = \frac{\theta^{2}}{n(n+2)}.
 $$
 
-```python
+```python-r
 def umvue_estimator(sample):
     n = len(sample)
     return (n+1) / n * np.max(sample, axis=0)
@@ -292,7 +292,7 @@ $$
 
 See [[Best Estimator for Uniform Distribution Parameter#Appendix]] for details of the calculation.
 
-```python
+```python-r
 def jackknife_estimator(sample):
     mle = mle_estimator(sample)
     # Produce leave-one-out MLEs
@@ -351,7 +351,7 @@ $$
 \operatorname{MSE}(\hat{\theta}^{(\mathrm{MMSE})}) = \frac{\theta^{2}}{(n+1)^{2}}.
 $$
 
-```python
+```python-r
 def mmse_estimator(sample):
     n = sample.shape[0]
     return (n + 2) / (n + 1) * np.max(sample, axis=0)
@@ -388,7 +388,7 @@ The following table summarizes the estimators we have discussed.
 
 Finally, we plot the histograms of all estimators separately to compare their distributions, and calculate their empirical mean squared errors.
 
-```python
+```python-r
 # Plot histograms of all estimators separately
 num_bins = 20
 range_bins = (0.8, 1.2)
@@ -412,7 +412,7 @@ plt.tight_layout()
 plt.show()
 ```
 
-```python
+```python-r
 # Calculate empirical MSE for each estimator
 num_simulations = int(1e3)
 mse_empirical = np.empty((len(estimators), len(sample_sizes), num_simulations))
@@ -424,7 +424,7 @@ for n in sample_sizes:
         mse_empirical[i, sample_sizes.index(n), :] = (estimator(samples) - theta_true)**2
 ```
 
-```python
+```python-r
 # Plot empirical MSE with 0.95 confidence region using fill_between for each estimator in a single plot
 plt.figure()
 for i, (name, estimator) in enumerate(estimators.items()):
@@ -508,7 +508,7 @@ $$
 
 We plot the histogram of the zero-one estimator for different $\delta$ values, and compare it with the MLE estimator on both the MSE and zero-one risk.
 
-```python
+```python-r
 def zero_one_estimator(sample, delta):
     return (1 + delta) * np.max(sample, axis=0)
 
@@ -534,7 +534,7 @@ plt.tight_layout()
 plt.show()
 ```
 
-```python
+```python-r
 # Calculate the empirical risks and zero-one risk for the zero-one estimator and MMSE
 num_simulations = int(1e3)
 delta = 5e-3
@@ -613,7 +613,7 @@ n (\theta-\hat{\theta}^{(\mathrm{MLE})} ) \overset{d}{\to} \mathrm{Exp}(1 /\thet
 $$
 Note that the exponential tail bound is significantly heavier than the Gaussian tail bound ($e^{-nt}$ vs. $e^{-nt^{2}}$). We verify this by simulation.
 
-```python
+```python-r
 n = 1000
 samples = np.random.uniform(0, theta_true, size=(n, 10000))
 mle_estimates = mle_estimator(samples)
