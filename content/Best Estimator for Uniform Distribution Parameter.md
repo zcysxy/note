@@ -29,7 +29,7 @@ import warnings
 warnings.filterwarnings('ignore')
 
 # Set style for better plots
-plt.style.use('seaborn-v0_8-colorblind')
+# plt.style.use('seaborn-v0_8-colorblind')
 # sns.set_palette("husl")
 
 # Set parameters for demonstrations

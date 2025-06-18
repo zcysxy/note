@@ -72,7 +72,9 @@ sys.stderr = io.StringIO()
 
                   // common packages
                   console.log('Loading common Python packages...');
-                  await pyodideInstance.loadPackage(['matplotlib', 'numpy', 'pandas', 'scipy', 'sympy', 'scikit-learn']);
+                  await pyodideInstance.loadPackage(['micropip', 'matplotlib', 'numpy', 'pandas', 'scipy', 'sympy', 'scikit-learn']);
+									let micropip = pyodideInstance.pyimport('micropip');
+									await micropip.install('seaborn');
                   console.log('Common packages loaded.');
 
                   console.log('Setting up global stdout/stderr redirection...');
@@ -449,12 +451,10 @@ img_str
         <button id='${id}-button' class='python-run-button' aria-label='Run code' disabled> <span class='play-icon'>
              </span>
           <span class='spinner'></span> </button>
-        <button id='${id}-expand' aria-label='Expand code'>
-          </button>
       </div>
     </div>
     <div id='codeContent-${id}' class='code-content'>
-      <textarea id='codeTextarea-${id}' style='display: none;'>${node.value}</textarea> <div id='codeGradient-${id}' class='code-gradient'></div>
+      <textarea id='codeBlock-${id}' style='display: none;'>${node.value}</textarea> <div id='codeGradient-${id}' class='code-gradient'></div>
     </div>
   </div>
   <div id='${id}-outputWrapper' class='output-wrapper'> <div class='output-header'>
@@ -481,17 +481,15 @@ img_str
 
   const blockId = '${id}'; // Store ID for easy reference
   const codeContent = document.getElementById('codeContent-' + blockId);
-  const codeTextarea = document.getElementById('codeTextarea-' + blockId);
+  const codeBlock = document.getElementById('codeBlock-' + blockId);
   const codeGradient = document.getElementById('codeGradient-' + blockId);
   const copyBtn = document.getElementById(blockId + '-copy');
   const runBtn = document.getElementById(blockId + '-button');
-  const expandBtn = document.getElementById(blockId + '-expand');
   const closeOutputBtn = document.getElementById(blockId + '-closeOutputBtn');
   const outputWrapper = document.getElementById(blockId + '-outputWrapper');
   const textOutput = document.getElementById(blockId + '-text');
   const plotOutput = document.getElementById(blockId + '-plot');
 
-  let isExpanded = false;
   let editorInstance = null; 
 
   // wierd way of doing svg, but it is necessary for compilation bugs
@@ -545,9 +543,9 @@ img_str
   function initializeEditorWhenReady() {
       if (typeof CodeMirror !== 'undefined') {
           console.log('CodeMirror ready for block:', blockId);
-          editorInstance = CodeMirror.fromTextArea(codeTextarea, {
+          editorInstance = CodeMirror.fromTextArea(codeBlock, {
             mode: 'python',
-            theme: 'material-palenight',
+            // theme: 'material-palenight',
             lineNumbers: true,
             lineWrapping: true,
             readOnly: false,
@@ -557,7 +555,7 @@ img_str
            window.codeMirrorInstances = window.codeMirrorInstances || {};
            window.codeMirrorInstances[blockId] = editorInstance;
 
-           editorInstance.setSize(null, '150px');
+           editorInstance.setSize(null, 'auto');
 
           // Refresh editor after slight delay to ensure layout calculation
           // setTimeout(() => editorInstance.refresh(), 50);
@@ -575,26 +573,7 @@ img_str
   function setupButtons() {
       copyBtn.appendChild(createSvgElement(svgCopy));
       runBtn.querySelector('.play-icon').appendChild(createSvgElement(svgPlay));
-      expandBtn.appendChild(createSvgElement(svgExpand)); 
       closeOutputBtn.appendChild(createSvgElement(svgClose));
-
-      expandBtn.addEventListener('click', () => {
-          isExpanded = !isExpanded;
-          codeContent.classList.toggle('expanded', isExpanded);
-          codeGradient.style.opacity = isExpanded ? '0' : '1'; 
-
-          expandBtn.innerHTML = ''; 
-          expandBtn.appendChild(createSvgElement(isExpanded ? svgCollapse : svgExpand));
-
-          if (editorInstance) {
-              editorInstance.setSize(null, isExpanded ? 'auto' : '150px');
-               if (isExpanded) {
-                   setTimeout(() => editorInstance.refresh(), 10); 
-               } else {
-                    editorInstance.refresh();
-               }
-          }
-      });
 
       copyBtn.addEventListener('click', () => {
           if (!editorInstance) return;
