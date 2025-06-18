@@ -68,6 +68,7 @@ AA --- BB --- CC
 
 ## Advanced Topics
 
+- [[Expectation Maximization]]
 - [[Confidence Interval and Hypothesis Test Duality]]
 - [[Hardness of Simple Hypothesis Test Through Total Variation]]
 - [[Hardness of Estimation Through Testing]]
