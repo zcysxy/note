@@ -1,5 +1,5 @@
 ---
-{"publish":true,"title":"Likelihood","created":"2022-05-18T16:26:34","modified":"2025-06-06T01:34:05","cssclasses":"","aliases":null,"type":"note","sup":["[[Probability Theory]]","[[Statistics]]"],"state":"done","related":["[[Maximum Likelihood Estimation]]"]}
+{"publish":true,"title":"Likelihood","created":"2022-05-18T16:26:34","modified":"2025-06-18T16:49:05","cssclasses":"","aliases":null,"type":"note","sup":["[[Probability Theory]]","[[Statistics]]"],"state":"done","related":["[[Maximum Likelihood Estimation]]"]}
 ---
 
 
@@ -37,16 +37,5 @@ The derivation of the log-likelihood function is called the ==score function==:
 $$
 s(\theta) \coloneqq \frac{ \mathrm{d} }{ \mathrm{d}\theta  }  \log L(\theta).
 $$
-
-## Sufficient Regularity Conditions
-
-
-
-- **Identifiability**: $f(x;\theta_1) \neq f(x;\theta_2) \iff \theta_1 \neq \theta_2$
-- **Continuity**: the log-likelihood function $l$ is twice differentiable and $l'(\theta)=0$ has a unique solution that results in a max
-- **Dominance**: there exists an integrable function $D(x)$ such that for any $\theta$, it holds that $|l(x;\theta)| < D(x)$
-- The parameter space $\Theta$ is finite or an open interval; the true parameter $\theta ^{*}$ is not on the boundary of $\Theta$
-- The support of the $f(x;\theta)$ does not depend on $\theta$
-- The [[Fisher Information]] matrix is invertible in a neighborhood of $\theta ^{*}$
 
 

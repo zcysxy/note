@@ -1,5 +1,5 @@
 ---
-{"publish":true,"title":"Best Estimator for Uniform Distribution Parameter","created":"2022-12-06T00:26:27","modified":"2025-06-12T06:13:33","cssclasses":"","aliases":null,"type":"jupyter","sup":["[[Probability Theory]]","[[Uniform Distribution]]"],"state":"done","related":["[[Maximum Likelihood Estimation]]"],"reference":["https://math.unm.edu/~knrumsey/pdfs/projects/Uniform.pdf"]}
+{"publish":true,"title":"Best Estimator for Uniform Distribution Parameter","created":"2022-12-06T00:26:27","modified":"2025-06-18T16:39:12","cssclasses":"","aliases":null,"type":"jupyter","sup":["[[Probability Theory]]","[[Uniform Distribution]]"],"state":"done","related":["[[Maximum Likelihood Estimation]]"],"reference":["https://math.unm.edu/~knrumsey/pdfs/projects/Uniform.pdf"]}
 ---
 
 
@@ -7,9 +7,9 @@
 
 We want to estimate the parameter $\theta$ of a [[Uniform Distribution]] given $n$ i.i.d samples $X_i \overset{ \text{i.i.d.} }{ \sim } \operatorname{Unif}[0,\theta ]$.
 
-- [?] So, what is the *best estimator*?
+- [?] So, what is the *best* estimator?
 
-First, we need to define the metric. We use [[Mean Squared Error]]. We know for an estimator $\hat{\theta}$ of $\theta$, its [[Mean Squared Error\|MSE]] is
+First, we need to define the evaluation metric. We use [[Mean Squared Error]]. We know for an estimator $\hat{\theta}$ of $\theta$, its [[Mean Squared Error\|MSE]] is
 $$
 \operatorname{MSE}(\hat{\theta},\theta ) = \operatorname{Bias}(\hat{\theta})^{2} + \operatorname{SE}(\hat{\theta})^{2},
 $$
@@ -17,20 +17,11 @@ where $\operatorname{Bias}(\hat{\theta}) = \mathbb{E}[\hat{\theta}] - \theta$ is
 
 We will also touch on [[Evaluating an Estimator#Asymptotic Normality]] for certain estimators.
 
-```python-r
+```python
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
-from scipy import stats
-from scipy.optimize import minimize_scalar
-import pandas as pd
-from matplotlib.patches import Rectangle
-import warnings
-warnings.filterwarnings('ignore')
-
-# Set style for better plots
-# plt.style.use('seaborn-v0_8-colorblind')
-# sns.set_palette("husl")
+plt.style.use('seaborn-v0_8-colorblind')
 
 # Set parameters for demonstrations
 np.random.seed(42)
@@ -52,7 +43,7 @@ $$
 $$
 which is a constant regardless of the sample size $n$.
 
-Obviously, $\hat{\theta}^{(1)}$ is not satisfactory as it only uses the information of one sample. More generally, we can consider an estimator that uses $k \le n$ samples:
+Obviously, $\hat{\theta}^{(1)}$ is not satisfactory as it only uses the information from one sample. More generally, we can consider an estimator that uses $k \le n$ samples:
 $$
 \hat{\theta}^{(k)} = \frac{1}{k} \sum_{i=1}^{k} 2X_{i},
 $$
@@ -60,11 +51,12 @@ which is still unbiased but has a reduced standard error:
 $$
 \operatorname{MSE}(\hat{\theta}^{(k)}) = \Var\left( \frac{1}{k} \sum_{i=1}^{k}2X_{i} \right)  = \frac{4}{k^{2}} \sum_{i=1}^{k}\Var(X_{i}) = \frac{\theta^{2}}{3k}.
 $$
-Again, the MSE is a constant w.r.t $n$.
+The variance reduces because $\hat{\theta}^{(k)}$ aggregates the information from $k$ i.i.d. samples.
+Again, its MSE is a constant w.r.t $n$.
 
 We plot the histogram of $\hat{\theta}^{(k)}$ for different $k$ values to see how the distribution changes with sample size.
 
-```python-r
+```python
 def k_sample_estimator(sample,k):
     assert k <= len(sample), "k must be less than or equal to the sample size"
     return 2 * np.mean(sample[:k], axis=0)
@@ -110,7 +102,7 @@ $$
 
 We compare the MSE and histogram of the moment estimator with $\hat{\theta}^{(2)}$:
 
-```python-r
+```python
 def moment_estimator(sample):
 		return 2 * np.mean(sample, axis=0)
 
@@ -160,17 +152,14 @@ def plot_hist(ax, estimators, estimates):
     ax.legend()
 plot_hist(ax_hist, estimators, estimates)
 
-plt.tight_layout()
 plt.show()
 ```
 
 ## Maximum Likelihood Estimation
 
-$$
-\operatorname{MSE}(\hat{\theta}^{(\mathrm{MLE})}) = \operatorname{Var}(\hat{\theta}^{(\mathrm{MLE})}) + \operatorname{Bias}(\hat{\theta}^{(\mathrm{MLE})})^{2}.
-$$
+> [!exercise] Derive the maximum likelihood estimator for $\theta$: $\hat{\theta}^{(\mathrm{MLE})}=\max_i X_i$.
 
-To get $\operatorname{Var}(\hat{\theta}^{(\mathrm{MLE})})$ and $\operatorname{Bias}(\hat{\theta}^{(\mathrm{MLE})})$, we need first get the distribution of $\hat{\theta}^{(\mathrm{MLE})} = \max_{i} X _i$.
+To get $\operatorname{Var}(\hat{\theta}^{(\mathrm{MLE})})$ and $\operatorname{Bias}(\hat{\theta}^{(\mathrm{MLE})})$, we first need to calculate the distribution of $\hat{\theta}^{(\mathrm{MLE})} = \max_{i} X _i$.
 $$
 P(\hat{\theta}^{(\mathrm{MLE})} \le x) = P(\max_{i} X _i \le x) = \prod_{i}P(X _i\le x) = (x / \theta)^{n}.
 $$
@@ -190,14 +179,14 @@ $$
 
 Therefore
 $$
-\operatorname{MSE}(\hat{\theta}^{(\mathrm{MLE})},\theta) = \frac{2\theta^{2}}{(n+2)(n+1)} \le \frac{\theta^{2}}{3n} = \operatorname{MSE}d_{1},\theta ).
+\operatorname{MSE}(\hat{\theta}^{(\mathrm{MLE})}) = \frac{2\theta^{2}}{(n+2)(n+1)} \le \frac{\theta^{2}}{3n} = \operatorname{MSE}(\hat{\theta}^{(\mathrm{MM})} ).
 $$
 
-Thus, we can say that $\hat{\theta}^{(\mathrm{MLE})} = \max_{i}X _i$ is a better estimator than $d_{1} = 2\overline{X}$.
+Thus, we can say that $\hat{\theta}^{(\mathrm{MLE})} = \max_{i}X _i$ is a better estimator than $\hat{\theta}^{(\mathrm{MM})}= 2\overline{X}$.
 
 We compare the MLE with previous estimators.
 
-```python-r
+```python
 def mle_estimator(sample):
     return np.max(sample, axis=0)
 
@@ -226,7 +215,9 @@ We have the following fact:
 
 > [!prop] Proposition ^prop
 >
-> If $T$ is a complete and [[Sufficient Statistic]] for a parameter $\theta$, and $\phi(T)$ is an estimator dependent only on $T$, then $\phi(T)$ is the unique minimum-variance unbiased estimator (UMVUE) of $\mathbb{E}_{\theta }\phi(T)$.
+> If $T$ is a complete and [[Sufficient Statistic]] for a parameter $\theta$, and $\phi(T)$ is an estimator dependent only on $T$, then $\phi(T)$ is the unique uniformly minimum-variance unbiased estimator (UMVUE) of $\mathbb{E}_{\theta }\phi(T)$.
+
+The uniformness refers to that the minimum variance is achieved for all $\theta$.
 
 We note that $\max_{i}X_{i}$ is a complete and sufficient statistic for $\theta$. Thus, the estimator
 $$
@@ -239,7 +230,7 @@ $$
 \operatorname{MSE}(\hat{\theta}^{(\mathrm{UMVUE})}) = \operatorname{Var}\left( \frac{n+1}{n}\hat{\theta}^{(\mathrm{MLE})} \right) = \left( \frac{n+1}{n} \right)^{2}\operatorname{Var}(\hat{\theta}^{(\mathrm{MLE})}) = \frac{\theta^{2}}{n(n+2)}.
 $$
 
-```python-r
+```python
 def umvue_estimator(sample):
     n = len(sample)
     return (n+1) / n * np.max(sample, axis=0)
@@ -280,7 +271,7 @@ $$
 \hat{\theta}^{(\mathrm{Jack})} = \hat{\theta} - \widehat{\operatorname{Bias}}(\hat{\theta}_{n}) = n\hat{\theta}_{n} -  \frac{n-1}{n}\sum_{i=1}^{n}\hat{\theta}_{(-i)}.
 $$
 
-Generally, the MSE of a Jackknife estimator is difficult to calculate as $\hat{\theta}_{(-i)}$ are correlated. However, if we are to correct the MLE estimator, the Jackknife estimator has a simple form:
+Generally, the MSE of a Jackknife estimator is difficult to calculate as $\hat{\theta}_{(-i)}$ are correlated. However, if we are to correct the MLE estimator for $\theta$, the Jackknife estimator has a simple form:
 $$
 \hat{\theta}^{(\mathrm{Jack})} = \frac{2n-1}{n} X_{(n)} - \frac{n-1}{n}X_{(n-1)},
 $$
@@ -292,7 +283,7 @@ $$
 
 See [[Best Estimator for Uniform Distribution Parameter#Appendix]] for details of the calculation.
 
-```python-r
+```python
 def jackknife_estimator(sample):
     mle = mle_estimator(sample)
     # Produce leave-one-out MLEs
@@ -321,14 +312,15 @@ plt.show()
 
 ## Minimal MSE
 
-When we look at the MSEs, for [[Best Estimator for Uniform Distribution Parameter#Maximum Likelihood Estimation\|MLE]], bias dominates, for [[Best Estimator for Uniform Distribution Parameter#Uniformly Minimum-Variance Unbiased Estimator\|UMVUE]] and [[Best Estimator for Uniform Distribution Parameter#Jackknife]], variance dominates.
+When we look at the MSE, for [[Best Estimator for Uniform Distribution Parameter#Maximum Likelihood Estimation\|MLE]], bias dominates, while for [[Best Estimator for Uniform Distribution Parameter#Uniformly Minimum-Variance Unbiased Estimator\|UMVUE]] and [[Best Estimator for Uniform Distribution Parameter#Jackknife]], variance dominates.
 A natural next step is to find the estimator that achieves the optimal balance between [[Bias-Variance Trade-Off\|bias and variance]]. Actually, such an estimator is indeed the *best* estimator for $\theta$ in terms of MSE (see [[Best Estimator for Uniform Distribution Parameter#Appendix]]).
 
 Consider a general form of the MLE and UMVUE using the complete and sufficient statistic $X _{(n)}$:
 $$
 \hat{\theta}^{(\mathrm{MMSE})} = cX_{(n)}
 $$
-Then, we have
+$c=1$ recovers the MLE and $c=(n+1)/n$ recovers the UMVUE.
+For a general $c$, we have
 $$
 \mathbb{E}[\hat{\theta}^{(\mathrm{MMSE})}] = \frac{cn\theta}{n+1},
 \quad
@@ -351,7 +343,7 @@ $$
 \operatorname{MSE}(\hat{\theta}^{(\mathrm{MMSE})}) = \frac{\theta^{2}}{(n+1)^{2}}.
 $$
 
-```python-r
+```python
 def mmse_estimator(sample):
     n = sample.shape[0]
     return (n + 2) / (n + 1) * np.max(sample, axis=0)
@@ -377,18 +369,18 @@ plt.show()
 
 The following table summarizes the estimators we have discussed.
 
-| Estimator | Expression | Bias | Variance | MSE |
-|-----------|------------|------|----------|-----|
-| $k$ Samples | $\frac{2}{k} \sum_{i=1}^{k} X_i$ | $0$ | $\frac{\theta^2}{3k}$ | $\frac{\theta^2}{3k}$ |
-| Method of Moments | $2\overline{X}$ | $0$ | $\frac{\theta^2}{3n}$ | $\frac{\theta^2}{3n}$ |
-| MLE | $X_{(n)}$ | $-\frac{\theta}{n+1}$ | $\frac{n\theta^2}{(n+2)(n+1)^2}$ | $\frac{2\theta^2}{(n+2)(n+1)}$ |
-| UMVUE | $\frac{n+1}{n} X_{(n)}$ | $0$ | $\frac{\theta^2}{n(n+2)}$ | $\frac{\theta^2}{n(n+2)}$ |
-| Jackknife | $\frac{2n-1}{n} X_{(n)} - \frac{n-1}{n} X_{(n-1)}$ | $-\frac{\theta}{n(n+1)}$ | $\frac{(2n^2 - 1)\theta^2}{n(n+1)^2(n+2)}$ | $\frac{2(n^2 - n + 1)\theta^2}{n^2(n+1)(n+2)}$ |
-| MMSE | $\frac{n+2}{n+1} X_{(n)}$ | $-\frac{\theta}{(n+1)^{2}}$ | $\frac{n(n+2)\theta^2}{(n+1)^4}$ | $\frac{\theta^2}{(n+1)^2}$ |
+| Estimator         | Expression                                         | Bias                        | Variance                                   | MSE                                            |
+| ----------------- | -------------------------------------------------- | --------------------------- | ------------------------------------------ | ---------------------------------------------- |
+| $k$ Samples       | $\frac{2}{k} \sum_{i=1}^{k} X_i$                   | $0$                         | $\frac{\theta^2}{3k}$                      | $\frac{\theta^2}{3k}$                          |
+| Method of Moments | $2\overline{X}$                                    | $0$                         | $\frac{\theta^2}{3n}$                      | $\frac{\theta^2}{3n}$                          |
+| MLE               | $X_{(n)}$                                          | $-\frac{\theta}{n+1}$       | $\frac{n\theta^2}{(n+2)(n+1)^2}$           | $\frac{2\theta^2}{(n+2)(n+1)}$                 |
+| UMVUE             | $\frac{n+1}{n} X_{(n)}$                            | $0$                         | $\frac{\theta^2}{n(n+2)}$                  | $\frac{\theta^2}{n(n+2)}$                      |
+| Jackknife         | $\frac{2n-1}{n} X_{(n)} - \frac{n-1}{n} X_{(n-1)}$ | $-\frac{\theta}{n(n+1)}$    | $\frac{(2n^2 - 1)\theta^2}{n(n+1)^2(n+2)}$ | $\frac{2(n^2 - n + 1)\theta^2}{n^2(n+1)(n+2)}$ |
+| MMSE              | $\frac{n+2}{n+1} X_{(n)}$                          | $-\frac{\theta}{(n+1)^{2}}$ | $\frac{n(n+2)\theta^2}{(n+1)^4}$           | $\frac{\theta^2}{(n+1)^2}$                     |
 
 Finally, we plot the histograms of all estimators separately to compare their distributions, and calculate their empirical mean squared errors.
 
-```python-r
+```python
 # Plot histograms of all estimators separately
 num_bins = 20
 range_bins = (0.8, 1.2)
@@ -412,7 +404,7 @@ plt.tight_layout()
 plt.show()
 ```
 
-```python-r
+```python
 # Calculate empirical MSE for each estimator
 num_simulations = int(1e3)
 mse_empirical = np.empty((len(estimators), len(sample_sizes), num_simulations))
@@ -424,7 +416,7 @@ for n in sample_sizes:
         mse_empirical[i, sample_sizes.index(n), :] = (estimator(samples) - theta_true)**2
 ```
 
-```python-r
+```python
 # Plot empirical MSE with 0.95 confidence region using fill_between for each estimator in a single plot
 plt.figure()
 for i, (name, estimator) in enumerate(estimators.items()):
@@ -449,17 +441,17 @@ plt.show()
 
 ## Beyond MSE
 
-So far, we have focused on the MSE as the metric for evaluating estimators. In this section, we first explore a new risk, and then discuss the statistical properties of MLE for the uniform distribution.
+So far, we have focused on the MSE as the metric for evaluating estimators. In this section, we first explore a new risk, and then discuss the statistical properties of MLE (and thus other estimators built on $\max_i X_i$) for the uniform distribution.
 
 ### Zero-One Loss
 
-Recall that MSE is the risk associated with the squared error loss function $L(\hat{\theta},\theta) = (\hat{\theta} - \theta)^{2}$.
+Recall that MSE is the risk associated with the squared loss $L(\hat{\theta},\theta) = (\hat{\theta} - \theta)^{2}$.
 
 Consider a new loss function:
 $$
 L(\hat{\theta},\theta) = \mathbb{1}\left\{ |\hat{\theta}-\theta| > \epsilon \right\}.
 $$
-This zero-one loss function is often used in binary decision-making problems. In the context of parameter estimation, it finds applications in catastrophic risk assessment, where any estimation error beyond a certain threshold $\epsilon$ is catastrophic. Then, the corresponding risk
+This zero-one loss function is often used in binary decision-making problems. In the context of parameter estimation, it finds applications in catastrophic risk assessment, where any estimation error beyond a certain threshold $\epsilon$ is considered catastrophic. Then, the corresponding risk
 $$
 R(\hat{\theta},\theta) = \mathbb{E}_{\theta}L(\hat{\theta},\theta) = P_{\theta}\left( |\hat{\theta}-\theta| > \epsilon \right)
 $$
@@ -491,7 +483,7 @@ c^{-n}(1- \epsilon/\theta)^{n} , \quad & 1 - \epsilon /\theta \le c \le 1 + \eps
 \end{cases}
 \end{aligned}
 $$
-For a fixed $\theta$, we usually consider a small threshold $\epsilon$. In such scenario,
+For a fixed $\theta$, we usually consider a small threshold $\epsilon$. In such scenarios,
 $$
 (1+\epsilon /\theta)^{n} \approx 1 + n\epsilon /\theta, \quad \text{and} \quad (1-\epsilon /\theta)^{n} \approx 1 - n\epsilon /\theta.
 $$
@@ -501,14 +493,14 @@ Note that the estimator should not depend on the true parameter $\theta$. Thus, 
 $$
 R(\hat{\theta},\theta) = P_{\theta}\left( |\hat{\theta} - \theta| > \delta  \theta \right) ,
 $$
-whose corresponding optimal estimator is
+whose corresponding optimal estimator is thus
 $$
 \hat{\theta}^{(\mathrm{ZO})} = \left( 1 + \delta \right) X_{(n)}.
 $$
 
-We plot the histogram of the zero-one estimator for different $\delta$ values, and compare it with the MLE estimator on both the MSE and zero-one risk.
+We plot the histogram of the zero-one estimator for different $\delta$ values, and compare it with the MMSE estimator on both the MSE and zero-one risk.
 
-```python-r
+```python
 def zero_one_estimator(sample, delta):
     return (1 + delta) * np.max(sample, axis=0)
 
@@ -534,7 +526,7 @@ plt.tight_layout()
 plt.show()
 ```
 
-```python-r
+```python
 # Calculate the empirical risks and zero-one risk for the zero-one estimator and MMSE
 num_simulations = int(1e3)
 delta = 5e-3
@@ -588,7 +580,7 @@ plt.show()
 
 ### Statistical Properties of MLE for Uniform Distribution
 
-[[Maximum Likelihood Estimation\|MLE]] is known to be the *best* estimator, in terms of statistical properties, such as consistency and asymptotic normality, under mild conditions. However, in this note, we have shown that the MLE for the uniform distribution is biased and has a larger MSE than some other estimators. Do our findings contradict the properties of MLE?
+[[Maximum Likelihood Estimation\|MLE]] is known to be the *best* estimator in terms of statistical properties, such as consistency and asymptotic normality, under mild conditions. However, in this note, we have shown that the MLE for the uniform distribution is biased and has a larger MSE than some other estimators. Do our findings contradict the properties of MLE?
 
 We first verify the consistency. In the previous section, we show that for $c=1$ and any $\epsilon\in(0,\theta)$,
 $$
@@ -613,7 +605,7 @@ n (\theta-\hat{\theta}^{(\mathrm{MLE})} ) \overset{d}{\to} \mathrm{Exp}(1 /\thet
 $$
 Note that the exponential tail bound is significantly heavier than the Gaussian tail bound ($e^{-nt}$ vs. $e^{-nt^{2}}$). We verify this by simulation.
 
-```python-r
+```python
 n = 1000
 samples = np.random.uniform(0, theta_true, size=(n, 10000))
 mle_estimates = mle_estimator(samples)
@@ -632,8 +624,7 @@ plt.tight_layout()
 plt.show()
 ```
 
-Finally, we remark that either MSE or asymptotic normality is just one of the many criteria for evaluating estimators. One estimator with smaller MSE may underestimate other risks. One asymptotically normal estimator may have larger MSE than another estimator. At the end of the day, we should choose the estimator that best fits our specific problem and risk criteria.
-
+Finally, we remark that either MSE or asymptotic normality is just one of many criteria for evaluating estimators. One estimator with smaller MSE may underestimate other risks. One asymptotically normal estimator may have larger MSE than another estimator. At the end of the day, we should choose the estimator that best fits our specific problem and risk criteria.
 
 ## Appendix
 
@@ -706,7 +697,7 @@ Now suppose $f_{n}$ is not linear. By Taylor expansion,
 $$
 f_{n}(\theta) = \sum_{k=0}^{\infty} \frac{f_n^{(k)}(0)}{k!} \theta^k.
 $$
-For $\hat{\theta}$ to be uniformly optimal for any $\theta$, it must satisties
+For $\hat{\theta}$ to be uniformly optimal for any $\theta$, it must satisfy
 $$
 f_n(0) -\theta  = o(\theta) \text{ as }\theta \to 0  \quad\text{and}\quad f_{n}(\theta) -\theta  = O(\theta) \text{ as } \theta\to \infty.
 $$

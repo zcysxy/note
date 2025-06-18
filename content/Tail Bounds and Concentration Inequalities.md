@@ -1,5 +1,5 @@
 ---
-{"publish":true,"title":"Tail Bounds and Concentration Inequalities","created":"2025-05-26T19:28:12","modified":"2025-06-07T09:16:59","cssclasses":"","state":"done","sup":["[[Statistics]]"],"alias":null,"type":"jupyter","related":["[[Concentration Inequality]]"]}
+{"publish":true,"title":"Tail Bounds and Concentration Inequalities","created":"2025-05-26T19:28:12","modified":"2025-06-07T09:16:59","cssclasses":"","state":"done","sup":["[[Statistics]]"],"aliases":null,"type":"jupyter","related":["[[Concentration Inequality]]"]}
 ---
 
 

@@ -1,5 +1,5 @@
 ---
-{"publish":true,"title":"Confidence Interval and Hypothesis Test Duality","created":"2025-05-27T14:51:17","modified":"2025-05-31T23:12:33","cssclasses":"","state":"done","sup":["[[Statistics]]"],"alias":null,"type":"note","related":["[[Confidence Interval]]","[[Hypothesis Testing]]"]}
+{"publish":true,"title":"Confidence Interval and Hypothesis Test Duality","created":"2025-05-27T14:51:17","modified":"2025-05-31T23:12:33","cssclasses":"","state":"done","sup":["[[Statistics]]"],"aliases":null,"type":"note","related":["[[Confidence Interval]]","[[Hypothesis Testing]]"]}
 ---
 
 

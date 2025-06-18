@@ -1,5 +1,5 @@
 ---
-{"publish":true,"aliases":["MLE"],"title":"Maximum Likelihood Estimation","created":"2022-05-28T03:34:23","modified":"2025-06-10T18:41:53","cssclasses":"","type":"note","sup":["[[Estimation]]"],"related":["[[Machine Learning]]"],"state":"done"}
+{"publish":true,"aliases":["MLE"],"title":"Maximum Likelihood Estimation","created":"2022-05-28T03:34:23","modified":"2025-06-18T17:08:24","cssclasses":"","type":"note","sup":["[[Estimation]]"],"related":["[[Machine Learning]]"],"state":"done"}
 ---
 
 
@@ -79,7 +79,7 @@ For any function $g$, the transformation of a MLE $g(\hat{\theta})$ is still the
 
 We denote $\ell _{\theta} = \log p_{\theta }$ as the log-likelihood, and let $\theta _{*} = \argmax_{\theta\in\Theta} \mathbb{E}_{p}\ell _{\theta }(X)$.
 
-Given [[Likelihood#Sufficient Regularity Conditions]], MLE is [[Estimation#Consistency\|consistent]]: $\hat{\theta}_{\mathrm{ML}} \overset{P}{\longrightarrow} \theta_*$.
+Given [[Regularity Conditions for M-Estimators#For Maximum Likelihood Estimation\|sufficient regularity conditions]], MLE is [[Estimation#Consistency\|consistent]]: $\hat{\theta}_{\mathrm{ML}} \overset{P}{\longrightarrow} \theta_*$.
 
 Further, if we have realizability and identifiability: $\exists! \theta _{\mathrm{data}} \in \Theta  : p_{\theta _{\mathrm{data}}} = p_{\mathrm{\mathrm{data}}}$, then $\theta _{*} = \theta _{\mathrm{data}}$. This is because of the property of [[KL Divergence]]: $D_{\mathrm{KL}}(p_{\mathrm{data}}\|p_{\theta}) = 0$ if and only if $p_{\theta} = p_{\mathrm{data}}$.
 
@@ -87,7 +87,7 @@ Please refer to [[M-Estimator#Consistency]] for the proof of a more general resu
 
 ### Asymptotic Normality
 
-Given [[Likelihood#Sufficient Regularity Conditions]], we have
+Given [[Regularity Conditions for M-Estimators#For Maximum Likelihood Estimation\|sufficient regularity conditions]], we have
 $$
 \sqrt{ n }\left( \hat{\theta} _{\mathrm{ML}} - \theta _{*} \right)  \overset{ d }{ \to } \mathcal{N}(0, \Sigma _{\mathrm{ML}} )
 $$

@@ -1,5 +1,5 @@
 ---
-{"publish":true,"aliases":["Minimax"],"title":"Risk","created":"2025-05-24T19:42:49","modified":"2025-05-24T20:14:35","cssclasses":"","state":"done","sup":["[[Statistics]]"],"alias":null,"type":"note"}
+{"publish":true,"aliases":["Minimax"],"title":"Risk","created":"2025-05-24T19:42:49","modified":"2025-05-24T20:14:35","cssclasses":"","state":"done","sup":["[[Statistics]]"],"type":"note"}
 ---
 
 
