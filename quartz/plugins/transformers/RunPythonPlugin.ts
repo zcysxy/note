@@ -1,9 +1,9 @@
-import { QuartzTransformerPlugin } from "../types";
-import { Root } from "mdast";
-import { visit } from "unist-util-visit";
+import { QuartzTransformerPlugin } from "../types"
+import { Root } from "mdast"
+import { visit } from "unist-util-visit"
 
-let blockCounter = 0;
-const generateBlockId = () => `py-block-${blockCounter++}`;
+let blockCounter = 0
+const generateBlockId = () => `py-block-${blockCounter++}`
 
 export const RunPythonPlugin: QuartzTransformerPlugin = () => ({
   name: "RunPythonPlugin",
@@ -242,6 +242,11 @@ img_str
           contentType: "external",
         },
         {
+          src: "https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/base16-dark.min.css",
+          loadTime: "beforeDOMReady",
+          contentType: "external",
+        },
+        {
           src: "https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/base16-light.min.css",
           loadTime: "beforeDOMReady",
           contentType: "external",
@@ -425,41 +430,39 @@ img_str
             `,
         },
       ],
-    };
+    }
   },
 
   markdownPlugins() {
     return [
       () => (tree: Root, _file) => {
-        blockCounter = 0;
+        blockCounter = 0
+				const isJupyter = _file.data.frontmatter?.type?.toString() === "jupyter"
+				if (!isJupyter) {
+					return
+				}
         visit(tree, "code", (node, index, parent) => {
-          if (
-            node.lang === "python-r" &&
-            parent?.children &&
-            index !== undefined
-          ) {
-            const id = generateBlockId();
+          if (node.lang === "python" && parent?.children && index !== undefined) {
+            const id = generateBlockId()
 
             const htmlContent = `
 <div class='code-wrapper' id='wrapper-${id}'>
   <div class='code-block'>
-    <div class='code-header'>
-      <div class='code-language'>Python</div>
-      <div class='code-actions'>
-        <button id='${id}-copy' aria-label='Copy code'>
-          </button>
-        <button id='${id}-button' class='python-run-button' aria-label='Run code' disabled> <span class='play-icon'>
-             </span>
-          <span class='spinner'></span> </button>
-      </div>
-    </div>
+    <!-- <div class='code-header'>
+       <div class='code-language'>Python</div>
+       <div class='code-actions'>
+       </div>
+     </div> -->
     <div id='codeContent-${id}' class='code-content'>
       <textarea id='codeBlock-${id}' style='display: none;'>${node.value}</textarea> <div id='codeGradient-${id}' class='code-gradient'></div>
     </div>
   </div>
   <div id='${id}-outputWrapper' class='output-wrapper'> <div class='output-header'>
-        <div class='output-title'>Output</div>
-        <button id='${id}-closeOutputBtn' class='close-output-btn' aria-label='Close output'>
+        <button id='${id}-copy' aria-label='Copy code'> Copy </button>
+        <button id='${id}-button' class='python-run-button' aria-label='Run code' disabled> <span class='play-icon'>
+            Run </span> <span class='spinner' style='display:none'> Running </span> </button>
+        <button id='${id}-closeOutputBtn' class='close-output-btn' aria-label='Clear output'>
+				Clear Output
           </button>
       </div>
       <div class='output-content'>
@@ -474,6 +477,7 @@ img_str
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/material-palenight.min.css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/base16-light.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/base16-dark.min.css" />
 
 <script>
 (function() {
@@ -531,25 +535,20 @@ img_str
       attrs: { xmlns: 'http://www.w3.org/2000/svg', width: '16', height: '16', viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', 'stroke-width': '2', 'stroke-linecap': 'round', 'stroke-linejoin': 'round' },
       children: [ { tag: 'polyline', attrs: { points: '20 6 9 17 4 12' } } ]
   };
-   const svgClose = {
-        attrs: { xmlns: 'http://www.w3.org/2000/svg', width: '16', height: '16', viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', 'stroke-width': '2', 'stroke-linecap': 'round', 'stroke-linejoin': 'round' },
-        children: [
-            { tag: 'line', attrs: { x1: '18', y1: '6', x2: '6', y2: '18' } },
-            { tag: 'line', attrs: { x1: '6', y1: '6', x2: '18', y2: '18' } }
-        ]
-    };
 
 
   function initializeEditorWhenReady() {
       if (typeof CodeMirror !== 'undefined') {
           console.log('CodeMirror ready for block:', blockId);
+					// Get html[saved-theme]
+					const cmTheme = document.querySelector('html').getAttribute('saved-theme') === 'dark' ? 'base16-dark' : 'base16-light';
           editorInstance = CodeMirror.fromTextArea(codeBlock, {
             mode: 'python',
-            // theme: 'material-palenight',
+            theme: cmTheme,
             lineNumbers: true,
             lineWrapping: true,
             readOnly: false,
-            style: 'background-color: auto',
+            style: 'background: none',
           });
 
            window.codeMirrorInstances = window.codeMirrorInstances || {};
@@ -571,18 +570,17 @@ img_str
 
 
   function setupButtons() {
-      copyBtn.appendChild(createSvgElement(svgCopy));
-      runBtn.querySelector('.play-icon').appendChild(createSvgElement(svgPlay));
-      closeOutputBtn.appendChild(createSvgElement(svgClose));
+      // copyBtn.appendChild(createSvgElement(svgCopy));
+      // runBtn.querySelector('.play-icon').appendChild(createSvgElement(svgPlay));
 
       copyBtn.addEventListener('click', () => {
           if (!editorInstance) return;
           navigator.clipboard.writeText(editorInstance.getValue()).then(() => {
-              copyBtn.innerHTML = ''; 
-              copyBtn.appendChild(createSvgElement(svgCheck)); 
+              copyBtn.innerHTML = 'Copied'; 
+              // copyBtn.appendChild(createSvgElement(svgCheck)); 
               setTimeout(() => {
-                  copyBtn.innerHTML = ''; 
-                  copyBtn.appendChild(createSvgElement(svgCopy)); 
+                  copyBtn.innerHTML = 'Copy'; 
+                  // copyBtn.appendChild(createSvgElement(svgCopy)); 
               }, 1500); 
           }).catch(err => {
               console.error('Failed to copy code:', err);
@@ -619,18 +617,18 @@ img_str
 
 })(); 
 </script>
-`;
+`
 
             const newNode = {
               type: "html",
               value: htmlContent,
-            } as any;
+            } as any
 
-            parent.children.splice(index, 1, newNode);
-            return index + 1;
+            parent.children.splice(index, 1, newNode)
+            return index + 1
           }
-        });
+        })
       },
-    ];
+    ]
   },
-});
+})

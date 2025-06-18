@@ -12,6 +12,30 @@ code.mermaid svg,
   margin: 1rem auto;
 }
 
+// CodeMirror
+div.CodeMirror.CodeMirror-wrap {
+  @extend code;
+  line-height: 1.6rem;
+  background: none;
+  border: 1px solid var(--lightgray);
+  border-radius: 5px;
+  & .CodeMirror-gutters {
+    background: none;
+  }
+}
+.output-wrapper button {
+  background: none;
+  border: 1px solid var(--lightgray);
+  border-radius: 5px;
+  color: var(--text-normal, var(--darkgray));
+  cursor: pointer;
+  &:hover {
+    color: var(--primary);
+    border-color: var(--secondary);
+  }
+  margin-bottom: 1rem;
+}
+
 figure:has(>img),
 p:has(>img) {
   text-align: center;

@@ -89,7 +89,7 @@ export default ((opts?: Partial<ContentMetaOptions>) => {
           .replaceAll(" ", "%20")
         // const badge = `<a target="_blank" href="https://colab.research.google.com/github/zcysxy/quartz/blob/v4/content/jupyter/${fileName}.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>`
         segments.push(
-          <span class="meta-type">
+          <span class="meta-type" data-type="jupyter">
             <a
               target="_blank"
               href={`https://colab.research.google.com/github/zcysxy/quartz/blob/v4/content/jupyter/${fileName}.ipynb`}
