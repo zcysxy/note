@@ -1,5 +1,5 @@
 ---
-{"publish":true,"aliases":["EM"],"title":"Expectation Maximization","created":"2023-04-13T16:33:44","modified":"2025-06-18T19:49:51","cssclasses":"","type":"note","sup":["[[Maximum Likelihood Estimation]]","[[Unsupervised Learning]]"],"state":"done"}
+{"publish":true,"aliases":["EM"],"title":"Expectation Maximization","created":"2023-04-13T16:33:44","modified":"2025-06-19T00:53:42","cssclasses":"","type":"note","sup":["[[Maximum Likelihood Estimation]]","[[Unsupervised Learning]]"],"state":"done"}
 ---
 
 
@@ -8,13 +8,15 @@
 Expectation Maximization (EM) algorithm is an iterative algorithm used to estimate the [[Maximum Likelihood Estimation]] (MLE) or [[Maximum a Posteriori]] (MAP) parameters of a probabilistic model, in the presence of **unobserved** or **missing** data.
 
 Imagine we have a *hidden* (unobserved or missing) random variable $Y$, given whose observation the [[Likelihood]] $p(x,y\given \theta)$ is easy to compute or optimize.
-When only $x$ is available, we have
+When only $x$ is available, we take the *expectation* over $Y$:
 $$
 p(x\given \theta ) =\int_{\mathcal{Y}} p(x,y\given \theta) \d y.
 $$
+^eq-margin
+
 Then, optimizing the RHS gives us the MLE/MAP.
 
-> [!ex] Gaussian parameters
+> [!ex] Missing Gaussian Data
 > For a Gaussian random variable $X$ with observed subvector $x^{o}$ and missing subvector $x^{m}$, we can easily find its [[Maximum Likelihood Estimation]] for parameters when there is no missing data. Therefore, with the presence of missing data, we have
 > $$
 > p\left(x_i^o \mid \mu, \Sigma\right)=\int p\left(x_i^o, x_i^m \mid \mu, \Sigma\right) d x_i^m=N\left(\mu_i^o, \Sigma_i^o\right),
@@ -22,9 +24,30 @@ Then, optimizing the RHS gives us the MLE/MAP.
 > where $\mu_i^o$ and $\Sigma_i^o$ are the sub-vector/sub-matrix of $\mu$ and $\Sigma$ defined by $x_i^o$.
 ^ex
 
+> [!ex] Mixture of Gaussians
+> For the mixture of two Gaussian distributions $\mathcal{N}(\mu_{1},1)$ and $\mathcal{N}(\mu_{2},1)$, it can be think of that the random variable first pick a Gaussian distribution with probability $0.5$, and then sample from the selected Gaussian. Under this interpretation, the hidden variable $Y \sim \operatorname{Bernoulli}(0.5)$ is the index of the selected Gaussian.
+> Then, $X = YZ_{1}+(1-Y)Z_{2}$, where $Z_{1} \sim \mathcal{N}(\mu_{1},1)$ and $Z_{2} \sim \mathcal{N}(\mu_{2},1)$.
+>
+> With the help of this auxiliary variable $Y$, the log-likelihood function changed from
+> $$
+> \ln p(x\given \mu_{1},\mu_{2}) = \ln \left( \exp(-(x-\mu_{1})^{2} /2) + \exp(-(x-\mu_{2})^{2}) /2 \right) ,
+> $$
+> which is neither convex nor concave in $\mu_{1}$ and $\mu_{2}$, to
+> $$
+> \begin{aligned}
+> \ln p(x,y\given \mu_{1},\mu_{2}) + \mathrm{const.} =& \ln \left(y \exp(-(x-\mu_{1})^{2} /2) + (1-y)\exp(-(x-\mu_{2})^{2}) /2 \right) \\
+> =& \ln \left( \exp(-y(x-\mu_{1})^{2} /2 - (1-y)(x-\mu_{2})^{2}) /2 \right) \\
+> =& -\frac{1}{2}(y(x-\mu_{1})^{2} + (1-y)(x-\mu_{2})^{2} ),
+> \end{aligned}
+> $$
+>  which is concave in $\mu_{1}$ and $\mu_{2}$.
+^ex2
+
 More often, the [[Likelihood#Log-Likelihood]] function, which is a summation instead of a production, is easier to optimize given complete data: $\log p(x,y\given \theta)$. This motivates the EM algorithm.
 
 ## Objective Justification
+
+### Decomposition
 
 Formally, with the help of another random variable $y$ and its distribution $q$, we have the following log-likelihood decomposition:
 $$
@@ -57,6 +80,25 @@ And to make this lower bound tight, we need to **minimize** the [[Cross-Entropy]
 
 Another reason for minimizing the cross-entropy term is given in [[Expectation Maximization#Convergence Property]].
 
+### Lower Bound
+
+We can also use the marginalization/expectation in [[Expectation Maximization#^eq-margin]] for log-likelihood. To do this, we need to introduce an arbitrary distribution $q$ for $y$ and uses Jensen's inequality:
+$$
+\begin{aligned}
+\ln p(x\given \theta) =& \ln \int_{\mathcal{Y}} p(x,y\given \theta) \d y \\
+=& \ln \int _{\mathcal{Y}} \frac{p(x,y\given \theta)}{q(y)} q(y) \d y \\
+=& \ln \mathbb{E}_{q} \left[ \frac{p(x,Y\given \theta)}{q(y)}  \right] \\
+\ge& \mathbb{E}_{q} \left[\ln  \frac{p(x,Y\given \theta)}{q(y)}  \right] \\
+=& \mathbb{E}_{q} \left[\ln  p(x,Y\given \theta)  \right]  + H(q).
+\end{aligned}
+$$
+Similarly, to make any increase in the expectation term lead to the maximum increase in the log-likelihood, we need the equality to hold, which requires
+$$
+q(y) \propto p(x,y\given \theta) \implies
+q(y) = \frac{p(x,y \given \theta)}{\int p(x,y \given \theta) \d y}
+= \frac{p(y\given x,\theta)p(x\given \theta)}{\int p(y\given x,\theta)p(x \given \theta) \d y} = p_{x,\theta}(y).
+$$
+
 ## Algorithm
 
 Justified above, the EM algorithm iteratively minimizes the cross-entropy term and then maximizes the expectation term:
@@ -81,7 +123,7 @@ $$
 &=\mathbb{E}_{q_{t+1}}\ln p(x,Y\given \theta_t)+ H(q_{t+1})  \quad && \text{(E-step; $H(q)$ is self-entropy)} \\
 &\le\mathbb{E}_{q_{t+1}}\ln p(x,Y\given \theta_{t+1}) +H(q_{t+1})  \quad && \text{(M-step)} \\
 &\le\mathbb{E}_{q_{t+1}}\ln p(x,Y\given \theta_{t+1}) +H(q_{t+1}\| p_{x,\theta _{t+1}}) &&  (H(q\|p)> H(q) \text{ if } p\ne q )\\
-&=\mathbb{E}_{q}\ln p(x,Y\given \theta_{t+1}) +H(q\| p_{x,\theta _{t+1}}) 
+&=\mathbb{E}_{q}\ln p(x,Y\given \theta_{t+1}) +H(q\| p_{x,\theta _{t+1}})
 && \text{(holds for any $q$)}\\
 & =\ln p(x \mid \theta_{t+1}).
 \end{aligned}
@@ -91,9 +133,36 @@ Note that we have two increases in one iteration:
 ![image.png|300](https://raw.githubusercontent.com/zcysxy/Figurebed/master/img/20230423183207.png)
 Additionally, the increase in the cross-entropy/KL term is introduced by the update of $\theta$ rather than $q$. And to make any update in $\theta$ lead to an increase in the cross-entropy/KL term, we need to first **minimize** the cross-entropy/KL term in the E-step. This reasoning is consistent with [[Expectation Maximization#Objective Justification]].
 
+## Application: Mixed Gaussian Model
+
+Continuing the [[Expectation Maximization#^ex2\|mixture of Gaussians]] example, we see that given the hidden observation $\{ y_i \}_{i=1}^{n}$, we can easily calculate the log-likelihood maximizer:
+$$
+\hat{\mu}_{1} = \frac{\sum_{i}x_{i}y_{i}}{\sum_{i}y_{i}},\quad \hat{\mu}_{2} = \frac{\sum_{i}x_{i}(1-y_{i})}{\sum_{i}(1-y_{i})}.
+$$
+Without direct observation, we replace them with expectation:
+$$
+\mathbb{E}_{Y}\ln p(x,Y\given \mu ) = -n \ln (2\sqrt{ 2\pi  }) - \frac{1}{2} \sum_{i=1}^{n}\left[ \mathbb{E}[Y_{i}](x_{i}-\mu_{1})^{2} + (1-\mathbb{E}[Y_{i}])(x_{i}-\mu_{2})^{2} \right].
+$$
+Setting the distribution of $Y_{i}$ as $p_{x_{i},\mu}$ gives the E-step:
+$$
+\begin{aligned}
+\mathbb{E}Y_{i} =& P(Y_{i}=1\given x_{i},\mu ) = \frac{P(Y_{i}=1,x_{i}\given \mu )}{P(x_{i}\given \mu)}\\
+=& \frac{\exp(-(x_{i}-\mu_{1} )^{2} /2) \cdot 1/2}{\exp(-(x_i-\mu_{1})^{2} /2) \cdot 1/2 + \exp(-(x_i-\mu_{2})^{2} /2) \cdot 1/2}\\
+=& \frac{1}{1 + \exp(((x_{i}-\mu_{1})^{2}-(x_i-\mu_{2})^{2} )/2)},
+\end{aligned}
+$$
+which is larger than 0.5 if $x_{i}$ is closer to $\mu_{1}$, and smaller than 0.5 if $x_{i}$ is closer to $\mu_{2}$.
+Then, the M-step is to maximize the expectation:
+$$
+\hat{\mu}_{1} = \frac{\sum_{i=1}^{n}\mathbb{E}[Y_{i}]x_{i}}{\sum_{i=1}^{n}\mathbb{E}[Y_{i}]},\quad
+\hat{\mu}_{2} = \frac{\sum_{i=1}^{n}(1-\mathbb{E}[Y_{i}])x_{i}}{\sum_{i=1}^{n}(1-\mathbb{E}[Y_{i}])}.
+$$
+$$
+$$
+
 ## Application: Filling Missing Gaussian Data
 
-We now return to the [[Expectation Maximization#^ex\|example]], to both learn the parameter and fill in the missing data.
+We now return to the example of [[Expectation Maximization#^ex\|missing Gaussian data]], to both learn the parameter and fill in the missing data.
 In this specific problem $\theta = (\mu,\Sigma),y = x^{m}$. And the objective decomposition reads
 $$
 \begin{aligned}
@@ -127,5 +196,3 @@ $$
 $$
 where $\hat{x}_i$ is $x_{i}$ with the missing values being replaced by $\hat{\mu}_i$,
 and $\hat{V}_i$ is the zeros matrix plus the sub-matrix $\hat{\Sigma}_i$ in the missing dimensions.
-
-## Application: Mixed Gaussian Model

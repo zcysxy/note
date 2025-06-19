@@ -21,7 +21,7 @@ We will also touch on [[Evaluating an Estimator#Asymptotic Normality]] for certa
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
-plt.style.use('seaborn-v0_8-colorblind')
+# plt.style.use('seaborn-v0_8-colorblind')
 
 # Set parameters for demonstrations
 np.random.seed(42)
