@@ -21,12 +21,12 @@
 > - Metric
 >   - [[Evaluating an Estimator]]
 >     - Probabilistic properties
->       - [[Estimation#Bias]]
->       - [[Estimation#Standard Error]]
->       - [[Estimation#Risk]]
+>       - [[Evaluating an Estimator#Bias]]
+>       - [[Evaluating an Estimator#Standard Error]]
+>       - [[Evaluating an Estimator#Risk]]
 >     - Statistical properties
->       - [[Estimation#Consistency]]
->       - [[Estimation#Asymptotic Normality]]
+>       - [[Evaluating an Estimator#Consistency]]
+>       - [[Evaluating an Estimator#Asymptotic Normality]]
 >   - [[Bayes Optimal Estimator]]
 >   - [[Minimax Optimal Estimator]]
 > - Point estimation methods
