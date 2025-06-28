@@ -57,7 +57,7 @@ AA --- BB --- CC
         - [[M-Estimator]]
         - [[Z-Estimator]]
     - Interval Estimation: [[Confidence Interval]]
-    - Distributional Estimation: [[Bayes Estimator]]
+    - Distributional Estimation: [[Bayes Estimation]]
 - [[Hypothesis Testing]]
     - [[Evaluating a Test]]
         - [[Bayes Optimal Test]]
