@@ -1,5 +1,5 @@
 ---
-{"publish":true,"title":"Statistical Functional","created":"2025-06-28T17:51:19","modified":"2025-06-28T18:19:13","cssclasses":"","alias":null,"type":"note","sup":["[[Statistics]]"],"state":"[[%wip]]"}
+{"publish":true,"title":"Statistical Functional","created":"2025-06-28T17:51:19","modified":"2025-06-28T19:02:02","cssclasses":"","alias":null,"type":"note","sup":["[[Statistics]]"],"state":"done"}
 ---
 
 
@@ -56,5 +56,17 @@ A corollary is
 This corollary covers many common statistical functionals.
 
 > [!ex] Variance
+>
+> Let $T_{1}$ and $T_{2}$ be the first and second moments respectively. Then, the variance is $T = T_{2} - T_{1}^{2}$. The corresponding plug-in estimator is $T(\hat{P}) = T_{2}(\hat{P})-T_{1}(\hat{P})^{2} = \frac{1}{n}\sum_{i=1}^{n}(X_{i})^{2} - (\frac{1}{n}\sum_{i=1}^{n}X_{i})^{2} = \frac{1}{n}\sum_{i=1}^{n}(X_{i} - \overline{X})^{2}$, the sample variance.
 
 > [!ex] Correlation
+>
+> Let $T_{a,b}$ be the mixed moment of $X$ and $Y$ of order $a+b$. Then the correlation is
+> $$
+> T = \frac{T_{1,1} - T_{1,0}T_{0,1}}{\sqrt{ T_{2,0} - T_{1,0}^{2} } \sqrt{ T_{0,2} - T_{0,1}^{2} }} = \frac{\mathbb{E}XY - \mathbb{E}X \mathbb{E}Y}{\sqrt{ \mathbb{E} X^{2} - (\mathbb{E}X)^{2} } \sqrt{ \mathbb{E} Y^{2} - (\mathbb{E}Y)^{2} }}.
+> $$
+> Hence, the corresponding plug-in estimator is
+> $$
+> T(\hat{P}) = \frac{T_{1,1}(\hat{P}) - T_{1,0}(\hat{P})T_{0,1}(\hat{P})}{\sqrt{ T_{2,0}(\hat{P}) - T_{1,0}(\hat{P})^{2} } \sqrt{ T_{0,2}(\hat{P}) - T_{0,1}(\hat{P})^{2} }} = \frac{\sum_{i=1}^{n}(X_{i}-\overline{X})(Y_{i}-\overline{Y})}{\sqrt{ \sum_{i=1}^{n}(X_{i}-\overline{X})^{2} } \sqrt{ \sum_{i=1}^{n}(Y_{i}-\overline{Y})^{2} }},
+> $$
+> which is the sample correlation.
