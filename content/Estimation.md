@@ -13,6 +13,18 @@
 >     - [[Bayes Estimation]]
 > - Metric
 >     - [[Evaluating an Estimator]]
+>         - <div class="transclude" data-embed-alias=" inline sub-list naked " data-url="Evaluating an Estimator"> 
+
+- Probabilistic properties
+	- [[Estimation#Bias]]
+	- [[Estimation#Standard Error]]
+	- [[Estimation#Risk]]
+- Statistical properties
+	- [[Estimation#Consistency]]
+	- [[Estimation#Asymptotic Normality]]
+
+</div>
+ <a href="Evaluating an Estimator" class="internal transclude-src">Link to original</a>
 >     - [[Bayes Optimal Estimator]]
 >     - [[Minimax Optimal Estimator]]
 > - Point estimation methods

@@ -28,6 +28,8 @@ This note discusses the following metrics
 	- [[Evaluating an Estimator#Consistency]]
 	- [[Evaluating an Estimator#Asymptotic Normality]]
 
+^list
+
 ## Bias
 
 The ==bias== of an estimator is
@@ -86,7 +88,7 @@ where the variance is taken over the data generating distribution which is deter
 > * In general, the unbiasedness is not preserved under the transformation
 > 
 
-### Example: Mean Estimator of Error
+### Example: Error Mean
 
 Using $\hat{\mu}$ to denote the mean of the data, from the calculation in [[Evaluating an Estimator#Example Variance Estimator]], we have
 $$\operatorname{SE}(\hat{\mu}) = \frac{\sigma}{\sqrt{m}}$$
