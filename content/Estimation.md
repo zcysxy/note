@@ -11,8 +11,8 @@
     - [[Bayes Estimation]]
 - Metric
     - [[Evaluating an Estimator]]
-    - [[Bayes Optimality]]
-    - [[Minimax]]
+    - [[Bayes Optimal Estimator]]
+    - [[Minimax Optimal Estimator]]
 - Point estimation methods
     - [[Method of Moments]]
     - [[Maximum Likelihood Estimation]]
