@@ -1,5 +1,5 @@
 ---
-{"publish":true,"aliases":["index"],"title":"*Sufficient* of Statistics","created":"2023-10-17T21:41:50","modified":"2025-06-07T21:21:57","cssclasses":"","type":"index","sup":["[[Math]]"],"state":"[[%wip]]","banner":"https://raw.githubusercontent.com/zcysxy/Figurebed/master/img/20231017221426.png","banner_icon":"🔮","reference":"AOS"}
+{"publish":true,"aliases":["index"],"title":"*Sufficient* of Statistics","created":"2023-10-17T21:41:50","modified":"2025-06-28T18:11:51","cssclasses":"","type":"index","sup":["[[Math]]"],"state":"[[%wip]]","banner":"https://raw.githubusercontent.com/zcysxy/Figurebed/master/img/20231017221426.png","banner_icon":"🔮","reference":"AOS"}
 ---
 
 
@@ -73,6 +73,13 @@ AA --- BB --- CC
 - [[Confidence Interval and Hypothesis Test Duality]]
 - [[Hardness of Simple Hypothesis Test Through Total Variation]]
 - [[Hardness of Estimation Through Testing]]
+- [[Statistical Functional]]
+
+## Interactive Notebooks
+
+- [[Tail Bounds and Concentration Inequalities]]
+- [[Constructing Confidence Interval]]
+- [[Best Estimator for Uniform Distribution Parameter]]
 
 ## Probability and Statistics
 
