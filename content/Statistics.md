@@ -26,19 +26,20 @@ AA --- BB --- CC
 
 - [c] Table. Statistics dictionary
 
-| Statistics                         | **[[Machine Learning]]**            |
-| ---------------------------------- | ----------------------------------- |
-| [[Estimation]]                     | [[Machine Learning\|learning]]      |
-| [[Regression]]                     | [[Supervised Learning]]             |
-| [[Clustering]]                     | [[Unsupervised Learning]]           |
-| [[Hypothesis Testing\|hypothesis]] | [[Classification]]                  |
-| covariates                         | features                            |
-| coefficient                        | weight                              |
-| predictor                          | input                               |
-| response                           | output                              |
-| intercept                          | bias                                |
-| derived predictor                  | [[Hidden Units]]                    |
-| penalty function                   | [[L2 Regularization\|weight decay]] |
+| Statistics                          | **[[Machine Learning]]**            |
+| ----------------------------------- | ----------------------------------- |
+| [[Estimation]]                      | [[Machine Learning\|learning]]      |
+| [[Confidence Interval\|confidence]] | uncertainty                         |
+| [[Regression]]                      | [[Supervised Learning]]             |
+| [[Clustering]]                      | [[Unsupervised Learning]]           |
+| [[Hypothesis Testing\|hypothesis]]  | [[Classification]]                  |
+| covariates                          | features                            |
+| coefficient                         | weight                              |
+| predictor                           | input                               |
+| response                            | output                              |
+| intercept                           | bias                                |
+| derived predictor                   | [[Hidden Units]]                    |
+| penalty function                    | [[L2 Regularization\|weight decay]] |
 
 ## Basic Concepts
 

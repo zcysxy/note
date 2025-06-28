@@ -18,7 +18,7 @@ $$
 > [!ex] Loss Function and Risk Function
 > An example for a loss function is the squared error loss $L(\theta ,\delta )=\|\theta -\delta \|^{2}$, and the risk function for this loss is the [[Mean Squared Error]].
 
-Unfortunately, in general, the risk cannot be minimized since it depends on the unknown parameter $\theta$ itself (If we knew what was the actual value of $\theta$, we wouldn't need to estimate it). Therefore additional criteria for finding an optimal estimator in some sense are required. One such criterion is the **minimax criterion**.
+Unfortunately, in general, the risk cannot be minimized since it depends on the unknown parameter $\theta$ itself (If we knew what was the actual value of $\theta$, we wouldn't need to estimate it). Therefore additional criteria for finding an optimal estimator in some sense are required.
 
 - ==Bayes Risk==: $$R_{B}(A)\coloneqq \mathbb{E}_{\theta \sim Q}[R(A,\theta)],\quad \text{prior }Q\in\Delta(\Theta).$$
     - Can incorporate prior knowledge about the parameter $\theta$.

@@ -1,46 +1,48 @@
 ---
-{"publish":true,"created":"2023-08-02T18:42:38","modified":"2025-06-27T22:32:18","cssclasses":"","type":"index","sup":["[[Machine Learning]]","[[Statistics]]"],"state":"done"}
+{"publish":true,"created":"2023-08-02T18:42:38","modified":"2025-06-28T04:44:06","cssclasses":"","type":"index","sup":["[[Machine Learning]]","[[Statistics]]"],"state":"done"}
 ---
 
 
 # Estimation
 
-- Types of estimation
-    - [[Estimation#Point Estimation]]
-    - [[Confidence Interval]]/Region
-    - [[Bayes Estimation]]
-- Metric
-    - [[Evaluating an Estimator]]
-    - [[Bayes Optimal Estimator]]
-    - [[Minimax Optimal Estimator]]
-- Point estimation methods
-    - [[Method of Moments]]
-    - [[Maximum Likelihood Estimation]]
-    - [[Mean Squared Error\|Least Squares]]
-    - [[M-Estimator]]
-    - [[Z-Estimator]]
-    - [[Maximum a Posteriori]]
-
-```mermaid
-flowchart
-subgraph BB[Prediction]
-direction TB
-E["Empirical Risk Minimization"]
-E --"geneneralizes"--> F["Regression"]
-F --"contains"--> FF@{shape: processes, label: "... ...", w: 100px}
-end
-subgraph AA[Estimation]
-direction TB
-A["M-Estimator"] --"generalizes"--> B["Maximum Likelihood Estimator"]
-C["Z-Estimator"] --"generalizes"--> A
-C["Z-Estimator"] --"generalizes"--> D["Moment Estimator"]
-B <--"same for exponential family"--> D
-B --"add a prior"--> M["Maximum a Posteriori "]
-D --"contains"--> D1["Sample Mean"]
-D --"contains"--> D2["Sample Variance"]
-end
-E  <--"same form"--> A
-```
+> [!tldr]+ Quick Reference
+>
+> - Types of estimation
+>     - [[Estimation#Point Estimation]]
+>     - [[Confidence Interval]]/Region
+>     - [[Bayes Estimation]]
+> - Metric
+>     - [[Evaluating an Estimator]]
+>     - [[Bayes Optimal Estimator]]
+>     - [[Minimax Optimal Estimator]]
+> - Point estimation methods
+>     - [[Method of Moments]]
+>     - [[Maximum Likelihood Estimation]]
+>     - [[Mean Squared Error\|Least Squares]]
+>     - [[M-Estimator]]
+>     - [[Z-Estimator]]
+>     - [[Maximum a Posteriori]]
+>
+> ```mermaid
+> flowchart
+> subgraph BB[Prediction]
+> direction TB
+> E["Empirical Risk Minimization"]
+> E --"geneneralizes"--> F["Regression"]
+> F --"contains"--> FF@{shape: processes, label: "... ...", w: 100px}
+> end
+> subgraph AA[Estimation]
+> direction TB
+> A["M-Estimator"] --"generalizes"--> B["Maximum Likelihood Estimator"]
+> C["Z-Estimator"] --"generalizes"--> A
+> C["Z-Estimator"] --"generalizes"--> D["Moment Estimator"]
+> B <--"same for exponential family"--> D
+> B --"add a prior"--> M["Maximum a Posteriori "]
+> D --"contains"--> D1["Sample Mean"]
+> D --"contains"--> D2["Sample Variance"]
+> end
+> E  <--"same form"--> A
+> ```
 
 ## Point Estimation
 

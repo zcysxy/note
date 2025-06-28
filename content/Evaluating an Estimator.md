@@ -104,6 +104,8 @@ As seen in previous sections, we can have different probabilistic (expected) per
 
 For example, [[Mean Squared Error]] is the quadratic risk using a quadratic loss function $L(\hat{\theta},\theta) = (\hat{\theta} - \theta)^2$; and it encompasses both [[Evaluating an Estimator#Bias]] and [[Evaluating an Estimator#Standard Error]]: $\mathrm{MSE} = \mathrm{Bias}^{2} + \mathrm{SE}^{2}$.
 
+Further, if we want to control the risk across all possible values of the parameter $\theta$, we can consider optimality in terms of [[Bayes Optimal Estimator\|Bayes risk]] and [[Minimax Optimal Estimator\|minimax risk]].
+
 ## Consistency
 
 We wish that as the number of data in our dataset increases, our point estimates converge [[Convergence of Random Variables#Convergence in Probability\|in probability]] to the true value. This condition is called ==consistency==:
