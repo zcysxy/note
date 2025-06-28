@@ -22,7 +22,7 @@ Unfortunately, in general, the risk cannot be minimized since it depends on the 
 
 - ==Bayes Risk==: $$R_{B}(A)\coloneqq \mathbb{E}_{\theta \sim Q}[R(A,\theta)],\quad \text{prior }Q\in\Delta(\Theta).$$
     - Can incorporate prior knowledge about the parameter $\theta$.
-    - Can be understood as the *average* or weighted risk.
+    - Can be understood as the *average* or weighted risk, with $Q$ being the weight.
 - ==Minimax Risk==: $$R_{M}(A)\coloneqq \sup_{\theta\in\Theta }R(A,\theta).$$
     - Suitable for deterministic parameters.
     - Can be understood as the *worst-case* risk.

@@ -1,5 +1,5 @@
 ---
-{"publish":true,"title":"Bayes Optimality","created":"2023-09-20T21:26:09","modified":"2025-06-27T22:27:12","cssclasses":"","aliases":null,"type":"note","sup":["[[Machine Learning]]","[[Statistical Learning]]","[[Risk]]"],"state":"done","related":["[[Classification]]","[[Bayesian Statistics]]","[[Bayes Optimal Test]]","[[Bayes Optimal Estimator]]","[[Bayesian Linear Regression]]"]}
+{"publish":true,"title":"Bayes Optimality","created":"2023-09-20T21:26:09","modified":"2025-06-27T23:04:22","cssclasses":"","aliases":null,"type":"note","sup":["[[Machine Learning]]","[[Statistical Learning]]","[[Risk]]"],"state":"done","related":["[[Classification]]","[[Bayesian Statistics]]","[[Bayes Optimal Test]]","[[Bayes Optimal Estimator]]","[[Bayesian Linear Regression]]"]}
 ---
 
 
@@ -10,7 +10,7 @@ $$
 R(A) = \mathbb{E}_{P \sim Q}\mathbb{E}_{X,Y \sim P}[L(A(X),Y)],
 $$
 where $L$ is the loss function, $Q$ is the prior of the data-generating distribution $P$.
-The "procedure" can be an estimator, a predictor, a classifier, a test, etc., giving corresponding [[Bayes Optimal Estimator]], [[Bayesian Linear Regression]], Bayes Classifier, [[Bayes Optimal Test]], etc.
+The "procedure" can be an estimator, a predictor, a classifier, a test, etc., giving corresponding [[Bayes Optimal Estimator]], [[Bayesian Linear Regression]], [[Classification#Optimal Classifier Bayes Classifier\|Bayes Classifier]], [[Bayes Optimal Test]], etc.
 
 For an [[Estimation]] task, the data-generating distribution is parameterized by $\theta \in \Theta$. Thus the prior $Q$ is on $\Theta$ and the target $Y$ is $\theta$ itself, giving
 $$
@@ -54,6 +54,9 @@ If $Y$ is determined by $P$ regardless of $X$, say $Y = \theta \cong P \sim Q$, 
 $$
 A^{*}(x) = \arg\inf_{\hat{\theta}} \mathbb{E}_{\theta }[L(\hat{\theta },\theta)\given X=x].
 $$
+
+^6bddb6
+
 Now the expectation is over the posterior of $\theta$ given observation $X=x$. This is often the case in [[Estimation]]. In this case, the greedy principle also appears by exchanging the order of integration:
 $$
 R(A) =\int _{\Theta }\int_{\mathcal{X}} L(A(x),\theta )\d x\d \theta = \int _{\mathcal{X}} \int_{\Theta } L(A(x),\theta )\d \theta \d x.

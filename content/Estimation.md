@@ -1,5 +1,5 @@
 ---
-{"publish":true,"created":"2023-08-02T18:42:38","modified":"2025-06-27T22:25:16","cssclasses":"","type":"index","sup":["[[Machine Learning]]","[[Statistics]]"],"state":"done"}
+{"publish":true,"created":"2023-08-02T18:42:38","modified":"2025-06-27T22:32:18","cssclasses":"","type":"index","sup":["[[Machine Learning]]","[[Statistics]]"],"state":"done"}
 ---
 
 
@@ -72,6 +72,6 @@ In contrast to point estimation, [[Confidence Interval]]/region returns a subset
 
 ### Bayes vs Frequentist
 
-- Bayesian approach has been criticized for over-reliance on convenient priors and lack of robustness.
-- The frequentist approach ([[Maximum Likelihood Estimation]]) has been criticized for inflexibility (failure to incorporate prior information) and incoherence (failure to process information systematically).
-- For large $n$, as well as when the prior is uniform, the Bayesian method will provide similar results to the classical likelihood approach method.
+- The [[Bayes Estimation\|Bayesian approach]] has been criticized for its over-reliance on convenient priors and lack of robustness.
+- The frequentist approach, such as [[Maximum Likelihood Estimation\|MLE]], has been criticized for its inflexibility (failure to incorporate prior information) and incoherence (failure to process information systematically).
+- For large sample sizes ($n$), or when the prior is uniform, the Bayesian method tends to yield results similar to those of the classical likelihood approach.
