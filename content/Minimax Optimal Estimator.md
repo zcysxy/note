@@ -50,7 +50,7 @@ Formally, if $A_{M}$ is minimax w.r.t $\mathcal{P} \subset \mathcal{P}'$ and $R(
 
 > [!rmk] Worst-case and conservative
 >
-The generalization property, which is from the "worst-case" nature of the minimax risk, indicates that this metric can be very conservative. Even if an estimator performs well for almost all distributions in the larger model, it may still not be minimax if there is a single distribution for which it performs poorly.
+> The generalization property, which is from the "worst-case" nature of the minimax risk, indicates that this metric can be very conservative. Even if an estimator performs well for almost all distributions in the larger model, it may still not be minimax if there is a single distribution for which it performs poorly.
 
 ### Example: Non-Parametric Mean
 

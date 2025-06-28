@@ -28,7 +28,7 @@ AA --- BB --- CC
 
 | Statistics                         | **[[Machine Learning]]**            |
 | ---------------------------------- | ----------------------------------- |
-| estimation                         | [[Machine Learning\|learning]]      |
+| [[Estimation]]                     | [[Machine Learning\|learning]]      |
 | [[Regression]]                     | [[Supervised Learning]]             |
 | [[Clustering]]                     | [[Unsupervised Learning]]           |
 | [[Hypothesis Testing\|hypothesis]] | [[Classification]]                  |
