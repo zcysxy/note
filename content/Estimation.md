@@ -1,5 +1,5 @@
 ---
-{"publish":true,"created":"2023-08-02T18:42:38","modified":"2025-06-07T23:11:33","cssclasses":"","type":"note","sup":["[[Machine Learning]]","[[Statistics]]"],"state":"done"}
+{"publish":true,"created":"2023-08-02T18:42:38","modified":"2025-06-27T21:47:22","cssclasses":"","type":"index","sup":["[[Machine Learning]]","[[Statistics]]"],"state":"done"}
 ---
 
 
@@ -11,6 +11,8 @@
     - [[Bayes Estimator]]
 - Metric
     - [[Evaluating an Estimator]]
+    - [[Bayes Optimality]]
+    - [[Minimax]]
 - Methods
     - [[Method of Moments]]
     - [[Maximum Likelihood Estimation]]
@@ -39,20 +41,27 @@ end
 E  <--"same form"--> A
 ```
 
-> [!rmk] Comparison of Estimation Methods  
-> - For quadratic risks, [[Maximum Likelihood Estimation\|MLE]] is more accurate in general
-> - [[Maximum Likelihood Estimation#Misspecification\|MLE]] still gives good results even for misspecified models, while [[Method of Moments]] is more sensitive to model misspecification.
-> - Sometimes [[Maximum Likelihood Estimation\|MLE]] can be computationally intractable, and [[Method of Moments]] is easier with only polynomial equations.
-
-This note focuses on point estimation.
-
 ## Point Estimation
 
-A **==point estimator/statistic==** is just a "prediction" of some quantity of interest based on some data points. The quantity of interest can be a single parameter, a vector of parameters, or even a whole function.
+A ==point estimator/statistic== *recovers* a quantity of interest from data samples. Formally, it's any algorithm/measurable function that returns a **point** in the parameter space given the sample:
+$$
+\hat{\theta} : \mathcal{X}\to \Theta, \quad X \mapsto \hat{\theta}_{X}.
+$$
+The parameter space $\Theta$ can be one-dimensional, multi-dimensional, or even a function space. When the sample $X=(X_{1},\dots,X_{n})$ has a sample size/dimension of $n$, we also conventionally write $\hat{\theta}_{n}$ to denote the point estimator.
 
-By convention, a point estimate of $\theta$ is denoted by $\hat{\theta}$. And it's of the following form:
-$$\hat{\theta}_m = g(x^{(1)},\dots,x^{(m)})$$
+In contrast to point estimation, [[Confidence Interval]]/region returns a subset of the parameter space $\hat{C}\in 2^{\Theta}$, and [[Bayes Estimator]] returns a distribution over the parameter space $\hat{P}\in \Delta(\Theta)$.
 
-Where $x^{(i)}$ are data points and $g$ can be any valid function, thus the range of $g$ is the same as the set of allowable values of $\theta$.
 
-Besides parameters, we can also predict functions directly, and such point estimations are called **==function estimations==**. The function estimator $\hat{f}$ is simply a point estimator in function space.
+
+## Comparison of Estimation Methods  
+
+### MLE vs MoM
+
+- For quadratic risks, [[Maximum Likelihood Estimation\|MLE]] is more accurate in general
+- [[Maximum Likelihood Estimation#Misspecification\|MLE]] still gives good results even for misspecified models, while [[Method of Moments]] is more sensitive to model misspecification.
+- Sometimes [[Maximum Likelihood Estimation\|MLE]] can be computationally intractable, and [[Method of Moments]] is easier with only polynomial equations.
+
+### Bayesian Estimation
+
+- Point [[Bayes Estimator]] returns the **mean** of the posterior distribution for any [[Bowl-Shaped Loss]].
+- [[Maximum a Posteriori\|MAP]] returns the **mode** of the posterior distribution.

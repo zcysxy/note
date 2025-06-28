@@ -1,5 +1,5 @@
 ---
-{"publish":true,"aliases":["EM"],"title":"Expectation Maximization","created":"2023-04-13T16:33:44","modified":"2025-06-19T00:53:42","cssclasses":"","type":"note","sup":["[[Maximum Likelihood Estimation]]","[[Unsupervised Learning]]"],"state":"done"}
+{"publish":true,"aliases":["EM"],"title":"Expectation Maximization","created":"2023-04-13T16:33:44","modified":"2025-06-19T00:53:42","cssclasses":"","type":"note","sup":["[[Maximum Likelihood Estimation]]","[[Unsupervised Learning]]"],"state":"done","reference":["https://gregorygundersen.com/blog/2019/11/10/em/"]}
 ---
 
 
