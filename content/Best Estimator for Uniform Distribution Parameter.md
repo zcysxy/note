@@ -1,5 +1,5 @@
 ---
-{"publish":true,"title":"Best Estimator for Uniform Distribution Parameter","created":"2022-12-06T00:26:27","modified":"2025-06-18T16:39:12","cssclasses":"","aliases":null,"type":"jupyter","sup":["[[Probability Theory]]","[[Uniform Distribution]]"],"state":"done","related":["[[Maximum Likelihood Estimation]]"],"reference":["https://math.unm.edu/~knrumsey/pdfs/projects/Uniform.pdf"]}
+{"publish":true,"title":"Best Estimator for Uniform Distribution Parameter","created":"2022-12-06T00:26:27","modified":"2025-06-27T21:52:59","cssclasses":"","aliases":null,"type":"jupyter","sup":["[[Probability Theory]]","[[Uniform Distribution]]"],"state":"done","related":["[[Maximum Likelihood Estimation]]"],"reference":["https://math.unm.edu/~knrumsey/pdfs/projects/Uniform.pdf"]}
 ---
 
 
@@ -61,7 +61,7 @@ def k_sample_estimator(sample,k):
     assert k <= len(sample), "k must be less than or equal to the sample size"
     return 2 * np.mean(sample[:k], axis=0)
 
-n_sim = sample_sizes[2]
+n_sim = sample_sizes[2]  # n_sim = 20
 samples_hist = np.random.uniform(0, theta_true, size=(n_sim, num_simulations)) # reuse for later simulations
 ks = list(range(0,n_sim,5))
 ks[0] = 1
@@ -74,7 +74,7 @@ for kind in range(len(ks)):
 plt.subplot(1, 1, 1)
 for kind in range(len(ks)):
     sns.histplot(estmates[kind, :], stat='density', label=f'$k={ks[kind]}$', bins=20, binrange=(0,2), alpha=0.5)
-plt.axvline(theta_true, color='red', linestyle='--', label='True $\theta$')
+plt.axvline(theta_true, color='red', linestyle='--', label='True $\\theta$')
 plt.title(f'Histograms of $\\hat{{\\theta}}^{{(k)}}$ for different k (n={n_sim})')
 plt.xlabel('$\\hat{\\theta}^{(k)}$')
 plt.yticks([])
@@ -112,6 +112,7 @@ estimators_mse = {
 }
 
 # Plot MSE vs sample size n
+# fig = plt.subplots(2, 1, figsize=(7, 9))
 ax_mse = plt.subplot(2, 1, 1)
 n_mse = range(2,30)
 def plot_mse(ax,estimators_mse,n_mse):
@@ -119,6 +120,7 @@ def plot_mse(ax,estimators_mse,n_mse):
         ax.plot(n_mse, [estimators_mse[m](n) for n in n_mse], label=f'{m}')
     ax.set_xlabel('Sample Size n')
     ax.set_ylabel('MSE')
+    ax.set_yscale('log')
     ax.set_title('MSE of Estimators vs Sample Size')
     ax.legend()
 plot_mse(ax_mse, estimators_mse, n_mse)
@@ -159,7 +161,7 @@ plt.show()
 
 > [!exercise] Derive the maximum likelihood estimator for $\theta$: $\hat{\theta}^{(\mathrm{MLE})}=\max_i X_i$.
 
-To get $\operatorname{Var}(\hat{\theta}^{(\mathrm{MLE})})$ and $\operatorname{Bias}(\hat{\theta}^{(\mathrm{MLE})})$, we first need to calculate the distribution of $\hat{\theta}^{(\mathrm{MLE})} = \max_{i} X _i$.
+To get $\operatorname{Var}(\hat{\theta}^{(\mathrm{MLE})})$ and $\operatorname{Bias}(\hat{\theta}^{(\mathrm{MLE})})$, we first need to calculate the distribution of $\hat{\theta}^{(\mathrm{MLE})} = \max_{i} X _i$. It's CDF is
 $$
 P(\hat{\theta}^{(\mathrm{MLE})} \le x) = P(\max_{i} X _i \le x) = \prod_{i}P(X _i\le x) = (x / \theta)^{n}.
 $$
@@ -209,7 +211,7 @@ plt.show()
 
 ## Uniformly Minimum-Variance Unbiased Estimator
 
-Can we do better? Equation $(1)$ suggests that $\frac{n+1}{n}\hat{\theta}^{(\mathrm{MLE})}$ is an unbiased estimator, which may further reduce the error.
+Can we do better? Equation $(1)$ suggests that $\frac{n+1}{n}\hat{\theta}^{(\mathrm{MLE})}$ is an unbiased estimator, which *may* further reduce the error.
 
 We have the following fact:
 
