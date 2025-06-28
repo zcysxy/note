@@ -167,4 +167,4 @@ $$
 Thus, the sample mean is not minimax.
 However, as illustrated in the figure below, the sample mean's risk is only larger than this minimax estimator's risk when $\theta$ is near $1/2$; as $n\to \infty$, their minimax risk gap vanishes, and the sample mean's risk is almost always smaller than this minimax estimator's.
 
-![[excalidraw/bernoulli-minimax.excalidraw]]
+![[excalidraw/bernoulli-minimax.excalidraw.svg]]
