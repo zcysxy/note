@@ -125,7 +125,7 @@ $$
 $$
 we get
 $$
-\hat{\theta} - \theta ^* \approx \ddot{M}_{\theta ^*}^{-1} \dot{M}_{\theta ^*}.
+\hat{\theta} - \theta ^* \approx -\ddot{M}_{\theta ^*}^{-1} \dot{M}_{\theta ^*}.
 $$
 Thus, the asymptotic variance is approximately
 $$
