@@ -1,5 +1,5 @@
 ---
-{"publish":true,"title":"Hypothesis Testing","created":"2022-12-07T20:11:12","modified":"2025-07-15T15:38:28","cssclasses":"","type":"note","sup":["[[Statistics]]"],"state":"done"}
+{"publish":true,"title":"Hypothesis Testing","created":"2022-12-07T20:11:12","modified":"2025-07-17T16:15:05","cssclasses":"","type":"note","sup":["[[Statistics]]"],"state":"done"}
 ---
 
 
@@ -161,6 +161,12 @@ $$
 W = \frac{\overline{X} - \overline{Y}}{\widehat{\mathrm{SE}}(\overline{X}-\overline{Y})} = \frac{\overline{X} - \overline{Y}}{\sqrt{  \widehat{\Var}(\overline{X}) + \widehat{\Var}(\overline{Y})}} = \frac{\overline{X} - \overline{Y}}{\sqrt{ \frac{\hat{\sigma}^{2}_{X}}{n} + \frac{\hat{\sigma}_{Y}^{2}}{m} }},
 $$
 where $n$ and $m$ are the sample sizes of $X$ and $Y$, and we use sample means and sample variances as estimators.
+
+## Non-Asymptotic Test Statistic
+
+Unlike [[Hypothesis Testing#CLT Test Statistic]], which relies on [[Central Limit Theorem\|CLT]] and [[Convergence of Random Variables#Slutsky's Theorem\|Slutsky's theorem]] for [[Hypothesis Testing#Wald Test]] to calculate the critical values, a non-asymptotic test statistic is more suitable for small sample sizes. A test statistic is non-asymptotic if we know its (approximate) distribution under the null without relying on asymptotic properties.
+If the underlying sample is already [[Normal Distribution\|normal]], then example distributions for non-asymptotic test statistics include [[Chi-Square Distribution]] and [[t Distribution]].
+Other parts of the test procedure are the same as those using other test statistics.
 
 ## p-Value
 
