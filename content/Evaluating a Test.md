@@ -1,5 +1,5 @@
 ---
-{"publish":true,"title":"Evaluating a Test","created":"2025-05-30T02:48:39","modified":"2025-05-31T20:32:19","cssclasses":"","state":"done","sup":["[[Hypothesis Testing]]"],"aliases":null,"type":"note"}
+{"publish":true,"title":"Evaluating a Test","created":"2025-05-30T02:48:39","modified":"2025-07-15T14:19:33","cssclasses":"","state":"done","sup":["[[Hypothesis Testing]]"],"aliases":null,"type":"note"}
 ---
 
 
@@ -55,9 +55,9 @@ R_{B}(\psi,\pi ) = \alpha \cdot \pi_{0} c_{\mathrm{FP}} + \beta \cdot \pi_{1} c_
 $$
 where $\pi$ is the prior for $\theta$ and $c_{\mathrm{FP}}$ and $c_{\mathrm{FN}}$ are the costs of Type I and Type II errors, respectively. See [[Bayes Optimal Test]] for the optimal test under this metric.
 
-### Uniformly Most Powerful Test
+### Neyman-Pearson Paradigm
 
-[[Uniformly Most Powerful Test]] for a simple alternative hypothesis formulates the problem as a constrained optimization problem:
+Neyman-Pearson paradigm, or [[Uniformly Most Powerful Test]]ing for general HT, for a simple alternative hypothesis formulates the problem as a constrained optimization problem:
 $$
 \begin{aligned}
 \max_{\psi} & \quad \pi _{\psi }\\

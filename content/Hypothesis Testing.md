@@ -1,5 +1,5 @@
 ---
-{"publish":true,"title":"Hypothesis Testing","created":"2022-12-07T20:11:12","modified":"2025-06-04T19:30:40","cssclasses":"","type":"note","sup":["[[Statistics]]"],"state":"done"}
+{"publish":true,"title":"Hypothesis Testing","created":"2022-12-07T20:11:12","modified":"2025-07-15T15:38:28","cssclasses":"","type":"note","sup":["[[Statistics]]"],"state":"done"}
 ---
 
 
@@ -54,9 +54,11 @@ subgraph B[Transformation]
     BA1[test statistic]; BA2[rejection region]
     B1[?]; B2[?];
     BB1[test statistic]; BB2[p-value]
+    BC1[confidence interval]; BC2[rejection region]
 end
 A --- BA1 --- BA2 --- C
 A --- BB1 --- BB2 --- C
+A --- BC1 --- BC2 --- C
 A[sample] --- B1 --- B2 --- C[test]
 ```
 
@@ -100,7 +102,8 @@ $$
 \Lambda(\boldsymbol{x}) = \frac{\sup_{\theta \in \Theta_0} L(\theta \mid \boldsymbol{x})}{\sup_{\theta \in \Theta} L(\theta \mid \boldsymbol{x})}
 = \frac{L(\hat{\theta}_{0} )}{L(\hat{\theta}_{\mathrm{MLE}})},
 $$
-where $\Theta_0$ is the null hypothesis parameter space.
+where $\Theta_0$ is the null hypothesis parameter space. To highlight the role of the alternative, we can also constrain the supremum to the alternative parameter space $\Theta_1$ in the denominator. By definition, the maximizers are called constrained MLEs.
+
 Then, the rejection region is given by
 $$
 \mathrm{RR} = \{ \boldsymbol{x} \mid \Lambda(\boldsymbol{x}) \le k \},
@@ -135,10 +138,29 @@ $$
 \mathrm{RR} = \begin{cases}
 T_n \ge z_{1-\alpha} && \text{ (right-tail test)},\\
 T_n \le z_{\alpha} &&\text{ (left-tail test)},\\
-|T_n| \ge z_{\alpha /2} &&\text{ (two-sided test)},
+|T_n| \ge z_{1- \alpha /2} &&\text{ (two-sided test)},
 \end{cases}
 $$
 where $z_{\beta}$ is the $\beta$-quantile of the standard normal distribution.
+
+### Wald Test
+
+In a more general parametric setting where we want to test some parameter $\theta$, we can construct an [[Estimation\|estimator]] and its asymptotic distribution using the *estimated* standard error:
+$$
+W\coloneqq \frac{\hat{\theta}_{X} - \theta _{0}}{\widehat{\mathrm{SE}}(\hat{\theta}_{X})} \to \mathcal{N}(0,1), \quad \text{under the null } H_{0}: \theta ^{*} = \theta _{0}.
+$$
+The left-hand side $W$ is called the ==Wald test statistic==. The rejection region is then $\{ |W| > z_{1-\alpha /2} \}$ for a two-sided test, or $\{ W \lessgtr z_{1-\alpha} \}$ for one-sided tests.
+
+If the estimator if [[Maximum Likelihood Estimation\|MLE]], under [[Regularity Conditions in Estimation#For Maximum Likelihood Estimation\|sufficient regularity conditions]], the SE is $\sqrt{ (nI(\theta_{0}))^{-1} }$. Similarly, the Wald test statistic is
+$$
+W = \sqrt{ n I(\hat{\theta}^{\mathrm{MLE}}_{X}) }\left( \hat{\theta}^{\mathrm{MLE}}_{X} - \theta _{0} \right) .
+$$
+
+The use of estimated SE (variance) is also helpful for *non-parametric* tests. For example, if we want to test if two independent samples $X$ and $Y$ have the same mean, the Wald test statistic is
+$$
+W = \frac{\overline{X} - \overline{Y}}{\widehat{\mathrm{SE}}(\overline{X}-\overline{Y})} = \frac{\overline{X} - \overline{Y}}{\sqrt{  \widehat{\Var}(\overline{X}) + \widehat{\Var}(\overline{Y})}} = \frac{\overline{X} - \overline{Y}}{\sqrt{ \frac{\hat{\sigma}^{2}_{X}}{n} + \frac{\hat{\sigma}_{Y}^{2}}{m} }},
+$$
+where $n$ and $m$ are the sample sizes of $X$ and $Y$, and we use sample means and sample variances as estimators.
 
 ## p-Value
 
