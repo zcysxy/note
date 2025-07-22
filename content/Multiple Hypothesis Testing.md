@@ -1,5 +1,5 @@
 ---
-{"publish":true,"title":"Multiple Hypothesis Testing","created":"2024-11-14T13:36:19","modified":"2025-07-22T15:48:13","cssclasses":"","state":"done","sup":["[[Statistics]]"],"aliases":null,"type":"output","output":{"pdf_document":{"defaults":".config/pandoc/defaults/pdf","output":"scribe.pdf","template":"statscribe.tex"}},"header-includes":["\\usepackage{pgfplots}","\\usetikzlibrary{calc}","\\PassOptionsToPackage{dvipsnames,svgnames}{xcolor}","\\usepackage[dvipsnames,svgnames]{xcolor}","\\usepgfplotslibrary{fillbetween}"],"author":"Chenyu Zhang","date":"November 14","lec-num":17,"secnumdepth":2}
+{"publish":true,"title":"Multiple Hypothesis Testing","created":"2024-11-14T13:36:19","modified":"2025-07-22T16:00:19","cssclasses":"","state":"done","sup":["[[Statistics]]"],"aliases":null,"type":"output","output":{"pdf_document":{"defaults":".config/pandoc/defaults/pdf","output":"scribe.pdf","template":"statscribe.tex"}},"header-includes":["\\usepackage{pgfplots}","\\usetikzlibrary{calc}","\\PassOptionsToPackage{dvipsnames,svgnames}{xcolor}","\\usepackage[dvipsnames,svgnames]{xcolor}","\\usepgfplotslibrary{fillbetween}"],"author":"Chenyu Zhang","date":"November 14","lec-num":17,"secnumdepth":2}
 ---
 
 
@@ -43,12 +43,12 @@ Instead, FDR restricts the scope of discoveries and consider a relative error ra
 
 A key question in designing a multiple testing algorithm is how to combine the results of individual hypothesis tests to produce a coherent output.
 [[p-value]]s serve as a convenient object to work with for this purpose. We denote $p_i$ as the p-value for $H_{0,i}$, i.e., $P_{\theta}(p_{i}\le t)\le t$ for all $\theta\in\Theta_{0,i}$ and $t\in[0,1]$. ^[Note that by definition p-values are super-uniform; but sometimes we assume they are exactly uniform to obtain tight results.]
-[[Multiple Hypothesis Testing#^fig-p]] plots the sorted p-values for different signals. Specifically, when the null hypothesis is true, the p-values are uniformly distributed (no interesting signal); when the sorted p-values deviate significantly from the line $y=x$, it presents a clear signal.
+[[Multiple Hypothesis Testing#^fig-p\|The following figure]] plots the sorted p-values for different signals. Specifically, when the null hypothesis is true, the p-values are uniformly distributed (no interesting signal); when the sorted p-values deviate significantly from the line $y=x$, it presents a clear signal.
 However, this signal does not directly translate into that all p-values below a certain threshold are significant. Because even when all nulls are true, due to the high dimension, some of their p-values will be small by chance.
 Thus, the observed signal suggests only a systematic departure from the null hypothesis rather than significance for each individual p-value.
 
 ![](https://raw.githubusercontent.com/zcysxy/Figurebed/master/img/mhtp.svg)
-- [c] Sorted p-values
+- [c] Figure. Sorted p-values
  ^fig-p
 
 
@@ -58,6 +58,8 @@ $$
 A: [0,1]^{n}\to 2^{\{ 1,\dots,n  \}} \cong \{ 0,1 \}^{n},\quad \vec{p}\mapsto R.
 $$
 One simple algorithm of this kind is the Bonferroni algorithm.
+
+## Bonferroni Algorithm
 
 > [!def]  Bonferroni
 >
@@ -79,46 +81,19 @@ One simple algorithm of this kind is the Bonferroni algorithm.
 > where $\mathcal{N} = \{ 1\le i\le n: H_{0,i} \text{ is true} \}$. Then, by the union bound,
 > $$
 > \P(\cup_{i\in\mathcal{N}} \{ p_{i}\le \alpha /n \}) \le \sum_{i\in\mathcal{N}} \P(p_{i}\le \alpha /n)\le \sum_{i\in\mathcal{N}} \alpha /n \le \alpha.
-> \qedhere$$
+> $$
 
 We remark that the Bonferroni algorithm works for dependent tests. Nonetheless, the following example on independent Gaussian helps us understand the algorithm.
 
 > [!ex] Gaussian
 >
 > Consider data $X \sim \mathcal{N}(\theta,I)$, null hypotheses $H_{0,i}: \theta_{i}=0$, and one-sided p-values $p_{i} = 1-\Phi(X_{i})$. Then, the Bonferroni algorithm rejects $H_{0,i}$ if $p_{i}\le \alpha/n$, which is equivalent to $X_{i}\ge -\Phi^{-1}(\alpha/n)$.
-> See [@fig:g] for a visualization of how the Bonferroni algorithm controls the cumulative tail probability.
+> See [[Multiple Hypothesis Testing#^fig-g]] for a visualization of how the Bonferroni algorithm controls the cumulative tail probability.
 
-```tikz
-% \usepackage{geometry,caption,color,setspace,comment,footmisc,pdflscape,subfigure,array}
-\usepackage{pgfplots}
-\usetikzlibrary{calc}
-\usetikzlibrary{decorations}
-% \usepgfplotslibrary{fillbetween}
-\begin{document}
+![Figure. The Bonferroni algorithm on Gaussian data](https://raw.githubusercontent.com/zcysxy/Figurebed/master/img/mhtbon.svg)
+^fig-g
 
-\pgfmathdeclarefunction{gauss}{2}{%
-  \pgfmathparse{1/(#2*sqrt(2*pi))*exp(-((x-#1)^2)/(2*#2^2))}%
-}
-\tikzset{every picture/.style={line width=1.2, draw opacity=0.7}}
-%\begin{figure}[ht]
-%\centering\hspace{2.5cm}
-\begin{tikzpicture} 
-    \begin{axis}[
-        unit vector ratio*=1 1,
-        domain=-2:2,
-        samples=100,
-        xmin=-2, xmax=2,
-        ymin=0, ymax=4,
-        ticks=none,
-        axis line style={line width=1.2},
-    ]
-    % Draw y-axis
-    \addplot [color=black,line width=1.2] coordinates {(0,0)(0,4)};
-    % Draw the Bonferroni threshold: a vertical line around sqrt(2log(n))
-    \addplot [color=Crimson, dashed,line width=1.2] coordinates {(1,0)(1,4)};
-    % Draw Gaussian
-    \foreach \i in {0,0.6,...,3.6}{
-        \addplot [%%name path=density,
+name path=density,
         color=black,line width=1.2] {gauss(0,0.8)+0.2+\i};
         %% \addplot [name path=bottom,opacity=0] coordinates {(-2,0.2+\i)(2,0.2+\i)};
         %% \addplot [fill=red, fill opacity=0.2] fill between[of=density and bottom, soft clip={domain=1:2}];
@@ -135,6 +110,8 @@ We remark that the Bonferroni algorithm works for dependent tests. Nonetheless, 
 %\end{figure}
 \end{document}
 ```
+
+%%
 
 The following proposition gives an approximation of $\Phi^{-1}(-\alpha / n)$ for any $\alpha\in(0,1)$.
 
