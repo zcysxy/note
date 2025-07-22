@@ -1,5 +1,5 @@
 ---
-{"publish":true,"title":"Multiple Hypothesis Testing","created":"2024-11-14T13:36:19","modified":"2025-07-22T19:46:34","cssclasses":"","state":"done","sup":["[[Statistics]]"],"aliases":null,"type":"output","output":{"pdf_document":{"defaults":".config/pandoc/defaults/pdf","output":"scribe.pdf","template":"statscribe.tex"}},"header-includes":["\\usepackage{pgfplots}","\\usetikzlibrary{calc}","\\PassOptionsToPackage{dvipsnames,svgnames}{xcolor}","\\usepackage[dvipsnames,svgnames]{xcolor}","\\usepgfplotslibrary{fillbetween}"],"author":"Chenyu Zhang","date":"November 14","lec-num":17,"secnumdepth":2}
+{"publish":true,"title":"Multiple Hypothesis Testing","created":"2024-11-14T13:36:19","modified":"2025-07-22T19:57:00","cssclasses":"","state":"done","sup":["[[Statistics]]"],"aliases":null,"type":"output","output":{"pdf_document":{"defaults":".config/pandoc/defaults/pdf","output":"scribe.pdf","template":"statscribe.tex"}},"header-includes":["\\usepackage{pgfplots}","\\usetikzlibrary{calc}","\\PassOptionsToPackage{dvipsnames,svgnames}{xcolor}","\\usepackage[dvipsnames,svgnames]{xcolor}","\\usepgfplotslibrary{fillbetween}"],"author":"Chenyu Zhang","date":"November 14","lec-num":17,"secnumdepth":2}
 ---
 
 
@@ -65,7 +65,7 @@ $$
 A(\vec{p}) = \{ i: p_{i}\le \alpha /n \}.
 $$
 
-> [!prop] FWER control for Bonferroni
+> [!proposition] FWER control for Bonferroni
 >
 > The Bonferroni algorithm controls the FWER at level $\alpha$.
 >
@@ -94,7 +94,7 @@ We remark that the Bonferroni algorithm works for dependent tests. Nonetheless, 
 
 The following proposition gives an approximation of $\Phi^{-1}(-\alpha / n)$ for any $\alpha\in(0,1)$.
 
-> [!prop] Max-Central Limit Theorem (Fisher–Tippett–Gnedenko) ^prop-max
+> [!proposition] Max-Central Limit Theorem (Fisher–Tippett–Gnedenko) ^prop-max
 >
 > Let $Z_{i} \overset{ \text{iid} }{ \sim }\mathcal{N}(0,1), i=1,\dots,n$. We have
 > $$
@@ -115,32 +115,32 @@ The following proposition gives an approximation of $\Phi^{-1}(-\alpha / n)$ for
 
 The previous proposition already connects the threshold of the Bonferroni algorithm to the max statistic, which is good for detecting sparse signals. The following propositions further formalize the connection between the Bonferroni algorithm and sparsity, suggesting that the Bonferroni algorithm is good at detecting sparse signals and dealing with sparse alternatives.
 
-> [!prop]
+> [!proposition]
 >
 > If $\theta_{1} = (1+\epsilon )\sqrt{ 2\log n }$ with $\epsilon\in(0,1)$ and $\theta _{i}=0$ for $i\ge 2$, then the Bonferroni algorithm has power
 > $$
 > \P(\underbrace{ 1\in R=A(X) }_{ \textup{reject }H_{0,1} }) \to 1, \text{ as } n\to\infty.
 > $$
-
-> [!pf]
 >
-> First, by the definition of the Bonferroni algorithm, we have
-> $$
-> \P(1\in R) = \P(X_{1}\ge -\Phi^{-1}(\alpha/n)) = \P(Z \ge -\Phi^{-1}(\alpha/n) - \theta_{1}),
-> $$
-> where $Z\sim \mathcal{N}(0,1)$. Then, by Proposition [[Multiple Hypothesis Testing#^prop-max]], we get
-> $$
-> \P(Z \ge -\Phi^{-1}(\alpha/n) - \theta_{1})
-> = \P(Z \ge (1 + o(1) - 1 -\epsilon )\sqrt{ 2\log n }).
-> $$
-> Letting $n\to\infty$ gives
-> $$
-> \P(1\in\R) \to \P(Z\ge -\infty) = 1.
-> $$
+> > [!proof]-
+> >
+> > First, by the definition of the Bonferroni algorithm, we have
+> > $$
+> > \P(1\in R) = \P(X_{1}\ge -\Phi^{-1}(\alpha/n)) = \P(Z \ge -\Phi^{-1}(\alpha/n) - \theta_{1}),
+> > $$
+> > where $Z\sim \mathcal{N}(0,1)$. Then, by Proposition [[Multiple Hypothesis Testing#^prop-max]], we get
+> > $$
+> > \P(Z \ge -\Phi^{-1}(\alpha/n) - \theta_{1})
+> > = \P(Z \ge (1 + o(1) - 1 -\epsilon )\sqrt{ 2\log n }).
+> > $$
+> > Letting $n\to\infty$ gives
+> > $$
+> > \P(1\in\R) \to \P(Z\ge -\infty) = 1.
+> > $$
 
 The following proposition can be obtained by a similar argument.
 
-> [!prop]
+> [!proposition]
 >
 > If $\theta_{1} = (1-\epsilon )\sqrt{ 2\log n }$ with $\epsilon\in(0,1)$ and $\theta _{i}=0$ for $i\ge 2$, then the Bonferroni algorithm has power approaching 0 as $n\to\infty$.
 
@@ -168,46 +168,47 @@ Also note that without the bound's dependence on $i$, the BH algorithm reduces t
 >
 > For **independent** p-values, the BH algorithm satisfies $\mathrm{FDR} \le \alpha \cdot \# \text{true nulls} /n \le \alpha$.
 > The first equality holds when the p-values are uniformly distributed for true nulls.
-
-We first define the confusion matrix:
-
-| \#    | Accepted | Rejected |
-| ----- | -------- | -------- |
-| True  | $U$      | $V$      |
-| False | $T$      | $S$      |
-
-^tbl-confusion
-
-And we denote $N$ as the index set of true nulls; $R$ is the rejection set as before. With a slight abuse of notation, we use $N$ and $R$ to also denote the number of true nulls and the number of rejections, respectively.
-Then, $U+V = N$, $T+S = n-N$, $U+T = n-R$, and $V+S = R$.
-
-Define the indicator $V_{i} = \1_{ \{ i\in R \} }$. By definition, we have
-$$
-\begin{aligned}
-\mathrm{FDR} =& \mathbb{E}\left[ \frac{V}{1 \vee R } \right] \\
-=& \mathbb{E}\left[ \sum_{i\in N} \frac{V_{i}}{1 \vee R} \right]\\
-=& \sum_{i\in N}\mathbb{E}\left[ \sum_{k=1}^{n} \frac{V_{i}}{k} \1_{\{ R=k \}} \right].
-\end{aligned}
-$$
-Without loss of generality, we assume the p-values are already sorted.
-Then, observe that if $i\in R$, there exists $j \ge i$ such that $p_{i}\le p_{j} \le \alpha j/n$.
-Therefore, if we consider a virtual instance where $p_i=0$ and other p-values are unchanged, BH will return the same rejection set for this instance.^[For this virtual instance, p-values may not be sorted anymore. However, p-values that are smaller than $p_j$ in the original instance will stay below $p_{j}$].
-We denote $R(p_{i}\gets 0)$ as the rejection set after setting $p_{i}$ to 0. Note that this virtual instance only depends on $p_{-i} = \{ p_{1},\dots,p_{i-1},p_{i+1},\dots,p_{n} \}$. Therefore,
-$$
-\begin{aligned}
-\mathrm{FDR} =& \sum_{i\in N} \mathbb{E}\left[  \sum_{k=1}^{n} \frac{1}{k} V_{i} \1_{\{ R(p_{i}\gets 0)=k \}}   \right] \\
- =& \sum_{i\in N} \mathbb{E}\left[  \sum_{k=1}^{n} \frac{1}{k} \mathbb{E}\left[ V_{i} \1_{\{ R(p_{i}\gets 0)=k \}} \given p_{-i}\right]  \right] \\
- =& \sum_{i\in N} \mathbb{E}\left[  \sum_{k=1}^{n} \frac{1}{k} \P\left( p_{i}\le \alpha \frac{k}{n} \right) \1_{\{ R(p_{i}\gets 0)=k \}}   \right] \\
- \le& \sum_{i\in N} \mathbb{E}\left[  \sum_{k=1}^{n} \frac{1}{k} \cdot \alpha \frac{k}{n} \cdot \1_{\{ R(p_{i}\gets 0)=k \}}   \right] \\
- =& \sum_{i\in N} \mathbb{E}\left[ \frac{\alpha}{n} \right] \\
- =& \frac{N}{n} \alpha \\
- \le& \alpha
-,\end{aligned}
-$$
-where the first equation is because if $V_{i}=1$, setting $p_{i}=0$ will not change the rejection set as we argued;
-the second equation uses the tower property;
-the third equation uses the fact that $p_{i}$ is independent of $p_{-i}$, and the indicator specifies that $i_{0} = k$;
-the fourth inequality uses the fact that $p_{i}$ is super-uniform, and the equality holds when it's uniform.
+>
+> > [!proof]-
+> > We first define the confusion matrix:
+> > 
+> > | \#    | Accepted | Rejected |
+> > | ----- | -------- | -------- |
+> > | True  | $U$      | $V$      |
+> > | False | $T$      | $S$      |
+> > 
+> > ^tbl-confusion
+> > 
+> > And we denote $N$ as the index set of true nulls; $R$ is the rejection set as before. With a slight abuse of notation, we use $N$ and $R$ to also denote the number of true nulls and the number of rejections, respectively.
+> > Then, $U+V = N$, $T+S = n-N$, $U+T = n-R$, and $V+S = R$.
+> > 
+> > Define the indicator $V_{i} = \1_{ \{ i\in R \} }$. By definition, we have
+> > $$
+> > \begin{aligned}
+> > \mathrm{FDR} =& \mathbb{E}\left[ \frac{V}{1 \vee R } \right] \\
+> > =& \mathbb{E}\left[ \sum_{i\in N} \frac{V_{i}}{1 \vee R} \right]\\
+> > =& \sum_{i\in N}\mathbb{E}\left[ \sum_{k=1}^{n} \frac{V_{i}}{k} \1_{\{ R=k \}} \right].
+> > \end{aligned}
+> > $$
+> > Without loss of generality, we assume the p-values are already sorted.
+> > Then, observe that if $i\in R$, there exists $j \ge i$ such that $p_{i}\le p_{j} \le \alpha j/n$.
+> > Therefore, if we consider a virtual instance where $p_i=0$ and other p-values are unchanged, BH will return the same rejection set for this instance.^[For this virtual instance, p-values may not be sorted anymore. However, p-values that are smaller than $p_j$ in the original instance will stay below $p_{j}$].
+> > We denote $R(p_{i}\gets 0)$ as the rejection set after setting $p_{i}$ to 0. Note that this virtual instance only depends on $p_{-i} = \{ p_{1},\dots,p_{i-1},p_{i+1},\dots,p_{n} \}$. Therefore,
+> > $$
+> > \begin{aligned}
+> > \mathrm{FDR} =& \sum_{i\in N} \mathbb{E}\left[  \sum_{k=1}^{n} \frac{1}{k} V_{i} \1_{\{ R(p_{i}\gets 0)=k \}}   \right] \\
+> >  =& \sum_{i\in N} \mathbb{E}\left[  \sum_{k=1}^{n} \frac{1}{k} \mathbb{E}\left[ V_{i} \1_{\{ R(p_{i}\gets 0)=k \}} \given p_{-i}\right]  \right] \\
+> >  =& \sum_{i\in N} \mathbb{E}\left[  \sum_{k=1}^{n} \frac{1}{k} \P\left( p_{i}\le \alpha \frac{k}{n} \right) \1_{\{ R(p_{i}\gets 0)=k \}}   \right] \\
+> >  \le& \sum_{i\in N} \mathbb{E}\left[  \sum_{k=1}^{n} \frac{1}{k} \cdot \alpha \frac{k}{n} \cdot \1_{\{ R(p_{i}\gets 0)=k \}}   \right] \\
+> >  =& \sum_{i\in N} \mathbb{E}\left[ \frac{\alpha}{n} \right] \\
+> >  =& \frac{N}{n} \alpha \\
+> >  \le& \alpha
+> > ,\end{aligned}
+> > $$
+> > where the first equation is because if $V_{i}=1$, setting $p_{i}=0$ will not change the rejection set as we argued;
+> > the second equation uses the tower property;
+> > the third equation uses the fact that $p_{i}$ is independent of $p_{-i}$, and the indicator specifies that $i_{0} = k$;
+> > the fourth inequality uses the fact that $p_{i}$ is super-uniform, and the equality holds when it's uniform.
 
 ## Connection Between Different Metrics
 
