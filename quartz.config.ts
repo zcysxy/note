@@ -90,6 +90,7 @@ const config: QuartzConfig = {
 					"\\Perp": "\\perp\\!\\!\\!\\perp",
 				},
 			}),
+			Plugin.TikzTransformer(),
 			Plugin.FigureCaptions(),
 			Plugin.RunPythonPlugin(),
     ],
