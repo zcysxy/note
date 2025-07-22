@@ -1,5 +1,5 @@
 ---
-{"publish":true,"title":"Multiple Hypothesis Testing","created":"2024-11-14T13:36:19","modified":"2025-07-22T16:02:08","cssclasses":"","state":"done","sup":["[[Statistics]]"],"aliases":null,"type":"output","output":{"pdf_document":{"defaults":".config/pandoc/defaults/pdf","output":"scribe.pdf","template":"statscribe.tex"}},"header-includes":["\\usepackage{pgfplots}","\\usetikzlibrary{calc}","\\PassOptionsToPackage{dvipsnames,svgnames}{xcolor}","\\usepackage[dvipsnames,svgnames]{xcolor}","\\usepgfplotslibrary{fillbetween}"],"author":"Chenyu Zhang","date":"November 14","lec-num":17,"secnumdepth":2}
+{"publish":true,"title":"Multiple Hypothesis Testing","created":"2024-11-14T13:36:19","modified":"2025-07-22T19:46:34","cssclasses":"","state":"done","sup":["[[Statistics]]"],"aliases":null,"type":"output","output":{"pdf_document":{"defaults":".config/pandoc/defaults/pdf","output":"scribe.pdf","template":"statscribe.tex"}},"header-includes":["\\usepackage{pgfplots}","\\usetikzlibrary{calc}","\\PassOptionsToPackage{dvipsnames,svgnames}{xcolor}","\\usepackage[dvipsnames,svgnames]{xcolor}","\\usepgfplotslibrary{fillbetween}"],"author":"Chenyu Zhang","date":"November 14","lec-num":17,"secnumdepth":2}
 ---
 
 
@@ -60,7 +60,7 @@ One simple algorithm of this kind is the Bonferroni algorithm.
 
 ## Bonferroni Algorithm
 
-Let $\alpha\in(0,1)$ be the family-wise error rate (FWER). Let $\{p_i\}_{i=1}^{n}$ be the p-values of individual tests. The Bonferroni algorithm returns
+Let $\alpha\in(0,1)$ be the family-wise error rate (FWER). Let $\{p_i\}_{i=1}^{n}$ be the p-values of individual tests. The ==Bonferroni== algorithm returns
 $$
 A(\vec{p}) = \{ i: p_{i}\le \alpha /n \}.
 $$
@@ -90,49 +90,28 @@ We remark that the Bonferroni algorithm works for dependent tests. Nonetheless, 
 ![The Bonferroni algorithm on Gaussian data.](https://raw.githubusercontent.com/zcysxy/Figurebed/master/img/mhtbon.svg)
 ^fig-g
 
-name path=density,
-        color=black,line width=1.2] {gauss(0,0.8)+0.2+\i};
-        %% \addplot [name path=bottom,opacity=0] coordinates {(-2,0.2+\i)(2,0.2+\i)};
-        %% \addplot [fill=red, fill opacity=0.2] fill between[of=density and bottom, soft clip={domain=1:2}];
-        \addplot [opacity=0] coordinates {(-2,0.2+\i)(2,0.2+\i)};
-    }
-    \end{axis}
-    \draw (2.9,0.02) node [below] {0};
-    \draw (4.6,0.02) node [below] {$\Phi^{-1}(\alpha/n)$};
-    % Add a brackets over all curves to indicate the aggregated tail probability
-    \draw [decorate,decoration={brace,amplitude=5pt,mirror,raise=5pt}] (5.8,0.2) -- (5.8,4.8) node [black,midway,right=6pt,text width=2cm,text centered] {cumulative tail};
-    \end{tikzpicture}
 
-%\caption{The Bonferroni algorithm on Gaussian data}\label{fig:g}
-%\end{figure}
-\end{document}
-```
-
-%%
 
 The following proposition gives an approximation of $\Phi^{-1}(-\alpha / n)$ for any $\alpha\in(0,1)$.
 
-> [!prop] ^prop-max
+> [!prop] Max-Central Limit Theorem (Fisher–Tippett–Gnedenko) ^prop-max
 >
 > Let $Z_{i} \overset{ \text{iid} }{ \sim }\mathcal{N}(0,1), i=1,\dots,n$. We have
 > $$
 > \frac{\max_{i}Z_i}{\sqrt{ 2 \log n }} \overset{ P }{ \to } 1, \quad \text{as } n\to\infty.
 > $$
-> ==[By the max-central limit theorem, we have]==
+> Then, calculating the CDF of $\max_{i}Z_{i}$ gives
 > $$
 > -\Phi ^{-1}( \alpha / n ) = \sqrt{ 2 \log n } (1 + o(1)),
 > $$
 > where the [[Asymptotic Notation]] holds as $n\to\infty$.
 
-[@fig:a] gives an illustration of how $\sqrt{ 2\log n }$ approximates $\Phi^{-1}(-\alpha/n)$ when $\alpha=0.05$.
+[[Multiple Hypothesis Testing#^fig-a]] gives an illustration of how $\sqrt{ 2\log n }$ approximates $\Phi^{-1}(-\alpha/n)$ when $\alpha=0.05$.
 
-\begin{figure}[ht]
-  	\centering\hspace{-.5cm}
-	\includegraphics[scale=0.94]{/Users/ce/0-TMP/08-test/test.pdf}
-	\caption{Approximation of $\Phi^{-1}(-\alpha/n)$.}\label{fig:a}
-\end{figure}
+![Approximation of $\Phi^{-1}(-\alpha/n)$.}](https://raw.githubusercontent.com/zcysxy/Figurebed/master/img/maxclt.png)
+^fig-a
 
-## Sparsity Connection
+### Sparsity Connection
 
 The previous proposition already connects the threshold of the Bonferroni algorithm to the max statistic, which is good for detecting sparse signals. The following propositions further formalize the connection between the Bonferroni algorithm and sparsity, suggesting that the Bonferroni algorithm is good at detecting sparse signals and dealing with sparse alternatives.
 
@@ -164,3 +143,77 @@ The following proposition can be obtained by a similar argument.
 > [!prop]
 >
 > If $\theta_{1} = (1-\epsilon )\sqrt{ 2\log n }$ with $\epsilon\in(0,1)$ and $\theta _{i}=0$ for $i\ge 2$, then the Bonferroni algorithm has power approaching 0 as $n\to\infty$.
+
+## Benjamini-Hochberg Algorithm
+
+Let $p_{(1)}\le \dots \le p_{(n)}$ be sorted p-values. The ==Benjamini-Hochberg (BH)== algorithm returns
+$$
+A(\vec{p}) = \left\{  (i): (i)\le \max \left\{  i : p_{(i)}\le \frac{i}{n}\alpha  \right\}  \right\}.
+$$
+That is, denoting $i_{0}\coloneqq \max \{ i: p_{(i)} \le i\alpha /n \}$, we reject $i_{0}$ nulls with the smallest p-values.
+
+Note that
+$$
+A(\vec{p}) \ne \left\{  (i): p_{(i)}\le \frac{i}{n}\alpha   \right\}.
+$$
+That is, unlike Bonferroni, BH does not reject nulls under a function graph. Instead, it first determines $i_{0}$, and then reject nulls before $i_{0}$ on the line of sorted p-values. See [[Multiple Hypothesis Testing#^fig-bh]] for an illustration: even before $i_{0}$ there are some p-values above the line $\frac{i}{n}\alpha$, they get rejected because $i_{0}$ is the last index below the line.
+Also note that without the bound's dependence on $i$, the BH algorithm reduces to the Bonferroni algorithm.
+
+![Illustration of BH algorithm.](https://raw.githubusercontent.com/zcysxy/Figurebed/master/img/mhtbh.svg)
+^fig-bh
+
+
+
+> [!prop] FDR control for BH
+>
+> For **independent** p-values, the BH algorithm satisfies $\mathrm{FDR} \le \alpha \cdot \# \text{true nulls} /n \le \alpha$.
+> The first equality holds when the p-values are uniformly distributed for true nulls.
+
+We first define the confusion matrix:
+
+| \#    | Accepted | Rejected |
+| ----- | -------- | -------- |
+| True  | $U$      | $V$      |
+| False | $T$      | $S$      |
+
+^tbl-confusion
+
+And we denote $N$ as the index set of true nulls; $R$ is the rejection set as before. With a slight abuse of notation, we use $N$ and $R$ to also denote the number of true nulls and the number of rejections, respectively.
+Then, $U+V = N$, $T+S = n-N$, $U+T = n-R$, and $V+S = R$.
+
+Define the indicator $V_{i} = \1_{ \{ i\in R \} }$. By definition, we have
+$$
+\begin{aligned}
+\mathrm{FDR} =& \mathbb{E}\left[ \frac{V}{1 \vee R } \right] \\
+=& \mathbb{E}\left[ \sum_{i\in N} \frac{V_{i}}{1 \vee R} \right]\\
+=& \sum_{i\in N}\mathbb{E}\left[ \sum_{k=1}^{n} \frac{V_{i}}{k} \1_{\{ R=k \}} \right].
+\end{aligned}
+$$
+Without loss of generality, we assume the p-values are already sorted.
+Then, observe that if $i\in R$, there exists $j \ge i$ such that $p_{i}\le p_{j} \le \alpha j/n$.
+Therefore, if we consider a virtual instance where $p_i=0$ and other p-values are unchanged, BH will return the same rejection set for this instance.^[For this virtual instance, p-values may not be sorted anymore. However, p-values that are smaller than $p_j$ in the original instance will stay below $p_{j}$].
+We denote $R(p_{i}\gets 0)$ as the rejection set after setting $p_{i}$ to 0. Note that this virtual instance only depends on $p_{-i} = \{ p_{1},\dots,p_{i-1},p_{i+1},\dots,p_{n} \}$. Therefore,
+$$
+\begin{aligned}
+\mathrm{FDR} =& \sum_{i\in N} \mathbb{E}\left[  \sum_{k=1}^{n} \frac{1}{k} V_{i} \1_{\{ R(p_{i}\gets 0)=k \}}   \right] \\
+ =& \sum_{i\in N} \mathbb{E}\left[  \sum_{k=1}^{n} \frac{1}{k} \mathbb{E}\left[ V_{i} \1_{\{ R(p_{i}\gets 0)=k \}} \given p_{-i}\right]  \right] \\
+ =& \sum_{i\in N} \mathbb{E}\left[  \sum_{k=1}^{n} \frac{1}{k} \P\left( p_{i}\le \alpha \frac{k}{n} \right) \1_{\{ R(p_{i}\gets 0)=k \}}   \right] \\
+ \le& \sum_{i\in N} \mathbb{E}\left[  \sum_{k=1}^{n} \frac{1}{k} \cdot \alpha \frac{k}{n} \cdot \1_{\{ R(p_{i}\gets 0)=k \}}   \right] \\
+ =& \sum_{i\in N} \mathbb{E}\left[ \frac{\alpha}{n} \right] \\
+ =& \frac{N}{n} \alpha \\
+ \le& \alpha
+,\end{aligned}
+$$
+where the first equation is because if $V_{i}=1$, setting $p_{i}=0$ will not change the rejection set as we argued;
+the second equation uses the tower property;
+the third equation uses the fact that $p_{i}$ is independent of $p_{-i}$, and the indicator specifies that $i_{0} = k$;
+the fourth inequality uses the fact that $p_{i}$ is super-uniform, and the equality holds when it's uniform.
+
+## Connection Between Different Metrics
+
+Using the [[Multiple Hypothesis Testing#^tbl-confusion\|confusion matrix]], we can express the metrics as
+$$
+\mathrm{FDR} = \mathbb{E}\left[ \frac{V}{1 \vee R} \right],\quad  \mathrm{FWER} = \P(V\ge 1) = \mathbb{E}[\1_{\{ V\ge 1 \}}].
+$$
+Since $R\ge V$, we have $\mathbb{1}_{\{ V\ge 1 \}} \ge V /(1\vee R)$, and thus $\mathrm{FDR} \le \mathrm{FWER}$.
+For a single hypothesis test, or if we consider the global null, where we either reject all nulls or none, we have $V /(1\vee R) = \1_{\{ V\ne \emptyset \}} = \1_{\{ V\ge 1 \}}$. In this case, $\mathrm{FDR} = \mathrm{FWER}$.
