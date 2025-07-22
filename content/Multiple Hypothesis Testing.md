@@ -1,5 +1,5 @@
 ---
-{"publish":true,"title":"Multiple Hypothesis Testing","created":"2024-11-14T13:36:19","modified":"2025-07-22T14:52:04","cssclasses":"","state":"done","sup":["[[Statistics]]"],"aliases":null,"type":"output","output":{"pdf_document":{"defaults":".config/pandoc/defaults/pdf","output":"scribe.pdf","template":"statscribe.tex"}},"header-includes":["\\usepackage{pgfplots}","\\usetikzlibrary{calc}","\\PassOptionsToPackage{dvipsnames,svgnames}{xcolor}","\\usepackage[dvipsnames,svgnames]{xcolor}","\\usepgfplotslibrary{fillbetween}"],"author":"Chenyu Zhang","date":"November 14","lec-num":17,"secnumdepth":2}
+{"publish":true,"title":"Multiple Hypothesis Testing","created":"2024-11-14T13:36:19","modified":"2025-07-22T15:35:39","cssclasses":"","state":"done","sup":["[[Statistics]]"],"aliases":null,"type":"output","output":{"pdf_document":{"defaults":".config/pandoc/defaults/pdf","output":"scribe.pdf","template":"statscribe.tex"}},"header-includes":["\\usepackage{pgfplots}","\\usetikzlibrary{calc}","\\PassOptionsToPackage{dvipsnames,svgnames}{xcolor}","\\usepackage[dvipsnames,svgnames]{xcolor}","\\usepgfplotslibrary{fillbetween}"],"author":"Chenyu Zhang","date":"November 14","lec-num":17,"secnumdepth":2}
 ---
 
 
@@ -42,71 +42,17 @@ FWER obeys the [[Uniformly Most Powerful Test\|Neyman-Pearson]] paradigm which c
 Instead, FDR restricts the scope of discoveries and consider a relative error rate
 
 A key question in designing a multiple testing algorithm is how to combine the results of individual hypothesis tests to produce a coherent output.
-[[p-value]]s serve as a convenient object to work with for this purpose. We denote $p_i$ as the $p$-value for $H_{0,i}$, i.e., $P_{\theta}(p_{i}\le t)\le t$ for all $\theta\in\Theta_{0,i}$ and $t\in[0,1]$. ^[Note that by definition p-values are super-uniform; but sometimes we assume they are exactly uniform to obtain tight results.]
-[@fig:p] plots the sorted $p$-values for different signals. Specifically, when the null hypothesis is true, the $p$-values are uniformly distributed (no interesting signal); when the sorted $p$-values deviate significantly from the line $y=x$, it presents a clear signal.
-==[However, this signal does not directly translate into that all $p$-values below a certain threshold are significant. Because when there are many true nulls, some of their $p$-values will be small by chance.]==
-Thus, the observed signal suggests only a systematic departure from the null hypothesis rather than significance for each individual $p$-value.
+[[p-value]]s serve as a convenient object to work with for this purpose. We denote $p_i$ as the p-value for $H_{0,i}$, i.e., $P_{\theta}(p_{i}\le t)\le t$ for all $\theta\in\Theta_{0,i}$ and $t\in[0,1]$. ^[Note that by definition p-values are super-uniform; but sometimes we assume they are exactly uniform to obtain tight results.]
+[[Multiple Hypothesis Testing#^fig-p]] plots the sorted p-values for different signals. Specifically, when the null hypothesis is true, the p-values are uniformly distributed (no interesting signal); when the sorted p-values deviate significantly from the line $y=x$, it presents a clear signal.
+However, this signal does not directly translate into that all p-values below a certain threshold are significant. Because even when all nulls are true, due to the high dimension, some of their p-values will be small by chance.
+Thus, the observed signal suggests only a systematic departure from the null hypothesis rather than significance for each individual p-value.
 
-```tikz
-% \usepackage{geometry,caption,color,setspace,comment,footmisc,pdflscape,subfigure,array}
-\usepackage{pgfplots}
-\usetikzlibrary{calc}
-\begin{document}
+<svg xmlns="http://www.w3.org/2000/svg" width="311.142" height="241.057" viewBox="-72 -72 233.356 180.793"><g stroke-opacity=".7" stroke-width="1.2" stroke="currentColor" fill="currentColor" stroke-miterlimit="10"><g transform="matrix(1 0 0 -1 -1.513 90.33)" stroke-width="1.2" stroke="currentColor"><path d="M0 0v162h162V0H0Z" fill="none"></path><clipPath id="pgf91f1a382d52ccd3447a884e5f3e1a739cp1"><path d="M0 0h162v162H0Z"></path></clipPath><g clip-path="url(#pgf91f1a382d52ccd3447a884e5f3e1a739cp1)"><path d="m0 0 1.636 1.636 1.636 1.636L4.91 4.91l1.636 1.636L8.18 8.18l1.636 1.636 1.636 1.636 1.637 1.637 1.636 1.636 1.636 1.636 1.636 1.636 1.636 1.636 1.637 1.637 1.636 1.636 1.636 1.636 1.636 1.636 1.636 1.636 1.636 1.636 1.637 1.637 1.636 1.636 1.636 1.636 1.636 1.636 1.636 1.636 1.637 1.637 1.636 1.636 1.636 1.636 1.636 1.636 1.636 1.636 1.637 1.637 1.636 1.636 1.636 1.636 1.636 1.636 1.636 1.636 1.637 1.637 1.636 1.636 1.636 1.636 1.636 1.636 1.636 1.636 1.637 1.637 1.636 1.636 1.636 1.636 1.636 1.636 1.636 1.636 1.637 1.637 1.636 1.636 1.636 1.636L76.9 76.9l1.636 1.636 1.636 1.636 1.637 1.637 1.636 1.636 1.636 1.636 1.636 1.636 1.636 1.636 1.637 1.637 1.636 1.636 1.636 1.636 1.636 1.636 1.636 1.636 1.637 1.637 1.636 1.636 1.636 1.636 1.636 1.636 1.636 1.636 1.637 1.637 1.636 1.636 1.636 1.636 1.636 1.636 1.636 1.636 1.637 1.637 1.636 1.636 1.636 1.636 1.636 1.636 1.636 1.636 1.637 1.637 1.636 1.636 1.636 1.636 1.636 1.636 1.636 1.636 1.637 1.637 1.636 1.636 1.636 1.636 1.636 1.636 1.636 1.636 1.636 1.636 1.637 1.637 1.636 1.636 1.636 1.636 1.636 1.636 1.636 1.636 1.637 1.637 1.636 1.636 1.636 1.636 1.636 1.636 1.636 1.636 1.637 1.637 1.636 1.636 1.636 1.636 1.636 1.636" fill="none"></path><path d="M0 27.54h162" fill="none" stroke-dasharray="3.0,3.0" stroke="gray"></path><path d="M0 8.1h162" fill="none" stroke-dasharray="3.0,3.0" stroke="#dd143c"></path></g><path d="M18.2 17.426a2 2 0 1 1-4 0 2 2 0 0 1 4 0ZM34.4 34.48a2 2 0 1 1-4 0 2 2 0 0 1 4 0ZM50.6 51.48a2 2 0 1 1-4 0 2 2 0 0 1 4 0ZM66.8 64.686a2 2 0 1 1-4 0 2 2 0 0 1 4 0ZM83 83.32a2 2 0 1 1-4 0 2 2 0 0 1 4 0ZM99.2 105.136a2 2 0 1 1-4 0 2 2 0 0 1 4 0ZM115.4 118.78a2 2 0 1 1-4 0 2 2 0 0 1 4 0ZM131.6 136.023a2 2 0 1 1-4 0 2 2 0 0 1 4 0ZM147.8 146.88a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm-2 0" fill="#0ff"></path><path d="M18.2 4.328a2 2 0 1 1-4 0 2 2 0 0 1 4 0ZM34.4 8.82a2 2 0 1 1-4 0 2 2 0 0 1 4 0ZM50.6 15.971a2 2 0 1 1-4 0 2 2 0 0 1 4 0ZM66.8 18.918a2 2 0 1 1-4 0 2 2 0 0 1 4 0ZM83 24.606a2 2 0 1 1-4 0 2 2 0 0 1 4 0ZM99.2 30.718a2 2 0 1 1-4 0 2 2 0 0 1 4 0ZM115.4 40.614a2 2 0 1 1-4 0 2 2 0 0 1 4 0ZM131.6 42.46a2 2 0 1 1-4 0 2 2 0 0 1 4 0ZM147.8 45.76a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm-2 0" fill="#ff8000"></path><text y="89.73" x="16.686" font-family="cmmi10" font-size="10" transform="matrix(0 1 1 0 -100.29 61.798)" stroke="none">p</text><g fill="var(--background-primary)"><path d="M3.84 129.27h67.362v28.889H3.84Z"></path><g stroke="none" fill="currentColor"><path d="M10.84 149.937a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm-2 0" fill="#0ff" stroke="currentColor"></path><g font-family="cmr10" font-size="10" stroke="none"><text y="77.285" x="20.086" transform="matrix(1 0 0 -1 -7.245 224.5)">No</text><text y="77.285" x="35.919" transform="matrix(1 0 0 -1 -7.245 224.5)">signal</text></g><path d="M10.84 137.492a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm-2 0" fill="#ff8000" stroke="currentColor"></path><g font-family="cmr10" font-size="10" stroke="none"><text y="89.73" x="20.086" transform="matrix(1 0 0 -1 -7.245 224.5)">Clear</text><text y="89.73" x="46.78" transform="matrix(1 0 0 -1 -7.245 224.5)">Signal</text></g></g></g></g><g stroke="none"><text y="86.392" x=".165" font-family="cmr7" font-size="7" transform="translate(11.977 11.412)">1</text><path d="M11.664 99.042h4.943v.4h-4.943z"></path><text y="93.778" x="-.313" font-family="cmmi7" font-size="7" transform="translate(11.977 11.412)">n</text></g><g stroke="none"><text y="86.392" x=".165" font-family="cmr7" font-size="7" transform="translate(29.049 11.412)">2</text><path d="M28.736 99.042h4.943v.4h-4.943z"></path><text y="93.778" x="-.313" font-family="cmmi7" font-size="7" transform="translate(29.049 11.412)">n</text></g><g stroke="none"><text y="86.392" x="-.313" font-family="cmmi7" font-size="7" transform="translate(142.86 9.915)">n</text><path d="M142.547 97.545h4.943v.4h-4.943z"></path><text y="93.778" x="-.313" font-family="cmmi7" font-size="7" transform="translate(142.86 9.915)">n</text></g><text y="90.329" x="-1.513" font-family="cmmi10" font-size="10" transform="translate(-9.398 -26.3)" stroke="none">®</text><g fill="#dc143c" stroke="none"><text y="90.329" x="-1.513" font-family="cmr10" font-size="10" transform="translate(-64.09 -6.784)">Bonferroni:</text><text y="86.392" x="53.215" font-family="cmmi7" font-size="7" transform="translate(-64.09 -6.784)">®</text><path d="M-10.875 80.846h5.199v.4h-5.2z"></path><text y="93.778" x="53.342" font-family="cmmi7" font-size="7" transform="translate(-64.09 -6.784)">n</text></g></g></svg>
+- [c] Sorted p-values ^fig-p
 
-\tikzset{every picture/.style={line width=1.2, draw opacity=0.7}}
-%\begin{figure}[ht]
-%\centering\hspace{-2.5cm}
-\begin{tikzpicture} 
-    \begin{axis}[
-        unit vector ratio*=1 1,
-        domain=0:10,
-        samples=100,
-        % xlabel={$x$},
-        % Put x label to the right
-        % xlabel style={at={(1,0.02)}, anchor=east},
-        ylabel={$p$},
-        ylabel style={at={(0.1,0.5)}, anchor=north},
-        xmin=0, xmax=10,
-        ymin=0, ymax=10,
-        legend image post style={draw=black},
-        % align legend text to left
-        legend style={cells={anchor=west}, at={(0.02,0.98)}, anchor=north west},
-        ticks=none,
-    ]
-    \addplot [
-        domain=0:10, 
-        samples=100, 
-        color=black,
-    ]
-    {x};
-    \foreach \x in {1,...,9}{
-    \addplot [only marks, mark=*,mark options={fill=cyan} ] coordinates {
-        (\x,\x+rand/2)
-    };
-    }
-    \foreach \x in {1,...,9}{
-    \addplot [only marks, mark=*,mark options={fill=orange} ] coordinates {
-        (\x,\x^1/3+rand/5)
-    };
-    }
-    \legend{,,,,,,,,,No signal,Clear Signal,,,,,,,,}
-    % Draw a horizontal line at 1/n
-    \addplot [color=gray, dashed] coordinates {(0,1.7)(10,1.7)};
-    \addplot [color=Crimson, dashed] coordinates {(0,0.5)(10,0.5)};
-    \end{axis}
 
-    \draw (0.55,0.02) node [below] {$\frac{1}{n}$};
-    \draw (1.15,0.02) node [below] {$\frac{2}{n}$};
-    \draw (5.15,0.02) node [below] {$\frac{n}{n}$};
-    \draw (0.02,1) node [left] {$\alpha$};
-    \draw (0.02,0.3) node [left] {\color{Crimson}Bonferroni: $\frac{\alpha}{n}$};
-    \end{tikzpicture}
-%\caption{Sorted $p$-values}\label{fig:p}
-%\end{figure}
-\end{document}
-```
 
-A multiple testing algorithm using $p$-values is of the form
+A multiple testing algorithm using p-values is of the form
 $$
 A: [0,1]^{n}\to 2^{\{ 1,\dots,n  \}} \cong \{ 0,1 \}^{n},\quad \vec{p}\mapsto R.
 $$
@@ -114,7 +60,7 @@ One simple algorithm of this kind is the Bonferroni algorithm.
 
 > [!def]  Bonferroni
 >
-> Let $\alpha\in(0,1)$ be the family-wise error rate (FWER). Let $\{p_i\}_{i=1}^{n}$ be the $p$-values of individual tests. The Bonferroni algorithm returns
+> Let $\alpha\in(0,1)$ be the family-wise error rate (FWER). Let $\{p_i\}_{i=1}^{n}$ be the p-values of individual tests. The Bonferroni algorithm returns
 > $$
 > A(\vec{p}) = \{ i: p_{i}\le \alpha /n \}.
 > $$
@@ -138,7 +84,7 @@ We remark that the Bonferroni algorithm works for dependent tests. Nonetheless, 
 
 > [!ex] Gaussian
 >
-> Consider data $X \sim \mathcal{N}(\theta,I)$, null hypotheses $H_{0,i}: \theta_{i}=0$, and one-sided $p$-values $p_{i} = 1-\Phi(X_{i})$. Then, the Bonferroni algorithm rejects $H_{0,i}$ if $p_{i}\le \alpha/n$, which is equivalent to $X_{i}\ge -\Phi^{-1}(\alpha/n)$.
+> Consider data $X \sim \mathcal{N}(\theta,I)$, null hypotheses $H_{0,i}: \theta_{i}=0$, and one-sided p-values $p_{i} = 1-\Phi(X_{i})$. Then, the Bonferroni algorithm rejects $H_{0,i}$ if $p_{i}\le \alpha/n$, which is equivalent to $X_{i}\ge -\Phi^{-1}(\alpha/n)$.
 > See [@fig:g] for a visualization of how the Bonferroni algorithm controls the cumulative tail probability.
 
 ```tikz
