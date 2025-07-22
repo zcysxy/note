@@ -1,5 +1,5 @@
 ---
-{"publish":true,"title":"Multiple Hypothesis Testing","created":"2024-11-14T13:36:19","modified":"2025-07-22T16:00:19","cssclasses":"","state":"done","sup":["[[Statistics]]"],"aliases":null,"type":"output","output":{"pdf_document":{"defaults":".config/pandoc/defaults/pdf","output":"scribe.pdf","template":"statscribe.tex"}},"header-includes":["\\usepackage{pgfplots}","\\usetikzlibrary{calc}","\\PassOptionsToPackage{dvipsnames,svgnames}{xcolor}","\\usepackage[dvipsnames,svgnames]{xcolor}","\\usepgfplotslibrary{fillbetween}"],"author":"Chenyu Zhang","date":"November 14","lec-num":17,"secnumdepth":2}
+{"publish":true,"title":"Multiple Hypothesis Testing","created":"2024-11-14T13:36:19","modified":"2025-07-22T16:02:08","cssclasses":"","state":"done","sup":["[[Statistics]]"],"aliases":null,"type":"output","output":{"pdf_document":{"defaults":".config/pandoc/defaults/pdf","output":"scribe.pdf","template":"statscribe.tex"}},"header-includes":["\\usepackage{pgfplots}","\\usetikzlibrary{calc}","\\PassOptionsToPackage{dvipsnames,svgnames}{xcolor}","\\usepackage[dvipsnames,svgnames]{xcolor}","\\usepgfplotslibrary{fillbetween}"],"author":"Chenyu Zhang","date":"November 14","lec-num":17,"secnumdepth":2}
 ---
 
 
@@ -47,8 +47,7 @@ A key question in designing a multiple testing algorithm is how to combine the r
 However, this signal does not directly translate into that all p-values below a certain threshold are significant. Because even when all nulls are true, due to the high dimension, some of their p-values will be small by chance.
 Thus, the observed signal suggests only a systematic departure from the null hypothesis rather than significance for each individual p-value.
 
-![](https://raw.githubusercontent.com/zcysxy/Figurebed/master/img/mhtp.svg)
-- [c] Figure. Sorted p-values
+![Sorted p-values.](https://raw.githubusercontent.com/zcysxy/Figurebed/master/img/mhtp.svg)
  ^fig-p
 
 
@@ -61,27 +60,25 @@ One simple algorithm of this kind is the Bonferroni algorithm.
 
 ## Bonferroni Algorithm
 
-> [!def]  Bonferroni
->
-> Let $\alpha\in(0,1)$ be the family-wise error rate (FWER). Let $\{p_i\}_{i=1}^{n}$ be the p-values of individual tests. The Bonferroni algorithm returns
-> $$
-> A(\vec{p}) = \{ i: p_{i}\le \alpha /n \}.
-> $$
+Let $\alpha\in(0,1)$ be the family-wise error rate (FWER). Let $\{p_i\}_{i=1}^{n}$ be the p-values of individual tests. The Bonferroni algorithm returns
+$$
+A(\vec{p}) = \{ i: p_{i}\le \alpha /n \}.
+$$
 
 > [!prop] FWER control for Bonferroni
 >
 > The Bonferroni algorithm controls the FWER at level $\alpha$.
-
-> [!proof]
 >
-> By definition, the FWER is
-> $$
-> \P(\exists i: p_{i}\le \alpha /n) = \P(\cup_{i\in\mathcal{N}} \{ p_{i}\le \alpha /n \}) ,
-> $$
-> where $\mathcal{N} = \{ 1\le i\le n: H_{0,i} \text{ is true} \}$. Then, by the union bound,
-> $$
-> \P(\cup_{i\in\mathcal{N}} \{ p_{i}\le \alpha /n \}) \le \sum_{i\in\mathcal{N}} \P(p_{i}\le \alpha /n)\le \sum_{i\in\mathcal{N}} \alpha /n \le \alpha.
-> $$
+> > [!proof]-
+> >
+> > By definition, the FWER is
+> > $$
+> > \P(\exists i: p_{i}\le \alpha /n) = \P(\cup_{i\in\mathcal{N}} \{ p_{i}\le \alpha /n \}) ,
+> > $$
+> > where $\mathcal{N} = \{ 1\le i\le n: H_{0,i} \text{ is true} \}$. Then, by the union bound,
+> > $$
+> > \P(\cup_{i\in\mathcal{N}} \{ p_{i}\le \alpha /n \}) \le \sum_{i\in\mathcal{N}} \P(p_{i}\le \alpha /n)\le \sum_{i\in\mathcal{N}} \alpha /n \le \alpha.
+> > $$
 
 We remark that the Bonferroni algorithm works for dependent tests. Nonetheless, the following example on independent Gaussian helps us understand the algorithm.
 
@@ -90,7 +87,7 @@ We remark that the Bonferroni algorithm works for dependent tests. Nonetheless, 
 > Consider data $X \sim \mathcal{N}(\theta,I)$, null hypotheses $H_{0,i}: \theta_{i}=0$, and one-sided p-values $p_{i} = 1-\Phi(X_{i})$. Then, the Bonferroni algorithm rejects $H_{0,i}$ if $p_{i}\le \alpha/n$, which is equivalent to $X_{i}\ge -\Phi^{-1}(\alpha/n)$.
 > See [[Multiple Hypothesis Testing#^fig-g]] for a visualization of how the Bonferroni algorithm controls the cumulative tail probability.
 
-![Figure. The Bonferroni algorithm on Gaussian data](https://raw.githubusercontent.com/zcysxy/Figurebed/master/img/mhtbon.svg)
+![The Bonferroni algorithm on Gaussian data.](https://raw.githubusercontent.com/zcysxy/Figurebed/master/img/mhtbon.svg)
 ^fig-g
 
 name path=density,
