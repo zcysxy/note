@@ -9,15 +9,16 @@ export const TikzTransformer: QuartzTransformerPlugin = () => {
       return {
         js: [
           {
-            src: "https://tikzjax.com/v1/tikzjax.js",
+            src: "../../static/tikzjax/tikzjax.js",
             loadTime: "beforeDOMReady",
             contentType: "external",
             async: true,
+						attribute: {"data-tex-packages": '{ "array": "", "pgfplots": "" }'}
           },
         ],
         css: [
           {
-            src: "http://tikzjax.com/v1/fonts.css",
+            src: "../../static/tikzjax/fonts.css",
             loadTime: "beforeDOMReady",
             contentType: "external",
           },
