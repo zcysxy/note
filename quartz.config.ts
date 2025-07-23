@@ -90,6 +90,7 @@ const config: QuartzConfig = {
 					"\\given": "\\mid",
 					"\\d": "\\mathrm{d}",
 					"\\Perp": "\\perp\\!\\!\\!\\perp",
+					"\\1": "\\mathbb{1}",
 				},
 			}),
 			Plugin.FigureCaptions(),
