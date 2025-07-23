@@ -1,5 +1,5 @@
 ---
-{"publish":true,"title":"Multiple Hypothesis Testing","created":"2024-11-14T13:36:19","modified":"2025-07-22T19:57:00","cssclasses":"","state":"done","sup":["[[Statistics]]"],"aliases":null,"type":"output","output":{"pdf_document":{"defaults":".config/pandoc/defaults/pdf","output":"scribe.pdf","template":"statscribe.tex"}},"header-includes":["\\usepackage{pgfplots}","\\usetikzlibrary{calc}","\\PassOptionsToPackage{dvipsnames,svgnames}{xcolor}","\\usepackage[dvipsnames,svgnames]{xcolor}","\\usepgfplotslibrary{fillbetween}"],"author":"Chenyu Zhang","date":"November 14","lec-num":17,"secnumdepth":2}
+{"publish":true,"title":"Multiple Hypothesis Testing","created":"2024-11-14T13:36:19","modified":"2025-07-22T20:05:46","cssclasses":"","state":"done","sup":["[[Statistics]]"],"aliases":null,"type":"output","output":{"pdf_document":{"defaults":".config/pandoc/defaults/pdf","output":"scribe.pdf","template":"statscribe.tex"}},"header-includes":["\\usepackage{pgfplots}","\\usetikzlibrary{calc}","\\PassOptionsToPackage{dvipsnames,svgnames}{xcolor}","\\usepackage[dvipsnames,svgnames]{xcolor}","\\usepgfplotslibrary{fillbetween}"],"author":"Chenyu Zhang","date":"November 14","lec-num":17,"secnumdepth":2}
 ---
 
 
@@ -171,17 +171,17 @@ Also note that without the bound's dependence on $i$, the BH algorithm reduces t
 >
 > > [!proof]-
 > > We first define the confusion matrix:
-> > 
+> >
 > > | \#    | Accepted | Rejected |
 > > | ----- | -------- | -------- |
 > > | True  | $U$      | $V$      |
 > > | False | $T$      | $S$      |
-> > 
+> >
 > > ^tbl-confusion
-> > 
+> >
 > > And we denote $N$ as the index set of true nulls; $R$ is the rejection set as before. With a slight abuse of notation, we use $N$ and $R$ to also denote the number of true nulls and the number of rejections, respectively.
 > > Then, $U+V = N$, $T+S = n-N$, $U+T = n-R$, and $V+S = R$.
-> > 
+> >
 > > Define the indicator $V_{i} = \1_{ \{ i\in R \} }$. By definition, we have
 > > $$
 > > \begin{aligned}
