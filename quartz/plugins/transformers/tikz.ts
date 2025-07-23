@@ -9,7 +9,7 @@ export const TikzTransformer: QuartzTransformerPlugin = () => {
       return {
         js: [
           {
-            src: "../../static/tikzjax/tikzjax.js",
+            src: "https://zcysxy.github.io/quartz/static/tikzjax/tikzjax.js",
             loadTime: "beforeDOMReady",
             contentType: "external",
             async: true,
@@ -18,7 +18,7 @@ export const TikzTransformer: QuartzTransformerPlugin = () => {
         ],
         css: [
           {
-            src: "../../static/tikzjax/fonts.css",
+            src: "https://zcysxy.github.io/quartz/static/tikzjax/fonts.css",
             loadTime: "beforeDOMReady",
             contentType: "external",
           },
