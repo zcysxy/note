@@ -108,7 +108,7 @@ The following proposition gives an approximation of $\Phi^{-1}(-\alpha / n)$ for
 
 [[Multiple Hypothesis Testing#^fig-a]] gives an illustration of how $\sqrt{ 2\log n }$ approximates $\Phi^{-1}(-\alpha/n)$ when $\alpha=0.05$.
 
-![Approximation of $\Phi^{-1}(-\alpha/n)$.}](https://raw.githubusercontent.com/zcysxy/Figurebed/master/img/maxclt.png)
+![Approximation of $\Phi^{-1}(-\alpha/n)$.|300](https://raw.githubusercontent.com/zcysxy/Figurebed/master/img/maxclt.png)
 ^fig-a
 
 ### Sparsity Connection
