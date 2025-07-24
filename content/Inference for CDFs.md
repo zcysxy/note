@@ -1,5 +1,5 @@
 ---
-{"publish":true,"aliases":["Glivenko–Cantelli Theorem","Dvorak–Kiefer–Wolfowitz Theorem","DKW","CDF Inference","Donsker"],"title":"Inference for CDFs","created":"2025-07-23T02:31:36","modified":"2025-07-23T18:31:27","cssclasses":"","state":"done","sup":["[[Statistics]]"],"type":"note"}
+{"publish":true,"aliases":["Glivenko–Cantelli Theorem","Dvoretzky–Kiefer–Wolfowitz Theorem","DKW","CDF Inference","Donsker"],"title":"Inference for CDFs","created":"2025-07-23T02:31:36","modified":"2025-07-23T22:39:01","cssclasses":"","state":"[[%watch]]","sup":["[[Statistics]]"],"type":"note"}
 ---
 
 
@@ -63,7 +63,7 @@ One can verify that $\hat{F}_{n}$ is a valid CDF as it's monotonic, right contin
 \end{document}
 ```
 
-For any distribution $P$ with CDF $F$, the [[Inference for CDFs#Glivenko–Cantelli]] theorem states the asymptotic almost sure convergence of $\|\hat{F}_{n}-F\|_{\infty }$, [[Inference for CDFs#Donsker]]'s theorem states its asymptotic convergence in distribution, and [[Inference for CDFs#Dvorak–Kiefer–Wolfowitz]] theorem gives the non-asymptotic convergence rate.
+For any distribution $P$ with CDF $F$, the [[Inference for CDFs#Glivenko–Cantelli]] theorem states the asymptotic almost sure convergence of $\|\hat{F}_{n}-F\|_{\infty }$, [[Inference for CDFs#Donsker]]'s theorem states its asymptotic convergence in distribution, and [[Inference for CDFs#Dvoretzky–Kiefer–Wolfowitz]] theorem gives the non-asymptotic convergence rate.
 
 ## Glivenko–Cantelli
 
@@ -95,7 +95,7 @@ Letting $m\to \infty$ gives the result.
 
 
 
-## Dvorak–Kiefer–Wolfowitz
+## Dvoretzky–Kiefer–Wolfowitz
 
 $\hat{F}_{n}$ converges uniformly to the true CDF $F$ with a subGaussian tail bound:
 $$
@@ -104,11 +104,29 @@ $$
 
 ### Proof
 
-Let $M_{n}\coloneqq \sup_{t}|\hat{F}_{n}(t)-F(t)|$. One important observation is that "stretching the x-axis" does not change $M_{n}$. Therefore, we can arbitrarily stretch $F$ along the x-axis to make it arbitrarily close to $F_{\mathrm{Unif}[0,1]}$
+Let $M_{n}\coloneqq \sup_{t}|\hat{F}_{n}(t)-F(t)|$. One important observation is that "stretching the x-axis" does not change $M_{n}$. Therefore, we can arbitrarily stretch $F$ along the x-axis to make it arbitrarily close to $F_{\mathrm{Unif}[0,1]}$.
+
+Formally, we notice that
+$$\hat{F}_{n}(t) = \frac{1}{n}\sum_{i=1}^{n}\mathbb{1}_{\{t \ge X_{i}\}}$$
+is the average of $n$ iid Bernoulli r.v.s with parameter $\mathbb{E}[\mathbb{1}_{\{ t\ge X_{i} \}}]=P(X_{i}\le t) = F(t)$. Let
+$$
+\hat{G}_n(F(t)) = \frac{1}{n} \sum_{i=1}^{n} \mathbb{1}_{\{ F(t) \ge U_{i} \}},
+$$
+where $U_{i} \overset{ \text{iid} }{ \sim } \operatorname{Unif}[0,1]$. We can see that $\mathbb{1}\{ F(t)\ge U_{i} \}$ is also a Bernoulli r.v. with parameter $F(t)$. Therefore,
+$$
+\hat{F}_{n}(t) \overset{ d }{ = } \hat{G}_{n}(F(t)).
+$$
+This gives
+$$
+\sup_{t\in\R}|\hat{F}_{n}(t) - F(t)| \overset{ d }{ = } \sup_{t\in[0,1]}|\hat{G}_{n}(F(t)) - F(t)| = \sup_{s\in \operatorname{range}(F)} |\hat{G}_{n}(s) - s| \le \sup_{s\in[0,1]} |\hat{G}_{n}(s) - s|,
+$$
+where the equality holds iff $\operatorname{range}(F)=[0,1]$ iff $F$ is continuous.
+
+Note that $\hat{G}_n$ is just the empirical CDF of the uniform distribution. Therefore, $M_n$ has the same distribution for any continuous $F$. We call such a distribution-invariant statistic a ==pivotal statistic==.
+
+Apply some concentration analysis to the supreme of uniform empirical CDF gives the desired result.
 
 
-
-We call such a distribution-invariant quantity $M_{n}$ as pivotal.
 
 ## Donsker
 
