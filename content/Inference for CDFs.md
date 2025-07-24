@@ -1,5 +1,5 @@
 ---
-{"publish":true,"aliases":["Glivenko–Cantelli Theorem","Dvoretzky–Kiefer–Wolfowitz Theorem","DKW","CDF Inference","Donsker"],"title":"Inference for CDFs","created":"2025-07-23T02:31:36","modified":"2025-07-23T22:39:01","cssclasses":"","state":"[[%watch]]","sup":["[[Statistics]]"],"type":"note"}
+{"publish":true,"aliases":["Glivenko–Cantelli Theorem","Dvoretzky–Kiefer–Wolfowitz Theorem","DKW","CDF Inference","Donsker"],"title":"Inference for CDFs","created":"2025-07-23T02:31:36","modified":"2025-07-23T22:39:01","cssclasses":"","state":"[[%watch]]","sup":["[[Statistics]]","[[Cumulative Distribution Function]]"],"type":"note"}
 ---
 
 
@@ -12,56 +12,7 @@ $$
 $$
 One can verify that $\hat{F}_{n}$ is a valid CDF as it's monotonic, right continuous, and has limits $0$ and $1$.
 
-```tikz
-\usepackage{pgfplots}
-\begin{document}
-\begin{tikzpicture}
 
-\begin{axis}[
-    xlabel={$t$},
-    ylabel={$F(t)$},
-    xmin=0, xmax=6,
-    ymin=0, ymax=1.1,
-    axis lines=left,
-    grid=major,
-    legend pos=south east,
-]
-
-\addplot[
-    red,
-    thick,
-    domain=0:6,
-    samples=100,
-] {1 / (1 + exp(-1.5*(x-3)))};
-\addlegendentry{Theoretical CDF}
-
-\addplot[blue, thick, mark=none] coordinates {(0,0)};
-\addlegendentry{Empirical CDF}
-\addplot[
-    jump mark left,
-    mark=*,
-    mark size=1pt,
-    blue,
-    thick,
-] coordinates {
-    (0, 0)      % Start at the origin
-    (1.5, 0.1)
-    (2.1, 0.2)
-    (2.5, 0.3)
-    (2.8, 0.4)
-    (3.0, 0.5)
-    (3.2, 0.6)
-    (3.5, 0.7)
-    (3.9, 0.8)
-    (4.4, 0.9)
-    (5.0, 1.0)
-    (6, 1.0)      % Extend to the plot edge
-};
-
-\end{axis}
-\end{tikzpicture}
-\end{document}
-```
 
 For any distribution $P$ with CDF $F$, the [[Inference for CDFs#Glivenko–Cantelli]] theorem states the asymptotic almost sure convergence of $\|\hat{F}_{n}-F\|_{\infty }$, [[Inference for CDFs#Donsker]]'s theorem states its asymptotic convergence in distribution, and [[Inference for CDFs#Dvoretzky–Kiefer–Wolfowitz]] theorem gives the non-asymptotic convergence rate.
 
