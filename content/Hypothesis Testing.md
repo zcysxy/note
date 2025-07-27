@@ -110,7 +110,9 @@ $$
 $$
 where $k$ is chosen such that the test has a significance level $\alpha$.
 
-This method is called the ==likelihood ratio test==.
+This method is called the ==likelihood ratio test (LRT)==.
+
+We can see that LRT is closely related to [[Hypothesis Testing#Wald Test]] with MLE: Wald statistic measures the closeness of the MLE to the null value (x-axis), while LRT measures the closeness of their likelihoods (y-axis). Under certain regularity conditions, the two measures are equivalent.
 
 
 </div>

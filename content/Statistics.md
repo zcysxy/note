@@ -49,7 +49,7 @@ AA --- BB --- CC
     - [[Total Variation Distance]]
     - [[KL Divergence]]
 
-- Estimation
+- [[Estimation]]
     - Point Estimation
         - [[Evaluating an Estimator]]
         - [[Maximum Likelihood Estimation]]
@@ -64,8 +64,11 @@ AA --- BB --- CC
         - [[Bayes Optimal Test]]
         - [[Uniformly Most Powerful Test]]
     - [[p-value]]
-- [[Prediction]]/[[Regression]]
-    - [[ANOVA]]
+- [[Regression]]
+- [[Prediction]]
+    - [[Probably Approximately Correct]]
+    - [[Conformal Prediction]]
+    - [[Risk-Control Prediction]]
 
 ## Advanced Topics
 
@@ -78,6 +81,8 @@ AA --- BB --- CC
     - [[Bayes Optimal Test]]
     - [[Multiple Hypothesis Testing]]
     - [[Goodness of Fit Test]]
+    - [[Permutation Test]]
+    - [[ANOVA]]
 - Hypothesis testing and other statistical procedures
     - [[Confidence Interval and Hypothesis Test Duality]]
     - [[Hardness of Simple Hypothesis Test Through Total Variation]]
