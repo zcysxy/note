@@ -1,5 +1,5 @@
 ---
-{"publish":true,"aliases":["index"],"title":"*Sufficient* of Statistics","created":"2023-10-17T21:41:50","modified":"2025-07-23T04:10:54","cssclasses":"","type":"index","sup":["[[Math]]"],"state":"[[%wip]]","banner":"https://raw.githubusercontent.com/zcysxy/Figurebed/master/img/20231017221426.png","banner_icon":"🔮","reference":"AOS"}
+{"publish":true,"aliases":["index"],"title":"*Sufficient* of Statistics","created":"2023-10-17T21:41:50","modified":"2025-07-27T20:39:18","cssclasses":"","type":"index","sup":["[[Math]]"],"state":"[[%wip]]","banner":"https://raw.githubusercontent.com/zcysxy/Figurebed/master/img/20231017221426.png","banner_icon":"🔮","reference":"AOS"}
 ---
 
 
@@ -72,9 +72,12 @@ AA --- BB --- CC
 
 ## Advanced Topics
 
-- [[Expectation Maximization]]
-- [[Statistical Functional]]
+- Advanced concepts
+    - [[Sufficient Statistic]]
+    - [[Statistical Functional]]
+    - [[Admissibility]]
 - [[Inference for CDFs]]
+- [[Expectation Maximization]]
 - More on hypothesis testing
     - [[Likelihood Ratio Test]]
     - [[Uniformly Most Powerful Test]]
