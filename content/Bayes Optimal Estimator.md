@@ -100,4 +100,4 @@ When $\mu_{0}=0$ and $\tau^{2} = \sigma^{2} /n$, we have $A^{*}(X) = \overline{X
 
 The following figure plots the risk (MSE with $\sigma^{2}=1$) for different estimators. We can see that, unlike sample mean or sample median, which have a constant risk regardless of $\theta$, the regularized sample mean has a lower risk when $\theta$ is small, but underestimate when $\theta$ is large. Therefore, if the prior puts more belief on small $\theta$, the regularized sample mean has a smaller Bayes risk.
 
-![[excalidraw/gaussian-mean-risk.excalidraw]]
+![Risk of different estimators.](excalidraw/gaussian-mean-risk.excalidraw.svg)
