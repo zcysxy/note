@@ -1,5 +1,5 @@
 ---
-{"publish":true,"aliases":["index"],"title":"*Sufficient* of Statistics","created":"2023-10-17T21:41:50","modified":"2025-07-27T20:39:18","cssclasses":"","type":"index","sup":["[[Math]]"],"state":"[[%wip]]","banner":"https://raw.githubusercontent.com/zcysxy/Figurebed/master/img/20231017221426.png","banner_icon":"🔮","reference":"AOS"}
+{"publish":true,"aliases":["index"],"title":"*Sufficient* of Statistics","created":"2023-10-17T21:41:50","modified":"2025-07-30T18:06:02","cssclasses":"","type":"index","sup":["[[Math]]"],"state":"[[%wip]]","banner":"https://raw.githubusercontent.com/zcysxy/Figurebed/master/img/20231017221426.png","banner_icon":"🔮","reference":"AOS"}
 ---
 
 
@@ -24,24 +24,9 @@ end
 AA --- BB --- CC
 ```
 
-- [c] Table. Statistics dictionary
+## Map of Contents
 
-| Statistics                          | **[[Machine Learning]]**            |
-| ----------------------------------- | ----------------------------------- |
-| [[Estimation]]                      | [[Machine Learning\|learning]]      |
-| [[Confidence Interval\|confidence]] | uncertainty                         |
-| [[Regression]]                      | [[Supervised Learning]]             |
-| [[Clustering]]                      | [[Unsupervised Learning]]           |
-| [[Hypothesis Testing\|hypothesis]]  | [[Classification]]                  |
-| covariates                          | features                            |
-| coefficient                         | weight                              |
-| predictor                           | input                               |
-| response                            | output                              |
-| intercept                           | bias                                |
-| derived predictor                   | [[Hidden Units]]                    |
-| penalty function                    | [[L2 Regularization\|weight decay]] |
-
-## Basic Concepts
+### Basic Concepts
 
 - [[Statistical Model]]
 - [[Statistical Decision Theory]]
@@ -70,7 +55,7 @@ AA --- BB --- CC
     - [[Conformal Prediction]]
     - [[Risk-Control Prediction]]
 
-## Advanced Topics
+### Advanced Topics
 
 - Advanced concepts
     - [[Sufficient Statistic]]
@@ -91,11 +76,30 @@ AA --- BB --- CC
     - [[Hardness of Simple Hypothesis Test Through Total Variation]]
     - [[Hardness of Estimation Through Testing]]
 
-## Interactive Notebooks
+### Interactive Notebooks
 
 - [[Tail Bounds and Concentration Inequalities]]
 - [[Constructing Confidence Interval]]
 - [[Best Estimator for Uniform Distribution Parameter]]
+
+## Statistics and Machine Learning
+
+
+
+| Statistics                          | **[[Machine Learning]]**            |
+| ----------------------------------- | ----------------------------------- |
+| [[Estimation]]                      | [[Machine Learning\|learning]]      |
+| [[Confidence Interval\|confidence]] | uncertainty                         |
+| [[Regression]]                      | [[Supervised Learning]]             |
+| [[Clustering]]                      | [[Unsupervised Learning]]           |
+| [[Hypothesis Testing\|hypothesis]]  | [[Classification]]                  |
+| covariates                          | features                            |
+| coefficient                         | weight                              |
+| predictor                           | input                               |
+| response                            | output                              |
+| intercept                           | bias                                |
+| derived predictor                   | [[Hidden Units]]                    |
+| penalty function                    | [[L2 Regularization\|weight decay]] |
 
 ## Probability and Statistics
 
