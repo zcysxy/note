@@ -115,6 +115,6 @@ Take the [sunrise problem](https://en.wikipedia.org/wiki/Sunrise_problem): "Will
 A frequentist would say it definitely will, as it always has—there’s no empirical evidence (e.g., the sun ever failing to rise) that justifies treating it as a random event. Even if they model it as a random experiment, say a Bernoulli trial, the repeated success would lead them to conclude the sun will rise tomorrow with probability one.
 A Bayesian with no prior knowledge would update their belief as they observe the sun rise day after day, assigning an increasingly high probability to it happening again tomorrow, but never quite reaching certainty until the end of time.
 
-![The "density" plot of the answer from frequentists and Bayesians.](bayes.excalidraw)
+![The "density" plot of the answer from frequentists and Bayesians.](excalidraw/bayes.excalidraw.svg)
 
 Frequentist and Bayesian perspectives can be unified through the lens of [[Optimization]]: a frequentist seeks the parameter that [[Empirical Risk Minimization\|minimizes the empirical risk]], while a Bayesian seeks a posterior distribution that minimizes an energy functional using a variational formulation. With more samples, both follow gradient descent type dynamics toward the minimizer, with the convergence rate captured by a [[Poincare Inequality\|Poincaré type inequality]].
