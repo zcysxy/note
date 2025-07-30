@@ -1,5 +1,5 @@
 ---
-{"publish":true,"title":"Bayes Optimal Estimator","created":"2025-06-27T22:22:59","modified":"2025-06-28T00:04:40","cssclasses":"","state":"done","sup":["[[Estimation]]","[[Bayes Estimation]]"],"aliases":null,"type":"note","related":["[[Risk]]"]}
+{"publish":true,"title":"Bayes Optimal Estimator","created":"2025-06-27T22:22:59","modified":"2025-06-28T00:04:40","cssclasses":"","state":"done","sup":["[[Estimation]]","[[Bayesian Inference]]"],"aliases":null,"type":"note","related":["[[Risk]]"]}
 ---
 
 
@@ -61,7 +61,7 @@ $$
 
 ## Minimizing Posterior Risk
 
-After calculating the posterior (see [[Bayes Estimation]] for discussion on the calculation of posterior), the next question is how to calculate the Bayes estimator, i.e., find the minimizer of the posterior risk.
+After calculating the posterior (see [[Bayesian Inference]] for discussion on the calculation of posterior), the next question is how to calculate the Bayes estimator, i.e., find the minimizer of the posterior risk.
 
 For certain loss functions, their posterior risk minimizers are common functional of the posterior:
 

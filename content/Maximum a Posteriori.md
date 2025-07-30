@@ -1,11 +1,11 @@
 ---
-{"publish":true,"aliases":["MAP"],"title":"Maximum a Posteriori","created":"2023-01-31T15:04:22","modified":"2023-02-06T14:43:43","cssclasses":"","type":"note","sup":["[[Probability Theory]]","[[Linear Regression]]","[[Bayes Estimation]]"],"state":"done","related":["[[Ridge Regression]]"]}
+{"publish":true,"aliases":["MAP"],"title":"Maximum a Posteriori","created":"2023-01-31T15:04:22","modified":"2023-02-06T14:43:43","cssclasses":"","type":"note","sup":["[[Probability Theory]]","[[Linear Regression]]","[[Bayesian Inference]]"],"state":"done","related":["[[Ridge Regression]]"]}
 ---
 
 
 # Maximum a Posteriori
 
-As in the [[Bayes Estimation]], we have a posterior distribution given a prior distribution and the observation. However, instead of taking the expectation, we can also apply the [[Maximum Likelihood Estimation]], which gives the **maximum a posteriori (MAP)** estimation.
+As in [[Bayesian Inference]], we have a posterior distribution given a prior distribution and the observation. However, instead of taking the expectation, we can also apply the [[Maximum Likelihood Estimation]], which gives the **maximum a posteriori (MAP)** estimation.
 
 $$\begin{aligned}
 w_{\mathrm{MAP}} & =\argmax _w \ln p(w \mid y, X) \\

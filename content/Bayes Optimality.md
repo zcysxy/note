@@ -1,5 +1,5 @@
 ---
-{"publish":true,"title":"Bayes Optimality","created":"2023-09-20T21:26:09","modified":"2025-06-27T23:04:22","cssclasses":"","aliases":null,"type":"note","sup":["[[Machine Learning]]","[[Statistical Learning]]","[[Risk]]"],"state":"done","related":["[[Classification]]","[[Bayesian Statistics]]","[[Bayes Optimal Test]]","[[Bayes Optimal Estimator]]","[[Bayesian Linear Regression]]"]}
+{"publish":true,"title":"Bayes Optimality","created":"2023-09-20T21:26:09","modified":"2025-06-27T23:04:22","cssclasses":"","aliases":null,"type":"note","sup":["[[Machine Learning]]","[[Statistical Learning]]","[[Risk]]"],"state":"done","related":["[[Classification]]","[[Bayesian Inference]]","[[Bayes Optimal Test]]","[[Bayes Optimal Estimator]]","[[Bayesian Linear Regression]]"]}
 ---
 
 

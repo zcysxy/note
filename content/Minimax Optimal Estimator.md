@@ -121,7 +121,7 @@ The first step establishes that $R_{M}(A_{M}) = R(A_{M}) = R_{B}(A_{M},Q)$ and t
 
 We will show that with [[Mean Squared Error\|MSE]], the sample mean of Bernoulli trials $X \sim \operatorname{Binom}(n,\theta)$ is not a minimax estimator of $\theta$, and we will find a minimax estimator.
 
-Recall that the [[Bayes Estimation#Conjugate Prior]] of [[Binomial Distribution\|binomial]] is [[Beta Distribution]]:
+Recall that the [[Bayesian Inference#Conjugate Prior]] of [[Binomial Distribution\|binomial]] is [[Beta Distribution]]:
 $$
 (\theta \sim \operatorname{Beta}(a,b)) \ast ( x \sim  \operatorname{Binom}(n,\theta)) = \theta \sim \operatorname{Beta}(a+n,b+n-x),
 $$

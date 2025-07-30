@@ -1,5 +1,5 @@
 ---
-{"publish":true,"created":"2023-08-02T18:42:38","modified":"2025-06-28T04:44:06","cssclasses":"","type":"index","sup":["[[Machine Learning]]","[[Statistics]]"],"state":"done"}
+{"publish":true,"created":"2023-08-02T18:42:38","modified":"2025-07-30T02:57:19","cssclasses":"","type":"index","sup":["[[Machine Learning]]","[[Statistics]]"],"state":"done"}
 ---
 
 
@@ -10,7 +10,7 @@
 > - Types of estimation
 >     - [[Estimation#Point Estimation]]
 >     - [[Confidence Interval]]/Region
->     - [[Bayes Estimation]]
+>     - [[Bayesian Inference]]
 > - Metric
 >     - [[Evaluating an Estimator]]
 >         - Probabilistic properties
@@ -59,7 +59,7 @@ $$
 $$
 The parameter space $\Theta$ can be one-dimensional, multi-dimensional, or even a function space. When the sample $X=(X_{1},\dots,X_{n})$ has a sample size/dimension of $n$, we also conventionally write $\hat{\theta}_{n}$ to denote the point estimator.
 
-In contrast to point estimation, [[Confidence Interval]]/region returns a subset of the parameter space $\hat{C}\in 2^{\Theta}$, and [[Bayes Estimation]] returns a distribution over the parameter space $\hat{P}\in \Delta(\Theta)$.
+In contrast to point estimation, [[Confidence Interval]]/region returns a subset of the parameter space $\hat{C}\in 2^{\Theta}$, and [[Bayesian Inference]] returns a distribution over the parameter space $\hat{P}\in \Delta(\Theta)$.
 
 
 
@@ -73,14 +73,19 @@ In contrast to point estimation, [[Confidence Interval]]/region returns a subset
 
 ### Bayesian Estimation
 
-- [[Maximum a Posteriori\|MAP]] returns the **mode** of the posterior distribution.
-- [[Bayes Optimal Estimator]] returns the
-    - **mean** of the posterior distribution for [[Mean Squared Error]], or any [[Bowl-Shaped Loss]] with a Gaussian posterior;
-    - **median** of the posterior distribution for absolute error loss $L(\hat{\theta},\theta)= |\hat{\theta}-\theta|$;
-    - **mode** of the posterior distribution for zero-one loss $L(\hat{\theta},\theta)= \mathbb{I}(\hat{\theta}\ne\theta)$.
+<div class="transclude" data-embed-alias="  " data-url="Bayesian Inference"> 
+
+* [[Maximum a Posteriori]], which returns the **mode** of the posterior distribution.
+* [[Bayes Optimal Estimator]], which returns the
+    * **mean** of the posterior distribution for [[Mean Squared Error]], or any [[Bowl-Shaped Loss]] with a Gaussian posterior;
+    * **median** of the posterior distribution for absolute error loss $L(\hat{\theta},\theta)= |\hat{\theta}-\theta|$;
+    * **mode** of the posterior distribution for zero-one loss $L(\hat{\theta},\theta)= \mathbb{I}(\hat{\theta}\ne\theta)$.
+
+</div>
+ <a href="Bayesian Inference" class="internal transclude-src">Link to original</a>
 
 ### Bayes vs Frequentist
 
-- The [[Bayes Estimation\|Bayesian approach]] has been criticized for its over-reliance on convenient priors and lack of robustness.
+- The [[Bayesian Inference\|Bayesian approach]] has been criticized for its over-reliance on convenient priors and lack of robustness.
 - The frequentist approach, such as [[Maximum Likelihood Estimation\|MLE]], has been criticized for its inflexibility (failure to incorporate prior information) and incoherence (failure to process information systematically).
 - For large sample sizes ($n$), or when the prior is uniform, the Bayesian method tends to yield results similar to those of the classical likelihood approach.
