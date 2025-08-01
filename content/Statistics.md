@@ -28,12 +28,13 @@ AA --- BB --- CC
 
 ### Basic Concepts
 
-- [[Statistical Model]]
-- [[Statistical Decision Theory]]
-- [[f-Divergence]]
-    - [[Total Variation Distance]]
-    - [[KL Divergence]]
-
+- Setup
+    - [[Statistical Model]]
+    - [[Statistical Decision Theory]]
+    - [[Risk]]
+    - [[f-Divergence]]
+        - [[Total Variation Distance]]
+        - [[KL Divergence]]
 - [[Estimation]]
     - Point Estimation
         - [[Evaluating an Estimator]]

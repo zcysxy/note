@@ -3,7 +3,7 @@
 ---
 
 
-# Bayesian Statistics
+# Bayesian Inference
 
 In ==frequentist== statistics, the best [[Statistical Decision Theory\|decision]] is unique and thus has a single value.
 For example, in [[Regression]], the data is assumed to be generated corresponding to a fixed parameter, and we aim to recover this parameter, using methods such as [[Maximum Likelihood Estimation]], and then make [[Prediction]]s based on that point estimate of the parameter.
@@ -17,7 +17,7 @@ This probability distribution over the model or its parameter is referred to as 
 Once the data is observed, we should update our belief to incorporate the new information.
 This is done by updating the prior distribution using [[Bayes' theorem]] conditioned on the observed data, resulting in the ==posterior distribution==.
 
-Bayesian statistics is primarily concerned with inferring the underlying model (==Bayesian estimation==), from which we can make further decisions (Bayesian inference).
+Bayesian statistics is primarily concerned with inferring the underlying model (==Bayesian estimation==), from which we can make further decisions (==Bayesian inference==).
 
 
 
@@ -100,7 +100,7 @@ For point estimators, we have
 
 ^bayes-est-comp
 
-For set estimators, we have Bayesian confidence regions. A Bayesian confidence region $C \subset \Theta$ if of level $1-\alpha$ if
+For set estimators, we have Bayesian confidence regions. A ==Bayesian confidence region== $C \subset \Theta$ if of level $1-\alpha$ if
 $$
 P(\theta\in C \given X) \ge 1-\alpha.
 $$
