@@ -52,8 +52,8 @@ In this note, we denote a sequence of random variables as $X_{n}$.
 - Notation: $X_n \overset{\text{a.s.}}{\longrightarrow} X$.
 - Alternative interpretation: Viewing a random variable as a [[Random Variable#Law\|measure of events]], the above convergence is equivalent to
     $$
-    \mathbb{P}(\omega\in\Omega:\lim_{n\to\infty} X_n(\omega) = X(\omega)) = 1
-    ,$$
+    \mathbb{P}(\omega\in\Omega:\lim_{n\to\infty} X_n(\omega) = X(\omega)) = 1,
+    $$
     where $\Omega$ is the [[Probability Space\|event space]].
 - [!] Remark: $X_n$ are generally highly dependent for this convergence to hold.
     - [@] Partial sum -> infinite sum
@@ -88,10 +88,10 @@ Several important statements equivalent to convergence in distribution are given
 2. $\liminf_{n \to \infty } \mathbb{E}g(X_n) \geq \mathbb{E} g(X)$ for any nonnegative and continuous function.
 3. $\liminf_{n \to \infty } P(X_n\in B) \geq P(X\in B)$ for any open set $B$.
 4. $\limsup_{n \to \infty } P(X_n\in B) \le P(X\in B)$ for any closed set $B$.
-5. $P(X_n\in B) \to P(X\in B)$ for any continuity set[^1] $B$.
+5. $P(X_n\in B) \to P(X\in B)$ for any continuity set[^3] $B$.
     - which is further equivalent to $\left|\int _{B} f_{X_n}(x) - f_{X}(x)\right| \, \d x\to 0$.
 
-[^1]: A continuity set has a zero-measure boundary.
+[^3]: A continuity set has a zero-measure boundary.
 
 ### Convergence of PDF/PMF
 
