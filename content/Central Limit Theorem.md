@@ -9,7 +9,7 @@ Let $\{ X _i \}_{i=1}^{n}$ be a set of i.i.d. [[Random Variable]]s with [[Expect
 $$
 \frac{\overline{X} - \mu}{\sigma / \sqrt{ n }} \overset{d}{\longrightarrow} Z \sim \mathcal{N}(0,1),
 $$
-where $\overset{ d }{ \to }$ means [[Probability Review Draft#Convergence in Distribution/ Weak\|convergence in distribution]].
+where $\overset{ d }{ \to }$ means [[Convergence of Random Variables#Convergence in Probability\|convergence in probability]].
 
 - [~] Also holds for multi-variate distributions: $\sqrt{ n }(\overline{X}-\mu)\overset{ d }{ \to }\mathcal{N}(0,\Sigma)$.
 
