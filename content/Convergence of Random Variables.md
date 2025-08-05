@@ -19,7 +19,7 @@
 > f_{X_n} {\to} f_{X} \\ \Downarrow \\
 > X_{n} \overset{d}{\to} X  \\
 > \Updownarrow \\ p_{X_n} {\to} p_{X}
-\end{array}
+> \end{array}
 > \iff \phi _{X_n} \to \phi _X,
 > $$
 > where $f$, $p$, and $\phi$ are PDF (for continuous r.v.s), PMF (for discrete r.v.s), and characteristic function, respectively, and their convergences are in the sense of convergence of functions: $g_n(t) \to g(t) \ \forall t$.
@@ -54,7 +54,7 @@ In this note, we denote a sequence of random variables as $X_{n}$.
     $$
     \mathbb{P}(\omega\in\Omega:\lim_{n\to\infty} X_n(\omega) = X(\omega)) = 1,
     $$
-    where $\Omega$ is the [[Probability Space\|event space]].
+  where $\Omega$ is the [[Probability Space\|event space]].
 - [!] Remark: $X_n$ are generally highly dependent for this convergence to hold.
     - [@] Partial sum -> infinite sum
     - [@] R.v.s defined as converging functions of a single underlying r.v.
@@ -74,7 +74,7 @@ In this note, we denote a sequence of random variables as $X_{n}$.
     $$
     \lim_{n\to\infty} F_{X_n}(x) = F_X(x)
     ,$$
-    for all $x$ at which $F_X$ is continuous, where $F$ is a [[Cumulative Distribution Function]].
+  for all $x$ at which $F_X$ is continuous, where $F$ is a [[Cumulative Distribution Function]].
 - Notation: $X_n \overset{d}{\longrightarrow} X$.
 - Alternative interpretation: Weak convergence inspects the convergence of the associated CDF of a random variable sequence, and thus it's *weaker* and generally requires no dependency between $X_{n}$. It's equivalent to the convergence of the [[Characteristic Function]].
 - [!] Remark: Weak convergence is consistent with the convergence of real numbers. If $X_n \overset{ \text{a.s.} }{ = } a_n\in\R$ and $X\overset{ \text{a.s.} }{ = }a\in\R$, then $X_n\overset{ d }{ \to }X \iff a_n\to a$.
