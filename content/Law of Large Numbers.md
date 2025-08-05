@@ -138,15 +138,15 @@ $$
     \sum_{j=i}^{\infty} \frac{1}{j^{2}} \le \sum_{j=i}^{\infty} \frac{1}{j(j-1)} = \sum_{j=i}^{\infty} \frac{1}{j-1} - \frac{1}{j} = \frac{1}{i-1} \le \frac{2}{i}.
     $$
 7. First we have
-  $$
-  \mathbb{E}X_{1} =\lim_{ i \to \infty } \int _{0}^{i} x\,\d \P(x) = \lim_{ i \to \infty } \mathbb{E}Y_{i}.
-  $$
-  Thus, for any $\epsilon>0$, there exists $i_{0}\in\N$ such that for all $i\ge i_{0}$, $\mathbb{E}X_{1} - \mathbb{E}Y_{i} \le \epsilon$. Then, for all $i \ge i_{0}$, we have
-  $$
-  \mathbb{E}X_{1} - \frac{\mathbb{E} S_{i}'}{i} \le \mathbb{E}X_{1} - \frac{\sum_{j=i_{0}}^{i}\mathbb{E}_{Y_{j}}}{i}  \le \frac{i_{0}}{i}\mu + \frac{i-i_{0}}{i}\epsilon,
-  $$
-  which gives
-  $$
-  \lim_{ i \to \infty }  \mathbb{E}X_{1} - \frac{\mathbb{E}S_{i}'}{i} \le \epsilon.
-  $$
-  By the arbitrariness of $\epsilon$, we conclude $\lim_{ i \to \infty } \mathbb{E} S_{i}' /i = \mu$.
+   $$
+   \mathbb{E}X_{1} =\lim_{ i \to \infty } \int _{0}^{i} x\,\d \P(x) = \lim_{ i \to \infty } \mathbb{E}Y_{i}.
+   $$
+   Thus, for any $\epsilon>0$, there exists $i_{0}\in\N$ such that for all $i\ge i_{0}$, $\mathbb{E}X_{1} - \mathbb{E}Y_{i} \le \epsilon$. Then, for all $i \ge i_{0}$, we have
+   $$
+   \mathbb{E}X_{1} - \frac{\mathbb{E} S_{i}'}{i} \le \mathbb{E}X_{1} - \frac{\sum_{j=i_{0}}^{i}\mathbb{E}_{Y_{j}}}{i}  \le \frac{i_{0}}{i}\mu + \frac{i-i_{0}}{i}\epsilon,
+   $$
+   which gives
+   $$
+   \lim_{ i \to \infty }  \mathbb{E}X_{1} - \frac{\mathbb{E}S_{i}'}{i} \le \epsilon.
+   $$
+   By the arbitrariness of $\epsilon$, we conclude $\lim_{ i \to \infty } \mathbb{E} S_{i}' /i = \mu$.
