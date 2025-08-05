@@ -49,6 +49,8 @@ And since $\mu$ is a constant, convergence in distribution implies convergence i
 >
 > Both using the [[Characteristic Function]], the proof of WLLN only uses the first order Taylor expansion, while the proof of [[Central Limit Theorem]] uses the second order expansion. This is because WLLN concerns only about *what* the convergence point is (mean), while CLT characterizes *how* the sequence converges (variance). In this sense, WLLN is less informative than CLT, while requires weaker assumptions.
 
+^519975
+
 ### SLLN
 
 - [~] prerequisite: [[Borel-Cantelli Lemma]]

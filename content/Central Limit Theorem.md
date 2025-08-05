@@ -1,5 +1,5 @@
 ---
-{"publish":true,"aliases":["CLT"],"title":"Central Limit Theorem","created":"2022-11-04T12:18:06","modified":"2025-08-04T21:03:55","cssclasses":"","type":"note","sup":["[[Probability Theory]]"],"state":"done"}
+{"publish":true,"aliases":["CLT"],"title":"Central Limit Theorem","created":"2022-11-04T12:18:06","modified":"2025-08-05T00:55:20","cssclasses":"","type":"note","sup":["[[Probability Theory]]"],"state":"done"}
 ---
 
 
@@ -13,7 +13,13 @@ where $\overset{ d }{ \to }$ means [[Convergence of Random Variables#Convergence
 
 - [~] Also holds for multi-variate distributions: $\sqrt{ n }(\overline{X}-\mu)\overset{ d }{ \to }\mathcal{N}(0,\Sigma)$.
 
-Central limit theorem (CLT) implies [[Law of Large Numbers\|Weak Law of Large Numbers]]. To see this, we can rewrite the CLT as $\overline{X}\overset{ d }{ \to } \mathcal{N}(\mu, \sigma^{2} /n) \to \mu$. That is, $\overline{X}$ converges in distribution to a point mass at $\mu$, which is equivalent to convergence in probability to $\mu$. However, CLT does not imply [[Law of Large Numbers\|Strong Law of Large Numbers]]. Additionally, neither weak or strong LLN requires finite variance.
+> [!rmk] CLT and LLN
+> 
+> Central limit theorem (CLT) implies [[Law of Large Numbers\|Weak Law of Large Numbers]]. To see this, we can rewrite the CLT as $\overline{X}\overset{ d }{ \to } \mathcal{N}(\mu, \sigma^{2} /n) \to \mu$. That is, $\overline{X}$ converges in distribution to a point mass at $\mu$, which is equivalent to convergence in probability to $\mu$.
+> 
+> A non-asymptotic version of CLT, the [[Central Limit Theorem#Sup-Norm Approximation Error Berry-Essèen Theorem\|Berry-Essèen Theorem]], together with an additional bounded third moment assumption, implies the [[Law of Large Numbers\|Strong Law of Large Numbers]].
+> 
+> However, neither weak or strong LLN requires assumptions beyond finite mean. Therefore, LLN holds under weaker conditions, while offering less information about the asymptotic dynamics of the sample mean. See also [[Law of Large Numbers#^519975]].
 
 ## Proof
 
@@ -50,9 +56,25 @@ $$
 ## Sup-Norm Approximation Error: Berry-Essèen Theorem
 
 The Berry-Essèen theorem gives a non-asymptotic bound on the difference between the CDF of the sample mean and standard normal, capturing the convergence rate in the CLT.
-Suppose $\mathbb{E}|X_1|^{3}<+\infty$. Then
+Suppose $\mathbb{E}|X_1|^{3}<+\infty$. Let $Z_n = \sqrt{ n }(\overline{X}-\mu) /\sigma$. Then
 $$
 \sup_{t}\left| P(Z_n\le t)-\Phi(t) \right| \le \frac{33}{4}\frac{\mathbb{E}|X_1-\mu|^{3}}{\sqrt{n}\sigma ^{3}}.
 $$
 
-Under this additional bounded third moment assumption, the Berry-Essèen theorem also implies the [[Law of Large Numbers\|Strong Law of Large Numbers]]
+We also have a *non-uniform* Berry-Essèen bound, which is tighter for larger $t$:[^1]
+$$
+\left| P(Z_n\le t)-\Phi(t) \right| \le c\frac{\mathbb{E}|X_1-\mu|^{3}}{\sqrt{n}\sigma ^{3}(1+|t|^{3})},
+$$
+where $c$ is some constant[^2].
+Under this additional bounded third moment assumption, this bound implies the [[Law of Large Numbers\|Strong Law of Large Numbers]]. To see this, we have
+$$
+P\left( |Z_{n}| > \sqrt{ n }\epsilon /\sigma\right)  \le 2 \Phi(- \sqrt{ n }\epsilon /\sigma) + 2c \frac{\mathbb{E}|X_{1}-\mu|^{3}}{\sqrt{ n } \sigma ^{3} (1 + n ^{3 /2}\epsilon ^{3} /\sigma ^{3})},
+$$
+which implies
+$$
+\sum_{n=1}^{\infty} P(|\overline{X}_{n}-\mu| > \epsilon) \lesssim \sum_{n=1}^{\infty} \Phi(-\sqrt{ n }\epsilon /\sigma) + n^{-2}\epsilon ^{-3} \lesssim \sum_{n=1}^{\infty} \frac{e^{-n\epsilon^{2} /2\sigma^{2}}}{\sqrt{ n }\epsilon /\sigma} + n^{-2}\epsilon ^{-3} < \infty,
+$$
+where we use [[Concentration Inequality#Mill's Ratio]]. Thus, by the [[Borel-Cantelli Lemma]], we have $P(\limsup_{ n \to \infty }|\overline{X}_{n}-\mu| > \epsilon)=0$ and thus $\overline{X}_{n} \overset{ \text{a.s.} }{ \to } \mu$.
+
+[^1]: Michel, R. On the constant in the nonuniform version of the Berry-Esséen theorem. _Z. Wahrscheinlichkeitstheorie verw Gebiete_ **55**, 109–117 (1981).
+[^2]: $c \le 33/4 + 8(1+e)$
