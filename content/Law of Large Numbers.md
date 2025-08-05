@@ -96,19 +96,19 @@ Thus, we can focus on the truncated sequence $Y_{i}$.
 Finally, we apply [[Chebyshev Inequality]] and [[Borel-Cantelli Lemma]] to the truncated subsequence:
 $$
 \begin{align}
-&\sum_{j=1}^{\infty }\P\left( \left|\frac{S_{k_{j}}' - \mathbb{E} S_{k_j}'}{k_{j}} \right| > \epsilon\right) \\
+&\sum_{j=1}^{\infty }\P\left( \left|\frac{S_{k_{j}}' - \mathbb{E} S_{k_j}'}{k_{j}} \right| > \epsilon\right) \notag\\
 \le & \sum_{j=1}^{\infty } \frac{\Var(S_{k_{j}}')}{k_{j}^{2} \epsilon^{2}} \tag{1}\\
 \le & \sum_{j=1}^{\infty } \frac{\sum_{i=1}^{k_{j}}\Var(Y_{i})}{k_{j}^{2} \epsilon^{2}} \tag{2}\\
 = & \sum_{i=1}^{k_{1}}\Var(Y_{i}) \cdot \frac{1}{k_{1}^{2}\epsilon^{2}} \frac{1}{1-\alpha^{-2}} + \sum_{i=k_{1}+1}^{k_{2}} \Var(Y_{i}) \cdot \frac{1}{k_{2}^{2}\epsilon^{2}} \frac{1}{1-\alpha^{-2}} + \cdots \tag{3}\\
-\le & \frac{1}{\epsilon^{2}(1-\alpha ^{-2})} \left(\sum_{i=1}^{k_{1}}\frac{\Var(Y_{i})}{i^{2}} + \sum_{i=k_{1}+1}^{k_{2}} \frac{\Var(Y_{i})}{i^{2}} + \cdots\right) \\
-= & \frac{1}{\epsilon^{2}(1-\alpha ^{-2})} \sum_{i=1}^{\infty}\frac{\Var(Y_{i})}{i^{2}} \\
+\le & \frac{1}{\epsilon^{2}(1-\alpha ^{-2})} \left(\sum_{i=1}^{k_{1}}\frac{\Var(Y_{i})}{i^{2}} + \sum_{i=k_{1}+1}^{k_{2}} \frac{\Var(Y_{i})}{i^{2}} + \cdots\right) \notag\\
+= & \frac{1}{\epsilon^{2}(1-\alpha ^{-2})} \sum_{i=1}^{\infty}\frac{\Var(Y_{i})}{i^{2}} \notag\\
 \le & \frac{1}{\epsilon^{2}(1-\alpha ^{-2})} \sum_{i=1}^{\infty}\frac{\mathbb{E} Y^{2}_{i}}{i^{2}} \tag{4}\\
 = & \frac{1}{\epsilon^{2}(1-\alpha ^{-2})} \sum_{i=1}^{\infty}i^{-2}\int _{x=0}^{i} x^{2}\,\d \P(x) \tag{5}\\
-= & \frac{1}{\epsilon^{2}(1-\alpha ^{-2})} \sum_{i=1}^{\infty}i^{-2}\sum_{j=0}^{i-1}\int _{j}^{j+1} x^{2}\,\d \P(x)\\
-= & \frac{1}{\epsilon^{2}(1-\alpha ^{-2})} \sum_{i=1}^{\infty}\left( \sum_{j=i}^{\infty} j^{-2}\right) \int _{i-1}^{i} x^{2}\,\d \P(x) \\
+= & \frac{1}{\epsilon^{2}(1-\alpha ^{-2})} \sum_{i=1}^{\infty}i^{-2}\sum_{j=0}^{i-1}\int _{j}^{j+1} x^{2}\,\d \P(x)\notag\\
+= & \frac{1}{\epsilon^{2}(1-\alpha ^{-2})} \sum_{i=1}^{\infty}\left( \sum_{j=i}^{\infty} j^{-2}\right) \int _{i-1}^{i} x^{2}\,\d \P(x) \notag\\
 \le & \frac{1}{\epsilon^{2}(1-\alpha ^{-2})} \sum_{i=1}^{\infty} \frac{2}{i} \int _{i-1}^{i} x^{2}\,\d \P(x) \tag{6}\\
-\le & \frac{2}{\epsilon^{2}(1-\alpha ^{-2})} \sum_{i=1}^{\infty}  \int _{i-1}^{i} x\,\d \P(x) \\
-= & \frac{2}{\epsilon^{2}(1-\alpha ^{-2})} \mathbb{E}X_{1} < \infty.
+\le & \frac{2}{\epsilon^{2}(1-\alpha ^{-2})} \sum_{i=1}^{\infty}  \int _{i-1}^{i} x\,\d \P(x) \notag\\
+= & \frac{2}{\epsilon^{2}(1-\alpha ^{-2})} \mathbb{E}X_{1} < \infty.\notag
 \end{align}
 $$
 See [[Law of Large Numbers#Details]] for the derivation of $(1)$-$(7)$. Thus, by the [[Borel-Cantelli Lemma]],
