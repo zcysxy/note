@@ -1,5 +1,5 @@
 ---
-{"publish":true,"created":"2023-10-15T22:20:54","modified":"2025-08-04T19:44:50","cssclasses":"","type":"note","sup":["[[Probability Theory]]","[[Random Variable]]"],"state":"done"}
+{"publish":true,"created":"2023-10-15T22:20:54","modified":"2025-08-04T23:49:53","cssclasses":"","type":"note","sup":["[[Probability Theory]]","[[Random Variable]]"],"state":"done"}
 ---
 
 
@@ -157,3 +157,11 @@ $$
 X_n + Y_n \overset{ L^p }{ \to } X + Y.
 $$
 Note that we no longer restrict $Y_n$ to converge to a constant.
+
+## Sum of IID Random Variables
+
+A good example to illustrate different modes of convergence is the sum, or average, of iid random variables. Suppose $X_{i}$ are iid with finite mean $\mu$ and variance $\sigma^{2}$. Let $\overline{X}_{n} = \sum_{i=1}^{n}X_{i}$. Then, the following theorems claim that $\overline{X}_n$ converges to $\mu$,
+
+- in distribution by [[Central Limit Theorem]];
+- in probability by [[Law of Large Numbers\|Weak Law of Large Numbers]];
+- and almost surely by [[Law of Large Numbers\|Strong Law of Large Numbers]].
