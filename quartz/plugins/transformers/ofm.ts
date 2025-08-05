@@ -74,7 +74,7 @@ const defaultOptions: Options = {
 }
 
 // Add the following RegEx beneath the other regex definitions:
-const customCheckboxRegex = /^(\s*)[-\*\+] \[([^xX ])\]\s*(.*)$/gm
+const customCheckboxRegex = /^(> )*?(\s*)[-\*\+] \[([^xX ])\]\s*(.*)$/gm
 
 const calloutMapping = {
   note: "note",
@@ -181,8 +181,8 @@ export const ObsidianFlavoredMarkdown: QuartzTransformerPlugin<Partial<Options>>
           src = src.toString()
         }
 
-        src = src.replace(customCheckboxRegex, (match, spaces, checkType, text) => {
-          return "\n" + "\t".repeat((spaces?.length || 0) / 4) + "- <span class='custom-checkbox' data-task='" + checkType + "'>" + (opts.customCheckboxMappings[checkType] || "") + " " + text + "</span>"
+        src = src.replace(customCheckboxRegex, (match, quote, spaces, checkType, text) => {
+          return (quote ? quote : "\n") + "\t".repeat((spaces?.length || 0) / 4) + "- <span class='custom-checkbox' data-task='" + checkType + "'>" + (opts.customCheckboxMappings[checkType] || "") + " " + text + "</span>"
         })
       }
 
