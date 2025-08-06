@@ -176,7 +176,7 @@ Note that for a Gaussian vector, [[Gaussian Properties#Independence, Correlation
 
 In words, $U^TY$ captures all the information of $\theta$ left-applied by $X$. The remaining part is pure noise perpendicular to the column space of $X$ and does not depend on $\theta$. This is illustrated in the following plot, where $\epsilon_{1} = P\epsilon$ and $\epsilon_{2} = (I-P)\epsilon$.
 
-![Decomposition of $Z\theta$ and $\epsilon_{2}$.](gausian-linaer-model.excalidraw)
+![Decomposition of $Z\theta$ and $\epsilon_{2}$.](excalidraw/gausian-linaer-model.excalidraw.svg)
 
 #### Method II. Fisher-Neyman Factorization
 
