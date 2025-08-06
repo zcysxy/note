@@ -91,6 +91,8 @@ const config: QuartzConfig = {
 					"\\d": "\\mathrm{d}",
 					"\\Perp": "\\perp\\!\\!\\!\\perp",
 					"\\1": "𝟙",
+					"\\lsq": "\\hat{\\theta}^{(\\mathrm{LS})}",
+					"\\xx": "X^TX",
 				},
 			}),
 			Plugin.FigureCaptions(),
