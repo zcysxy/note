@@ -111,8 +111,8 @@ $$
 The variance of MLE is
 $$
 \begin{aligned}
-\Var[w_{\symrm{MLE}}]
-=& \mathbb{E}[w_{\symrm{MLE}}w_{\symrm{MLE}}^{T}] - \mathbb{E}[w_{\symrm{MLE}}]\mathbb{E}[w_{\symrm{MLE}}]^{T}\\
+\Var[w_{\mathrm{MLE}}]
+=& \mathbb{E}[w_{\mathrm{MLE}}w_{\mathrm{MLE}}^{T}] - \mathbb{E}[w_{\mathrm{MLE}}]\mathbb{E}[w_{\mathrm{MLE}}]^{T}\\
 = & \mathbb{E}\left[\left(X^T X\right)^{-1} X^T Y Y^T X\left(X^T X\right)^{-1}\right]-w w^T \\
 = & \left(X^T X\right)^{-1} X^T \mathbb{E}\left[Y Y^T\right] X\left(X^T X\right)^{-1}-w w^T \\
 = & \left(X^T X\right)^{-1} X^T (\Var(Y) + \mathbb{E}[Y]\mathbb{E}[Y]^{T}) X\left(X^T X\right)^{-1}-w w^T \\
@@ -135,7 +135,7 @@ $$
 = \sigma^{2}\tr(\left(X^T X\right)^{-1}).
 $$
 
-- [!] When the data are highly correlated, there will be small singular values, the values of $w_{\mathrm{MLE}}$ are very sensitive to the measured data $y$ and give unstable predictions for new data. This is bad if we want to analyze and predict using $w_{\symrm{MLE}}$.
+- [!] When the data are highly correlated, there will be small singular values, the values of $w_{\mathrm{MLE}}$ are very sensitive to the measured data $y$ and give unstable predictions for new data. This is bad if we want to analyze and predict using $w_{\mathrm{MLE}}$.
 
 [[Ridge Regression]] can help with this problem.
 
