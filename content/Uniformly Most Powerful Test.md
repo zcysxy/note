@@ -69,7 +69,7 @@ Recall that a one-parameter exponential family has the form
 <div class="transclude" data-embed-alias="  " data-url="Exponential Family"> 
 
 $$
-f(x ; \theta)=c(\theta) h(x) e^{t(x) q(\theta)}
+f(x ; \theta)=c(\theta) h(x) \exp (t(x) q(\theta))
 $$
 
 </div>

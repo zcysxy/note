@@ -1,5 +1,5 @@
 ---
-{"publish":true,"title":"High Dimensional Probability","created":"2023-05-09T19:38:43","modified":"2025-06-04T02:18:27","cssclasses":"","aliases":null,"type":"note","banner":"https://lh3.googleusercontent.com/Rs2iZI77DywOVUtFprm9d5SQqAy-76Q4stgKQ0xS5XO0oqcMfvXUvtoYbRi8txBI26i1L7-4alpYn0CXdnPUyEfaWtriHcNN1lTfZpY=s2500","banner_icon":"🤹","sup":["[[Probability Theory]]","[[Stochastic Process]]","[[Math]]"],"state":"[[%wip]]"}
+{"publish":true,"title":"High Dimensional Probability","created":"2023-05-09T19:38:43","modified":"2025-08-05T01:24:05","cssclasses":"","aliases":null,"type":"note","banner":"https://lh3.googleusercontent.com/Rs2iZI77DywOVUtFprm9d5SQqAy-76Q4stgKQ0xS5XO0oqcMfvXUvtoYbRi8txBI26i1L7-4alpYn0CXdnPUyEfaWtriHcNN1lTfZpY=s2500","banner_icon":"🤹","sup":["[[Probability Theory]]","[[Stochastic Process]]","[[Math]]"],"state":"[[%wip]]"}
 ---
 
 
@@ -12,18 +12,23 @@ $$
 $$
 Such a factorization into the dimension $n$ and one-dim property is called ==tensorization==, a key technique in high-dimensional probability.
 
+For the transformation of such high-dim random vectors, high-dimensional probability theory studies **high-dimensional functions** of the form
+$$
+f(X_{1},\dots,X_n).
+$$
+Provided that $f$ is "smooth" enough, we expect [[High Dimensional Probability#Concentration of Measure]], i.e., $f(X) \approx \mathbb{E}[f(X)]$.
+Provided that $f$ is not too "complex", we can express it as a [[High Dimensional Probability#Suprema of Stochastic Processes]], and bound its expectation by its "complexity".
 
-
-**Applications**:
-
-- [[Statistical Learning]]
-- Compressed sensing
-- random matrices
-    - covariance matrix
-    - random graphs
-- Sampling
-- Optimal transport
-- Gaussian approximation
+> [!oth] Applications
+>
+> - [[Statistical Learning]]
+> - Compressed sensing
+> - random matrices
+>     - covariance matrix
+>     - random graphs
+> - Sampling
+> - Optimal transport
+> - Gaussian approximation
 
 ## Concentration of Measure
 
@@ -52,6 +57,8 @@ Consider the simplest form: $f(x_{1},\dots,x_n) = \frac{1}{n}\sum_{i=1}^{n}x_i$.
 > [!ex]
 > - L2 error: $\| X - \hat{X} \|_{2} = \sup_{v\in S^{d-1}}\left|\left< v, (X-\hat{X})v \right>\right|$.
 > - Convex conjugate: $f^{*}(x)=\sup_{y\in\R^{n}}\{ \left< y,x \right> - f(y) \}$
+
+The prevalence of suprema is related to the ==variational principle==, which transform the original problem into an [[Optimization]] problem, with the original solution corresponding to a supremum.
 
 > [!thm] Informal Principle
 If $t\mapsto Y_{t}$ is "smooth", then $\mathbb{E}[\sup_{t\in T}Y_t]$  can be controlled by the complexity of $T$.

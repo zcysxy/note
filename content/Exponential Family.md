@@ -1,41 +1,65 @@
 ---
-{"publish":true,"title":"Exponential Family","created":"2023-11-12T21:15:45","modified":"2025-06-11T19:33:18","cssclasses":"","aliases":null,"type":"note","sup":["[[Probability Theory]]"],"state":"done"}
+{"publish":true,"title":"Exponential Family","created":"2023-11-12T21:15:45","modified":"2025-08-06T19:16:09","cssclasses":"","aliases":null,"type":"note","sup":["[[Probability Theory]]"],"state":"done"}
 ---
 
 
 # Exponential Family
 
-A family of univariate [[Probability Density Function\|PDF]]/[[Probability Mass Function\|PMF]] is said to be **exponential** if it can be expressed as:
+A family of univariate [[Probability Density Function\|PDF]]/[[Probability Mass Function\|PMF]] is said to be ==exponential== if it can be expressed as:
 $$
-f(x ; \theta)=c(\theta) h(x) e^{t(x) q(\theta)}
+f(x ; \theta)=c(\theta) h(x) \exp (t(x) q(\theta))
 $$
 
 ^exp-pdf
 
-where $c(\theta) \geq 0, h(x) \geq 0$.
-A joint [[Probability Density Function\|PDF]] for a multivariate distribution is called exponential if
+or equivalently,
 $$
-f(x ; \theta)=c(\theta) h(\boldsymbol{x}) e^{\sum_{j=1}^k t_j(\boldsymbol{x}) q_j(\theta)}
+f(x;\theta) = h(x)\exp(t(x)q(\theta) - b(\theta)),
 $$
-If $\theta\in\R^{k}$, such distribution is said to be in a $k$-parameter exponential family.
+where all values are scalars, $h(x) \geq 0$, and $c(\theta) = e^{-b(\theta)} \geq 0$ is the normalizing constant.
 
-- $c(\theta)$ is the **normalizing constant**.
-- $h(x)$ is the **base measure**.
-- $\exp(q(\theta)^Tt(x))$ is the **exponential tilt** that up(down)-weights the base measure.
-- $t(x)$ is a **sufficient statistic** w.r.t. the *natural* parameter space
+We can extend this to cover **multivariate random variables** and **multi-dimensional parameters**. Specifically, consider real vectors $x\in\R^{d}$, $\theta\in\R^{s}$ and $t,q \in \R^{k}$ where $k \ge s$.
+A joint [[Probability Density Function\|PDF]]/[[Probability Mass Function\|PMF]] is said to be exponential if
+$$
+f(x ; \theta)=c(\theta) h({x}) \exp (\left<  t({x}), q(\theta) \right>),
+$$
+where the inner product can be matrix inner product.
+Common distributions have $s = k$, and such distribution is said to be in a ==$k$-parameter exponential family==. When $s< k$, we say it is in a ==curved exponential family==.
+An exponential family has the following components:
+
+- $c(\theta)$ is the ==normalizing constant==;
+- $h(x)$ is the ==base measure==;
+- $q(\theta)$ is the ==natural parameter==; it can be thought of as a reparameterization of $\theta$, and thus we require the dimension of  to be no less than that of $\theta$;
+- $t(x)$ is a ==[[Sufficient Statistic]]== w.r.t. the *natural* parameter space:
   $$
-  \Theta= \left\{  \theta:\int h(x)e^{q(\theta)^Tt(x)} \d x < \infty \right\}.
+  \Theta= \left\{  \theta:\int h(x)e^{\langle q(\theta),t(x)\rangle} \d x < \infty \right\};
   $$
+- $\exp(q(\theta)^Tt(x))$ is the ==exponential tilt== that up(down)-weights the base measure.
 
-To verify if some family of distributions is of exponential type, we must be able to identify the functions $c(\theta), h(x), t(x)$ and $q(\theta)$.
+If $q = \theta$ (perhaps after some reparameterization $\theta \gets q(\theta)$), we say the exponential family is in ==canonical form==. Further, if the sufficient statistic is the r.v. itself, i.e., $t(x) = x$, we say the exponential family is in ==natural form==. In between, we have the ==dispersion form==:
+$$
+f(x;\theta) = h(\phi,x) \exp\left( \frac{x^T\theta - b(\theta)}{\phi} \right),
+$$
+where $\phi$ is called the ==dispersion parameter==. We can see that if $\phi$ is known, then $\theta$ is the only canonical parameter, but the sufficient statistic is the *dispersed* $x$: $t(x) = x/\phi$. If $\phi$ is unknown, the model may corresponds to a multi-parameter exponential family.
 
-Examples:
+- [@] For example, a [[Normal Distribution]] with known variance $\sigma^{2}$ has a dispersion form with $\phi = \sigma^{2}$, $t(x) = x$, $q(\mu) = \mu$, and $b(\mu) = \mu^{2} /2$.
 
-- [[Bernoulli Distribution]]: $f(x;p) = (1-p)e^{x \log \frac{p}{1-p}}$
-- [[Binomial Distribution]]: $f(x;n,p) = {n \choose x}p^{x}(1-p)^{n-x}$
-- [[Poisson Distribution]]: $p(n;\lambda) = e ^{-\lambda }(n!)^{-1}e^{n \log \lambda}$
-- [[Normal Distribution]]: $(2\pi)^{-n /2} \sigma ^{-n}e^{n \mu^{2}}e^{-\left( \sum x _i^{2} - 2\left( \sum x_{i} \right)\mu \right) / \sigma^{2}}$
-- [[Exponential Distribution]]
+## Examples
+
+To verify if some family of distributions is of exponential type, we must be able to identify the functions $c(\theta)$ (or $b(\theta)$), $h(x)$, $t(x)$ and $q(\theta)$.
+
+| Distribution \\  Component                  | PDF/PMF                                                                                          | $q$                                                                 | $t$                     | $b$                                                       | $h$                                    |
+| ------------------------------------------- | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------- | ----------------------- | --------------------------------------------------------- | -------------------------------------- |
+| Univariate [[Normal Distribution]]          | $(2 \pi)^{-1/2} \sigma^{-1} \exp\left(-(x - \mu)^2 /(2\sigma^2\right)$                           | $(\mu/\sigma^2,\ -1/(2\sigma^2))$                                   | $(x,\ x^2)$             | $\mu^2 / (2\sigma^2) + \ln \sigma$                        | $(2\pi)^{-1/2}$                        |
+| Multivariate [[Normal Distribution]]        | $(2 \pi)^{-d / 2} \vert\Sigma\vert^{-1 / 2} \exp (-({x}-{\mu})^{T} {\Sigma}^{-1}({x}-{\mu}) /2)$ | $(\Sigma^{-1}\mu , -\Sigma^{-1} /2)\in \R^{d}\times\R^{d \times d}$ | $(x, x x^T)$            | $(\mu ^T\Sigma^{-1} \mu  + \ln \vert \Sigma \vert)/2$     | $(2\pi)^{-d /2}$                       |
+| [[Exponential Distribution]]                | $\lambda \exp(-\lambda x)$                                                                       | $-\lambda$                                                          | $x$                     | $-\ln \lambda$                                            | $\1_{x \ge 0}$                         |
+| [[Bernoulli Distribution]]                  | $p^x (1 - p)^{1 - x}$                                                                            | $\ln(p /(1 - p))$                                                   | $x$                     | $-\ln(1/(1-p))$                                           | $\1_{x\in \{0,1\}}$                    |
+| [[Binomial Distribution]] with known $n$    | $\binom{n}{x} p^x (1 - p)^{n - x}$                                                               | $\ln(p /(1 - p))$                                                   | $x$                     | $-n \ln(1 /(1-p))$                                        | $\binom{n}{x}\1_{x \in \{0,\dots,n\}}$ |
+| [[Poisson Distribution]]                    | $\lambda^x e^{-\lambda} /x!$                                                                     | $\log \lambda$                                                      | $x$                     | $\lambda$                                                 | $1 / x!\1_{x \in \mathbb{N}}$          |
+| [[Chi-Square Distribution]]                 | $e^{-x/2}(x/2)^{\nu /2 -1} / (2\Gamma(\nu /2))$                                                  | $\nu /2 -1$                                                         | $\ln x$                 | $\ln\Gamma(\nu /2) + \ln 2\cdot \nu /2$                   | $e^{-x /2}(\nu/2)\1_{x>0}$             |
+| [[Gamma Distribution]]                      | $\beta e^{-\beta x} (\beta x)^{\alpha - 1} /\Gamma(\alpha)$                                      | $(\alpha-1, -\beta)$                                                | $(\ln x, x)$            | $\ln \Gamma(\alpha)-\alpha\ln \beta$                      | $\1_{x>0}$                             |
+| [[Beta Distribution]]                       | $x^{\alpha - 1} (1 - x)^{\beta - 1} \Gamma(\alpha+\beta)/(\Gamma(\alpha)\Gamma(\beta))$          | $(\alpha,\ \beta)$                                                  | $(\ln x,\ \ln(1 - x))$  | $\ln ( \Gamma(\alpha)\Gamma(\beta)/\Gamma(\alpha+\beta))$ | $\1_{x \in (0,1)} /(x(1-x))$           |
+| [[Categorical Distribution]] with known $K$ | $\prod_{i=1}^{K} p_i^{x_{i}}$ with $p_{K} = 1-\sum_{i=1}^{K-1}p_{i}$                             | $(\log(p_1/p_K),\dots,\log(p_{K-1}/p_K))\in \R^{K-1}$               | $(x_{1},\dots,x_{K-1})$ | $-\ln p_{K}$                                              | $\1_{x \in \{e_1,\dots,e_K\}}$         |
 
 ## MLE for Exponential Family
 
@@ -58,3 +82,24 @@ $$
 $$
 Then, the MLE estimator of $t$, which is the zero of the derivative, satisfies $\mathbb{E}_{\hat{\theta}_{\mathrm{MLE}}}t(X) = \hat{\mathbb{E}}_{n}t(x)$, indicating that MLE is a [[Method of Moments#General MM Estimator]] w.r.t $t(x)$.
 As a result, the asymptotic normality property of both MLE (M-estimator) and MM (Z-estimator) applies.
+
+## Moments of Dispersion Exponential Family
+
+The above calculation also gives a convenient way to compute the first (mean) and second (variance) central moments of $X$ when $X$ follows a dispersion exponential family. Specifically, notice that $t(x) = x /\phi$ and $c(\theta) = \exp(-b(\theta) / \phi)$. Therefore, we have
+$$
+\operatorname{LL}'(\theta) = \frac{c'(\theta)}{c(\theta)} + t(x) = \frac{x - b'(\theta)}{\phi}.
+$$
+Under [[Regularity Conditions in Estimation#For Maximum Likelihood Estimation]], we have $\mathbb{E}[\operatorname{LL}'(\theta)]=0$, and thus
+$$
+\mathbb{E}[X] = b'(\theta).
+$$
+Similarly, under the same conditions, we have
+$$
+0 = \mathbb{E}\left[ \operatorname{LL}''(\theta) + (\operatorname{LL}'(\theta))^{2} \right] = \frac{-b''(\theta)}{\phi} + \frac{\mathbb{E}[(X - \mathbb{E}[X])^{2}]}{\phi^{2}},
+$$
+which gives
+$$
+\Var(X) = \phi b''(\theta).
+$$
+
+- [@] For example, for a [[Poisson Distribution]], $\theta = \ln \lambda$, $b(\theta) = e^{\theta}$, and $\phi=1$. Thus, $\mathbb{E}[X]=\Var(X)=b(\theta)=b'(\theta)=b''(\theta) =\lambda$.

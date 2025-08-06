@@ -1,5 +1,5 @@
 ---
-{"publish":true,"aliases":["index"],"title":"*Sufficient* of Statistics","created":"2023-10-17T21:41:50","modified":"2025-08-05T23:35:29","cssclasses":"","type":"index","sup":["[[Math]]"],"state":"[[%wip]]","banner":"https://raw.githubusercontent.com/zcysxy/Figurebed/master/img/20231017221426.png","banner_icon":"🔮","reference":"AOS"}
+{"publish":true,"aliases":["index"],"title":"*Sufficient* of Statistics","created":"2023-10-17T21:41:50","modified":"2025-08-06T00:23:39","cssclasses":"","type":"index","sup":["[[Math]]"],"state":"[[%wip]]","banner":"https://raw.githubusercontent.com/zcysxy/Figurebed/master/img/20231017221426.png","banner_icon":"🔮","reference":"AOS"}
 ---
 
 
@@ -51,6 +51,13 @@ AA --- BB --- CC
         - [[Uniformly Most Powerful Test]]
     - [[p-value]]
 - [[Regression]]
+    - [[Linear Regression#Ordinary Least Squares]]
+        - [[Gaussian Linear Model]]
+    - Regularized Linear Regression
+        - [[Ridge Regression]]
+        - [[LASSO]]
+    - [[Generalized Linear Model]]
+        - [[Logistic Regression]]
 - [[Prediction]]
     - [[Probably Approximately Correct]]
     - [[Conformal Prediction]]
@@ -72,6 +79,7 @@ AA --- BB --- CC
     - [[Goodness of Fit Test]]
     - [[Permutation Test]]
     - [[ANOVA]]
+- More on regression: see the list in [[Regression]].
 - Hypothesis testing and other statistical procedures
     - [[Confidence Interval and Hypothesis Test Duality]]
     - [[Hardness of Simple Hypothesis Test Through Total Variation]]
