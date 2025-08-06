@@ -1,5 +1,5 @@
 ---
-{"publish":true,"aliases":["index"],"title":"*Sufficient* of Statistics","created":"2023-10-17T21:41:50","modified":"2025-07-30T18:06:02","cssclasses":"","type":"index","sup":["[[Math]]"],"state":"[[%wip]]","banner":"https://raw.githubusercontent.com/zcysxy/Figurebed/master/img/20231017221426.png","banner_icon":"🔮","reference":"AOS"}
+{"publish":true,"aliases":["index"],"title":"*Sufficient* of Statistics","created":"2023-10-17T21:41:50","modified":"2025-08-05T23:35:29","cssclasses":"","type":"index","sup":["[[Math]]"],"state":"[[%wip]]","banner":"https://raw.githubusercontent.com/zcysxy/Figurebed/master/img/20231017221426.png","banner_icon":"🔮","reference":"AOS"}
 ---
 
 
@@ -76,6 +76,7 @@ AA --- BB --- CC
     - [[Confidence Interval and Hypothesis Test Duality]]
     - [[Hardness of Simple Hypothesis Test Through Total Variation]]
     - [[Hardness of Estimation Through Testing]]
+    - [[Testing for Regression]]
 
 ### Interactive Notebooks
 
