@@ -1,9 +1,36 @@
 ---
-{"publish":true,"title":"Regression","created":"2023-01-19T14:53:16","modified":"2025-08-07T12:22:52","cssclasses":"","aliases":null,"type":"note","sup":["[[Machine Learning]]","[[Statistics]]"],"state":"[[%wip]]","related":["[[Prediction]]"]}
+{"publish":true,"title":"Regression","created":"2023-01-19T14:53:16","modified":"2025-08-07T13:00:36","cssclasses":"","aliases":null,"type":"note","sup":["[[Machine Learning]]","[[Statistics]]"],"state":"[[%wip]]","related":["[[Prediction]]"]}
 ---
 
 
 # Regression
+
+> [!tldr]+ Everything is just linear regression
+>
+> ```mermaid
+> graph LR
+> AA(Linear Regression) --> A
+> A(Least Squares) <--"Gaussian Linear Model"--> B(Maximum Likelihood Estimation)
+> AA --"feature augmentation"--> G:::hidden
+> G --"polynomial feature"--> C(Polynomial Regression)
+> G --"general feature"--> D(Generalized Linear Regression)
+> D --> S(Splines)
+> A --"regularization"--> R:::hidden
+> R --"L2"--> RR(Ridge Regression)
+> R --"L1"--> L(LASSO)
+> RR <--"Gaussian prior"--> M(Maximum a Posteriori)
+> AA --"underdetermined system"--> N(Least Norm)
+> N --"kernel"--> NK(Kernel Regression)
+> AA --"prior to posterior"--> BB(Bayesian Linear Regression)
+> BB --"kernel"--> BK(Gaussian Process Regression)
+> B --"link function"--> GL(Generalized Linear Model)
+> GL --> GLL(Logistic Regression)
+> GL --> GLP(Poison Regression)
+> GLL --"prior to posterior"--> BL(Bayesian Logistic Regression)
+> 
+> classDef hidden display: none;
+> class A,AA,B,BB,BL,BK,C,D,G,GL,GLL,GLP,L,M,N,NK,R,RR,S internal-link
+> ```
 
 Regression is a fundamental statistical task[^1] aimed at uncovering the *relationship* between two correlated random variables. When one variable is designated as the _input_ and the other as the _output_, regression focuses on modeling the _effect_ of the input on the output. This setup makes regression closely related to, or often regarded as a type of, [[Prediction]] task, where the goal is to match the prediction to the true output; please refer to [[Regression#Regression and Prediction]] for more discussion on the relationship between the two tasks.
 
