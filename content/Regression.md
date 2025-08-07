@@ -34,7 +34,7 @@
 
 Regression is a fundamental statistical task[^1] aimed at uncovering the *relationship* between two correlated random variables. When one variable is designated as the _input_ and the other as the _output_, regression focuses on modeling the _effect_ of the input on the output. This setup makes regression closely related to, or often regarded as a type of, [[Prediction]] task, where the goal is to match the prediction to the true output; please refer to [[Regression#Regression and Prediction]] for more discussion on the relationship between the two tasks.
 
-[1]: Regression is also referred to as a class of methods that are used to solve this type of task.
+[^1]: Regression is also referred to as a class of methods that are used to solve this type of task.
 
 A regression task involves the following components:
 
