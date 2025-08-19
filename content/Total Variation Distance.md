@@ -1,5 +1,5 @@
 ---
-{"publish":true,"aliases":["Total-Variation Metric","TV"],"created":"2022-05-28T03:34:22","modified":"2025-06-05T22:56:30","cssclasses":"","type":"note","sup":["[[Probability Theory]]"],"state":"[[%wip]]"}
+{"publish":true,"aliases":["Total-Variation Metric","TV"],"created":"2022-05-28T03:34:22","modified":"2025-08-18T19:02:50","cssclasses":"","type":"note","sup":["[[Probability Theory]]"],"state":"done"}
 ---
 
 
@@ -134,7 +134,45 @@ $$
 
 Then we can specify the other values of $P$ to make it meet the marginal constraint.
 
-[[!todo]] See also *Hw 3.4*.
+
+
+### Example
+
+Consider the following discrete distribution:
+<div class="transclude" data-embed-alias="  " data-url="Hardness of Simple Hypothesis Test Through Total Variation"> 
+
+$$
+P_{0}(X=k) = \begin{cases}
+0.1, & k=0; \\
+0.6, & k=1; \\
+0.3, & k=2;
+\end{cases}\quad P_{1}(X=k) = \begin{cases}
+0.3, & k=0; \\
+0.6, & k=1; \\
+0.1, & k=2.
+\end{cases}
+$$
+
+</div>
+ <a href="Hardness of Simple Hypothesis Test Through Total Variation" class="internal transclude-src">Link to original</a>
+To find the joint distribution $P$ that achieves the *optimal coupling*, the general approach is to assign
+$$
+P(X_{0}=X_{1}=x) = P_{0}(x)\wedge P_{1}(x),
+$$
+and assign the remaining mass to make the marginal distributions satisfied.
+
+An example joint distribution is
+
+$$
+P(X_{0}=x_{0},X_{1}=x_{1}) 
+= \begin{cases}
+0.6, & (x_{0},x_{1})=(1,1);\\
+0.1, & (x_{0},x_{1})\in \{(0,0),(2,2)\};\\
+0.2, & (x_{0},x_{1})= (2,0);\\
+0, & \text{otherwise}.
+\end{cases}
+$$
+We can verify that $P(X_{0})=P_{0}$, $P(X_{1})=P_{1}$, and $P(X_{1}=X_{2}) = 0.8 = 1 -\operatorname{TV}(P_{0},P_{1})$.
 
 ## Sample Gain
 

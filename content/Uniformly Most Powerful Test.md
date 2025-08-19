@@ -1,5 +1,5 @@
 ---
-{"publish":true,"aliases":["Neyman-Pearson","UMP"],"title":"Uniformly Most Powerful Test","created":"2025-05-30T02:48:16","modified":"2025-06-04T01:45:31","cssclasses":"","state":"[[%wip]]","sup":["[[Hypothesis Testing]]"],"type":"note"}
+{"publish":true,"aliases":["Neyman-Pearson","UMP"],"title":"Uniformly Most Powerful Test","created":"2025-05-30T02:48:16","modified":"2025-08-18T19:19:52","cssclasses":"","state":"done","sup":["[[Hypothesis Testing]]"],"type":"note"}
 ---
 
 
@@ -62,6 +62,8 @@ For a statistical model with monotone likelihood ratio and a composite HT $\Thet
 
 - [!] We note that $A^{(\mathrm{UMP})}$ is independent of $\theta_{1}$.
 
+
+
 ### Exponential Family
 
 An important class of models with monotone likelihood ratio is the [[Exponential Family]], which includes many common distributions such as the [[Normal Distribution]], [[Poisson Distribution]], and [[Exponential Distribution]].
@@ -81,3 +83,31 @@ Specifically, if $q$ is monotonically increasing, then the UMP test has the same
 > We state that an UMP exists for exponential family models. Surprisingly, the other direction is also generally true. Under weak conditions, the exists of UMP for one-sided composite HT of level $\alpha$ and all sample sizes implies an exponential family model.
 
 #### Gaussian
+
+We consider $\mathcal{P}_{\theta}= \mathcal{N}(\theta,1)$ as a concrete example. Suppose $\Theta_{0} = (-\infty,0]$, $\Theta_{1}=(0,\infty)$. Then,
+$$
+A^{(\mathrm{UMP})}_{\alpha}(x) = \1 \{ x > \Phi^{-1}(1-\alpha)  \}.
+$$
+
+To prove this, we first consider a simple-simple HT $\Theta_{0}=\{ 0 \}$, $\Theta_{1}=\{ \theta_{1} \}, \theta_{1} > 0$. By the [[Uniformly Most Powerful Test#Neyman-Pearson]] lemma, the optimal test for this simple-simple HT is
+$$
+A^{(\mathrm{NP})}_{\alpha}(x) = \1 \{ f_{1}(x) /f_{0}(x) > \lambda  \},
+$$
+where $\lambda$ is determined by $P_{0}(f_{1}(X) / f_{0}(X) > \lambda ) = \alpha$.
+
+Note that for this simple-simple HT,
+$$
+f_{1}(x) /f_{0}(x) = \exp \left( -\frac{1}{2}(x-\theta_{1})^{2} + \frac{1}{2}x^{2} \right)  = \exp\left( \theta_{1} x - \frac{1}{2}\theta_{1}^{2} \right),
+$$
+which monotonically increases in $x$. Thus, there exists $\eta$ such that
+$$
+P_{0}(f_{1}(X) / f_{0}(X) > \lambda) = \alpha \iff P_{0}(x > \eta) = \alpha \iff \eta = \Phi^{-1}(1-\alpha).
+$$
+$A_{\alpha}^{(\mathrm{NP})}$ is independent of $\theta_{1}$, and is thus UMP for the simple-composite HT $\Theta_{0}=\{ 0 \}$, $\Theta_{1}=(0,\infty)$.
+
+On the other hand, for any $\theta_{0} <0$, we have
+$$
+\mathbb{E}_{\theta_{0}}A^{(\mathrm{NP})}(X) = P_{\theta_{0}}(X > \Phi^{-1}(1-\alpha)) < P_{0}(X > \Phi^{-1}(1-\alpha)) = \alpha.
+$$
+Thus, $A_{\alpha}^{(\mathrm{NP})}$ satisfies the size constraint for the composite null $\Theta_{0}=(-\infty,0]$.
+In conclusion, $A^{(\mathrm{UMP})} = A^{(\mathrm{NP})}$.

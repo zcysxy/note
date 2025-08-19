@@ -1,5 +1,5 @@
 ---
-{"publish":true,"title":"Hardness of Simple Hypothesis Test Through Total Variation","created":"2025-05-27T23:43:04","modified":"2025-05-28T00:30:58","cssclasses":"","state":"done","sup":["[[Hypothesis Testing]]"],"aliases":null,"type":"note","related":["[[Total Variation Distance]]"]}
+{"publish":true,"title":"Hardness of Simple Hypothesis Test Through Total Variation","created":"2025-05-27T23:43:04","modified":"2025-08-18T18:50:00","cssclasses":"","state":"done","sup":["[[Hypothesis Testing]]"],"aliases":null,"type":"note","related":["[[Total Variation Distance]]"]}
 ---
 
 
@@ -33,3 +33,38 @@ Then, we have
 > =& 1 - \TV(P_{0},P_{1}).
 > \end{aligned}
 > $$
+
+## Example
+
+Let's verify [[Bayes Optimal Test]] achieves this lower bound.
+
+Consider the following discrete distribution:
+$$
+P_{0}(X=k) = \begin{cases}
+0.1, & k=0; \\
+0.6, & k=1; \\
+0.3, & k=2;
+\end{cases}\quad P_{1}(X=k) = \begin{cases}
+0.3, & k=0; \\
+0.6, & k=1; \\
+0.1, & k=2.
+\end{cases}
+$$
+^ex
+
+Note that $B^{\mathrm{opt}} \coloneqq \{ P_{1} >P_{0} \} = \{ 0 \}$. Thus, a Bayes optimal test is
+$$
+A^*(x) = \begin{cases}
+1, & x \in\{0\};\\
+0, & x \in \{ 1,2 \},
+\end{cases}
+$$
+whose risk is
+$$
+S_{P_{0},P_{1}}(A^{*}) = P_{0}(A^*(X)=1) + P_{1}(A^*(X)=0) = 0.1 + (0.6 + 0.1) = 0.8.
+$$
+OTOH, we have
+$$
+\operatorname{TV}(P_{0},P_{1}) = P_{1}(X=0) - P_{0}(X=0) = 0.2.
+$$
+Thus, $S_{P_{0},P_{1}}(A^*) = 1-\operatorname{TV}(P_{0},P_{1})$.
