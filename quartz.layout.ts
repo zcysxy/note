@@ -33,7 +33,7 @@ export const defaultContentPageLayout: PageLayout = {
   ],
   left: [
     Component.TagTitle(),
-    Component.PageTitle(),
+    // Component.PageTitle(),
     Component.MobileOnly(Component.Spacer()),
     Component.DesktopOnly(Component.Flex({
       components: [
@@ -78,7 +78,8 @@ export const defaultContentPageLayout: PageLayout = {
 export const defaultListPageLayout: PageLayout = {
   beforeBody: [Component.Breadcrumbs(), Component.ArticleTitle(), Component.ContentMeta()],
   left: [
-    Component.PageTitle(),
+    Component.TagTitle(),
+    // Component.PageTitle(),
     Component.MobileOnly(Component.Spacer()),
     Component.Flex({
       components: [

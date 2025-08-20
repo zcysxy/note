@@ -48,6 +48,8 @@ export interface GlobalConfiguration {
   pageTitleSuffix?: string
   /** Tag-based titles: a dictionary mapping tags to display titles */
   tagTitle?: { [tag: string]: string }
+  /** Tag-based URLs: a dictionary mapping tags to destination URLs */
+  tagUrl?: { [tag: string]: string }
   /** Whether to enable single-page-app style rendering. this prevents flashes of unstyled content and improves smoothness of Quartz */
   enableSPA: boolean
   /** Whether to display Wikipedia-style popovers when hovering over links */

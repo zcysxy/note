@@ -76,7 +76,7 @@ img[alt="Open In Colab"] + svg {
     "grid-sidebar-left grid-footer grid-sidebar-right" / 320px auto 0px;
 }
 
-.page-title {
+.tag-title {
   &:before {
     --page-icon-size: 4rem;
     content: "";
@@ -125,7 +125,7 @@ img[alt="Open In Colab"] + svg {
     /*   flex-direction: column; */
     /* } */
   }
-  .page-title {
+  .tag-title {
     /* margin-bottom: 1rem; */
     &:before {
       display: none;
