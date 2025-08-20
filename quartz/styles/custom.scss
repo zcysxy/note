@@ -77,6 +77,12 @@ img[alt="Open In Colab"] + svg {
 }
 
 .tag-title {
+  &:has(a[href$="statistics"]):before {
+    background-image: var(--page-icon-svg);
+  }
+  &:has(a[href$="probability-theory"]):before {
+    background-image: var(--page-icon-svg);
+  }
   &:before {
     --page-icon-size: 4rem;
     content: "";
@@ -84,7 +90,7 @@ img[alt="Open In Colab"] + svg {
     display: inline-block;
     width: var(--page-icon-size);
     height: var(--page-icon-size);
-    background-image: var(--page-icon-svg);
+    /* background-image: var(--page-icon-svg); */
     background-size: var(--page-icon-size) var(--page-icon-size);
     background-position: 50%;
     mask-size: var(--page-icon-size) var(--page-icon-size);
