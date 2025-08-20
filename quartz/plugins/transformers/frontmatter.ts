@@ -78,7 +78,19 @@ export const FrontMatter: QuartzTransformerPlugin<Partial<Options>> = (userOpts)
             }
 
             const tags = coerceToArray(coalesceAliases(data, ["tags", "tag"]))
-            if (tags) data.tags = [...new Set(tags.map((tag: string) => slugTag(tag)))]
+						// If tags contain "pub-*", remove them (used for publication management)
+						// Add the removed tag to <body> as "data-tag" attribute
+						if (tags) {
+							// const filteredTags = tags.filter((tag: string) => !tag.startsWith("pub-"))
+							const filteredTags = tags.filter((tag: string) => {
+								if (tag.startsWith("pub-")) {
+									file.data["tag"] = tag
+									return false
+								}
+								return true
+							})
+							data.tags = [...new Set(filteredTags.map((tag: string) => slugTag(tag)))]
+						}
 
             const aliases = coerceToArray(coalesceAliases(data, ["aliases", "alias"]))
             if (aliases) {

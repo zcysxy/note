@@ -231,10 +231,11 @@ export function renderPage(
   )
 
   const lang = componentData.fileData.frontmatter?.lang ?? cfg.locale?.split("-")[0] ?? "en"
+  const tag = componentData.fileData.tag ?? ""
   const doc = (
     <html lang={lang}>
       <Head {...componentData} />
-      <body data-slug={slug}>
+      <body data-slug={slug} data-tag={tag}>
         <div id="quartz-root" class="page">
           <Body {...componentData}>
             {LeftComponent}
