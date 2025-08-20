@@ -13,7 +13,7 @@ const config: QuartzConfig = {
     pageTitleSuffix: "",
     tagTitle: {
       "pub-stat": "Sufficient Statistics",
-      "pub-prob": "Sufficient Statistics",
+      "pub-prob": "Almost All Probability",
     },
     tagUrl: {
       "pub-stat": "/statistics",
