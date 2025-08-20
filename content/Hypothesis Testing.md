@@ -1,5 +1,5 @@
 ---
-{"publish":true,"title":"Hypothesis Testing","created":"2022-12-07T20:11:12","modified":"2025-07-17T16:15:05","cssclasses":"","type":"note","sup":["[[Statistics]]"],"state":"done"}
+{"publish":true,"title":"Hypothesis Testing","created":"2022-12-07T20:11:12","modified":"2025-07-17T16:15:05","tags":["pub-stat"],"cssclasses":"","type":"note","sup":["[[Statistics]]"],"state":"done"}
 ---
 
 

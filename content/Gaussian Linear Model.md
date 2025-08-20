@@ -1,5 +1,5 @@
 ---
-{"publish":true,"title":"Gaussian Linear Model","created":"2025-07-26T02:29:39","modified":"2025-07-27T00:26:11","cssclasses":"","state":"done","sup":["[[Linear Regression]]"],"aliases":null,"type":"note","related":["[[Estimation]]"]}
+{"publish":true,"title":"Gaussian Linear Model","created":"2025-07-26T02:29:39","modified":"2025-07-27T00:26:11","tags":["pub-stat"],"cssclasses":"","state":"done","sup":["[[Linear Regression]]"],"aliases":null,"type":"note","related":["[[Estimation]]"]}
 ---
 
 

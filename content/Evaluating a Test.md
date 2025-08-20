@@ -1,5 +1,5 @@
 ---
-{"publish":true,"title":"Evaluating a Test","created":"2025-05-30T02:48:39","modified":"2025-07-15T14:19:33","cssclasses":"","state":"done","sup":["[[Hypothesis Testing]]"],"aliases":null,"type":"note"}
+{"publish":true,"title":"Evaluating a Test","created":"2025-05-30T02:48:39","modified":"2025-07-15T14:19:33","tags":["pub-stat"],"cssclasses":"","state":"done","sup":["[[Hypothesis Testing]]"],"aliases":null,"type":"note"}
 ---
 
 

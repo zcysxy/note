@@ -1,5 +1,5 @@
 ---
-{"publish":true,"title":"f-Divergence","created":"2023-05-09T21:45:32","modified":"2025-06-06T01:33:01","cssclasses":"","type":"note","sup":["[[Probability Theory]]"],"state":"done"}
+{"publish":true,"title":"f-Divergence","created":"2023-05-09T21:45:32","modified":"2025-06-06T01:33:01","tags":["pub-stat"],"cssclasses":"","type":"note","sup":["[[Probability Theory]]"],"state":"done"}
 ---
 
 

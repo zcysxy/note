@@ -1,5 +1,5 @@
 ---
-{"publish":true,"aliases":"Overdetermined System","created":"2022-02-22T20:20:09","modified":"2025-08-05T21:56:05","cssclasses":"","type":"note","sup":["[[Regression]]","[[Machine Learning]]"],"state":"done","related":["[[Ridge Regression]]"]}
+{"publish":true,"aliases":"Overdetermined System","created":"2022-02-22T20:20:09","modified":"2025-08-05T21:56:05","tags":["pub-stat"],"cssclasses":"","type":"note","sup":["[[Regression]]","[[Machine Learning]]"],"state":"done","related":["[[Ridge Regression]]"]}
 ---
 
 

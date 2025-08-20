@@ -1,5 +1,5 @@
 ---
-{"publish":true,"aliases":["Sufficiency"],"title":"Sufficient Statistic","created":"2025-05-20T19:13:46","modified":"2025-08-18T18:23:51","cssclasses":"","state":"done","sup":["[[Statistics]]"],"type":"note"}
+{"publish":true,"aliases":["Sufficiency"],"title":"Sufficient Statistic","created":"2025-05-20T19:13:46","modified":"2025-08-18T18:23:51","tags":["pub-stat"],"cssclasses":"","state":"done","sup":["[[Statistics]]"],"type":"note"}
 ---
 
 

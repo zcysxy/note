@@ -1,5 +1,5 @@
 ---
-{"publish":true,"aliases":["KL"],"created":"2022-05-28T03:34:21","modified":"2025-06-01T03:56:26","cssclasses":"","type":"note","sup":["[[Machine Learning]]","[[Information Theory]]","[[Statistics]]","[[f-Divergence]]"],"state":"done"}
+{"publish":true,"aliases":["KL"],"created":"2022-05-28T03:34:21","modified":"2025-06-01T03:56:26","tags":["pub-stat"],"cssclasses":"","type":"note","sup":["[[Machine Learning]]","[[Information Theory]]","[[Statistics]]","[[f-Divergence]]"],"state":"done"}
 ---
 
 

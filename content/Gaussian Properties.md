@@ -1,5 +1,5 @@
 ---
-{"publish":true,"title":"Gaussian Properties","created":"2025-05-20T18:58:54","modified":"2025-05-21T01:13:06","cssclasses":"","state":"[[%wip]]","sup":["[[Normal Distribution]]"],"aliases":null,"type":"note"}
+{"publish":true,"title":"Gaussian Properties","created":"2025-05-20T18:58:54","modified":"2025-05-21T01:13:06","tags":["pub-stat"],"cssclasses":"","state":"[[%wip]]","sup":["[[Normal Distribution]]"],"aliases":null,"type":"note"}
 ---
 
 

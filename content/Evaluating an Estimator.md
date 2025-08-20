@@ -1,5 +1,5 @@
 ---
-{"publish":true,"title":"Evaluating an Estimator","created":"2025-06-06T02:05:38","modified":"2025-06-06T03:50:21","cssclasses":"","state":"done","sup":["[[Estimation]]"],"aliases":null,"type":"note"}
+{"publish":true,"title":"Evaluating an Estimator","created":"2025-06-06T02:05:38","modified":"2025-06-06T03:50:21","tags":["pub-stat"],"cssclasses":"","state":"done","sup":["[[Estimation]]"],"aliases":null,"type":"note"}
 ---
 
 

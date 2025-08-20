@@ -1,5 +1,5 @@
 ---
-{"publish":true,"aliases":["Bernoulli Law of Large Numbers","Weak Law of Large Numbers","Strong Law of Large Numbers","LLN"],"title":"Law of Large Numbers","created":"2021-08-17T21:58:15","modified":"2025-08-04T23:42:28","cssclasses":"","type":"note","sup":["[[Probability Theory]]"],"related":[],"state":"done"}
+{"publish":true,"aliases":["Bernoulli Law of Large Numbers","Weak Law of Large Numbers","Strong Law of Large Numbers","LLN"],"title":"Law of Large Numbers","created":"2021-08-17T21:58:15","modified":"2025-08-04T23:42:28","tags":["pub-stat"],"cssclasses":"","type":"note","sup":["[[Probability Theory]]"],"related":[],"state":"done"}
 ---
 
 

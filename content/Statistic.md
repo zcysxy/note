@@ -1,5 +1,5 @@
 ---
-{"publish":true,"title":"Statistic","created":"2025-05-21T19:18:56","modified":"2025-06-28T18:01:58","cssclasses":"","state":"done","sup":["[[Statistics]]"],"aliases":null,"type":"note"}
+{"publish":true,"title":"Statistic","created":"2025-05-21T19:18:56","modified":"2025-06-28T18:01:58","tags":["pub-stat"],"cssclasses":"","state":"done","sup":["[[Statistics]]"],"aliases":null,"type":"note"}
 ---
 
 

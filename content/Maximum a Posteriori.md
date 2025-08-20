@@ -1,5 +1,5 @@
 ---
-{"publish":true,"aliases":["MAP"],"title":"Maximum a Posteriori","created":"2023-01-31T15:04:22","modified":"2023-02-06T14:43:43","cssclasses":"","type":"note","sup":["[[Probability Theory]]","[[Linear Regression]]","[[Bayesian Inference]]"],"state":"done","related":["[[Ridge Regression]]"]}
+{"publish":true,"aliases":["MAP"],"title":"Maximum a Posteriori","created":"2023-01-31T15:04:22","modified":"2023-02-06T14:43:43","tags":["pub-stat"],"cssclasses":"","type":"note","sup":["[[Probability Theory]]","[[Linear Regression]]","[[Bayesian Inference]]"],"state":"done","related":["[[Ridge Regression]]"]}
 ---
 
 

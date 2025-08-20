@@ -1,5 +1,5 @@
 ---
-{"publish":true,"title":"Admissibility","created":"2025-05-24T20:14:46","modified":"2025-07-27T20:38:21","cssclasses":"","state":"done","sup":["[[Statistical Decision Theory]]"],"type":"note","related":["[[Risk]]"]}
+{"publish":true,"title":"Admissibility","created":"2025-05-24T20:14:46","modified":"2025-07-27T20:38:21","tags":["pub-stat"],"cssclasses":"","state":"done","sup":["[[Statistical Decision Theory]]"],"type":"note","related":["[[Risk]]"]}
 ---
 
 

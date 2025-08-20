@@ -1,5 +1,5 @@
 ---
-{"publish":true,"aliases":["Moment Estimator"],"title":"Method of Moments","created":"2023-10-19T16:39:52","modified":"2025-06-02T22:25:36","cssclasses":"","type":"note","sup":["[[Estimation]]"],"state":"done","related":["[[Moment]]"]}
+{"publish":true,"aliases":["Moment Estimator"],"title":"Method of Moments","created":"2023-10-19T16:39:52","modified":"2025-06-02T22:25:36","tags":["pub-stat"],"cssclasses":"","type":"note","sup":["[[Estimation]]"],"state":"done","related":["[[Moment]]"]}
 ---
 
 

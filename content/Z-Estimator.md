@@ -1,5 +1,5 @@
 ---
-{"publish":true,"title":"Z-Estimator","created":"2025-06-06T16:34:37","modified":"2025-06-11T19:23:01","cssclasses":"","state":"done","sup":["[[Estimation]]"],"aliases":null,"type":"note"}
+{"publish":true,"title":"Z-Estimator","created":"2025-06-06T16:34:37","modified":"2025-06-11T19:23:01","tags":["pub-stat"],"cssclasses":"","state":"done","sup":["[[Estimation]]"],"aliases":null,"type":"note"}
 ---
 
 

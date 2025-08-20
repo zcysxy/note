@@ -1,5 +1,5 @@
 ---
-{"publish":true,"title":"Regression","created":"2023-01-19T14:53:16","modified":"2025-08-07T13:00:36","cssclasses":"","aliases":null,"type":"note","sup":["[[Machine Learning]]","[[Statistics]]"],"state":"[[%wip]]","related":["[[Prediction]]"]}
+{"publish":true,"title":"Regression","created":"2023-01-19T14:53:16","modified":"2025-08-07T13:00:36","tags":["pub-stat"],"cssclasses":"","aliases":null,"type":"note","sup":["[[Machine Learning]]","[[Statistics]]"],"state":"[[%wip]]","related":["[[Prediction]]"]}
 ---
 
 

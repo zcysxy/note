@@ -1,5 +1,5 @@
 ---
-{"publish":true,"title":"Hardness of Simple Hypothesis Test Through Total Variation","created":"2025-05-27T23:43:04","modified":"2025-08-18T18:50:00","cssclasses":"","state":"done","sup":["[[Hypothesis Testing]]"],"aliases":null,"type":"note","related":["[[Total Variation Distance]]"]}
+{"publish":true,"title":"Hardness of Simple Hypothesis Test Through Total Variation","created":"2025-05-27T23:43:04","modified":"2025-08-18T18:50:00","tags":["pub-stat"],"cssclasses":"","state":"done","sup":["[[Hypothesis Testing]]"],"aliases":null,"type":"note","related":["[[Total Variation Distance]]"]}
 ---
 
 

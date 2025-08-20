@@ -1,5 +1,5 @@
 ---
-{"publish":true,"title":"Statistical Functional","created":"2025-06-28T17:51:19","modified":"2025-06-28T19:02:02","cssclasses":"","type":"note","sup":["[[Statistics]]"],"state":"done"}
+{"publish":true,"title":"Statistical Functional","created":"2025-06-28T17:51:19","modified":"2025-06-28T19:02:02","tags":["pub-stat"],"cssclasses":"","type":"note","sup":["[[Statistics]]"],"state":"done"}
 ---
 
 

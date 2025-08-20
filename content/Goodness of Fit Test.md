@@ -1,5 +1,5 @@
 ---
-{"publish":true,"aliases":["Kolmogorov–Smirnov","chi-square test"],"title":"Goodness of Fit Test","created":"2025-07-22T21:17:40","modified":"2025-07-23T22:46:02","cssclasses":"","state":"done","sup":["[[Hypothesis Testing]]"],"type":"note"}
+{"publish":true,"aliases":["Kolmogorov–Smirnov","chi-square test"],"title":"Goodness of Fit Test","created":"2025-07-22T21:17:40","modified":"2025-07-23T22:46:02","tags":["pub-stat"],"cssclasses":"","state":"done","sup":["[[Hypothesis Testing]]"],"type":"note"}
 ---
 
 

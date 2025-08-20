@@ -1,5 +1,5 @@
 ---
-{"publish":true,"title":"Chi-Square Distribution","created":"2022-12-05T17:42:50","modified":"2025-07-17T16:01:52","cssclasses":"","aliases":null,"type":"note","sup":["[[Probability Theory]]"],"state":"done"}
+{"publish":true,"title":"Chi-Square Distribution","created":"2022-12-05T17:42:50","modified":"2025-07-17T16:01:52","tags":["pub-stat"],"cssclasses":"","aliases":null,"type":"note","sup":["[[Probability Theory]]"],"state":"done"}
 ---
 
 

@@ -1,5 +1,5 @@
 ---
-{"publish":true,"aliases":"LRT","title":"Likelihood Hypothesis Test","created":"2023-10-17T19:15:35","modified":"2025-07-22T20:34:40","cssclasses":"","type":"note","sup":["[[Hypothesis Testing]]"],"state":"done"}
+{"publish":true,"aliases":"LRT","title":"Likelihood Hypothesis Test","created":"2023-10-17T19:15:35","modified":"2025-07-22T20:34:40","tags":["pub-stat"],"cssclasses":"","type":"note","sup":["[[Hypothesis Testing]]"],"state":"done"}
 ---
 
 
@@ -41,6 +41,6 @@ $$
 \to& \chi^{2}_{k},
 \end{aligned}
 $$
-where $\ell$ is the log-likelihood, the approximation follows the [[M-Estimator#Proof Sketch]] of the asymptotic normality of M-Estimators.
+where $\ell$ is the log-likelihood, the approximation follows the [[M-Estimator#Proof of Consistency]] of the asymptotic normality of M-Estimators.
 
 - [~] LRT is useful to find a convenient **test statistic**. For instance, we can transform the inequality $\Lambda \le$ into an inequality in $-2 \log \Lambda$, which is a convenient test statistic because of the theorem of asymptotic LRT.

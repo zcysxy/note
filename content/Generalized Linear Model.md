@@ -1,5 +1,5 @@
 ---
-{"publish":true,"aliases":"GLM","title":"Generalized Linear Model","created":"2023-11-12T21:11:03","modified":"2025-08-07T03:07:05","cssclasses":"","type":"note","sup":["[[Linear Regression]]"],"state":"done"}
+{"publish":true,"aliases":"GLM","title":"Generalized Linear Model","created":"2023-11-12T21:11:03","modified":"2025-08-07T03:07:05","tags":["pub-stat"],"cssclasses":"","type":"note","sup":["[[Linear Regression]]"],"state":"done"}
 ---
 
 

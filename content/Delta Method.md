@@ -1,5 +1,5 @@
 ---
-{"publish":true,"title":"Delta Method","created":"2025-05-21T21:18:39","modified":"2025-06-09T21:33:39","cssclasses":"","state":"done","sup":null,"aliases":null,"type":"note"}
+{"publish":true,"title":"Delta Method","created":"2025-05-21T21:18:39","modified":"2025-06-09T21:33:39","tags":["pub-stat"],"cssclasses":"","state":"done","sup":null,"aliases":null,"type":"note"}
 ---
 
 

@@ -1,5 +1,5 @@
 ---
-{"publish":true,"created":"2023-08-02T18:42:38","modified":"2025-07-30T02:57:19","cssclasses":"","type":"index","sup":["[[Machine Learning]]","[[Statistics]]"],"state":"done"}
+{"publish":true,"created":"2023-08-02T18:42:38","modified":"2025-07-30T02:57:19","tags":["pub-stat"],"cssclasses":"","type":"index","sup":["[[Machine Learning]]","[[Statistics]]"],"state":"done"}
 ---
 
 

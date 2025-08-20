@@ -1,5 +1,5 @@
 ---
-{"publish":true,"aliases":["Neyman-Pearson","UMP"],"title":"Uniformly Most Powerful Test","created":"2025-05-30T02:48:16","modified":"2025-08-18T19:19:52","cssclasses":"","state":"done","sup":["[[Hypothesis Testing]]"],"type":"note"}
+{"publish":true,"aliases":["Neyman-Pearson","UMP"],"title":"Uniformly Most Powerful Test","created":"2025-05-30T02:48:16","modified":"2025-08-18T19:19:52","tags":["pub-stat"],"cssclasses":"","state":"done","sup":["[[Hypothesis Testing]]"],"type":"note"}
 ---
 
 

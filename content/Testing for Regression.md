@@ -1,5 +1,5 @@
 ---
-{"publish":true,"title":"Testing for Regression","created":"2025-08-05T21:59:56","modified":"2025-08-05T23:34:37","cssclasses":"","state":"done","sup":["[[Hypothesis Testing]]","[[Regression]]"],"aliases":null,"type":"note"}
+{"publish":true,"title":"Testing for Regression","created":"2025-08-05T21:59:56","modified":"2025-08-05T23:34:37","tags":["pub-stat"],"cssclasses":"","state":"done","sup":["[[Hypothesis Testing]]","[[Regression]]"],"aliases":null,"type":"note"}
 ---
 
 

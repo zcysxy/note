@@ -1,5 +1,5 @@
 ---
-{"publish":true,"title":"Bowl-Shaped Loss","created":"2025-06-27T21:39:32","modified":"2025-07-27T19:33:45","cssclasses":"","state":"done","sup":["[[Machine Learning]]","[[Statistics]]"],"aliases":null,"type":"note"}
+{"publish":true,"title":"Bowl-Shaped Loss","created":"2025-06-27T21:39:32","modified":"2025-07-27T19:33:45","tags":["pub-stat"],"cssclasses":"","state":"done","sup":["[[Machine Learning]]","[[Statistics]]"],"aliases":null,"type":"note"}
 ---
 
 

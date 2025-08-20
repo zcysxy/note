@@ -1,5 +1,5 @@
 ---
-{"publish":true,"title":"Permutation Test","created":"2025-07-27T19:01:13","modified":"2025-07-27T19:27:40","cssclasses":"","state":"done","sup":["[[Hypothesis Testing]]"],"aliases":null,"type":"note"}
+{"publish":true,"title":"Permutation Test","created":"2025-07-27T19:01:13","modified":"2025-07-27T19:27:40","tags":["pub-stat"],"cssclasses":"","state":"done","sup":["[[Hypothesis Testing]]"],"aliases":null,"type":"note"}
 ---
 
 

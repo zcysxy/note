@@ -1,5 +1,5 @@
 ---
-{"publish":true,"aliases":["MLE"],"title":"Maximum Likelihood Estimation","created":"2022-05-28T03:34:23","modified":"2025-06-18T17:08:24","cssclasses":"","type":"note","sup":["[[Estimation]]"],"related":["[[Machine Learning]]"],"state":"done"}
+{"publish":true,"aliases":["MLE"],"title":"Maximum Likelihood Estimation","created":"2022-05-28T03:34:23","modified":"2025-06-18T17:08:24","tags":["pub-stat"],"cssclasses":"","type":"note","sup":["[[Estimation]]"],"related":["[[Machine Learning]]"],"state":"done"}
 ---
 
 

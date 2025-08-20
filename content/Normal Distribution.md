@@ -1,5 +1,5 @@
 ---
-{"publish":true,"aliases":["Gauss distribution","Gaussian","Gaussian distribution"],"created":"2022-05-28T03:34:22","modified":"2024-12-16T16:00:42","cssclasses":"","type":"note","sup":["[[Probability Theory]]"],"state":"done"}
+{"publish":true,"aliases":["Gauss distribution","Gaussian","Gaussian distribution"],"created":"2022-05-28T03:34:22","modified":"2024-12-16T16:00:42","tags":["pub-stat"],"cssclasses":"","type":"note","sup":["[[Probability Theory]]"],"state":"done"}
 ---
 
 

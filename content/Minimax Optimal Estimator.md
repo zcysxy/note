@@ -1,5 +1,5 @@
 ---
-{"publish":true,"title":"Minimax Optimal Estimator","created":"2025-06-28T00:06:01","modified":"2025-07-17T15:21:44","cssclasses":"","state":"done","sup":["[[Estimation]]"],"aliases":null,"type":"note","related":["[[Risk]]"]}
+{"publish":true,"title":"Minimax Optimal Estimator","created":"2025-06-28T00:06:01","modified":"2025-07-17T15:21:44","tags":["pub-stat"],"cssclasses":"","state":"done","sup":["[[Estimation]]"],"aliases":null,"type":"note","related":["[[Risk]]"]}
 ---
 
 

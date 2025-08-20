@@ -1,5 +1,5 @@
 ---
-{"publish":true,"aliases":["Glivenko–Cantelli Theorem","Dvoretzky–Kiefer–Wolfowitz Theorem","DKW","CDF Inference","Donsker"],"title":"Inference for CDFs","created":"2025-07-23T02:31:36","modified":"2025-07-23T22:39:01","cssclasses":"","state":"[[%watch]]","sup":["[[Statistics]]","[[Cumulative Distribution Function]]"],"type":"note"}
+{"publish":true,"aliases":["Glivenko–Cantelli Theorem","Dvoretzky–Kiefer–Wolfowitz Theorem","DKW","CDF Inference","Donsker"],"title":"Inference for CDFs","created":"2025-07-23T02:31:36","modified":"2025-07-23T22:39:01","tags":["pub-stat"],"cssclasses":"","state":"[[%watch]]","sup":["[[Statistics]]","[[Cumulative Distribution Function]]"],"type":"note"}
 ---
 
 

@@ -1,5 +1,5 @@
 ---
-{"publish":true,"aliases":["Bayesian Statistics"],"created":"2022-05-28T03:34:22","modified":"2025-07-30T03:13:02","cssclasses":"","type":"note","sup":["[[Statistics]]"],"state":"done"}
+{"publish":true,"aliases":["Bayesian Statistics"],"created":"2022-05-28T03:34:22","modified":"2025-07-30T03:13:02","tags":["pub-stat"],"cssclasses":"","type":"note","sup":["[[Statistics]]"],"state":"done"}
 ---
 
 

@@ -1,5 +1,5 @@
 ---
-{"publish":true,"title":"Bayes Optimal Estimator","created":"2025-06-27T22:22:59","modified":"2025-06-28T00:04:40","cssclasses":"","state":"done","sup":["[[Estimation]]","[[Bayesian Inference]]"],"aliases":null,"type":"note","related":["[[Risk]]"]}
+{"publish":true,"title":"Bayes Optimal Estimator","created":"2025-06-27T22:22:59","modified":"2025-06-28T00:04:40","tags":["pub-stat"],"cssclasses":"","state":"done","sup":["[[Estimation]]","[[Bayesian Inference]]"],"aliases":null,"type":"note","related":["[[Risk]]"]}
 ---
 
 

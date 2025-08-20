@@ -1,5 +1,5 @@
 ---
-{"publish":true,"title":"M-Estimator","created":"2025-06-04T01:17:30","modified":"2025-06-10T23:10:03","cssclasses":"","state":"done","sup":["[[Estimation]]"],"aliases":null,"type":"note","related":["[[Maximum Likelihood Estimation]]"]}
+{"publish":true,"title":"M-Estimator","created":"2025-06-04T01:17:30","modified":"2025-08-19T22:46:02","tags":["pub-stat"],"cssclasses":"","state":"done","sup":["[[Estimation]]"],"aliases":null,"type":"note","related":["[[Maximum Likelihood Estimation]]"]}
 ---
 
 
@@ -54,7 +54,7 @@ It turns out that the above consistency holds under two reasonable conditions:
     - Some sufficient conditions for uniform convergence:
         - Finite [[Vapnik–Chervonenkis\|VC]] dimension.
         - Finite [[Rademacher Complexity]] or [[Gaussian Complexity]].
-        - Compact $\Theta$ and continuous $M_{\theta}$ and $M$, and $\mathbb{E}_{P}[\sup_{\theta\in\Theta}M_{\theta}(X)] < \infty$.
+        - Compact $\Theta$ and continuous $M_{n}$ and $M$ (in $\theta$), and $\mathbb{E}_{P}[\sup_{\theta\in\Theta}M_{\theta}(X)] < \infty$.
 - **Separation**: For any $\epsilon$, $\inf_{\theta:\|\theta-\theta ^{*}\| > \epsilon}M(\theta) > M(\theta ^{*})$
     - [~] In words, this condition says that only parameters close to $\theta ^*$ may yield a value of $M(\theta)$ close to the minimum $M(\theta ^*)$.
 
@@ -109,28 +109,39 @@ $$
 
 - [!] Note that we do not require $m_{\theta}$ is twice differentiable. The twice differentiability of $e$ is weaker.
 
-### Proof Sketch
+#### Proof of Asymptotic Normality
 
-In the proof sketch, we neglect the expectation, and assume that the expectation and derivatives commute. By Taylor expansion,
+The regularity conditions allow the commutation of expectation and derivatives.
+By definition, $\hat{\theta}$ minimizes the sample criterion function $M_n$, and thus is the zero of its derivative.
+By Taylor expansion,
 $$
-M(\theta) - M(\theta ^*) \approx \dot{M}_{\theta ^*}^T(\theta - \theta ^*) + \frac{1}{2}(\theta - \theta ^*)^T\ddot{M}_{\theta ^*}(\theta - \theta ^*).
+0 = \dot{M}_n(\hat{\theta}) = \dot{M}_n(\theta ^{*}) + \ddot{M}_n(\bar{\theta})(\hat{\theta}-\theta ^*),
 $$
-Denote the RHS as $Q(\theta)$. Then, we have
+where $\bar{\theta}$ is some point between $\hat{\theta}$ and $\theta ^{*}$. By [[Law of Large Numbers\|LLN]],
 $$
-\hat{\theta} \approx \argmin_{\theta}M(\theta ) \approx \argmin_{\theta}Q(\theta).
+\ddot{M}_n(\theta) \overset{ P }{ \to } \ddot{M}(\theta), \quad \forall \theta.
 $$
-By setting
+By the regularity conditions and the [[M-Estimator#Consistency]] property,
 $$
-\dot{Q}(\theta) = \dot{M}_{\theta ^*} + \ddot{M}_{\theta ^*}(\theta-\theta ^*) = 0,
+    \ddot{M}_n(\bar{\theta }) \overset{ P }{ \to } \ddot{M}(\theta ^*) = V_{\theta ^*},
 $$
-we get
+which is invertible. Thus, by [[Convergence of Random Variables#Continuous Mapping Theorem\|CMT]], we have
 $$
-\hat{\theta} - \theta ^* \approx -\ddot{M}_{\theta ^*}^{-1} \dot{M}_{\theta ^*}.
+\sqrt{ n }(\hat{\theta} - \theta ^*) \overset{ P }{ \to } V_{\theta ^*}^{-1} (\sqrt{ n } \dot{M}_n(\theta ^*)).
 $$
-Thus, the asymptotic variance is approximately
+
+Finally, since $\theta ^*$ minimizes the population objective $M$, $\dot{M}(\theta ^*) =0$. By [[Central Limit Theorem\|CLT]],
 $$
-\ddot{M}_{\theta ^*}^{-1}\dot{M}_{\theta ^*}\dot{M}_{\theta ^*}^T \ddot{M}_{\theta ^*}^{-1} = V_{\theta ^*}^{-1} \mathbb{E}[\dot{m}_{\theta ^*}\dot{m}_{\theta ^*}^T]V_{\theta ^*}^{-1}.
+\sqrt{ n } \dot{M}_n(\theta ^*) \overset{ d }{ \to } \mathcal{N}(0,\Var(\dot{m}(X,\theta ^*))) = \mathcal{N}(0, \mathbb{E}[\dot{m}_{\theta ^*}\dot{m}_{\theta ^*}^T]).
 $$
+[[Convergence of Random Variables#Slutsky's Theorem]] gives
+$$
+\sqrt{ n }(\hat{\theta} - \theta ^*) \overset{ d }{ \to } \mathcal{N}(0, V_{\theta ^*}^{-1} \mathbb{E}[\dot{m}_{\theta ^*}\dot{m}_{\theta ^*}^T])V_{\theta ^*}^{-T}).
+$$
+
+> [!rmk] The use of [[Law of Large Numbers\|LLN]] and [[Central Limit Theorem\|CLT]]
+>
+> We already know $\hat{\theta}-\theta ^* \overset{ P }{ \to }0$. To know the convergence rate, we need to use [[Central Limit Theorem\|CLT]], which uses high-order information. Since the $\ddot{M}_n(\theta ^*)$ converges to a non-singular $\ddot{M}(\theta ^*)$, we do not need to zoom in and [[Law of Large Numbers\|LLN]] suffices. The Hessian $\ddot{M}(\theta ^*)$ is called the stable curvature.
 
 
 
