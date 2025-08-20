@@ -11,6 +11,12 @@ const config: QuartzConfig = {
   configuration: {
     pageTitle: "Sufficient Statistics",
     pageTitleSuffix: "",
+    tagTitle: {
+      "pub-stat": "Statistics",
+      "pub-prob": "Proabability",
+      "ml": "Machine Learning",
+      "data-science": "Data Science"
+    },
     enableSPA: true,
     enablePopovers: true,
     analytics: {
