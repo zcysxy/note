@@ -17,7 +17,7 @@ const config: QuartzConfig = {
     },
     tagUrl: {
       "pub-stat": "/statistics",
-      "pub-prob": "/probability-theory",
+      "pub-prob": "/probability",
     },
     enableSPA: true,
     enablePopovers: true,
