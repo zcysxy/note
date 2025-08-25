@@ -202,9 +202,9 @@ body:not(.no-wrapped-dvtable) .markdown-source-view.mod-cm6 .table-view-table > 
   }
 }
 
-.cards table tbody > tr > td > :not(.el-embed-image) {
-  padding: calc(var(--cards-padding) / 3) 0;
-}
+/* .cards table tbody > tr > td > :not(.el-embed-image) { */
+/*   padding: calc(var(--cards-padding) / 3) 0; */
+/* } */
 
 .cards table tbody > tr > td:not(:last-child):not(:first-child) > .el-p:not(.el-embed-image) {
   border-bottom: 1px solid var(--background-modifier-border);
