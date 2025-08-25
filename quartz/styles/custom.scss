@@ -83,7 +83,7 @@ img[alt="Open In Colab"] + svg {
   &:has(a[href$="probability"]):before {
     background-image: var(--prob-page-icon-svg);
   }
-  &:not(:has(a[href$="probability"])):before {
+  &:not(:has(a[href$="probability"]), :has(a[href$="statistics"])):before {
     background-image: var(--base-page-icon-svg);
     html[saved-theme="light"] & {
       filter: brightness(0.9);
