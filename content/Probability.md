@@ -1,13 +1,11 @@
 ---
-{"publish":true,"aliases":["Probability Theory"],"title":"*Almost All* of Probability","created":"2022-09-25T14:40:01","modified":"2025-08-25T03:56:43","tags":["pub-prob"],"cssclasses":"","id":"Probability","banner":"https://raw.githubusercontent.com/zcysxy/Figurebed/master/img/Apstrakcija.jpg","pub-banner":"https://raw.githubusercontent.com/zcysxy/Figurebed/master/img/prob-icon.svg","banner_icon":"🎲","dg-publish":false,"state":"done","sup":["[[Math]]"],"type":"index"}
+{"publish":true,"aliases":["Probability Theory"],"title":"*Almost All* of Probability","created":"2022-09-25T14:40:01","modified":"2025-08-25T19:56:41","tags":["pub-prob"],"cssclasses":"","id":"Probability","banner":"https://raw.githubusercontent.com/zcysxy/Figurebed/master/img/Apstrakcija.jpg","pub-banner":"https://raw.githubusercontent.com/zcysxy/Figurebed/master/img/prob-icon.svg","banner_icon":"🎲","dg-publish":false,"state":"done","sup":["[[Math]]"],"type":"index"}
 ---
 
 
+
+
 # Probability
-
-
-
-# *Almost All* of Probability
 
 Probability is a **mathematical language** that describes the unobserved world, using vocabulary from [[Measure\|Measure Theory]].
 
