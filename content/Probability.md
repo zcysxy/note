@@ -1,5 +1,5 @@
 ---
-{"publish":true,"aliases":["Probability Theory"],"title":"*Almost All* of Probability","created":"2022-09-25T14:40:01","modified":"2025-08-19T10:42:36","tags":["pub-prob"],"cssclasses":"","id":"Probability","banner":"https://raw.githubusercontent.com/zcysxy/Figurebed/master/img/Apstrakcija.jpg","banner_icon":"🎲","dg-publish":false,"state":"done","sup":["[[Math]]"],"type":"index"}
+{"publish":true,"aliases":["Probability Theory"],"title":"*Almost All* of Probability","created":"2022-09-25T14:40:01","modified":"2025-08-19T10:42:36","tags":["pub-prob"],"cssclasses":"","id":"Probability","banner":"https://raw.githubusercontent.com/zcysxy/Figurebed/master/img/Apstrakcija.jpg","pub-banner":"https://raw.githubusercontent.com/zcysxy/Figurebed/master/img/prob-icon.svg","banner_icon":"🎲","dg-publish":false,"state":"done","sup":["[[Math]]"],"type":"index"}
 ---
 
 

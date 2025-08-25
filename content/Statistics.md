@@ -1,5 +1,5 @@
 ---
-{"publish":true,"title":"*Sufficient* of Statistics","created":"2023-10-17T21:41:50","modified":"2025-08-07T03:07:20","tags":["pub-stat"],"cssclasses":"","type":"index","sup":["[[Math]]"],"state":"done","banner":"https://raw.githubusercontent.com/zcysxy/Figurebed/master/img/20231017221426.png","banner_icon":"🔮","reference":"AOS"}
+{"publish":true,"title":"*Sufficient* of Statistics","created":"2023-10-17T21:41:50","modified":"2025-08-07T03:07:20","tags":["pub-stat"],"cssclasses":"","type":"index","sup":["[[Math]]"],"state":"done","banner":"https://raw.githubusercontent.com/zcysxy/Figurebed/master/img/20231017221426.png","pub-banner":"https://raw.githubusercontent.com/zcysxy/Figurebed/master/img/stat-icon.svg","banner_icon":"🔮","reference":"AOS"}
 ---
 
 
