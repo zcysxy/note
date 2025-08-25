@@ -1,5 +1,5 @@
 ---
-{"publish":true,"aliases":["index"],"title":"Note Box","created":"2025-08-24T22:52:59","modified":"2025-08-24T22:54:17","cssclasses":["cards","cards-cover","cards-2-1","cards-cols-3","note-gallery"],"state":"[[%wip]]","sup":null,"type":"note"}
+{"publish":true,"aliases":["index"],"title":"Note Box","created":"2025-08-24T22:52:59","modified":"2025-08-24T22:54:17","cssclasses":["cards","cards-cover","cards-2-1","cards-cols-1","note-gallery"],"state":"[[%wip]]","sup":null,"type":"note"}
 ---
 
 
