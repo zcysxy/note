@@ -1,5 +1,5 @@
 ---
-{"publish":true,"aliases":["index"],"title":"*Sufficient* of Statistics","created":"2023-10-17T21:41:50","modified":"2025-08-07T03:07:20","tags":["pub-stat"],"cssclasses":"","type":"index","sup":["[[Math]]"],"state":"[[%wip]]","banner":"https://raw.githubusercontent.com/zcysxy/Figurebed/master/img/20231017221426.png","banner_icon":"🔮","reference":"AOS"}
+{"publish":true,"aliases":["index"],"title":"*Sufficient* of Statistics","created":"2023-10-17T21:41:50","modified":"2025-08-07T03:07:20","tags":["pub-stat"],"cssclasses":"","type":"index","sup":["[[Math]]"],"state":"done","banner":"https://raw.githubusercontent.com/zcysxy/Figurebed/master/img/20231017221426.png","banner_icon":"🔮","reference":"AOS"}
 ---
 
 
@@ -120,7 +120,7 @@ A(Data generating process) --Probability--> B(Observed data)
 B --Statistical inference--> A
 ```
 
-[[Probability Theory]] answers the following question:
+[[Probability]] answers the following question:
 
 > [!qn] Given a data generating process, what are the properties of the outcomes?
 

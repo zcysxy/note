@@ -1,5 +1,5 @@
 ---
-{"publish":true,"title":"Likelihood","created":"2022-05-18T16:26:34","modified":"2025-06-18T16:49:05","tags":["pub-stat"],"cssclasses":"","aliases":null,"type":"note","sup":["[[Probability Theory]]","[[Statistics]]"],"state":"done","related":["[[Maximum Likelihood Estimation]]"]}
+{"publish":true,"title":"Likelihood","created":"2022-05-18T16:26:34","modified":"2025-06-18T16:49:05","tags":["pub-stat"],"cssclasses":"","aliases":null,"type":"note","sup":["[[Probability]]","[[Statistics]]"],"state":"done","related":["[[Maximum Likelihood Estimation]]"]}
 ---
 
 

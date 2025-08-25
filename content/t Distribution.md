@@ -1,5 +1,5 @@
 ---
-{"publish":true,"aliases":["Student's t-distribution"],"title":"t-Distribution","created":"2022-12-05T18:14:58","modified":"2025-07-17T16:05:33","tags":["pub-stat"],"cssclasses":"","type":"note","sup":["[[Probability Theory]]"],"state":"done"}
+{"publish":true,"aliases":["Student's t-distribution"],"title":"t-Distribution","created":"2022-12-05T18:14:58","modified":"2025-07-17T16:05:33","tags":["pub-stat"],"cssclasses":"","type":"note","sup":["[[Probability]]"],"state":"done"}
 ---
 
 

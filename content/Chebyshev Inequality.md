@@ -1,5 +1,5 @@
 ---
-{"publish":true,"aliases":["Markov Inequality","Probability Inequalities"],"title":"Chebyshev Inequality","created":"2022-12-04T22:31:54","modified":"2024-11-04T04:18:08","tags":["pub-stat"],"cssclasses":"","type":"note","sup":["[[Probability Theory]]"],"state":"done"}
+{"publish":true,"aliases":["Markov Inequality","Probability Inequalities"],"title":"Chebyshev Inequality","created":"2022-12-04T22:31:54","modified":"2024-11-04T04:18:08","tags":["pub-stat"],"cssclasses":"","type":"note","sup":["[[Probability]]"],"state":"done"}
 ---
 
 

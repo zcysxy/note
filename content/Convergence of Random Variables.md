@@ -1,5 +1,5 @@
 ---
-{"publish":true,"created":"2023-10-15T22:20:54","modified":"2025-08-04T23:49:53","tags":["pub-stat"],"cssclasses":"","type":"note","sup":["[[Probability Theory]]","[[Random Variable]]"],"state":"done"}
+{"publish":true,"created":"2023-10-15T22:20:54","modified":"2025-08-04T23:49:53","tags":["pub-stat"],"cssclasses":"","type":"note","sup":["[[Probability]]","[[Random Variable]]"],"state":"done"}
 ---
 
 

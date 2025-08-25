@@ -1,5 +1,5 @@
 ---
-{"publish":true,"title":"Best Estimator for Uniform Distribution Parameter","created":"2022-12-06T00:26:27","modified":"2025-06-27T21:52:59","tags":["pub-stat"],"cssclasses":"","aliases":null,"type":"jupyter","sup":["[[Probability Theory]]","[[Uniform Distribution]]"],"state":"done","related":["[[Maximum Likelihood Estimation]]"],"reference":["https://math.unm.edu/~knrumsey/pdfs/projects/Uniform.pdf"]}
+{"publish":true,"title":"Best Estimator for Uniform Distribution Parameter","created":"2022-12-06T00:26:27","modified":"2025-06-27T21:52:59","tags":["pub-stat"],"cssclasses":"","aliases":null,"type":"jupyter","sup":["[[Probability]]","[[Uniform Distribution]]"],"state":"done","related":["[[Maximum Likelihood Estimation]]"],"reference":["https://math.unm.edu/~knrumsey/pdfs/projects/Uniform.pdf"]}
 ---
 
 
