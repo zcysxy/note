@@ -1,5 +1,5 @@
 ---
-{"publish":true,"title":"*Sufficient* of Statistics","created":"2023-10-17T21:41:50","modified":"2025-08-07T03:07:20","tags":["pub-stat"],"cssclasses":"","type":"index","sup":["[[Math]]"],"state":"done","banner":"https://raw.githubusercontent.com/zcysxy/Figurebed/master/img/20231017221426.png","pub-banner":"https://raw.githubusercontent.com/zcysxy/Figurebed/master/img/stat-icon.svg","banner_icon":"🔮","reference":"AOS"}
+{"publish":true,"title":"*Sufficient* of Statistics","created":"2023-10-17T21:41:50","modified":"2025-08-25T03:35:43","tags":["pub-stat"],"cssclasses":"","type":"index","sup":["[[Math]]"],"state":"done","banner":"https://raw.githubusercontent.com/zcysxy/Figurebed/master/img/20231017221426.png","pub-banner":"https://raw.githubusercontent.com/zcysxy/Figurebed/master/img/stat-icon.svg","banner_icon":"🔮","reference":"AOS"}
 ---
 
 
@@ -135,5 +135,5 @@ While statistical inference answers the inverse problem:
     - van der Vaart, *Asymptotic Statistics*
     - Sheldon Ross, *Introduction to Probability and Statistics for Engineers and Scientists*
 - Courses
+    - MIT 6.S951 w/ Prof. Stephen Bates, 18.6501 w/ Prof. Philippe Rigollet
     - Columbia STAT 5701, 5703
-    - MIT 6.S951, 18.6501

@@ -1,11 +1,29 @@
 ---
-{"publish":true,"aliases":["Probability Theory"],"title":"*Almost All* of Probability","created":"2022-09-25T14:40:01","modified":"2025-08-19T10:42:36","tags":["pub-prob"],"cssclasses":"","id":"Probability","banner":"https://raw.githubusercontent.com/zcysxy/Figurebed/master/img/Apstrakcija.jpg","pub-banner":"https://raw.githubusercontent.com/zcysxy/Figurebed/master/img/prob-icon.svg","banner_icon":"🎲","dg-publish":false,"state":"done","sup":["[[Math]]"],"type":"index"}
+{"publish":true,"aliases":["Probability Theory"],"title":"*Almost All* of Probability","created":"2022-09-25T14:40:01","modified":"2025-08-25T03:56:43","tags":["pub-prob"],"cssclasses":"","id":"Probability","banner":"https://raw.githubusercontent.com/zcysxy/Figurebed/master/img/Apstrakcija.jpg","pub-banner":"https://raw.githubusercontent.com/zcysxy/Figurebed/master/img/prob-icon.svg","banner_icon":"🎲","dg-publish":false,"state":"done","sup":["[[Math]]"],"type":"index"}
 ---
 
 
 # Probability
 
 
+
+# *Almost All* of Probability
+
+Probability is a **mathematical language** that describes the unobserved world, using vocabulary from [[Measure\|Measure Theory]].
+
+```mermaid
+graph RL
+A("Probability space (Ω,𝓕,𝐏)")
+O("Space Ω") --> A
+F("Sigma field 𝓕") --> A
+F1@{shape: braces, label: "1\\. Empty set<br>2. Closure under complementation<br>3. Closure under countable unions"} --- F
+P("Probability measure 𝐏") --> A
+P1@{shape: braces, label: "1\\. Non-negativity<br>2. Countable addivity<br>3. Unit"} --- P
+style P1 text-align:left
+style F1 text-align:left
+```
+
+The three defining conditions of a probability measure are also called the ==probability axioms==.
 
 ## Basic Concepts
 
@@ -72,3 +90,15 @@
 | [[Laplace Distribution]]              |                                |                                                       |                                                                                                 |                                                                                                                                                         |                                             |                                                                                                                 |                                                                                               |                                  |
 
 
+
+## References
+
+- Textbooks
+    - Dimitri P. Bertsekas and John N. Tsitsiklis, *Introduction to Probability*
+    - Geoffrey Grimmett and David Stirzaker, *Probability and Random Processes*
+    - Sheldon Ross, *Introduction to Probability and Statistics for Engineers and Scientists*
+    - Gangjian Ying and Ping He, *Probability Theory*
+- Courses
+    - MIT 6.7700 w/ Prof. Philippe Rigollet, and 6.431 w/ Prof. John Tsitsiklis
+    - Columbia STAT 5701, 5703
+    - Fudan MATH 130009 w/ Prof. Gangjian Ying
