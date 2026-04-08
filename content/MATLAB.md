@@ -2,8 +2,8 @@
 publish: true
 title: MATLAB
 created: 2022-02-22T20:20:09
-modified: 2026-04-08T19:01:36
-published: 2026-04-08T19:01:36.629-04:00
+modified: 2026-04-08T19:28:52
+published: 2026-04-08T19:28:53.287-04:00
 type: index
 banner_icon: 📐
 banner: https://raw.githubusercontent.com/zcysxy/Figurebed/master/img/McGee_Charles_SqAndThings_6X8_8232_master.png
@@ -16,7 +16,7 @@ state: "[[%wip]]"
 
 # MATLAB
 
-- doc: [MATLAB Documentation](https://www.mathworks.com/help/matlab/index.html)
+- [MATLAB Documentation](https://www.mathworks.com/help/matlab/index.html)
 - [[Matlab Everything]]
 
 ## [[Matlab Basics]]
