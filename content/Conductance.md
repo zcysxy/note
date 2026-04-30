@@ -1,0 +1,19 @@
+---
+publish: true
+title: Conductance
+created: 2026-04-23T15:41:24
+modified: 2026-04-23T15:41:44
+published: 2026-04-30T15:36:53.402-04:00
+tags:
+  - "#pub-network"
+state: "[[%wip]]"
+sup:
+  - "[[Graph Theory]]"
+  - "[[Network]]"
+aliases:
+type: note
+---
+
+# Conductance
+
+## Cheeger's Inequality
