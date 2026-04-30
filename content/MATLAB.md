@@ -3,7 +3,9 @@ publish: true
 title: MATLAB
 created: 2022-02-22T20:20:09
 modified: 2026-04-08T19:28:52
-published: 2026-04-08T19:28:53.287-04:00
+published: 2026-04-30T15:02:05.960-04:00
+tags:
+  - pub-matlab
 type: index
 banner_icon: 📐
 banner: https://raw.githubusercontent.com/zcysxy/Figurebed/master/img/McGee_Charles_SqAndThings_6X8_8232_master.png
@@ -12,6 +14,7 @@ dg-publish: false
 sup:
   - "[[Language]]"
 state: "[[%wip]]"
+tag: pub-matlab
 ---
 
 # MATLAB
