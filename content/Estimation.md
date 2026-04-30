@@ -1,34 +1,43 @@
 ---
-{"publish":true,"created":"2023-08-02T18:42:38","modified":"2025-07-30T02:57:19","tags":["pub-stat"],"cssclasses":"","type":"index","sup":["[[Machine Learning]]","[[Statistics]]"],"state":"done"}
+publish: true
+created: 2023-08-02T18:42:38
+modified: 2025-07-30T02:57:19
+published: 2026-01-06T20:10:18.069-05:00
+tags:
+  - pub-stat
+type: index
+sup:
+  - "[[Machine Learning]]"
+  - "[[Statistics]]"
+state: done
 ---
-
 
 # Estimation
 
 > [!tldr]+ Quick Reference
 >
 > - Types of estimation
->     - [[Estimation#Point Estimation]]
->     - [[Confidence Interval]]/Region
->     - [[Bayesian Inference]]
+>   - [[#Point Estimation]]
+>   - [[Confidence Interval]]/Region
+>   - [[Bayesian Inference]]
 > - Metric
->     - [[Evaluating an Estimator]]
->         - Probabilistic properties
->         	- [[Estimation#Bias]]
->         	- [[Estimation#Standard Error]]
->         	- [[Estimation#Risk]]
->         - Statistical properties
->         	- [[Estimation#Consistency]]
->         	- [[Estimation#Asymptotic Normality]]
->     - [[Bayes Optimal Estimator]]
->     - [[Minimax Optimal Estimator]]
+>   - [[Evaluating an Estimator]]
+>     - Probabilistic properties
+>       - [[#Bias]]
+>       - [[#Standard Error]]
+>       - [[#Risk]]
+>     - Statistical properties
+>       - [[#Consistency]]
+>       - [[#Asymptotic Normality]]
+>   - [[Bayes Optimal Estimator]]
+>   - [[Minimax Optimal Estimator]]
 > - Point estimation methods
->     - [[Method of Moments]]
->     - [[Maximum Likelihood Estimation]]
->     - [[Mean Squared Error\|Least Squares]]
->     - [[M-Estimator]]
->     - [[Z-Estimator]]
->     - [[Maximum a Posteriori]]
+>   - [[Method of Moments]]
+>   - [[Maximum Likelihood Estimation]]
+>   - [[Mean Squared Error|Least Squares]]
+>   - [[M-Estimator]]
+>   - [[Z-Estimator]]
+>   - [[Maximum a Posteriori]]
 >
 > ```mermaid
 > flowchart
@@ -53,39 +62,28 @@
 
 ## Point Estimation
 
-A ==point estimator/statistic== *recovers* a quantity of interest from data samples. Formally, it's any algorithm/measurable function that returns a **point** in the parameter space given the sample:
+A ==point estimator/statistic== _recovers_ a quantity of interest from data samples. Formally, it's any algorithm/measurable function that returns a **point** in the parameter space given the sample:
 $$
 \hat{\theta} : \mathcal{X}\to \Theta, \quad X \mapsto \hat{\theta}_{X}.
 $$
-The parameter space $\Theta$ can be one-dimensional, multi-dimensional, or even a function space. When the sample $X=(X_{1},\dots,X_{n})$ has a sample size/dimension of $n$, we also conventionally write $\hat{\theta}_{n}$ to denote the point estimator.
+The parameter space $\Theta$ can be one-dimensional, multi-dimensional, or even a function space. When the sample $X=(X_{1},\dots,X\_{n})$ has a sample size/dimension of $n$, we also conventionally write $\hat{\theta}\_{n}$ to denote the point estimator.
 
-In contrast to point estimation, [[Confidence Interval]]/region returns a subset of the parameter space $\hat{C}\in 2^{\Theta}$, and [[Bayesian Inference]] returns a distribution over the parameter space $\hat{P}\in \Delta(\Theta)$.
+In contrast to point estimation, [[confidence interval]]/region returns a subset of the parameter space $\hat{C}\in 2^{\Theta}$, and [[Bayesian Inference]] returns a distribution over the parameter space $\hat{P}\in \Delta(\Theta)$.
 
-
-
-## Comparison of Estimation Methods  
+## Comparison of Estimation Methods
 
 ### MLE vs MoM
 
-- For quadratic risks, [[Maximum Likelihood Estimation\|MLE]] is more accurate in general
-- [[Maximum Likelihood Estimation#Misspecification\|MLE]] still gives good results even for misspecified models, while [[Method of Moments]] is more sensitive to model misspecification.
-- Sometimes [[Maximum Likelihood Estimation\|MLE]] can be computationally intractable, and [[Method of Moments]] is easier with only polynomial equations.
+- For quadratic risks, [[Maximum Likelihood Estimation|MLE]] is more accurate in general
+- [[Maximum Likelihood Estimation#Misspecification|MLE]] still gives good results even for misspecified models, while [[Method of Moments]] is more sensitive to model misspecification.
+- Sometimes [[Maximum Likelihood Estimation|MLE]] can be computationally intractable, and [[Method of Moments]] is easier with only polynomial equations.
 
 ### Bayesian Estimation
 
-<div class="transclude" data-embed-alias="  " data-url="Bayesian Inference"> 
-
-* [[Maximum a Posteriori]], which returns the **mode** of the posterior distribution.
-* [[Bayes Optimal Estimator]], which returns the
-    * **mean** of the posterior distribution for [[Mean Squared Error]], or any [[Bowl-Shaped Loss]] with a Gaussian posterior;
-    * **median** of the posterior distribution for absolute error loss $L(\hat{\theta},\theta)= |\hat{\theta}-\theta|$;
-    * **mode** of the posterior distribution for zero-one loss $L(\hat{\theta},\theta)= \mathbb{I}(\hat{\theta}\ne\theta)$.
-
-</div>
- <a href="Bayesian Inference" class="internal transclude-src">Link to original</a>
+![[Bayesian Inference#^bayes-est-comp]]
 
 ### Bayes vs Frequentist
 
-- The [[Bayesian Inference\|Bayesian approach]] has been criticized for its over-reliance on convenient priors and lack of robustness.
-- The frequentist approach, such as [[Maximum Likelihood Estimation\|MLE]], has been criticized for its inflexibility (failure to incorporate prior information) and incoherence (failure to process information systematically).
+- The [[Bayesian Inference|Bayesian approach]] has been criticized for its over-reliance on convenient priors and lack of robustness.
+- The frequentist approach, such as [[Maximum Likelihood Estimation|MLE]], has been criticized for its inflexibility (failure to incorporate prior information) and incoherence (failure to process information systematically).
 - For large sample sizes ($n$), or when the prior is uniform, the Bayesian method tends to yield results similar to those of the classical likelihood approach.

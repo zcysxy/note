@@ -5,7 +5,7 @@ aliases:
 title: Network
 created: 2026-03-27T17:35:19
 modified: 2026-04-30T15:31:56
-published: 2026-04-30T15:43:12.063-04:00
+published: 2026-04-30T15:45:48.681-04:00
 tags:
   - pub-network
 state: "[[%wip]]"

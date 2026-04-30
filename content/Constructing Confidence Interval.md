@@ -1,14 +1,38 @@
 ---
-{"publish":true,"title":"Constructing Confidence Interval","created":"2025-05-26T20:56:19","modified":"2025-06-07T17:05:27","tags":["pub-stat"],"cssclasses":"","state":"done","sup":["[[Confidence Interval]]"],"aliases":null,"type":"jupyter"}
+publish: true
+title: Constructing Confidence Interval
+created: 2025-05-26T20:56:19
+modified: 2026-01-03T07:59:24
+published: 2026-01-03T07:59:27.000-05:00
+tags:
+  - pub-stat
+state: done
+sup:
+  - "[[Confidence Interval]]"
+aliases:
+type: jupyter
+jupyter:
+  jupytext:
+    cell_markers: '"""'
+    cell_metadata_filter: -all
+    formats: ipynb,md
+    text_representation:
+      extension: .md
+      format_name: markdown
+      format_version: "1.3"
+      jupytext_version: 1.18.1
+  kernelspec:
+    display_name: Python 3
+    language: python
+    name: python3
 ---
-
 
 # Constructing Confidence Interval
 
 This notebook explores methods of constructing [[Confidence Interval]]s. We focus on the following methods:
 
 1. Exact calculation
-2. [[Central Limit Theorem\|CLT]] CI
+2. [[Central Limit Theorem|CLT]] CI
 3. Hoeffding CI
 4. Plug-in (Wald) CI
 5. Wilson score CI
@@ -37,38 +61,38 @@ sampler = lambda n, p: np.random.binomial(1, p, size=n)
 
 ## Test Statistic and Critical Values
 
-Recall that a [[Statistic]] is a function of the observed data, e.g., mean and variance.
+Recall that a [[statistic]] is a function of the observed data, e.g., mean and variance.
 If a test involves some parameters, a test statistic is often a function of both the sample and the parameter, such that
 
-- the distribution of $t$ is known, e.g., a [[t Distribution]] or a [[Chi-Square Distribution]], or can be approximated, e.g., using [[Central Limit Theorem\|CLT]] ^known
+- the distribution of $t$ is known, e.g., a [[t Distribution]] or a [[Chi-Square Distribution]], or can be approximated, e.g., using [[Central Limit Theorem|CLT]] ^known
 - the distribution of $t$ does not depend on the parameter ^unkown
 
-Such a test statistic is also called a *pivot (quantity)*.
+Such a test statistic is also called a _pivot (quantity)_.
 
 Then, we can first construct a confidence interval for the test statistic $t$.
 Using the knowledge of its distribution (or quantiles), the confidence interval can be given by:
 $$
-P(c_{\alpha /2} \leq t \leq c_{1-\alpha /2}) = 1-\alpha 
+P(c\_{\alpha /2} \leq t \leq c\_{1-\alpha /2}) = 1-\alpha
 $$
-where $c_{q}$ is the $q$-th quantile of the distribution of $t$, and $c_{\alpha/2}$ and $c_{1-\alpha /2}$ are called the *critical values*.
+where $c\_{q}$ is the $q$-th quantile of the distribution of $t$, and $c\_{\alpha/2}$ and $c\_{1-\alpha /2}$ are called the _critical values_.
 
 ## Exact CI
 
-Exact CIs are constructed using known quantile function $c_{q}$ and explicit expression of the test statistic $t$.
+Exact CIs are constructed using known quantile function $c\_{q}$ and explicit expression of the test statistic $t$.
 
 > [!tip] Warm up
 > Construct the exact CI of estimating $\theta$ with 10 iid samples from $\mathcal{N}(\theta,5)$. Use the look-up table of the Normal distribution quantiles.
 
-For Bernoulli trials, let's consider the sum of $n$ trials, $S_n = \sum_{i=1}^{n} X_i$, as the test statistic. $S_n$ follows a Binomial distribution, whose CDF satisfies:
+For Bernoulli trials, let's consider the sum of $n$ trials, $S\_n = \sum\_{i=1}^{n} X\_i$, as the test statistic. $S\_n$ follows a Binomial distribution, whose CDF satisfies:
 $$
-F_{\mathrm{binom}}\left( t; n,p \right)  = F_{\mathrm{beta}}(p; t+1, n+1-t).
+F\_{\mathrm{binom}}\left( t; n,p \right)  = F\_{\mathrm{beta}}(p; t+1, n+1-t).
 $$
-where $F_{\mathrm{beta}}(\cdot;\alpha,\beta)$ is the CDF of the Beta distribution with parameters $\alpha$ and $\beta$.
+where $F\_{\mathrm{beta}}(\cdot;\alpha,\beta)$ is the CDF of the Beta distribution with parameters $\alpha$ and $\beta$.
 Therefore, using exact beta distribution quantiles, a $1-\alpha$ level exact CI for $p$ is
 $$
-C^{(\mathrm{exact})}(S_n) = [b_{\alpha /2}(S_n,n-S_n+1), b_{1-\alpha /2}(S_n+1,n-S_n)],
+C^{(\mathrm{exact})}(S\_n) = \[b\_{\alpha /2}(S\_n,n-S\_n+1), b\_{1-\alpha /2}(S\_n+1,n-S\_n)],
 $$
-where $b_{q}(\alpha,\beta)$ is the $q$-th quantile of the Beta distribution with parameters $\alpha$ and $\beta$.
+where $b\_{q}(\alpha,\beta)$ is the $q$-th quantile of the Beta distribution with parameters $\alpha$ and $\beta$.
 
 > [!rmk] Remark
 > Note that $p$ is **not a random variable**. However, treating it as a beta random variable (as in a Bayesian interpretation) gives us the same exact calculation as using the binomial distribution.
@@ -226,12 +250,12 @@ By CLT and LLN, we know that
 $$
 \frac{\sqrt{ n }(\overline{X}-p)}{\hat{\sigma}} \overset{ d }{ \to } \mathcal{N}(0,1),
 $$
-where $\overline{X}$ is the sample mean and $\hat{\sigma}^{2} =\frac{1}{n-1}\sum_{i=1}^{n}(X_{i}-\overline{X})^{2}$ is the sample variance.
+where $\overline{X}$ is the sample mean and $\hat{\sigma}^{2} =\frac{1}{n-1}\sum\_{i=1}^{n}(X\_{i}-\overline{X})^{2}$ is the sample variance.
 This gives the CLT CI:
 $$
-C^{(\mathrm{CLT})}(X) = \overline{X} \pm z_{\alpha /2}\frac{\hat{\sigma}}{\sqrt{ n }}.
+C^{(\mathrm{CLT})}(X) = \overline{X} \pm z\_{\alpha /2}\frac{\hat{\sigma}}{\sqrt{ n }}.
 $$
-where $z_{\beta}$ is the $\beta$-th quantile of the standard normal distribution.
+where $z\_{\beta}$ is the $\beta$-th quantile of the standard normal distribution.
 
 ```python
 from scipy.stats import norm
@@ -306,7 +330,7 @@ fig = plot_stat(results_hoeff, 'Hoeffding CI')
 plt.show()
 ```
 
-We can see Hoeffding CI is super *conservative*: it has a much wider CI with a higher coverage than the nominal level.
+We can see Hoeffding CI is super _conservative_: it has a much wider CI with a higher coverage than the nominal level.
 
 > [!ex] Chebyshev CI
 > Construct another concentration inequality-based CI. For example, Chebyshev CI. And compare it with Hoeffding CI.
@@ -317,18 +341,18 @@ Another version of CLT CI is using the fact that
 $$
 \frac{\hat{\theta}-\theta}{\mathrm{SE}(\hat{\theta} )} \overset{ d }{ \to } \mathcal{N}(0,1),
 $$
-where $\mathrm{SE}$ is the *standard error* of the statistic $\hat{\theta}$.
+where $\mathrm{SE}$ is the _standard error_ of the statistic $\hat{\theta}$.
 For sample mean, we know its standard error is
 $$
-\mathrm{SE}(\overline{X}) = \frac{\operatorname{Var}(X_{i})}{\sqrt{ n }}.
+\mathrm{SE}(\overline{X}) = \frac{\operatorname{Var}(X\_{i})}{\sqrt{ n }}.
 $$
 For Bernoulli distribution, instead of using a sample variance to estimate the variance, and hence estimate the standard error, as we did in constructing [CLT CI](#clt-ci), we notice that
 $$
-\operatorname{Var}(X_i) = p(1-p).
+\operatorname{Var}(X\_i) = p(1-p).
 $$
 Thus, we can estimate the standard error by **plugging in** the estimation of $p$ instead, using $\hat{p} = \overline{X}$, giving the Wald plug-in CI:
 $$
-C^{(\mathrm{Wald})}(X) = \overline{X} \pm z_{\alpha /2} \sqrt{\frac{\overline{X}(1-\overline{X})}{n}}.
+C^{(\mathrm{Wald})}(X) = \overline{X} \pm z\_{\alpha /2} \sqrt{\frac{\overline{X}(1-\overline{X})}{n}}.
 $$
 
 ```python
@@ -413,7 +437,7 @@ Summary of the methodology behind the above methods:
 - CLT CI uses [[Central Limit Theorem]] and thus is asymptotically valid. It is preferred when the sample size is large. It does not leverage any structural information about the distribution.
 - Hoeffding CI is one example of a concentration inequality-based CI. This class of CIs is finite-sample valid. Any concentration inequality can be used to construct a CI, and some are more suitable for specific distributions. Generally, concentration inequality-based CIs are more conservative.
 - Wald CI uses the plug-in principle, which is asymptotically valid. It is preferred when the test statistic involves parameters that can be readily estimated; then the estimation is plugged into the CI formula.
-- Wilson score CI constructs the CI by *solving* the inequality by CLT or other concentration inequalities. It leverages the structure of the test statistic but is preferred only when the inequality can be solved easily.
+- Wilson score CI constructs the CI by _solving_ the inequality by CLT or other concentration inequalities. It leverages the structure of the test statistic but is preferred only when the inequality can be solved easily.
 
 The width of the confidence interval, that is, its accuracy, depends on:
 

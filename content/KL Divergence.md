@@ -1,14 +1,27 @@
 ---
-{"publish":true,"aliases":["KL"],"created":"2022-05-28T03:34:21","modified":"2025-06-01T03:56:26","tags":["pub-stat"],"cssclasses":"","type":"note","sup":["[[Machine Learning]]","[[Information Theory]]","[[Statistics]]","[[f-Divergence]]"],"state":"done"}
+publish: true
+aliases:
+  - KL
+created: 2022-05-28T03:34:21
+modified: 2025-06-01T03:56:26
+published: 2026-01-06T20:10:18.120-05:00
+tags:
+  - pub-stat
+type: note
+sup:
+  - "[[Machine Learning]]"
+  - "[[Information Theory]]"
+  - "[[Statistics]]"
+  - "[[f-Divergence]]"
+state: done
 ---
-
 
 # KL Divergence
 
 The ==Kullback-Leibler (KL) divergence==, a.k.a. ==relative entropy==, measures how one distribution diverges from a second, expected probability distribution. It is defined as:
 
 $$
-D_{\mathrm{KL}}(P \| Q)=\mathbb{E}_{\mathrm{x} \sim P}\left[\log \frac{P(x)}{Q(x)} \right]=\mathbb{E}_{\mathrm{x} \sim P}[\log P(x)-\log Q(x)].
+D\_{\mathrm{KL}}(P | Q)=\mathbb{E}_{\mathrm{x} \sim P}\left\[\log \frac{P(x)}{Q(x)} \right]=\mathbb{E}_{\mathrm{x} \sim P}\[\log P(x)-\log Q(x)].
 $$
 KL divergence is an example of [[f-Divergence]] with $f(x) = x\log x$.
 
@@ -18,11 +31,11 @@ For discrete variables, KL divergence is the **extra amount of information** nee
 
 ## Properties
 
-1. Generally $D_{\mathrm{KL}}(P||Q) \neq  D_{\mathrm{KL}}(Q||P)$
-2. $D_{\mathrm{KL}} \geq 0$
-3. $D_{\mathrm{KL}}(P||Q) = 0 \Rightarrow P \doteq Q$
-4. Generally $D_{\mathrm{KL}}(P||Q) \not\le D_{\mathrm{KL}}(P\|R) + D_{\mathrm{KL}}(R\| Q)$
+1. Generally $D\_{\mathrm{KL}}(P||Q) \neq  D\_{\mathrm{KL}}(Q||P)$
+2. $D\_{\mathrm{KL}} \geq 0$
+3. $D\_{\mathrm{KL}}(P||Q) = 0 \Rightarrow P \doteq Q$
+4. Generally $D\_{\mathrm{KL}}(P||Q) \not\le D\_{\mathrm{KL}}(P|R) + D\_{\mathrm{KL}}(R| Q)$
 
-- [!] KL divergence is not a metric.
+- KL divergence is not a metric.
 
 The second and third properties are by [[Jensen Inequality]] and the convexity of $-\log$.

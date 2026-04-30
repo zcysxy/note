@@ -3,9 +3,9 @@ publish: true
 title: Kleinberg Model
 created: 2026-04-09T14:57:53
 modified: 2026-04-22T03:07:20
-published: 2026-04-30T15:37:00.256-04:00
+published: 2026-04-30T16:13:48.037-04:00
 tags:
-  - "#pub-network"
+  - pub-network
 state: done
 sup:
   - "[[Network]]"

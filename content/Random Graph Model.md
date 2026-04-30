@@ -3,9 +3,9 @@ publish: true
 title: Random Graph Model
 created: 2026-03-31T17:53:22
 modified: 2026-04-02T17:31:01
-published: 2026-04-30T15:37:11.600-04:00
+published: 2026-04-30T16:13:47.889-04:00
 tags:
-  - "#pub-network"
+  - pub-network
 state: done
 sup:
   - "[[Network]]"

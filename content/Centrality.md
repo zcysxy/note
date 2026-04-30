@@ -1,11 +1,11 @@
 ---
 publish: true
-title: Connectivity
+title: Centrality
 created: 2026-03-27T22:26:33
 modified: 2026-04-21T21:30:17
-published: 2026-04-30T15:36:29.594-04:00
+published: 2026-04-30T16:13:47.924-04:00
 tags:
-  - "#pub-network"
+  - pub-network
 state: done
 sup:
   - "[[Network]]"

@@ -1,19 +1,34 @@
 ---
-{"publish":true,"title":"Best Estimator for Uniform Distribution Parameter","created":"2022-12-06T00:26:27","modified":"2025-06-27T21:52:59","tags":["pub-stat"],"cssclasses":"","aliases":null,"type":"jupyter","sup":["[[Probability]]","[[Uniform Distribution]]"],"state":"done","related":["[[Maximum Likelihood Estimation]]"],"reference":["https://math.unm.edu/~knrumsey/pdfs/projects/Uniform.pdf"]}
+publish: true
+title: Best Estimator for Uniform Distribution Parameter
+created: 2022-12-06T00:26:27
+modified: 2025-06-27T21:52:59
+published: 2026-01-06T20:10:18.002-05:00
+tags:
+  - pub-stat
+aliases:
+type: jupyter
+sup:
+  - "[[Probability]]"
+  - "[[Uniform Distribution]]"
+state: done
+related:
+  - "[[Maximum Likelihood Estimation]]"
+reference:
+  - https://math.unm.edu/~knrumsey/pdfs/projects/Uniform.pdf
 ---
-
 
 # Best Estimator for Uniform Distribution Parameter
 
-We want to estimate the parameter $\theta$ of a [[Uniform Distribution]] given $n$ i.i.d samples $X_i \overset{ \text{i.i.d.} }{ \sim } \operatorname{Unif}[0,\theta ]$.
+We want to estimate the parameter $\theta$ of a [[Uniform Distribution]] given $n$ i.i.d samples $X\_i \overset{ \text{i.i.d.} }{ \sim } \operatorname{Unif}\[0,\theta ]$.
 
-- [?] So, what is the *best* estimator?
+- So, what is the _best_ estimator?
 
-First, we need to define the evaluation metric. We use [[Mean Squared Error]]. We know for an estimator $\hat{\theta}$ of $\theta$, its [[Mean Squared Error\|MSE]] is
+First, we need to define the evaluation metric. We use [[Mean Squared Error]]. We know for an estimator $\hat{\theta}$ of $\theta$, its [[Mean Squared Error|MSE]] is
 $$
 \operatorname{MSE}(\hat{\theta},\theta ) = \operatorname{Bias}(\hat{\theta})^{2} + \operatorname{SE}(\hat{\theta})^{2},
 $$
-where $\operatorname{Bias}(\hat{\theta}) = \mathbb{E}[\hat{\theta}] - \theta$ is the bias of the estimator, and $\operatorname{SE}(\hat{\theta}) = \sqrt{\operatorname{Var}(\hat{\theta})}$ is the standard error of the estimator.
+where $\operatorname{Bias}(\hat{\theta}) = \mathbb{E}\[\hat{\theta}] - \theta$ is the bias of the estimator, and $\operatorname{SE}(\hat{\theta}) = \sqrt{\operatorname{Var}(\hat{\theta})}$ is the standard error of the estimator.
 
 We will also touch on [[Evaluating an Estimator#Asymptotic Normality]] for certain estimators.
 
@@ -32,24 +47,24 @@ num_simulations = 100000
 
 ## First Attempts
 
-Note that the [[Expectation]] of $\operatorname{Unif}[0,\theta]$ is $\theta /2$, which gives $\theta = 2\mathbb{E}[X]$. Therefore, the very first estimator we can think of is to replace the expectation with a sample value:
+Note that the [[Expectation]] of $\operatorname{Unif}\[0,\theta]$ is $\theta /2$, which gives $\theta = 2\mathbb{E}\[X]$. Therefore, the very first estimator we can think of is to replace the expectation with a sample value:
 $$
-\hat{\theta}^{(1)} = 2 X_{1}.
+\hat{\theta}^{(1)} = 2 X\_{1}.
 $$
 
 We know this estimator is unbiased and thus its MSE is
 $$
-\operatorname{MSE}(\hat{\theta}^{(1)}) = \Var(2X_{1}) = 4 \Var(X_{1}) = 4\cdot \frac{\theta^{2}}{12} = \frac{\theta^{2}}{3},
+\operatorname{MSE}(\hat{\theta}^{(1)}) = \Var(2X\_{1}) = 4 \Var(X\_{1}) = 4\cdot \frac{\theta^{2}}{12} = \frac{\theta^{2}}{3},
 $$
 which is a constant regardless of the sample size $n$.
 
 Obviously, $\hat{\theta}^{(1)}$ is not satisfactory as it only uses the information from one sample. More generally, we can consider an estimator that uses $k \le n$ samples:
 $$
-\hat{\theta}^{(k)} = \frac{1}{k} \sum_{i=1}^{k} 2X_{i},
+\hat{\theta}^{(k)} = \frac{1}{k} \sum\_{i=1}^{k} 2X\_{i},
 $$
 which is still unbiased but has a reduced standard error:
 $$
-\operatorname{MSE}(\hat{\theta}^{(k)}) = \Var\left( \frac{1}{k} \sum_{i=1}^{k}2X_{i} \right)  = \frac{4}{k^{2}} \sum_{i=1}^{k}\Var(X_{i}) = \frac{\theta^{2}}{3k}.
+\operatorname{MSE}(\hat{\theta}^{(k)}) = \Var\left( \frac{1}{k} \sum\_{i=1}^{k}2X\_{i} \right)  = \frac{4}{k^{2}} \sum\_{i=1}^{k}\Var(X\_{i}) = \frac{\theta^{2}}{3k}.
 $$
 The variance reduces because $\hat{\theta}^{(k)}$ aggregates the information from $k$ i.i.d. samples.
 Again, its MSE is a constant w.r.t $n$.
@@ -88,13 +103,13 @@ plt.show()
 
 A natural extension is to use all $n$ samples:
 $$
-\hat{\theta }^{(\mathrm{MM})} = \frac{1}{n}\sum_{i=1}^{n}2X_{i} = 2\overline{X}.
+\hat{\theta }^{(\mathrm{MM})} = \frac{1}{n}\sum\_{i=1}^{n}2X\_{i} = 2\overline{X}.
 $$
 Since the above is equivalent to solving the estimation equation
 $$
 2\overline{X} = \hat{\mathbb{E}}_{n}2X = \mathbb{E}_{\hat{\theta}^{(\mathrm{MM})}} 2X = \hat{\theta}^{(\mathrm{MM})},
 $$
-the resultant estimator is a [[Method of Moments\|Moment Estimator]]. In other words, we plug in the sample mean as the true mean (first moment) to get the estimation.
+the resultant estimator is a [[Method of Moments|Moment Estimator]]. In other words, we plug in the sample mean as the true mean (first moment) to get the estimation.
 The mean squared error is the same as the previous case with $n$ samples:
 $$
 \operatorname{MSE}(\hat{\theta}^{(\mathrm{MM})}) = \frac{\theta^{2}}{3n}.
@@ -159,24 +174,24 @@ plt.show()
 
 ## Maximum Likelihood Estimation
 
-> [!exercise] Derive the maximum likelihood estimator for $\theta$: $\hat{\theta}^{(\mathrm{MLE})}=\max_i X_i$.
+> [!exercise] Derive the maximum likelihood estimator for $\theta$: $\hat{\theta}^{(\mathrm{MLE})}=\max\_i X\_i$.
 
-To get $\operatorname{Var}(\hat{\theta}^{(\mathrm{MLE})})$ and $\operatorname{Bias}(\hat{\theta}^{(\mathrm{MLE})})$, we first need to calculate the distribution of $\hat{\theta}^{(\mathrm{MLE})} = \max_{i} X _i$. It's CDF is
+To get $\operatorname{Var}(\hat{\theta}^{(\mathrm{MLE})})$ and $\operatorname{Bias}(\hat{\theta}^{(\mathrm{MLE})})$, we first need to calculate the distribution of $\hat{\theta}^{(\mathrm{MLE})} = \max\_{i} X _i$. It's CDF is
 $$
-P(\hat{\theta}^{(\mathrm{MLE})} \le x) = P(\max_{i} X _i \le x) = \prod_{i}P(X _i\le x) = (x / \theta)^{n}.
+P(\hat{\theta}^{(\mathrm{MLE})} \le x) = P(\max_{i} X _i \le x) = \prod_{i}P(X \_i\le x) = (x / \theta)^{n}.
 $$
 
-Therefore, the [[Probability Density Function\|PDF]] of $\hat{\theta}^{(\mathrm{MLE})}$ is
+Therefore, the [[Probability Density Function|PDF]] of $\hat{\theta}^{(\mathrm{MLE})}$ is
 $$
-f(x) = \frac{nx^{n-1}}{\theta ^{n}}, \quad x \in [0,\theta ]
+f(x) = \frac{nx^{n-1}}{\theta ^{n}}, \quad x \in \[0,\theta ]
 $$
 
 Then, we have
 $$\tag{1}
-\mathbb{E}[\hat{\theta}^{(\mathrm{MLE})}] = \int _{0}^{\theta}xf(x) \, dx = \frac{n}{\theta ^{n}} \frac{1}{n+1}\theta ^{n+1} = \frac{n\theta}{n+1},
+\mathbb{E}\[\hat{\theta}^{(\mathrm{MLE})}] = \int \_{0}^{\theta}xf(x) , dx = \frac{n}{\theta ^{n}} \frac{1}{n+1}\theta ^{n+1} = \frac{n\theta}{n+1},
 $$
 $$
-\operatorname{Var}(\hat{\theta}^{(\mathrm{MLE})}) = \mathbb{E}[(\hat{\theta}^{(\mathrm{MLE})})^{2}] - \mathbb{E}[\hat{\theta}^{(\mathrm{MLE})}]^{2} = \frac{n\theta^{2}}{n+2} - \left( \frac{n\theta}{n+1} \right)^{2} = \frac{n\theta^{2}}{(n+2)(n+1)^{2}}.
+\operatorname{Var}(\hat{\theta}^{(\mathrm{MLE})}) = \mathbb{E}\[(\hat{\theta}^{(\mathrm{MLE})})^{2}] - \mathbb{E}\[\hat{\theta}^{(\mathrm{MLE})}]^{2} = \frac{n\theta^{2}}{n+2} - \left( \frac{n\theta}{n+1} \right)^{2} = \frac{n\theta^{2}}{(n+2)(n+1)^{2}}.
 $$
 
 Therefore
@@ -184,7 +199,7 @@ $$
 \operatorname{MSE}(\hat{\theta}^{(\mathrm{MLE})}) = \frac{2\theta^{2}}{(n+2)(n+1)} \le \frac{\theta^{2}}{3n} = \operatorname{MSE}(\hat{\theta}^{(\mathrm{MM})} ).
 $$
 
-Thus, we can say that $\hat{\theta}^{(\mathrm{MLE})} = \max_{i}X _i$ is a better estimator than $\hat{\theta}^{(\mathrm{MM})}= 2\overline{X}$.
+Thus, we can say that $\hat{\theta}^{(\mathrm{MLE})} = \max\_{i}X \_i$ is a better estimator than $\hat{\theta}^{(\mathrm{MM})}= 2\overline{X}$.
 
 We compare the MLE with previous estimators.
 
@@ -211,19 +226,19 @@ plt.show()
 
 ## Uniformly Minimum-Variance Unbiased Estimator
 
-Can we do better? Equation $(1)$ suggests that $\frac{n+1}{n}\hat{\theta}^{(\mathrm{MLE})}$ is an unbiased estimator, which *may* further reduce the error.
+Can we do better? Equation $(1)$ suggests that $\frac{n+1}{n}\hat{\theta}^{(\mathrm{MLE})}$ is an unbiased estimator, which _may_ further reduce the error.
 
 We have the following fact:
 
 > [!prop] Proposition ^prop
 >
-> If $T$ is a complete and [[Sufficient Statistic]] for a parameter $\theta$, and $\phi(T)$ is an estimator dependent only on $T$, then $\phi(T)$ is the unique uniformly minimum-variance unbiased estimator (UMVUE) of $\mathbb{E}_{\theta }\phi(T)$.
+> If $T$ is a complete and [[sufficient statistic]] for a parameter $\theta$, and $\phi(T)$ is an estimator dependent only on $T$, then $\phi(T)$ is the unique uniformly minimum-variance unbiased estimator (UMVUE) of $\mathbb{E}\_{\theta }\phi(T)$.
 
 The uniformness refers to that the minimum variance is achieved for all $\theta$.
 
-We note that $\max_{i}X_{i}$ is a complete and sufficient statistic for $\theta$. Thus, the estimator
+We note that $\max\_{i}X\_{i}$ is a complete and sufficient statistic for $\theta$. Thus, the estimator
 $$
-\hat{\theta}^{(\mathrm{UMVUE})} = \frac{n+1}{n}\max_{i}X_{i},
+\hat{\theta}^{(\mathrm{UMVUE})} = \frac{n+1}{n}\max\_{i}X\_{i},
 $$
 has the minimum variance among all unbiased estimators of $\theta$.
 
@@ -256,34 +271,34 @@ plt.show()
 
 ## Jackknife
 
-In our problem, the bias of the MLE can be explicitly calculated, and thus we can directly correct it using the [[Best Estimator for Uniform Distribution Parameter#Uniformly Minimum-Variance Unbiased Estimator\|UMVUE]]. For more general biased estimators, we can use Jackknife resampling to *estimate* the bias, and then correct the estimator.
+In our problem, the bias of the MLE can be explicitly calculated, and thus we can directly correct it using the [[#Uniformly Minimum-Variance Unbiased Estimator|UMVUE]]. For more general biased estimators, we can use Jackknife resampling to _estimate_ the bias, and then correct the estimator.
 
-The first step of this procedure is to produce a series of [[Cross-Validation\|leave-one-out]] estimates:
+The first step of this procedure is to produce a series of [[Cross-Validation|leave-one-out]] estimates:
 $$
-\hat{\theta}_{(-i)} = \hat{\theta}_{\{ X_{1},\dots,X_{i-1},X_{i+1},\dots,X_n \}}.
+\hat{\theta}_{(-i)} = \hat{\theta}_{{ X\_{1},\dots,X\_{i-1},X\_{i+1},\dots,X\_n }}.
 $$
-That is, we remove one sample $X_{i}$ and construct the estimator $\hat{\theta}_{(-i)}$ using the remaining samples.
+That is, we remove one sample $X\_{i}$ and construct the estimator $\hat{\theta}_{(-i)}$ using the remaining samples.
 Then, the Jackknife bias estimate is
 $$
-\widehat{\operatorname{Bias}}(\hat{\theta}_{n}) = (n-1)\left( \frac{1}{n}\sum_{i=1}^{n}\hat{\theta}_{(-i)} - \hat{\theta}_{n} \right) ,
+\widehat{\operatorname{Bias}}(\hat{\theta}_{n}) = (n-1)\left( \frac{1}{n}\sum\_{i=1}^{n}\hat{\theta}_{(-i)} - \hat{\theta}_{n} \right) ,
 $$
 where $\hat{\theta}_{n}$ is the original estimator (with $n$ samples) to be corrected.
 Thus, the corrected Jackknife estimator is
 $$
-\hat{\theta}^{(\mathrm{Jack})} = \hat{\theta} - \widehat{\operatorname{Bias}}(\hat{\theta}_{n}) = n\hat{\theta}_{n} -  \frac{n-1}{n}\sum_{i=1}^{n}\hat{\theta}_{(-i)}.
+\hat{\theta}^{(\mathrm{Jack})} = \hat{\theta} - \widehat{\operatorname{Bias}}(\hat{\theta}_{n}) = n\hat{\theta}_{n} -  \frac{n-1}{n}\sum_{i=1}^{n}\hat{\theta}\_{(-i)}.
 $$
 
 Generally, the MSE of a Jackknife estimator is difficult to calculate as $\hat{\theta}_{(-i)}$ are correlated. However, if we are to correct the MLE estimator for $\theta$, the Jackknife estimator has a simple form:
 $$
-\hat{\theta}^{(\mathrm{Jack})} = \frac{2n-1}{n} X_{(n)} - \frac{n-1}{n}X_{(n-1)},
+\hat{\theta}^{(\mathrm{Jack})} = \frac{2n-1}{n} X_{(n)} - \frac{n-1}{n}X\_{(n-1)},
 $$
-where $X_{(i)}$ is the $i$-th order statistic of the sample $X_{1},\dots,X_{n}$, and thus $X_{(n)}=\max_{i}X_{i}$.
+where $X\_{(i)}$ is the $i$-th order statistic of the sample $X\_{1},\dots,X\_{n}$, and thus $X\_{(n)}=\max\_{i}X\_{i}$.
 Moreover, we can calculate its MSE, which slightly improves that of the MLE estimator:
 $$
 \operatorname{MSE}(\hat{\theta}^{(\mathrm{Jack})}) = \left( 1- \frac{n-1}{n^{2}} \right) \operatorname{MSE}(\hat{\theta}^{(\mathrm{MLE})}).
 $$
 
-See [[Best Estimator for Uniform Distribution Parameter#Appendix]] for details of the calculation.
+See [[#Appendix]] for details of the calculation.
 
 ```python
 def jackknife_estimator(sample):
@@ -314,8 +329,8 @@ plt.show()
 
 ## Minimal MSE
 
-When we look at the MSE, for [[Best Estimator for Uniform Distribution Parameter#Maximum Likelihood Estimation\|MLE]], bias dominates, while for [[Best Estimator for Uniform Distribution Parameter#Uniformly Minimum-Variance Unbiased Estimator\|UMVUE]] and [[Best Estimator for Uniform Distribution Parameter#Jackknife]], variance dominates.
-A natural next step is to find the estimator that achieves the optimal balance between [[Bias-Variance Trade-Off\|bias and variance]]. Actually, such an estimator is indeed the *best* estimator for $\theta$ in terms of MSE (see [[Best Estimator for Uniform Distribution Parameter#Appendix]]).
+When we look at the MSE, for [[#Maximum Likelihood Estimation|MLE]], bias dominates, while for [[#Uniformly Minimum-Variance Unbiased Estimator|UMVUE]] and [[#Jackknife]], variance dominates.
+A natural next step is to find the estimator that achieves the optimal balance between [[Bias-Variance Trade-Off|bias and variance]]. Actually, such an estimator is indeed the _best_ estimator for $\theta$ in terms of MSE (see [[#Appendix]]).
 
 Consider a general form of the MLE and UMVUE using the complete and sufficient statistic $X _{(n)}$:
 $$
@@ -324,13 +339,13 @@ $$
 $c=1$ recovers the MLE and $c=(n+1)/n$ recovers the UMVUE.
 For a general $c$, we have
 $$
-\mathbb{E}[\hat{\theta}^{(\mathrm{MMSE})}] = \frac{cn\theta}{n+1},
+\mathbb{E}\[\hat{\theta}^{(\mathrm{MMSE})}] = \frac{cn\theta}{n+1},
 \quad
 \operatorname{Var}(\hat{\theta}^{(\mathrm{MMSE})}) = \frac{c^{2}n\theta^{2}}{(n+1)^{2}(n+2)}.
 $$
 Thus,
 $$
-\operatorname{MSE}(\hat{\theta}^{(\mathrm{MMSE})}) = \frac{\theta^{2}}{(n+1)^{2}(n+2)} (\underbrace{c^{2}n + (n+1-cn)^{2}(n+2)}_{f(c)}) 
+\operatorname{MSE}(\hat{\theta}^{(\mathrm{MMSE})}) = \frac{\theta^{2}}{(n+1)^{2}(n+2)} (\underbrace{c^{2}n + (n+1-cn)^{2}(n+2)}_{f(c)})
 $$
 Setting
 $$
@@ -338,7 +353,7 @@ $$
 $$
 gives $c = \frac{n+2}{n+1}$. Therefore, we get
 $$
-\hat{\theta}^{(\mathrm{MMSE})} = \frac{n+2}{n+1} \max_{i}X_{i},
+\hat{\theta}^{(\mathrm{MMSE})} = \frac{n+2}{n+1} \max_{i}X\_{i},
 $$
 with
 $$
@@ -373,12 +388,12 @@ The following table summarizes the estimators we have discussed.
 
 | Estimator         | Expression                                         | Bias                        | Variance                                   | MSE                                            |
 | ----------------- | -------------------------------------------------- | --------------------------- | ------------------------------------------ | ---------------------------------------------- |
-| $k$ Samples       | $\frac{2}{k} \sum_{i=1}^{k} X_i$                   | $0$                         | $\frac{\theta^2}{3k}$                      | $\frac{\theta^2}{3k}$                          |
+| $k$ Samples       | $\frac{2}{k} \sum\_{i=1}^{k} X\_i$                   | $0$                         | $\frac{\theta^2}{3k}$                      | $\frac{\theta^2}{3k}$                          |
 | Method of Moments | $2\overline{X}$                                    | $0$                         | $\frac{\theta^2}{3n}$                      | $\frac{\theta^2}{3n}$                          |
-| MLE               | $X_{(n)}$                                          | $-\frac{\theta}{n+1}$       | $\frac{n\theta^2}{(n+2)(n+1)^2}$           | $\frac{2\theta^2}{(n+2)(n+1)}$                 |
-| UMVUE             | $\frac{n+1}{n} X_{(n)}$                            | $0$                         | $\frac{\theta^2}{n(n+2)}$                  | $\frac{\theta^2}{n(n+2)}$                      |
-| Jackknife         | $\frac{2n-1}{n} X_{(n)} - \frac{n-1}{n} X_{(n-1)}$ | $-\frac{\theta}{n(n+1)}$    | $\frac{(2n^2 - 1)\theta^2}{n(n+1)^2(n+2)}$ | $\frac{2(n^2 - n + 1)\theta^2}{n^2(n+1)(n+2)}$ |
-| MMSE              | $\frac{n+2}{n+1} X_{(n)}$                          | $-\frac{\theta}{(n+1)^{2}}$ | $\frac{n(n+2)\theta^2}{(n+1)^4}$           | $\frac{\theta^2}{(n+1)^2}$                     |
+| MLE               | $X\_{(n)}$                                          | $-\frac{\theta}{n+1}$       | $\frac{n\theta^2}{(n+2)(n+1)^2}$           | $\frac{2\theta^2}{(n+2)(n+1)}$                 |
+| UMVUE             | $\frac{n+1}{n} X\_{(n)}$                            | $0$                         | $\frac{\theta^2}{n(n+2)}$                  | $\frac{\theta^2}{n(n+2)}$                      |
+| Jackknife         | $\frac{2n-1}{n} X\_{(n)} - \frac{n-1}{n} X\_{(n-1)}$ | $-\frac{\theta}{n(n+1)}$    | $\frac{(2n^2 - 1)\theta^2}{n(n+1)^2(n+2)}$ | $\frac{2(n^2 - n + 1)\theta^2}{n^2(n+1)(n+2)}$ |
+| MMSE              | $\frac{n+2}{n+1} X\_{(n)}$                          | $-\frac{\theta}{(n+1)^{2}}$ | $\frac{n(n+2)\theta^2}{(n+1)^4}$           | $\frac{\theta^2}{(n+1)^2}$                     |
 
 Finally, we plot the histograms of all estimators separately to compare their distributions, and calculate their empirical mean squared errors.
 
@@ -443,7 +458,7 @@ plt.show()
 
 ## Beyond MSE
 
-So far, we have focused on the MSE as the metric for evaluating estimators. In this section, we first explore a new risk, and then discuss the statistical properties of MLE (and thus other estimators built on $\max_i X_i$) for the uniform distribution.
+So far, we have focused on the MSE as the metric for evaluating estimators. In this section, we first explore a new risk, and then discuss the statistical properties of MLE (and thus other estimators built on $\max\_i X\_i$) for the uniform distribution.
 
 ### Zero-One Loss
 
@@ -451,7 +466,7 @@ Recall that MSE is the risk associated with the squared loss $L(\hat{\theta},\th
 
 Consider a new loss function:
 $$
-L(\hat{\theta},\theta) = \mathbb{1}\left\{ |\hat{\theta}-\theta| > \epsilon \right\}.
+L(\hat{\theta},\theta) = \mathbb{1}\left{ |\hat{\theta}-\theta| > \epsilon \right}.
 $$
 This zero-one loss function is often used in binary decision-making problems. In the context of parameter estimation, it finds applications in catastrophic risk assessment, where any estimation error beyond a certain threshold $\epsilon$ is considered catastrophic. Then, the corresponding risk
 $$
@@ -459,26 +474,26 @@ R(\hat{\theta},\theta) = \mathbb{E}_{\theta}L(\hat{\theta},\theta) = P_{\theta}\
 $$
 is the probability of catastrophe.
 
-Again, let's consider an estimator of the general form $\hat{\theta}^{(\mathrm{ZO})} = cX_{(n)}$, and try to minimize the zero-one risk. We have
+Again, let's consider an estimator of the general form $\hat{\theta}^{(\mathrm{ZO})} = cX\_{(n)}$, and try to minimize the zero-one risk. We have
 $$
 \begin{aligned}
-  R(\hat{\theta}^{(\mathrm{ZO})} ,\theta) =& P_{\theta}\left( |cX_{(n)} - \theta| > \epsilon \right) \\
-  =& P_{\theta}\left( cX_{(n)} - \theta > \epsilon \right) + P_{\theta}\left( cX_{(n)} - \theta < -\epsilon \right) \\
-  =& P_{\theta}\left( X_{(n)} >c^{-1} (\theta + \epsilon)\right) + P_{\theta}\left( X_{(n)} < c^{-1} (\theta - \epsilon)\right) \\
-  =& 1-F_{X_{(n)}}\left( c^{-1} (\theta + \epsilon) \right) + F_{X_{(n)}}\left( c^{-1} (\theta - \epsilon) \right)
+R(\hat{\theta}^{(\mathrm{ZO})} ,\theta) =& P\_{\theta}\left( |cX\_{(n)} - \theta| > \epsilon \right) \\
+\=& P\_{\theta}\left( cX\_{(n)} - \theta > \epsilon \right) + P\_{\theta}\left( cX\_{(n)} - \theta < -\epsilon \right) \\
+\=& P\_{\theta}\left( X\_{(n)} >c^{-1} (\theta + \epsilon)\right) + P\_{\theta}\left( X\_{(n)} < c^{-1} (\theta - \epsilon)\right) \\
+\=& 1-F\_{X\_{(n)}}\left( c^{-1} (\theta + \epsilon) \right) + F\_{X\_{(n)}}\left( c^{-1} (\theta - \epsilon) \right)
 .\end{aligned}
 $$
-We have already derived the CDF of $X_{(n)}$ in [[Best Estimator for Uniform Distribution Parameter#Maximum Likelihood Estimation]], which gives
+We have already derived the CDF of $X\_{(n)}$ in [[#Maximum Likelihood Estimation]], which gives
 $$
 \begin{aligned}
 R(\hat{\theta}^{(\mathrm{ZO})} ,\theta) =& \begin{cases}
 1 - \left( \frac{c^{-1} (\theta + \epsilon)}{\theta} \right)^{n} + \left( \frac{c^{-1} (\theta - \epsilon)}{\theta} \right)^{n}
 , \quad &1 + \epsilon /\theta < c\\
 \left( \frac{c^{-1} (\theta - \epsilon)}{\theta} \right)^{n}
-= c^{-n}(1- \epsilon/\theta)^{n} , \quad & 1 - \epsilon /\theta \le c \le 1 + \epsilon /\theta \\
+\= c^{-n}(1- \epsilon/\theta)^{n} , \quad & 1 - \epsilon /\theta \le c \le 1 + \epsilon /\theta \\
 1, \quad & 1 - \epsilon /\theta > c  \\
 \end{cases}\\
-=& \begin{cases}
+\=& \begin{cases}
 1 - c^{-n} \left( (1+ \epsilon/\theta)^{n} - (1- \epsilon/\theta)^{n} \right), \quad & 1 + \epsilon /\theta < c \\
 c^{-n}(1- \epsilon/\theta)^{n} , \quad & 1 - \epsilon /\theta \le c \le 1 + \epsilon /\theta \\
 1, \quad & 1 - \epsilon /\theta > c  \\
@@ -493,11 +508,11 @@ Using the above approximation, one can easily verify that $c = 1 + \epsilon /\th
 
 Note that the estimator should not depend on the true parameter $\theta$. Thus, we consider a zero-one loss based on the relative distance:
 $$
-R(\hat{\theta},\theta) = P_{\theta}\left( |\hat{\theta} - \theta| > \delta  \theta \right) ,
+R(\hat{\theta},\theta) = P\_{\theta}\left( |\hat{\theta} - \theta| > \delta  \theta \right) ,
 $$
 whose corresponding optimal estimator is thus
 $$
-\hat{\theta}^{(\mathrm{ZO})} = \left( 1 + \delta \right) X_{(n)}.
+\hat{\theta}^{(\mathrm{ZO})} = \left( 1 + \delta \right) X\_{(n)}.
 $$
 
 We plot the histogram of the zero-one estimator for different $\delta$ values, and compare it with the MMSE estimator on both the MSE and zero-one risk.
@@ -582,11 +597,11 @@ plt.show()
 
 ### Statistical Properties of MLE for Uniform Distribution
 
-[[Maximum Likelihood Estimation\|MLE]] is known to be the *best* estimator in terms of statistical properties, such as consistency and asymptotic normality, under mild conditions. However, in this note, we have shown that the MLE for the uniform distribution is biased and has a larger MSE than some other estimators. Do our findings contradict the properties of MLE?
+[[Maximum Likelihood Estimation|MLE]] is known to be the _best_ estimator in terms of statistical properties, such as consistency and asymptotic normality, under mild conditions. However, in this note, we have shown that the MLE for the uniform distribution is biased and has a larger MSE than some other estimators. Do our findings contradict the properties of MLE?
 
 We first verify the consistency. In the previous section, we show that for $c=1$ and any $\epsilon\in(0,\theta)$,
 $$
-P_{\theta}(|\hat{\theta}^{(\mathrm{MLE})} - \theta| > \epsilon) = (1-\epsilon /\theta)^{n}\to 0.
+P\_{\theta}(|\hat{\theta}^{(\mathrm{MLE})} - \theta| > \epsilon) = (1-\epsilon /\theta)^{n}\to 0.
 $$
 Thus, $\hat{\theta}^{(\mathrm{MLE})}$ is consistent.
 
@@ -599,7 +614,7 @@ Specifically, the uniform distribution fails to meet the regularity condition th
 
 Moreover, we actually have
 $$
-P_{\theta}(n(\theta-\hat{\theta}^{(\mathrm{MLE})} ) \le t) = 1 - P_{\theta}(\hat{\theta}^{(MLE)} \le \theta - t/n) = 1 - (1 - t /(n\theta))^{n} \to 1-e^{-t /\theta},
+P\_{\theta}(n(\theta-\hat{\theta}^{(\mathrm{MLE})} ) \le t) = 1 - P\_{\theta}(\hat{\theta}^{(MLE)} \le \theta - t/n) = 1 - (1 - t /(n\theta))^{n} \to 1-e^{-t /\theta},
 $$
 indicating that
 $$
@@ -632,55 +647,57 @@ Finally, we remark that either MSE or asymptotic normality is just one of many c
 
 ### Calculation of Jackknife MSE
 
-For correcting the MLE $X_{(n)}$, the Jackknife estimator has a simple form:
+For correcting the MLE $X\_{(n)}$, the Jackknife estimator has a simple form:
 $$
-\hat{\theta}^{(\mathrm{Jack})} = n X_{(n)} - \frac{n-1}{n}\left( (n-1)X_{(n)} + X_{(n-1)} \right) 
-= \frac{2n-1}{n} X_{(n)} - \frac{n-1}{n}X_{(n-1)},
+\hat{\theta}^{(\mathrm{Jack})} = n X\_{(n)} - \frac{n-1}{n}\left( (n-1)X\_{(n)} + X\_{(n-1)} \right)
+\= \frac{2n-1}{n} X\_{(n)} - \frac{n-1}{n}X\_{(n-1)},
 $$
-where $X_{(i)}$ is the $i$-th order statistic of the sample $X_{1},\dots,X_{n}$, and thus $X_{(n)}=\max_{i}X_{i}$.
+where $X\_{(i)}$ is the $i$-th order statistic of the sample $X\_{1},\dots,X\_{n}$, and thus $X\_{(n)}=\max\_{i}X\_{i}$.
 
-Similar to the calculation in [[Best Estimator for Uniform Distribution Parameter#Maximum Likelihood Estimation]] (see also [[Order Statistics#Distribution of i-th Order Statistic]]), the PDF of $X_{(n-1)}$ is
+Similar to the calculation in [[#Maximum Likelihood Estimation]] (see also [[Order Statistics#Distribution of i-th Order Statistic]]), the PDF of $X\_{(n-1)}$ is
 $$
-f_{(n-1)}(x) = \frac{n!}{(n-2)!} \frac{(x /\theta)^{n-2}(1-x /\theta)}{\theta} = \frac{n(n-1)x^{n-2}(1-x /\theta)}{\theta ^{n-1}}.
+f\_{(n-1)}(x) = \frac{n!}{(n-2)!} \frac{(x /\theta)^{n-2}(1-x /\theta)}{\theta} = \frac{n(n-1)x^{n-2}(1-x /\theta)}{\theta ^{n-1}}.
 $$
 Then, we can calculate the bias:
 $$
 \operatorname{Bias}(\hat{\theta}^{(\mathrm{Jack})}) =\frac{2n-1}{n} \frac{n\theta}{n+1} - \frac{n-1}{n} \frac{n(n-1)}{\theta ^{n-1}}\left( \frac{\theta ^{n}}{n} - \frac{\theta ^{n+1}}{(n+1)\theta } \right) -\theta  = -\frac{1}{n^{2}+n}\theta .
 $$
-We can see that compared to the [[Best Estimator for Uniform Distribution Parameter#Maximum Likelihood Estimation]], the bias is significantly reduced.
+We can see that compared to the [[#Maximum Likelihood Estimation]], the bias is significantly reduced.
 
-To calculate the variance of $\hat{\theta}^{(\mathrm{Jack})}$, we need to know the joint distribution of $X_{(n)}$ and $X_{(n-1)}$. Note that the [[Order Statistics#Joint Distribution\|joint PDF of the entire order statistic]] is given by
+To calculate the variance of $\hat{\theta}^{(\mathrm{Jack})}$, we need to know the joint distribution of $X\_{(n)}$ and $X\_{(n-1)}$. Note that the [[Order Statistics#Joint Distribution|joint PDF of the entire order statistic]] is given by
 $$
-f_{(X_{(i)})} (x) = \frac{n!}{\theta ^{n}} \mathbb{1}\{ x_{1}\le \dots\le x_{n} \}.
+f\_{(X\_{(i)})} (x) = \frac{n!}{\theta ^{n}} \mathbb{1}{ x\_{1}\le \dots\le x\_{n} }.
 $$
-Integrating out $(X_{(1)},\dots ,X_{(n-2)})$ gives
+Integrating out $(X\_{(1)},\dots ,X\_{(n-2)})$ gives
 $$
 \begin{aligned}
-f_{(X_{(n-1)},X_{(n)})}(x_{n-1},x_{n}) =&\frac{n!}{\theta ^{n}}\int _{0}^{x_{n-1}}\int _{0}^{x_{n-2}}\cdots\int _{0}^{x_{2}} \d x_{1} \cdots  \, \d x_{n-3} \d x_{n-2} \\
-=&\frac{n!}{\theta ^{n}}\int _{0}^{x_{n-1} }\int _{0}^{x_{n-2}}\frac{1}{(n-4)!}x_{n-3}^{n-4} \d x_{n-3}  \d x_{n-2} \\
-=&n(n-1) \frac{x_{n-1}^{n-2}}{\theta ^{n}}, \quad 0 \le x_{n-1} \le x_{n} \le \theta.
+f\_{(X\_{(n-1)},X\_{(n)})}(x\_{n-1},x\_{n}) =&\frac{n!}{\theta ^{n}}\int _{0}^{x_{n-1}}\int _{0}^{x_{n-2}}\cdots\int _{0}^{x_{2}} \d x\_{1} \cdots  , \d x\_{n-3} \d x\_{n-2} \\
+\=&\frac{n!}{\theta ^{n}}\int _{0}^{x_{n-1} }\int _{0}^{x_{n-2}}\frac{1}{(n-4)!}x\_{n-3}^{n-4} \d x\_{n-3}  \d x\_{n-2} \\
+\=\&n(n-1) \frac{x\_{n-1}^{n-2}}{\theta ^{n}}, \quad 0 \le x\_{n-1} \le x\_{n} \le \theta.
 \end{aligned}
 $$
 Thus, their covariance is
 $$
 \begin{aligned}
-\Cov(X_{(n-1)},X_{(n)}) =& \mathbb{E}[X_{(n-1)}X_{(n)}] - \mathbb{E}[X_{(n-1)}]\mathbb{E}[X_{(n)}]\\
-=&\int_{0}^{\theta}\int_{0}^{y} x y f_{(X_{(n-1)},X_{(n)})}(x,y) \mathrm{d}x \mathrm{d}y - \frac{n\theta}{n+1}  \frac{(n-1)\theta}{n+1}\\
-=& \frac{n(n-1)}{\theta^{n}} \frac{\theta^{n+2}}{n(n+2)} - \frac{n\theta}{n+1}  \frac{(n-1)\theta}{n+1} \\
-=& \frac{(n-1)\theta^{2}}{(n+1)^{2}(n+2)}.
+\Cov(X\_{(n-1)},X\_{(n)}) =& \mathbb{E}\[X\_{(n-1)}X\_{(n)}] - \mathbb{E}\[X\_{(n-1)}]\mathbb{E}\[X\_{(n)}]\\
+\=&\int\_{0}^{\theta}\int\_{0}^{y} x y f\_{(X\_{(n-1)},X\_{(n)})}(x,y) \mathrm{d}x \mathrm{d}y - \frac{n\theta}{n+1}  \frac{(n-1)\theta}{n+1}\\
+\=& \frac{n(n-1)}{\theta^{n}} \frac{\theta^{n+2}}{n(n+2)} - \frac{n\theta}{n+1}  \frac{(n-1)\theta}{n+1} \\
+\=& \frac{(n-1)\theta^{2}}{(n+1)^{2}(n+2)}.
 \end{aligned}
 $$
 Then, we can calculate the variance:
 $$
 \begin{aligned}
-\Var(\hat{\theta}^{(\mathrm{Jack})}) =& \frac{(2n-1)^{2}}{n^{2}}\Var(X_{(n)}) + \frac{(n-1)^{2}}{n^{2}}\Var(X_{(n-1)}) - 2 \frac{(2n-1)(n-1)}{n^{2}}\Cov(X_{(n)},X_{(n-1)}) \\
-=&  \frac{(2n-1)^{2}}{n^{2}}\frac{n\theta^{2}}{(n+2)(n+1)^{2}} 
-+ \frac{(n-1)^{2}}{n^{2}}\frac{2(n-1)\theta^{2}}{(n+1)^{2}(n+2)} 
-- 2 \frac{(2n-1)(n-1)}{n^{2}}\frac{(n-1)\theta^{2}}{(n+1)^{2}(n+2)} \\
-=& \frac{\theta^{2}}{(n+2)(n+1)^{2}} \left( \frac{(2n-1)^{2}}{n} + \frac{2(n-1)^{3}}{n^{2}} - \frac{2(2n-1)(n-1)^{2}}{n^{2}}\right) \\
-=& \frac{(2n^{2}-1)\theta^{2}}{n(n+1)^{2}(n+2)}.
-\end{aligned}
-$$
+\Var(\hat{\theta}^{(\mathrm{Jack})}) =& \frac{(2n-1)^{2}}{n^{2}}\Var(X\_{(n)}) + \frac{(n-1)^{2}}{n^{2}}\Var(X\_{(n-1)}) - 2 \frac{(2n-1)(n-1)}{n^{2}}\Cov(X\_{(n)},X\_{(n-1)}) \\
+\=&  \frac{(2n-1)^{2}}{n^{2}}\frac{n\theta^{2}}{(n+2)(n+1)^{2}}
+
+- \frac{(n-1)^{2}}{n^{2}}\frac{2(n-1)\theta^{2}}{(n+1)^{2}(n+2)}
+
+* 2 \frac{(2n-1)(n-1)}{n^{2}}\frac{(n-1)\theta^{2}}{(n+1)^{2}(n+2)} \\
+  \=& \frac{\theta^{2}}{(n+2)(n+1)^{2}} \left( \frac{(2n-1)^{2}}{n} + \frac{2(n-1)^{3}}{n^{2}} - \frac{2(2n-1)(n-1)^{2}}{n^{2}}\right) \\
+  \=& \frac{(2n^{2}-1)\theta^{2}}{n(n+1)^{2}(n+2)}.
+  \end{aligned}
+  $$
 
 Finally, we get
 $$
@@ -689,18 +706,18 @@ $$
 
 ### Optimality of MMSE
 
-For any estimator $\hat{\theta}$, we write $\mathbb{E}\hat{\theta}_{X} = f_n(\theta)$. Suppose $f$ is linear, then by the linearity of expectation, we have
+For any estimator $\hat{\theta}$, we write $\mathbb{E}\hat{\theta}_{X} = f\_n(\theta)$. Suppose $f$ is linear, then by the linearity of expectation, we have
 $$
-\mathbb{E}f_{n}\left( \frac{n+1}{n}X_{(n)} \right) = f_{n} \left( \frac{n+1}{n} \mathbb{E}X_{(n)} \right)  = f_{n}(\theta ) = \mathbb{E}\hat{\theta}_{X}.
+\mathbb{E}f_{n}\left( \frac{n+1}{n}X\_{(n)} \right) = f\_{n} \left( \frac{n+1}{n} \mathbb{E}X\_{(n)} \right)  = f\_{n}(\theta ) = \mathbb{E}\hat{\theta}_{X}.
 $$
-Let $\phi(T) = f_{n}\left( \frac{n+1}{n}T \right)$. By Proposition [[Best Estimator for Uniform Distribution Parameter#^prop]], we know $\phi(X_{(n)})$ has the same bias as but smaller variance than $\hat{\theta}_{X}$ if $\hat{\theta}_{X}\ne \phi(T)$ (uniqueness). Further, among the class of estimators consisting of linear functions of $X_{(n)}$, it is easy to see $\hat{\theta}^{(\mathrm{MMSE})}$ has the smallest MSE.
+Let $\phi(T) = f_{n}\left( \frac{n+1}{n}T \right)$. By Proposition [[#^prop]], we know $\phi(X\_{(n)})$ has the same bias as but smaller variance than $\hat{\theta}_{X}$ if $\hat{\theta}_{X}\ne \phi(T)$ (uniqueness). Further, among the class of estimators consisting of linear functions of $X\_{(n)}$, it is easy to see $\hat{\theta}^{(\mathrm{MMSE})}$ has the smallest MSE.
 
-Now suppose $f_{n}$ is not linear. By Taylor expansion,
+Now suppose $f\_{n}$ is not linear. By Taylor expansion,
 $$
-f_{n}(\theta) = \sum_{k=0}^{\infty} \frac{f_n^{(k)}(0)}{k!} \theta^k.
+f\_{n}(\theta) = \sum\_{k=0}^{\infty} \frac{f\_n^{(k)}(0)}{k!} \theta^k.
 $$
 For $\hat{\theta}$ to be uniformly optimal for any $\theta$, it must satisfy
 $$
-f_n(0) -\theta  = o(\theta) \text{ as }\theta \to 0  \quad\text{and}\quad f_{n}(\theta) -\theta  = O(\theta) \text{ as } \theta\to \infty.
+f\_n(0) -\theta  = o(\theta) \text{ as }\theta \to 0  \quad\text{and}\quad f\_{n}(\theta) -\theta  = O(\theta) \text{ as } \theta\to \infty.
 $$
-Thus, $f_{n}^{(k)} = 0$ for $k\ne 1$ and any $n$, indicating that $f_{n}$ must be linear in $\theta$.
+Thus, $f\_{n}^{(k)} = 0$ for $k\ne 1$ and any $n$, indicating that $f\_{n}$ must be linear in $\theta$.

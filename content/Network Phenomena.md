@@ -3,9 +3,9 @@ publish: true
 title: Network Phenomena
 created: 2026-04-02T16:35:16
 modified: 2026-04-05T01:16:21
-published: 2026-04-30T15:37:01.595-04:00
+published: 2026-04-30T16:13:48.128-04:00
 tags:
-  - "#pub-network"
+  - pub-network
 state: "[[%wip]]"
 sup:
   - "[[Network]]"
