@@ -15,11 +15,13 @@ const config: QuartzConfig = {
       "pub-stat": "Sufficient Statistics",
       "pub-prob": "Almost All Probability",
       "pub-matlab": "MATLAB",
+      "pub-network": "Networked Networks",
     },
     tagUrl: {
       "pub-stat": "/statistics",
       "pub-prob": "/probability",
       "pub-matlab": "/matlab",
+      "pub-network": "/network",
     },
     enableSPA: true,
     enablePopovers: true,

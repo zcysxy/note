@@ -86,6 +86,9 @@ img[alt="Open In Colab"] + svg {
   &:has(a[href$="matlab"]):before {
     background-image: var(--base-page-icon-svg);
   }
+  &:has(a[href$="network"]):before {
+    background-image: var(--base-page-icon-svg);
+  }
   &:not(:has(a[href$="probability"]), :has(a[href$="statistics"])):before {
     background-image: var(--base-page-icon-svg);
     html[saved-theme="light"] & {
