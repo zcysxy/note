@@ -14,10 +14,12 @@ const config: QuartzConfig = {
     tagTitle: {
       "pub-stat": "Sufficient Statistics",
       "pub-prob": "Almost All Probability",
+      "pub-matlab": "MATLAB",
     },
     tagUrl: {
       "pub-stat": "/statistics",
       "pub-prob": "/probability",
+      "pub-matlab": "/matlab",
     },
     enableSPA: true,
     enablePopovers: true,
