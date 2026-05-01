@@ -107,6 +107,7 @@ const config: QuartzConfig = {
 					"\\lsq": "\\hat{\\theta}^{(\\mathrm{LS})}",
 					"\\xx": "X^TX",
 					"\\tr": "\\operatorname{tr}",
+					"\\dist": "\\operatorname{dist}",
 				},
 			}),
 			Plugin.FigureCaptions(),

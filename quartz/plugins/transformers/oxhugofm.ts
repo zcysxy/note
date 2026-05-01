@@ -97,7 +97,9 @@ export const OxHugoFlavouredMarkdown: QuartzTransformerPlugin<Partial<Options>> 
 
         // ox-hugo escapes _ as \_
         src = src.replaceAll(quartzLatexRegex, (value) => {
-          return value.replaceAll("\\_", "_").replaceAll("\\=", "=")
+          return value.replaceAll("\\_", "_")
+					.replaceAll("\\=", "=")
+					.replaceAll("\\", "\\\\")
         })
       }
       return src
