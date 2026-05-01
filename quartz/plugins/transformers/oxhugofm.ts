@@ -99,7 +99,6 @@ export const OxHugoFlavouredMarkdown: QuartzTransformerPlugin<Partial<Options>> 
         src = src.replaceAll(quartzLatexRegex, (value) => {
           return value.replaceAll("\\_", "_")
 					.replaceAll("\\=", "=")
-					.replaceAll("\\", "\\\\")
         })
       }
       return src
