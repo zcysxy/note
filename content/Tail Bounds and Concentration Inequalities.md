@@ -3,7 +3,7 @@ publish: true
 title: Tail Bounds and Concentration Inequalities
 created: 2025-05-26T19:28:12
 modified: 2025-06-07T09:16:59
-published: 2026-01-06T20:10:18.295-05:00
+published: 2026-01-06T20:10:18.000-05:00
 tags:
   - pub-stat
 state: done

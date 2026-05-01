@@ -5,7 +5,7 @@ aliases:
 title: Erdős–Rényi Random Graph
 created: 2026-03-31T19:11:22
 modified: 2026-04-04T19:00:22
-published: 2026-04-30T16:13:47.985-04:00
+published: 2026-04-30T16:13:47.000-04:00
 tags:
   - pub-network
 state: "[[%wip]]"

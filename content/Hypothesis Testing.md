@@ -3,7 +3,7 @@ publish: true
 title: Hypothesis Testing
 created: 2022-12-07T20:11:12
 modified: 2025-07-17T16:15:05
-published: 2026-01-06T20:10:18.100-05:00
+published: 2026-01-06T20:10:18.000-05:00
 tags:
   - pub-stat
 type: note

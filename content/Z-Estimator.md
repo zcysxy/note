@@ -3,7 +3,7 @@ publish: true
 title: Z-Estimator
 created: 2025-06-06T16:34:37
 modified: 2025-06-11T19:23:01
-published: 2026-01-06T20:10:18.351-05:00
+published: 2026-01-06T20:10:18.000-05:00
 tags:
   - pub-stat
 state: done

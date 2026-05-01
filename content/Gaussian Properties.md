@@ -3,7 +3,7 @@ publish: true
 title: Gaussian Properties
 created: 2025-05-20T18:58:54
 modified: 2025-05-21T01:13:06
-published: 2026-01-06T18:49:43.137-05:00
+published: 2026-01-06T18:49:43.000-05:00
 tags:
   - pub-stat
 state: "[[%wip]]"

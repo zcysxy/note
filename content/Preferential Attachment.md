@@ -5,7 +5,7 @@ aliases:
 title: Preferential Attachment
 created: 2026-04-05T01:40:03
 modified: 2026-04-21T19:00:14
-published: 2026-04-30T16:13:48.005-04:00
+published: 2026-04-30T16:13:48.000-04:00
 tags:
   - pub-network
 state: done

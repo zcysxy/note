@@ -3,7 +3,7 @@ publish: true
 title: Regularity Conditions for M-Estimators
 created: 2025-06-18T16:47:11
 modified: 2025-08-20T00:36:20
-published: 2026-01-06T20:10:18.245-05:00
+published: 2026-01-06T20:10:18.000-05:00
 aliases:
 type: note
 sup:

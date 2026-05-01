@@ -3,7 +3,7 @@ publish: true
 title: Random Geometric Graph
 created: 2026-04-04T22:13:10
 modified: 2026-04-05T01:08:27
-published: 2026-04-30T16:13:48.148-04:00
+published: 2026-04-30T16:13:48.000-04:00
 tags:
   - pub-network
 state: done

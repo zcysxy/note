@@ -8,7 +8,7 @@ aliases:
 title: Law of Large Numbers
 created: 2021-08-17T21:58:15
 modified: 2025-08-04T23:42:28
-published: 2026-01-06T20:10:18.127-05:00
+published: 2026-01-06T20:10:18.000-05:00
 tags:
   - pub-stat
 type: note

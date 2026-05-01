@@ -4,7 +4,7 @@ aliases:
   - Bayesian Statistics
 created: 2022-05-28T03:34:22
 modified: 2025-07-30T03:13:02
-published: 2026-01-06T20:10:17.999-05:00
+published: 2026-01-06T20:10:17.000-05:00
 tags:
   - pub-stat
 type: note

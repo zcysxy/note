@@ -3,7 +3,7 @@ publish: true
 title: Bayes Optimal Estimator
 created: 2025-06-27T22:22:59
 modified: 2025-06-28T00:04:40
-published: 2026-01-06T20:10:17.997-05:00
+published: 2026-01-06T20:10:17.000-05:00
 tags:
   - pub-stat
 state: done

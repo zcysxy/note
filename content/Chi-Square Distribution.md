@@ -3,7 +3,7 @@ publish: true
 title: Chi-Square Distribution
 created: 2022-12-05T17:42:50
 modified: 2025-07-17T16:01:52
-published: 2026-01-06T20:10:18.027-05:00
+published: 2026-01-06T20:10:18.000-05:00
 tags:
   - pub-stat
 aliases:

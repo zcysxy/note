@@ -3,7 +3,7 @@ publish: true
 title: Gaussian Linear Model
 created: 2025-07-26T02:29:39
 modified: 2025-07-27T00:26:11
-published: 2026-01-06T20:10:18.086-05:00
+published: 2026-01-06T20:10:18.000-05:00
 tags:
   - pub-stat
 state: done

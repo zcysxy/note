@@ -5,7 +5,7 @@ aliases:
 title: Watts-Strogatz Model
 created: 2026-04-05T01:12:52
 modified: 2026-04-20T21:08:12
-published: 2026-04-30T16:13:47.960-04:00
+published: 2026-04-30T16:13:47.000-04:00
 tags:
   - pub-network
 state: done

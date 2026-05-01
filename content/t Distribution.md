@@ -5,7 +5,7 @@ aliases:
 title: t-Distribution
 created: 2022-12-05T18:14:58
 modified: 2025-07-17T16:05:33
-published: 2026-01-06T20:10:18.379-05:00
+published: 2026-01-06T20:10:18.000-05:00
 tags:
   - pub-stat
 type: note

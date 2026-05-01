@@ -3,7 +3,7 @@ publish: true
 title: Chung–Lu Model
 created: 2026-04-04T18:55:11
 modified: 2026-04-04T20:29:59
-published: 2026-04-30T16:13:48.213-04:00
+published: 2026-04-30T16:13:48.000-04:00
 tags:
   - pub-network
 state: done

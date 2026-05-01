@@ -4,7 +4,7 @@ aliases: LRT
 title: Likelihood Hypothesis Test
 created: 2023-10-17T19:15:35
 modified: 2025-07-22T20:34:40
-published: 2026-01-06T20:10:18.128-05:00
+published: 2026-01-06T20:10:18.000-05:00
 tags:
   - pub-stat
 type: note

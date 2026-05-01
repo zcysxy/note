@@ -3,7 +3,7 @@ publish: true
 title: Bayes Optimal Test
 created: 2025-05-27T23:48:18
 modified: 2025-05-31T20:00:05
-published: 2026-01-06T20:10:17.997-05:00
+published: 2026-01-06T20:10:17.000-05:00
 tags:
   - pub-stat
 state: done

@@ -4,8 +4,8 @@ aliases:
   - index
 title: Note Box
 created: 2025-08-24T22:52:59
-modified: 2025-08-24T23:58:34
-published: 2026-01-06T20:10:18.201-05:00
+modified: 2026-04-30T23:50:44
+published: 2026-04-30T23:50:46.100-04:00
 cssclasses:
   - cards
   - cards-cover
@@ -22,10 +22,11 @@ type: output
 
 ## 🪴 Live!
 
-|banner2|link|
+|banner3|link|
 |---|---|
 |![](https://raw.githubusercontent.com/zcysxy/Figurebed/master/img/stat-icon.svg)|🔮 [[Statistics\|Statistics]]|
 |![](https://raw.githubusercontent.com/zcysxy/Figurebed/master/img/prob-icon.svg)|🎲 [[Probability\|Probability]]|
+|![](https://raw.githubusercontent.com/zcysxy/Figurebed/master/img/network-icon.svg)|🌐 [[Network\|Network]]|
 
 ## 🔜 Coming Soon!
 

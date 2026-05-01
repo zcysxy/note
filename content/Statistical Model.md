@@ -3,7 +3,7 @@ publish: true
 title: Statistical Model
 created: 2025-05-21T18:14:35
 modified: 2025-05-24T23:57:10
-published: 2026-01-06T20:10:18.286-05:00
+published: 2026-01-06T20:10:18.000-05:00
 tags:
   - pub-stat
 state: done

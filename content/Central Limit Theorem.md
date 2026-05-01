@@ -5,7 +5,7 @@ aliases:
 title: Central Limit Theorem
 created: 2022-11-04T12:18:06
 modified: 2025-08-05T00:55:20
-published: 2026-01-06T20:10:18.025-05:00
+published: 2026-01-06T20:10:18.000-05:00
 tags:
   - pub-stat
 type: note

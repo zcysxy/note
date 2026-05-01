@@ -5,7 +5,7 @@ aliases:
 title: Sufficient Statistic
 created: 2025-05-20T19:13:46
 modified: 2025-08-18T18:23:51
-published: 2026-01-06T20:10:18.291-05:00
+published: 2026-01-06T20:10:18.000-05:00
 tags:
   - pub-stat
 state: done

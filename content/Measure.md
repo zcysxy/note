@@ -5,7 +5,7 @@ aliases:
 title: Measure
 created: 2024-09-06T23:20:58
 modified: 2024-11-04T02:20:38
-published: 2026-01-06T20:10:18.188-05:00
+published: 2026-01-06T20:10:18.000-05:00
 tags:
   - pub-prob
 id: Measure

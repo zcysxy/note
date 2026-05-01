@@ -5,7 +5,7 @@ aliases:
 title: Network
 created: 2026-03-27T17:35:19
 modified: 2026-04-30T15:31:56
-published: 2026-04-30T15:45:48.681-04:00
+published: 2026-04-30T23:50:41.132-04:00
 tags:
   - pub-network
 state: "[[%wip]]"
@@ -15,6 +15,7 @@ type: index
 banner: https://raw.githubusercontent.com/zcysxy/Figurebed/master/img/Joyce_Kozloff-Stars_Over_Manhattan-cropped.png
 banner_y: 20.0%
 banner_icon: 🌐
+pub-banner: https://raw.githubusercontent.com/zcysxy/Figurebed/master/img/network-icon.svg
 ---
 
 # Network
@@ -47,7 +48,7 @@ A network is a [[Graph]], but imagine there are _real_ entities and relationship
 - [[Network Phenomena]]
 - Applications
   - Model: $(\mathcal{V},\mathcal{E}, X)$ for various $X$
-  - QuestioWhat is the network effect and how does the network structure manifest?
+  - Question: What is the network effect and how does the network structure manifest?
   - [[Network Propagation]]: $X=$ (status, dynamics)
   - [[Network Game]]: $X=$ (payoff, strategy)
 

@@ -6,7 +6,7 @@ aliases:
 title: Assortativity
 created: 2026-03-30T21:37:34
 modified: 2026-04-22T23:28:59
-published: 2026-04-30T15:36:09.699-04:00
+published: 2026-04-30T15:36:09.000-04:00
 tags:
   - pub-network
 state: done

@@ -3,7 +3,7 @@ publish: true
 title: Likelihood
 created: 2022-05-18T16:26:34
 modified: 2025-06-18T16:49:05
-published: 2026-01-06T20:10:18.128-05:00
+published: 2026-01-06T20:10:18.000-05:00
 tags:
   - pub-stat
 aliases:

@@ -6,7 +6,7 @@ aliases:
 title: Chebyshev Inequality
 created: 2022-12-04T22:31:54
 modified: 2024-11-04T04:18:08
-published: 2026-01-06T20:10:18.026-05:00
+published: 2026-01-06T20:10:18.000-05:00
 tags:
   - pub-stat
 type: note

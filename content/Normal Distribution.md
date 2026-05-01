@@ -6,7 +6,7 @@ aliases:
   - Gaussian distribution
 created: 2022-05-28T03:34:22
 modified: 2024-12-16T16:00:42
-published: 2026-01-06T20:10:18.201-05:00
+published: 2026-01-06T20:10:18.000-05:00
 tags:
   - pub-stat
 type: note
