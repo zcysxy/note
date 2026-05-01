@@ -3,7 +3,7 @@ publish: true
 title: MATLAB
 created: 2022-02-22T20:20:09
 modified: 2026-04-08T19:28:52
-published: 2026-04-30T15:02:05.000-04:00
+published: 2026-05-01T00:06:55.120-04:00
 tags:
   - pub-matlab
 type: index
@@ -70,3 +70,16 @@ tag: pub-matlab
   - string
   - [[Matlab Types - Character]]
 - Table
+
+```base
+views:
+  - type: table
+    name: Table
+    filters:
+      and:
+        - file.name.contains("matlab")
+    order:
+      - file.name
+      - publish
+
+```
