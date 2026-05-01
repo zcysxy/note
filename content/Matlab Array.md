@@ -4,7 +4,9 @@ aliases: 数组
 title: Matlab Array
 created: 2021-08-17T21:58:15
 modified: 2023-02-09T13:24:10
-published: 2026-05-01T00:06:59.067-04:00
+published: 2026-05-01T00:08:21.717-04:00
+tags:
+  - pub-matlab
 type: note
 sup:
   - "[[Matlab Types]]"

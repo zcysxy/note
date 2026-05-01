@@ -1,9 +1,11 @@
 ---
 publish: true
 title: Matlab Operator
-created:
-modified:
-published: 2026-05-01T00:07:19.200-04:00
+created: 2026-01-06T20:10:18
+modified: 2026-05-01T00:09:34
+published: 2026-05-01T00:09:36.964-04:00
+tags:
+  - pub-matlab
 aliases:
 type: note
 sup:

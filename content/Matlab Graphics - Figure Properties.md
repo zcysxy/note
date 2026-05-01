@@ -3,7 +3,9 @@ publish: true
 title: MATLAB Graphics - Window
 created: 2022-04-01T22:23:24
 modified:
-published: 2026-05-01T00:07:18.966-04:00
+published: 2026-05-01T00:08:27.920-04:00
+tags:
+  - pub-matlab
 aliases:
 type: note
 sup:

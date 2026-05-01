@@ -3,7 +3,9 @@ publish: true
 title: Matlab Function - spdiags
 created: 2021-10-22T14:30:33
 modified: 2021-10-22T14:39:01
-published: 2026-05-01T00:07:17.982-04:00
+published: 2026-05-01T00:08:27.123-04:00
+tags:
+  - pub-matlab
 aliases:
 type: note
 sup:

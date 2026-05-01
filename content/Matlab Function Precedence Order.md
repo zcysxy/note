@@ -1,8 +1,10 @@
 ---
 publish: true
 created: 2026-01-06T20:10:18.000-05:00
-modified: 2026-05-01T00:07:18.029-04:00
-published: 2026-05-01T00:07:18.029-04:00
+modified: 2026-05-01T00:08:27.164-04:00
+published: 2026-05-01T00:08:27.164-04:00
+tags:
+  - pub-matlab
 sup: "[[MATLAB]]"
 state: "[[%wip]]"
 source: https://www.mathworks.com/help/matlab/matlab_prog/function-precedence-order.html

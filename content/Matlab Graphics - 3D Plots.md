@@ -3,7 +3,9 @@ publish: true
 title: Matlab Graphics - 3D Plots
 created: 2023-07-30T21:35:29
 modified: 2023-07-30T23:29:07
-published: 2026-05-01T00:07:18.907-04:00
+published: 2026-05-01T00:08:27.850-04:00
+tags:
+  - pub-matlab
 aliases:
 type: note
 sup:

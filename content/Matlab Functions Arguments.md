@@ -3,7 +3,9 @@ publish: true
 title: Matlab Functions Arguments
 created:
 modified: 2021-12-02T20:43:14
-published: 2026-05-01T00:07:18.784-04:00
+published: 2026-05-01T00:08:27.719-04:00
+tags:
+  - pub-matlab
 aliases:
 type: note
 sup:

@@ -3,8 +3,10 @@ publish: true
 aliases:
   - Branching Control Flow
 created: 2025-05-26T19:23:15.000-04:00
-modified: 2026-05-01T00:07:11.156-04:00
-published: 2026-05-01T00:07:11.156-04:00
+modified: 2026-05-01T00:08:26.880-04:00
+published: 2026-05-01T00:08:26.880-04:00
+tags:
+  - pub-matlab
 ---
 
 # Conditional Statement

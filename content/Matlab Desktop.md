@@ -1,8 +1,10 @@
 ---
 publish: true
 created: 2024-02-02T04:44:24.172-05:00
-modified: 2026-05-01T00:07:11.370-04:00
-published: 2026-05-01T00:07:11.370-04:00
+modified: 2026-05-01T00:08:26.997-04:00
+published: 2026-05-01T00:08:26.997-04:00
+tags:
+  - pub-matlab
 ---
 
 # Matlab Desktop

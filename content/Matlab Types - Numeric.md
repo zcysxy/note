@@ -1,8 +1,10 @@
 ---
 publish: true
 created: 2024-02-02T04:44:24.183-05:00
-modified: 2026-05-01T00:07:19.474-04:00
-published: 2026-05-01T00:07:19.474-04:00
+modified: 2026-05-01T00:08:28.394-04:00
+published: 2026-05-01T00:08:28.394-04:00
+tags:
+  - pub-matlab
 ---
 
 # Numeric

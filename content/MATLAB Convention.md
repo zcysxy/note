@@ -4,7 +4,9 @@ aliases: MATLAB Best Practice
 title: MATLAB Convention
 created: 2023-03-22T16:35:41
 modified: 2024-10-03T00:23:11
-published: 2026-05-01T00:07:11.294-04:00
+published: 2026-05-01T00:08:26.929-04:00
+tags:
+  - pub-matlab
 type: note
 sup:
   - "[[MATLAB]]"

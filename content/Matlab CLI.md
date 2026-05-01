@@ -3,7 +3,9 @@ publish: true
 title: Matlab CLI
 created: 2022-04-01T23:06:47
 modified: 2022-04-01T23:06:55
-published: 2026-05-01T00:07:11.024-04:00
+published: 2026-05-01T00:08:26.771-04:00
+tags:
+  - pub-matlab
 aliases:
 type: note
 sup:

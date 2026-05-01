@@ -3,7 +3,7 @@ publish: true
 title: MATLAB
 created: 2022-02-22T20:20:09
 modified: 2026-04-08T19:28:52
-published: 2026-05-01T00:06:55.120-04:00
+published: 2026-05-01T00:08:08.991-04:00
 tags:
   - pub-matlab
 type: index
@@ -81,5 +81,6 @@ views:
     order:
       - file.name
       - publish
+      - tags
 
 ```

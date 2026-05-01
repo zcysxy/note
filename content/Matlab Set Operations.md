@@ -1,8 +1,10 @@
 ---
 publish: true
 created: 2024-02-02T04:44:24.182-05:00
-modified: 2026-05-01T00:07:19.281-04:00
-published: 2026-05-01T00:07:19.281-04:00
+modified: 2026-05-01T00:08:28.178-04:00
+published: 2026-05-01T00:08:28.178-04:00
+tags:
+  - pub-matlab
 ---
 
 # Set Operations

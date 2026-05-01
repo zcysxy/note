@@ -3,7 +3,9 @@ publish: true
 title: MATLAB Debug
 created: 2023-02-09T16:15:41
 modified: 2023-02-09T16:25:05
-published: 2026-05-01T00:07:11.339-04:00
+published: 2026-05-01T00:08:26.965-04:00
+tags:
+  - pub-matlab
 aliases:
 type: note
 sup:

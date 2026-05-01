@@ -2,7 +2,9 @@
 publish: true
 created: 2022-05-28T03:34:21
 modified: 2023-02-09T13:25:40
-published: 2026-05-01T00:05:29.453-04:00
+published: 2026-05-01T00:08:21.734-04:00
+tags:
+  - pub-matlab
 type: note
 sup:
   - "[[Matlab Array]]"
