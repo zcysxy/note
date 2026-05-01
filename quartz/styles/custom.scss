@@ -77,6 +77,13 @@ img[alt="Open In Colab"] + svg {
 }
 
 .tag-title {
+  &:before { /* Default icon for tags without specific icons */
+    background-image: var(--base-page-icon-svg);
+    html[saved-theme="light"] & {
+      filter: brightness(0.9);
+      opacity: 0.8;
+    }
+  }
   &:has(a[href$="statistics"]):before {
     background-image: var(--stat-page-icon-svg);
   }
@@ -88,13 +95,6 @@ img[alt="Open In Colab"] + svg {
   }
   &:has(a[href$="network"]):before {
     background-image: var(--network-page-icon-svg);
-  }
-  &:not(:has(a[href$="probability"]), :has(a[href$="statistics"])):before {
-    background-image: var(--base-page-icon-svg);
-    html[saved-theme="light"] & {
-      filter: brightness(0.9);
-      opacity: 0.8;
-    }
   }
   &:before {
     --page-icon-size: 4rem;
