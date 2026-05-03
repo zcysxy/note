@@ -82,7 +82,7 @@ const config: QuartzConfig = {
 			Plugin.TikzTransformer(),
       Plugin.ObsidianFlavoredMarkdown({ enableInHtmlEmbed: true }),
       Plugin.GitHubFlavoredMarkdown(),
-			Plugin.OxHugoFlavouredMarkdown(),
+			// Plugin.OxHugoFlavouredMarkdown(),
       Plugin.TableOfContents(),
       Plugin.CrawlLinks({ markdownLinkResolution: "shortest" }),
       Plugin.Description(),
