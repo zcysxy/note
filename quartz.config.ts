@@ -14,7 +14,7 @@ const config: QuartzConfig = {
     tagTitle: {
       "pub-stat": "Sufficient Statistics",
       "pub-prob": "Almost All Probability",
-      "pub-matlab": "MATLAB",
+      "pub-matlab": "My Map of MATLAB",
       "pub-network": "Networked Networks",
     },
     tagUrl: {
