@@ -3,7 +3,7 @@ publish: true
 title: Permutation Test
 created: 2025-07-27T19:01:13
 modified: 2025-07-27T19:27:40
-published: 2026-01-06T20:10:18.000-05:00
+published: 2026-01-06T20:10:18.219-05:00
 tags:
   - pub-stat
 state: done
@@ -16,28 +16,28 @@ type: note
 # Permutation Test
 
 The permutation test is a non-parametric [[Hypothesis Testing|statistical test]] used to determine whether two samples come from the same distribution.
-Given two samples $X\_{i} \overset{ \text{iid} }{ \sim }P\_{1}, i=1,\dots,n$ and $Y\_{j} \overset{ \text{iid} }{ \sim }P\_{2}, j=1,\dots,m$, the null hypothesis is $H\_0: P\_{1} = P\_{2}$, and suppose we have a test statistic $T: \mathcal{X}^{n+m}\to \R$ that measures the agreement of the first $n$ with the last $m$ elements.
+Given two samples $X_{i} \overset{ \text{iid} }{ \sim }P_{1}, i=1,\dots,n$ and $Y_{j} \overset{ \text{iid} }{ \sim }P_{2}, j=1,\dots,m$, the null hypothesis is $H_0: P_{1} = P_{2}$, and suppose we have a test statistic $T: \mathcal{X}^{n+m}\to \R$ that measures the agreement of the first $n$ with the last $m$ elements.
 
-- An example $T$ is $T(x\_{1},\dots,x\_{n},y\_{1},\dots ,y\_{m}) = |\frac{1}{n}\sum\_{i=1}^{n}x\_{i} - \frac{1}{m} \sum\_{j=1}^{m}y\_{j}|$.
+- An example $T$ is $T(x_{1},\dots,x_{n},y_{1},\dots ,y_{m}) = |\frac{1}{n}\sum_{i=1}^{n}x_{i} - \frac{1}{m} \sum_{j=1}^{m}y_{j}|$.
 
 The ==permutation test== is conducted as follows:
 
 > [!alg] Permutation test
 >
-> 1. Input: $Z = (x\_{1},\dots,x\_{n},y\_{1},\dots ,y\_{m})\in \mathcal{X}^{n+m}$, $T^{\*} = T(Z)$.
+> 1. Input: $Z = (x_{1},\dots,x_{n},y_{1},\dots ,y_{m})\in \mathcal{X}^{n+m}$, $T^{*} = T(Z)$.
 > 2. For $k=1,\dots K$:
->    1. Draw a random permutation $\sigma _{k}\in S_{n+m}$; let $(Z\_{\sigma})_{i} = Z_{\sigma(i)}$.
->    2. Compute $t\_k=T(Z\_{\sigma})$.
-> 3. Return: $p = \frac{1+ \sum\_{k=1}^{K}\1 { T^{\*}\le t \_{k} }}{1+K}$.
+>    1. Draw a random permutation $\sigma _{k}\in S_{n+m}$; let $(Z_{\sigma})_{i} = Z_{\sigma(i)}$.
+>    2. Compute $t_k=T(Z_{\sigma})$.
+> 3. Return: $p = \frac{1+ \sum_{k=1}^{K}\1 \{ T^{*}\le t _{k} \}}{1+K}$.
 
-We can see that the test relies on the property that a larger $T$ implies a larger asymmetry between the first $n$ and the last $m$ elements. Thus, if $T^{\*}$ is large, we get a small p-value and is prone to reject $H\_{0}:P\_{1}=P\_{2}$.
+We can see that the test relies on the property that a larger $T$ implies a larger asymmetry between the first $n$ and the last $m$ elements. Thus, if $T^{*}$ is large, we get a small p-value and is prone to reject $H_{0}:P_{1}=P_{2}$.
 
 The permutation is
 
-- Good. It is valid for all $P\_{1}$, $P\_{2}$, and proper $T$.
+- Good. It is valid for all $P_{1}$, $P_{2}$, and proper $T$.
 - Neutral. It requires choosing a proper $T$.
 - Bad. The power of the test is not optimal; and it does not give [[Confidence Interval]]s for the difference of means.
 
-To see the validity, we require that if $X\_{i}\overset{ d }{ = }Y\_{j}$ for all $1\le i\le n, 1\le j\le m$, then $T(Z)\overset{ d }{ = }T(Z\_{\sigma})$, where $\sigma \sim \operatorname{Unif}(S\_{m+n})$, $S\_{m+n}$ is the set of all permutations of $m+n$ elements.
-Then, we know that $p\to P(T^{_}\le T(Z\_{\sigma}))$ as $K\to \infty$, and we have $P(T^{_}\le T(Z\_{\sigma })) = 1-F\_{T}(T^{_}) \sim \operatorname{Unif}\[0,1]$, where $F\_{T}$ is the CDF of $T^{_} = T(Z)$.
+To see the validity, we require that if $X_{i}\overset{ d }{ = }Y_{j}$ for all $1\le i\le n, 1\le j\le m$, then $T(Z)\overset{ d }{ = }T(Z_{\sigma})$, where $\sigma \sim \operatorname{Unif}(S_{m+n})$, $S_{m+n}$ is the set of all permutations of $m+n$ elements.
+Then, we know that $p\to P(T^{*}\le T(Z_{\sigma}))$ as $K\to \infty$, and we have $P(T^{*}\le T(Z_{\sigma })) = 1-F_{T}(T^{*}) \sim \operatorname{Unif}[0,1]$, where $F_{T}$ is the CDF of $T^{*} = T(Z)$.
 That is, $p$ is super-uniform.

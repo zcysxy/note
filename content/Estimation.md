@@ -2,7 +2,7 @@
 publish: true
 created: 2023-08-02T18:42:38
 modified: 2025-07-30T02:57:19
-published: 2026-01-06T20:10:18.000-05:00
+published: 2026-01-06T20:10:18.069-05:00
 tags:
   - pub-stat
 type: index
@@ -63,10 +63,12 @@ state: done
 ## Point Estimation
 
 A ==point estimator/statistic== _recovers_ a quantity of interest from data samples. Formally, it's any algorithm/measurable function that returns a **point** in the parameter space given the sample:
+
 $$
 \hat{\theta} : \mathcal{X}\to \Theta, \quad X \mapsto \hat{\theta}_{X}.
 $$
-The parameter space $\Theta$ can be one-dimensional, multi-dimensional, or even a function space. When the sample $X=(X_{1},\dots,X\_{n})$ has a sample size/dimension of $n$, we also conventionally write $\hat{\theta}\_{n}$ to denote the point estimator.
+
+The parameter space $\Theta$ can be one-dimensional, multi-dimensional, or even a function space. When the sample $X=(X_{1},\dots,X_{n})$ has a sample size/dimension of $n$, we also conventionally write $\hat{\theta}_{n}$ to denote the point estimator.
 
 In contrast to point estimation, [[confidence interval]]/region returns a subset of the parameter space $\hat{C}\in 2^{\Theta}$, and [[Bayesian Inference]] returns a distribution over the parameter space $\hat{P}\in \Delta(\Theta)$.
 

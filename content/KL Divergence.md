@@ -4,7 +4,7 @@ aliases:
   - KL
 created: 2022-05-28T03:34:21
 modified: 2025-06-01T03:56:26
-published: 2026-01-06T20:10:18.000-05:00
+published: 2026-01-06T20:10:18.120-05:00
 tags:
   - pub-stat
 type: note
@@ -21,8 +21,9 @@ state: done
 The ==Kullback-Leibler (KL) divergence==, a.k.a. ==relative entropy==, measures how one distribution diverges from a second, expected probability distribution. It is defined as:
 
 $$
-D\_{\mathrm{KL}}(P | Q)=\mathbb{E}_{\mathrm{x} \sim P}\left\[\log \frac{P(x)}{Q(x)} \right]=\mathbb{E}_{\mathrm{x} \sim P}\[\log P(x)-\log Q(x)].
+D_{\mathrm{KL}}(P \| Q)=\mathbb{E}_{\mathrm{x} \sim P}\left[\log \frac{P(x)}{Q(x)} \right]=\mathbb{E}_{\mathrm{x} \sim P}[\log P(x)-\log Q(x)].
 $$
+
 KL divergence is an example of [[f-Divergence]] with $f(x) = x\log x$.
 
 KL divergence measures how two probability distributions are different from each other: the more similar two distributions are, the smaller their KL divergence is. For example, if two distributions' KL divergence is 0, iff they are almost everywhere the same. ^88c6e5
@@ -31,10 +32,10 @@ For discrete variables, KL divergence is the **extra amount of information** nee
 
 ## Properties
 
-1. Generally $D\_{\mathrm{KL}}(P||Q) \neq  D\_{\mathrm{KL}}(Q||P)$
-2. $D\_{\mathrm{KL}} \geq 0$
-3. $D\_{\mathrm{KL}}(P||Q) = 0 \Rightarrow P \doteq Q$
-4. Generally $D\_{\mathrm{KL}}(P||Q) \not\le D\_{\mathrm{KL}}(P|R) + D\_{\mathrm{KL}}(R| Q)$
+1. Generally $D_{\mathrm{KL}}(P||Q) \neq  D_{\mathrm{KL}}(Q||P)$
+2. $D_{\mathrm{KL}} \geq 0$
+3. $D_{\mathrm{KL}}(P||Q) = 0 \Rightarrow P \doteq Q$
+4. Generally $D_{\mathrm{KL}}(P||Q) \not\le D_{\mathrm{KL}}(P\|R) + D_{\mathrm{KL}}(R\| Q)$
 
 - KL divergence is not a metric.
 

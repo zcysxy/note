@@ -3,7 +3,7 @@ publish: true
 title: Matlab Functions List
 created: 2021-08-17T21:58:15
 modified: 2021-10-22T14:29:01
-published: 2026-05-01T00:08:27.735-04:00
+published: 2026-05-01T00:08:27.000-04:00
 tags:
   - pub-matlab
 aliases:

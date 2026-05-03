@@ -3,7 +3,7 @@ publish: true
 title: Network Phenomena
 created: 2026-04-02T16:35:16
 modified: 2026-04-05T01:16:21
-published: 2026-04-30T16:13:48.000-04:00
+published: 2026-04-30T16:13:48.128-04:00
 tags:
   - pub-network
 state: "[[%wip]]"

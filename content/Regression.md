@@ -3,7 +3,7 @@ publish: true
 title: Regression
 created: 2023-01-19T14:53:16
 modified: 2025-08-07T13:00:36
-published: 2026-01-06T20:10:18.000-05:00
+published: 2026-01-06T20:10:18.244-05:00
 tags:
   - pub-stat
 aliases:
@@ -57,10 +57,10 @@ A regression task involves the following components:
 
 The most general model is the conditional distribution $f(X) = P(Y\given X)$. More practically, we often do ==partial modeling==, which decomposes the model into a ==regression function== that _partially_ describes the distribution of $Y$ and a residual uncertainty term.
 The most common example takes the form
-$$Y = f(X) + \epsilon,$$
+$Y = f(X) + \epsilon,$
 where $\epsilon$ denotes a noise term and our goal is to recover the deterministic function $f$.
 Our target random variable can also be various [[Statistic]]s of $Y$, such as conditional quantiles.
-Moreover, a regression task often restricts the search space of $f$ to a [[Statistical Model|parametric model]] ${ f\_{\theta} }_{\theta\in\Theta}$. Different parametric models learn from data differently. The learned model $f_{\theta}$ is then called a regression function parameterized by $\theta$.
+Moreover, a regression task often restricts the search space of $f$ to a [[Statistical Model|parametric model]] $\{ f_{\theta} \}_{\theta\in\Theta}$. Different parametric models learn from data differently. The learned model $f_{\theta}$ is then called a regression function parameterized by $\theta$.
 
 In the context of machine learning, regression is a [[Supervised Learning]] task, as the label is given for each sample.
 
@@ -86,17 +86,17 @@ Different regression function families and different loss functions give differe
 
 ## Regression and Prediction
 
-One could consider **regression and [[Prediction]] as distinct tasks** as they have different goals and thus different metrics. Given a random variable $(X,Y=f(X))$, regression focuses on fitting the model $f$, so it is evaluated using a model-level metric of the form $L(\hat{f},f)$. For example, if $f$ belongs to a parametric family ${ f\_{\theta } }$, then the metric is usually of the form $L(\hat{f},f) = L'(\theta,\theta )$, reducing the task to an instance of [[Estimation]]. In contrast, prediction focuses on matching the output $f(X)$, typically evaluated via a pointwise metric of the form $L(\hat{f}(X),f(X))$, e.g., the zero-one prediction error.
+One could consider **regression and [[Prediction]] as distinct tasks** as they have different goals and thus different metrics. Given a random variable $(X,Y=f(X))$, regression focuses on fitting the model $f$, so it is evaluated using a model-level metric of the form $L(\hat{f},f)$. For example, if $f$ belongs to a parametric family $\{ f_{\theta } \}$, then the metric is usually of the form $L(\hat{f},f) = L'(\theta,\theta )$, reducing the task to an instance of [[Estimation]]. In contrast, prediction focuses on matching the output $f(X)$, typically evaluated via a pointwise metric of the form $L(\hat{f}(X),f(X))$, e.g., the zero-one prediction error.
 
 One could also argue that **regression is a special case of [[Prediction]] task**, as the model $f$ is completely determined by the mapping $X \mapsto f(X)$, hence knowing the prediction $f(X)$ for _all_ $X$ essentially recovers the model $f$.
 However, the premise is almost never true and thus this inclusion is only theoretically valid. This is because in [[Statistics]] or [[Supervised Learning]], we only have access to the sample or training data, and thus the best predictor we can learn may deviate from the true model arbitrarily on the unseen data, even if their prediction on the unseen data is _close with high probability_ (generalize well in terms of prediction error).
-For example, even when the true model $f$ is simple, an over-parametrized neural network may learn a complex and uninterpretable predictor $f\_{\mathrm{NN}}$ that achieves excellent prediction accuracy but bears little resemblance to $f$.
+For example, even when the true model $f$ is simple, an over-parametrized neural network may learn a complex and uninterpretable predictor $f_{\mathrm{NN}}$ that achieves excellent prediction accuracy but bears little resemblance to $f$.
 On the other hand, if we restrict our search space of the predictor to the class of regression models, then solving a prediction task essentially reduces to solving a regression task.
 In other words, although we can view regression as a type of prediction task, not every prediction method is suitable for regression.
 The converse is always true: regression, as a class of methods, can be used to solve prediction tasks.
 
 One could also view **[[Prediction]] as a general regression task**, if we use the prediction accuracy as the fitting metric between the predictor and the model.
-For example, we can have $f\_{\mathrm{NN}}\overset{ P }{ \to }f$ as the sample size $n$ increases, in terms of that $\lim\_{ n \to \infty }P(|f\_{\mathrm{NN}}(X)-f(X)|>\epsilon)=0$. In this sense, we can say $f\_{\mathrm{NN}}$ fits $f$ well and solves the regression task under a prediction-oriented metric.
+For example, we can have $f_{\mathrm{NN}}\overset{ P }{ \to }f$ as the sample size $n$ increases, in terms of that $\lim_{ n \to \infty }P(|f_{\mathrm{NN}}(X)-f(X)|>\epsilon)=0$. In this sense, we can say $f_{\mathrm{NN}}$ fits $f$ well and solves the regression task under a prediction-oriented metric.
 
 Ultimately, different aspects view the relationship between regression and prediction differently, with the distinction lying in the **specific goals and metrics**.
 

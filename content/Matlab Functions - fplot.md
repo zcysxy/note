@@ -1,8 +1,8 @@
 ---
 publish: true
-created: 2026-01-06T20:10:18.000-05:00
+created: 2026-01-06T20:10:18.174-05:00
 modified: 2021-08-26T09:32:53
-published: 2026-05-01T00:08:27.356-04:00
+published: 2026-05-01T00:08:27.000-04:00
 tags:
   - pub-matlab
 sup:
@@ -15,10 +15,10 @@ sup:
 _fplot_ is the function to plot expressions or functions.
 
 - `fplot(f,<xinterval>)` plots the curve defined by the function `y = f(x)` over the specified interval for _x_
-  - default interval **$\[-5, 5]$**
+  - default interval **$[-5, 5]$**
   - specify the interval as a two-element vector of the form `[xmin xmax]`
 - `fplot(funx,funy,<tinterval>)` plots the curve defined by `x = funx(t)` and `y = funy(t)` over the specified interval for t
-  - default interval $\[-5, 5]$
+  - default interval $[-5, 5]$
   - specify the interval as a two-element vector of the form `[tmin tmax]`
 - `fplot(___,LineSpec)` specifies the line style, marker symbol, and line color
   - or `fplot(___,Name,Value)`

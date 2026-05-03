@@ -3,7 +3,7 @@ publish: true
 title: Regularity Conditions for M-Estimators
 created: 2025-06-18T16:47:11
 modified: 2025-08-20T00:36:20
-published: 2026-01-06T20:10:18.000-05:00
+published: 2026-01-06T20:10:18.245-05:00
 aliases:
 type: note
 sup:
@@ -29,33 +29,33 @@ Common in [[Statistics]], many core ideas in certain analyses are intuitive and 
 Some general regularity conditions used in estimation include:
 
 1. **Uniform support**: The support of the PDF $f(x;\theta)$ does not depend on $\theta$. ^supp
-2. **Identifiability**: $f(x;\theta\_1) \neq f(x;\theta\_2) \iff \theta\_1 \neq \theta\_2$. ^id
-3. **Interior**: The parameter space $\Theta$ is finite or an open interval; the true parameter $\theta ^{\*}$ is not on the boundary of $\Theta$. ^int
+2. **Identifiability**: $f(x;\theta_1) \neq f(x;\theta_2) \iff \theta_1 \neq \theta_2$. ^id
+3. **Interior**: The parameter space $\Theta$ is finite or an open interval; the true parameter $\theta ^{*}$ is not on the boundary of $\Theta$. ^int
 
 ## For Maximum Likelihood Estimation
 
 - [[Maximum Likelihood Estimation|MLE]] is a special [[M-Estimator]]. One can also review the regularity conditions for [[M-Estimator]]s. Here we discuss the regularity conditions for MLE specifically.
 
-MLE considers the [[Likelihood#Log-Likelihood]] $\ell \_{\theta} \coloneqq \log f(x;\theta)$ as the objective function.
+MLE considers the [[Likelihood#Log-Likelihood]] $\ell _{\theta} \coloneqq \log f(x;\theta)$ as the objective function.
 
 ### Consistency
 
 Similar to [[M-Estimator]]s, we need a stronger [[#^id|identifiability]] condition and a stronger [[Law of Large Numbers|LLN]] condition:
 
-1. **Separation**: For any $\epsilon >0$, $\sup\_{\theta:|\theta-\theta ^_|> \epsilon} \mathbb{E}\ell \_{\theta } < \mathbb{E} \ell \_{\theta ^_}$. ^sep
-2. **Uniform convergence**: $\sup\_{\theta} | \hat{\mathbb{E}}\_{n}\ell \_{\theta} - \mathbb{E} \ell \_{\theta}| \overset{ P }{ \to } 0$. ^uni-conv
+1. **Separation**: For any $\epsilon >0$, $\sup_{\theta:\|\theta-\theta ^*\|> \epsilon} \mathbb{E}\ell _{\theta } < \mathbb{E} \ell _{\theta ^*}$. ^sep
+2. **Uniform convergence**: $\sup_{\theta} | \hat{\mathbb{E}}_{n}\ell _{\theta} - \mathbb{E} \ell _{\theta}| \overset{ P }{ \to } 0$. ^uni-conv
 
-- Throughout the note, we do not need well-specification. The expectation is taken under the data generating distribution $p\_{\mathrm{data}}$, and $\theta ^\* = \argmin\_{\theta\in \Theta }\mathbb{E}_{p_{\mathrm{data}}}\ell \_{\theta}$.
+- Throughout the note, we do not need well-specification. The expectation is taken under the data generating distribution $p_{\mathrm{data}}$, and $\theta ^* = \argmin_{\theta\in \Theta }\mathbb{E}_{p_{\mathrm{data}}}\ell _{\theta}$.
 
-Under ([[#^sep|separation]]) and ([[#^uni-conv|uniform convergence]]), the MLE is consistent: $\hat{\theta}\_{\mathrm{MLE}} \overset{ P }{ \to } \theta ^\*$.
+Under ([[#^sep|separation]]) and ([[#^uni-conv|uniform convergence]]), the MLE is consistent: $\hat{\theta}_{\mathrm{MLE}} \overset{ P }{ \to } \theta ^*$.
 
 ---
 
 We list two sufficient conditions
 
 1. **Compactness**: $\Theta$ is compact. ^compact
-2. **Continuity**: $\ell \_{\theta}$ and $\mathbb{E}\ell \_{\theta }$ are continuous in $\theta$. ^cont
-3. **Lower bound**: $\mathbb{E}\[\inf\_{\theta\in\Theta} \ell \_{\theta }(X)] > -\infty$ ^lower
+2. **Continuity**: $\ell _{\theta}$ and $\mathbb{E}\ell _{\theta }$ are continuous in $\theta$. ^cont
+3. **Lower bound**: $\mathbb{E}[\inf_{\theta\in\Theta} \ell _{\theta }(X)] > -\infty$ ^lower
 
 - Under ([[#^compact|compactness]]), ([[#^id|identifiability]]) is equivalent to ([[#^sep|separation]]).
 - Under ([[#^compact|compactness]]), ([[#^cont|continuity]]) and ([[#^lower|lower bound]]) implies ([[#^uni-conv|uniform convergence]]).
@@ -63,15 +63,17 @@ We list two sufficient conditions
 ### Asymptotic Normality
 
 For asymptotic normality, we aim for the stronger result:
+
 $$
-\sqrt{ n } \left( \hat{\theta}\_{\mathrm{MLE}} - \theta \_{_} \right)  \overset{ d }{ \to } \mathcal{N}(0, I(\theta \_{_})^{-1}),
+\sqrt{ n } \left( \hat{\theta}_{\mathrm{MLE}} - \theta _{*} \right)  \overset{ d }{ \to } \mathcal{N}(0, I(\theta _{*})^{-1}),
 $$
+
 where $I(\theta)$ is the [[Fisher Information]] matrix at . For this stronger result to hold, we generally requires strong continuity conditions that allow the exchange of integration and differentiation, useful in the calculation of the [[Fisher Information]].
 
 Beyond ([[#^id|identifiability]]), ([[#^supp|uniform support]]), ([[#^int|interior]]), and the [[#Consistency]] property, we need:
 
-1. **Smoothness**: $f(x; \theta)$ is a thrice differentiable w.r.t $\theta$, and $|\partial \_{\theta}^{3}f(x; \theta)| \le h(x)$ on some neighborhood of $\theta ^{\*}$ for some integrable function $h(x)$. ^smooth
+1. **Smoothness**: $f(x; \theta)$ is a thrice differentiable w.r.t $\theta$, and $|\partial _{\theta}^{3}f(x; \theta)| \le h(x)$ on some neighborhood of $\theta ^{*}$ for some integrable function $h(x)$. ^smooth
 2. **Exchangeability**: We can interchange differentiation w.r.t $\theta$ up to second order and integration over $x$. ^ex
-3. **Invertibility**: The [[Fisher Information]] matrix is invertible in a neighborhood of $\theta ^{\*}$.
+3. **Invertibility**: The [[Fisher Information]] matrix is invertible in a neighborhood of $\theta ^{*}$.
 
-The above set of regularity conditions are _sufficient_ but not necessary. For example, the ([[#^smooth|smoothness]]) condition can be relaxed to first-order continuous differentiability with some additional conditions on the mapping $\theta \mapsto \mathbb{E} \ell \_{\theta}$. And ([[#^ex|exchangeability]]) can be implied by ([[#^smooth|smoothness]]) and some additional conditions. See [[M-Estimator]] for a more general set of regularity conditions.
+The above set of regularity conditions are _sufficient_ but not necessary. For example, the ([[#^smooth|smoothness]]) condition can be relaxed to first-order continuous differentiability with some additional conditions on the mapping $\theta \mapsto \mathbb{E} \ell _{\theta}$. And ([[#^ex|exchangeability]]) can be implied by ([[#^smooth|smoothness]]) and some additional conditions. See [[M-Estimator]] for a more general set of regularity conditions.

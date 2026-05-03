@@ -2,7 +2,7 @@
 publish: true
 created: 2022-02-22T20:20:09
 modified: 2022-04-03T15:54:09
-published: 2026-05-01T00:08:28.031-04:00
+published: 2026-05-01T00:08:28.000-04:00
 tags:
   - pub-matlab
 type: note
@@ -57,8 +57,8 @@ Matrix Operations 就是 [[Linear Algebra]] 中的矩阵操作, 区别于 [[Matl
     - ++**特别注意**++
       - 这里幂次运算符的计算公式是$\boldsymbol{V}2^{\boldsymbol{D}}\boldsymbol{V}^{-1}$, 其中 $\boldsymbol{V,D}$ 分别是以 $\boldsymbol{B}$ 特征向量为列向量的矩阵和特征值为对角线的矩阵, 即 $\boldsymbol{B} = \boldsymbol{V}\boldsymbol{D}\boldsymbol{V}^{-1}$
       - 因此这种算法要求 $\boldsymbol{B}$ 的特征向量线性无关, 所以 $\boldsymbol{V}$ 才可逆
-      - 而函数 _expm_ 的计算公式就是 $\sum\_{k=0}^\infty \frac{1}{k!}\boldsymbol{B}^k$, 对 $\boldsymbol{B}$ 无任何要求
+      - 而函数 _expm_ 的计算公式就是 $\sum_{k=0}^\infty \frac{1}{k!}\boldsymbol{B}^k$, 对 $\boldsymbol{B}$ 无任何要求
       - 因此 `^` 可能与函数 _expm_ 结果不一致, 特别地, `^` 会报错
-  - `A ^ a` 即 $\lim\_{\mathbb{Q}\ni q\to a} \boldsymbol{A}^q$
+  - `A ^ a` 即 $\lim_{\mathbb{Q}\ni q\to a} \boldsymbol{A}^q$
   - `a ^ b` 相当于 `a .^ b`
 - 转置 `.'` 是唯一有句号 `.` 但不是 [[Matlab Array Operations]] 的矩阵运算符

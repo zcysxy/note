@@ -3,7 +3,7 @@ publish: true
 title: Tail Bounds and Concentration Inequalities
 created: 2025-05-26T19:28:12
 modified: 2025-06-07T09:16:59
-published: 2026-01-06T20:10:18.000-05:00
+published: 2026-01-06T20:10:18.295-05:00
 tags:
   - pub-stat
 state: done
@@ -40,9 +40,11 @@ np.random.seed(42)
 ## Gaussian Tail Bound
 
 The tail bound of a Gaussian random variable $X \sim \mathcal{N}(0,1)$ is described by [[Concentration Inequality#Mill's Ratio|Mill's ratio]]:
+
 $$
-P(X \geq x) \le \frac{e^{-x^2 /2}}{x\sqrt{2\pi}}
+P(X \geq x) \le \frac{e^{-x^2 /2}}{x\sqrt{2\pi}} 
 $$
+
 We plot the theoretical tail bound:
 
 ```python
@@ -96,7 +98,8 @@ plt.show()
 ## t-Distribution Tail Bound
 
 Gaussian distribution is known to have a _light_ tail bound, i.e., an exponential decay in the tail probability. [[t Distribution]], on the other hand, is known to have a _heavy_ tail bound.
-For example, $t\_{1}$, or [[Cauchy Distribution|Cauchy]], distribution, has a tail bound of
+For example, $t_{1}$, or [[Cauchy Distribution|Cauchy]], distribution, has a tail bound of
+
 $$
 P(X \geq x) = \frac{1}{\pi} \arctan x^{-1} \asymp \frac{1}{\pi x}.
 $$
@@ -124,8 +127,9 @@ plt.show()
 Different from the tail bound of a specific random variable, concentration inequalities provide bounds for a class of random variables.
 
 For example, for any random variable $X$ with finite mean and variance, Chebyshev's inequality gives
+
 $$
-P(|X - \mathbb{E}\[X]| \geq t) \leq \frac{\mathrm{Var}(X)}{t^2}.
+P(|X - \mathbb{E}[X]| \geq t) \leq \frac{\mathrm{Var}(X)}{t^2}.
 $$
 
 Because of the generality, it's often too loose for certain distributions.
@@ -145,14 +149,18 @@ ax.legend()
 
 ## Hoeffding's Inequality
 
-For bounded iid random variables $X\_{i}\in \[0,1]$, [[Hoeffding's Inequality]] states that
+For bounded iid random variables $X_{i}\in [0,1]$, [[Hoeffding's Inequality]] states that
+
 $$
-P\left( \left| \frac{1}{n}\sum\_{i=1}^{n}X\_{i} - \mathbb{E}\[X] \right| \geq t \right) \leq 2e^{-2nt^2}.
+P\left( \left| \frac{1}{n}\sum_{i=1}^{n}X_{i} - \mathbb{E}[X] \right| \geq t \right) \leq 2e^{-2nt^2}.
 $$
+
 For a single standard Gaussian random variable, Hoeffding's inequality reduces to the Chernoff bound:
+
 $$
 P(X \geq t) \leq e^{-t^2 / 2},
 $$
+
 which is close to the exact Gaussian tail bound, with a slight difference caused by constants and the scaling of $t$.
 
 ```python

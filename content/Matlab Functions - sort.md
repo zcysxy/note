@@ -1,8 +1,8 @@
 ---
 publish: true
 created: 2024-02-02T04:44:24.177-05:00
-modified: 2026-05-01T00:08:27.629-04:00
-published: 2026-05-01T00:08:27.629-04:00
+modified: 2026-05-01T00:08:27.000-04:00
+published: 2026-05-01T00:08:27.000-04:00
 tags:
   - pub-matlab
 ---
@@ -19,16 +19,17 @@ tags:
   - _dim_ 需为**整数**, 默认为第一个非 1 的维数
   - 沿维数 _dim_ 的意思是 (若为升序):
 
-  $$\begin{aligned}
-  \bm{A}(x\_1,\underset{dim\text{th arg}}{\cdots,1,\cdots},x\_n) &\leq \bm{A}(x\_1,\underset{dim\text{th arg}}{\cdots,2,\cdots},x\_n)\\
-  & \leq \cdots\\
-  & \leq \bm{A}(x\_1,\underset{dim\text{th arg}}{\cdots,end,\cdots},x\_n)
+  $$$\begin{aligned}
+      \bm{A}(x_1,\underset{dim\text{th arg}}{\cdots,1,\cdots},x_n) &\leq \bm{A}(x_1,\underset{dim\text{th arg}}{\cdots,2,\cdots},x_n)\\
+      & \leq \cdots\\
+      & \leq \bm{A}(x_1,\underset{dim\text{th arg}}{\cdots,end,\cdots},x_n)
   \end{aligned}$$
 
-  - 特例:
-    - If _A_ is a **vector**, then `sort(A)` sorts the vector elements
-    - If _A_ is a **matrix**, then `sort(A)` treats the columns of _A_ as vectors and sorts **each column**
-    - if _A_ is a matrix, then `sort(A,2)` sorts the elements of each row
+  * 特例:
+      * If *A* is a **vector**, then `sort(A)` sorts the vector elements
+      * If *A* is a **matrix**, then `sort(A)` treats the columns of *A* as vectors and sorts **each column**
+      * if *A* is a matrix, then `sort(A,2)` sorts the elements of each row
+  $$$
 - `B = sort(___,Name,Value)` specifies additional parameters for sorting
   - For example, `sort(A,'ComparisonMethod','abs')` sorts the elements of _A_ by magnitude.
 - `[B,I] = sort(___)`

@@ -3,7 +3,7 @@ publish: true
 title: Matlab Graphics - Region
 created: 2022-04-02T15:07:25
 modified:
-published: 2026-05-01T00:08:27.963-04:00
+published: 2026-05-01T00:08:27.000-04:00
 tags:
   - pub-matlab
 aliases:

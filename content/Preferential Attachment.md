@@ -5,7 +5,7 @@ aliases:
 title: Preferential Attachment
 created: 2026-04-05T01:40:03
 modified: 2026-04-21T19:00:14
-published: 2026-04-30T16:13:48.000-04:00
+published: 2026-04-30T16:13:48.005-04:00
 tags:
   - pub-network
 state: done
@@ -18,9 +18,9 @@ type: note
 # Preferential Attachment
 
 - Motivation: A growing [[Random Graph Model]] that naturally generates a [[Power Law Distribution|power law]] degree distribution
-- Model: $n$ nodes arrives sequentially in $n$ steps; let $X\_{i}(t)$ be the in-degree of node $i$ at time $i\le t \le n$;
-  - Initialization: $X\_{i}(i)=\mathbb{1}{ i=1 }$
-  - Evolution: $X(t+1)=X(t)+I\_{t}$, where $I\_t$ follows a [[Categorical Distribution]] supported on ${1,\ldots,t}$ with probability $p\_{i} = p /t + (1-p) X\_{i}(t) /t$
+- Model: $n$ nodes arrives sequentially in $n$ steps; let $X_{i}(t)$ be the in-degree of node $i$ at time $i\le t \le n$;
+  - Initialization: $X_{i}(i)=\mathbb{1}\{ i=1 \}$
+  - Evolution: $X(t+1)=X(t)+I_{t}$, where $I_t$ follows a [[Categorical Distribution]] supported on $\{1,\ldots,t\}$ with probability $p_{i} = p /t + (1-p) X_{i}(t) /t$
   - Extensions:
     - An entering node can form multiple links
     - Undirected
@@ -36,76 +36,100 @@ type: note
 
 When $n$ is large, we can reindex the time steps as $0,\epsilon,2\epsilon, \dots, 1$ with $\epsilon = 1 /n =o(1)$.
 Then, we have a differential equation approximation for the expected degree dynamics:
+
 $$
-\mathbb{E}X\_{i}(t+\epsilon) - \mathbb{E}X\_{i}(t) = \frac{\epsilon}{t}(p + (1-p)X\_{i}(t)).
+\mathbb{E}X_{i}(t+\epsilon) - \mathbb{E}X_{i}(t) = \frac{\epsilon}{t}(p + (1-p)X_{i}(t)).
 $$
-Let $x\_{i}(t)\coloneqq \mathbb{E}X\_{i}(t)$. We then have
+
+Let $x_{i}(t)\coloneqq \mathbb{E}X_{i}(t)$. We then have
+
 $$
 \dot{x}_{i} = (p + (1-p)x_{i})/t.
 $$
-Integrating the above equation with initial condition $x\_{i}(i)=\mathbb{1}{ i=1 }$ gives
+
+Integrating the above equation with initial condition $x_{i}(i)=\mathbb{1}\{ i=1 \}$ gives
+
 $$
-x\_{i}(t) = \begin{cases}
+x_{i}(t) = \begin{cases}
 \frac{p}{1-p}(t ^{1-p} /p -1), & i=1,\\
 \frac{p}{1-p}((t /i) ^{1-p}  -1), & i\ge 2,
 \end{cases} \quad t \ge i.
 $$
-We see that $x\_{i}(t)$ is monotonically decreasing in $i$, showing a ==first-mover advantage==.
 
-Solving $x\_{i}(t)=d$ gives
+We see that $x_{i}(t)$ is monotonically decreasing in $i$, showing a ==first-mover advantage==.
+
+Solving $x_{i}(t)=d$ gives
+
 $$
 \frac{i}{t} = \left( 1 + \frac{1-p}{p}d \right)^{-1 /(1-p)},
 $$
+
 ^eq-exp
 
 indicating that
+
 $$
-\frac{|{ i: x\_{i}(t) \ge d }|}{t} \propto d^{-1 /(1-p)}, \quad\text{as } d\to \infty,
+\frac{|\{ i: x_{i}(t) \ge d \}|}{t} \propto d^{-1 /(1-p)}, \quad\text{as } d\to \infty,
 $$
+
 giving a power law with parameter $\gamma = 2+\frac{p}{1-p}$.
 
 ## Mean Field Approximation
 
 Let $f(k,t)$ be the fraction of nodes with degree $k$ at time $t$.
 Then, we have the following _master equation_ for $k\ge 1$:
+
 $$
 (t+1)f(k,t+1) = tf(k,t) + \underbrace{ f(k-1,t)(p+(1-p)(k-1)) }_{ \text{link to a node of degree }k-1 } - \underbrace{ f(k,t)(p+(1-p)k) }_{ \text{link to a node of degree }k }.
 $$
+
 For $k=0$, we have
+
 $$
 (t+1)f(0,t+1) = tf(0,t) + 1 - pf(0,t).
 $$
+
 Suppose a stationary distribution $f(k)$ exists, then we have
+
 $$
 \frac{f(k)}{f(k-1)} = \frac{p+(1-p)(k-1)}{1+p+(1-p)k} = \frac{k + \frac{2p-1}{1-p}}{k + \frac{1+p}{1-p}}
 $$
+
 Note that for a discrete [[Power Law Distribution]] with parameter $\alpha=1$, when $k\gg 1$, we have
+
 $$
 \frac{p(k)}{p(k-1)} = \frac{c k^{-\alpha} - c(k+1)^{-\alpha}}{c(k-1)^{-\alpha}-ck^{-\alpha}}
-\= \frac{1 - (1+k^{-1})^{-\alpha}}{(1-k^{-1})^{-\alpha}-1}
+= \frac{1 - (1+k^{-1})^{-\alpha}}{(1-k^{-1})^{-\alpha}-1}
 \approx \frac{1 - 1 + \alpha k^{-1} - \frac{\alpha(\alpha+1)}{2}k^{-2}}{1+\alpha k^{-1} + \frac{\alpha(\alpha+1)}{2}k^{-2} -1}
-\= \frac{k - \frac{\alpha+1}{2}}{k + \frac{\alpha+1}{2}}.
+= \frac{k - \frac{\alpha+1}{2}}{k + \frac{\alpha+1}{2}}.
 $$
+
 Thus, $\gamma = \alpha+1 = 2+\frac{p}{1-p} > 2$.
 
 One can also observe the above equivalence by calculating that
+
 $$
 p(k) = \frac{\mathrm{B}\left( k + \frac{p}{1-p}, 2 + \frac{p}{1-p} \right) }{\mathrm{B}\left( \frac{p}{1-p}, \frac{1}{1-p} \right)},
 $$
+
 where $\mathrm{B}$ is the Beta function, and using the asymptotic property of the Beta function that $\mathrm{B}(x,y) \sim \Gamma(y)x^{-y}$ as $x\to \infty$ for fixed $y$.
 
 ## Degree Correlation
 
-Let $F\_{i}^{t}$ be the expected degree distribution CDF of $i$'s in-neighbors at time $t$.
-Since [[#^eq-exp]] is strictly decreasing in the time a node enters, we know the for any $i$' in-neighbor $j$, $x\_{j}(t)< x\_{i}(t)$. Additionally, if at time $\tau$, a node $j$ enters and links to $i$, then a neighbor has an expected degree smaller than that of $j$ if and only if it comes after $j$. Thus, for $d < x\_{i}(t)$,
+Let $F_{i}^{t}$ be the expected degree distribution CDF of $i$'s in-neighbors at time $t$.
+Since [[#^eq-exp]] is strictly decreasing in the time a node enters, we know the for any $i$' in-neighbor $j$, $x_{j}(t)< x_{i}(t)$. Additionally, if at time $\tau$, a node $j$ enters and links to $i$, then a neighbor has an expected degree smaller than that of $j$ if and only if it comes after $j$. Thus, for $d < x_{i}(t)$,
+
 $$
-F\_{i}^{t}(d) = \frac{x\_{i}(t) - x\_{i}(\tau(d,t))}{x\_{i}(t)},
+F_{i}^{t}(d) = \frac{x_{i}(t) - x_{i}(\tau(d,t))}{x_{i}(t)},
 $$
+
 where $\tau(d,t)$ is the entrance time of _the_ node with expected degree $d$ at time $t$; any node after $\tau$ has expected degree smaller than $d$ at time $t$ and any node before $\tau$ has expected degree larger than $d$ at time $t$.
 Further, by [[#^eq-exp]],
+
 $$
-F^{t}\_{i}(d) = 1 -  \frac{(\tau /i) ^{1-p}  -1}{(t /i )^{1-p}-1},
+F^{t}_{i}(d) = 1 -  \frac{(\tau /i) ^{1-p}  -1}{(t /i )^{1-p}-1},
 $$
+
 which decreases in $i$ for any fixed $d$ and $t$.
 Thus, the first-movers' expected neighbor degree distribution first-order stochastically dominates that of later-movers.
 Together with the first-mover advantage, we see a positive degree correlation (age-based homophily/assortativity).

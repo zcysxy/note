@@ -3,7 +3,7 @@ publish: true
 title: f-Divergence
 created: 2023-05-09T21:45:32
 modified: 2025-06-06T01:33:01
-published: 2026-01-06T20:10:18.000-05:00
+published: 2026-01-06T20:10:18.368-05:00
 tags:
   - pub-stat
 type: note
@@ -14,13 +14,15 @@ state: done
 
 # f-Divergence
 
-For two distributions $P$ and $Q$ such that $Q>0$ whenever $P>0$, and a convex real function $f$ on $\[0,+\infty)$ with $f(1) = 0$ and $f(0) = \lim\_{ t \to 0+ }f(t)$, we can define
-$$
-D\_{f}(P|Q) = \int f\left( \frac{\d P(x)}{\d Q(x)} \right)\d  Q(x) , \d x = \mathbb{E}_{q} f(p/q),
-$$
-where the second equality holds when $p$ and $q$ are densities of $P$ and $Q$ respectively. $D_{f}(P| Q)$ is called the ==f-divergence== between $P$ and $Q$.
+For two distributions $P$ and $Q$ such that $Q>0$ whenever $P>0$, and a convex real function $f$ on $[0,+\infty)$ with $f(1) = 0$ and $f(0) = \lim_{ t \to 0+ }f(t)$, we can define
 
-Intuitively, the expected convex function $\mathbb{E}\_{Q}f$ _amplifies_ the difference signal in the likelihood ratio $\d P/\d Q$.
+$$
+D_{f}(P\|Q) = \int f\left( \frac{\d P(x)}{\d Q(x)} \right)\d  Q(x) \, \d x = \mathbb{E}_{q} f(p/q),
+$$
+
+where the second equality holds when $p$ and $q$ are densities of $P$ and $Q$ respectively. $D_{f}(P\| Q)$ is called the ==f-divergence== between $P$ and $Q$.
+
+Intuitively, the expected convex function $\mathbb{E}_{Q}f$ _amplifies_ the difference signal in the likelihood ratio $\d P/\d Q$.
 
 ## Examples
 
@@ -37,5 +39,5 @@ Intuitively, the expected convex function $\mathbb{E}\_{Q}f$ _amplifies_ the dif
 
 ## Properties
 
-- Non-negativity: $D\_{f}(P|Q) \ge 0$, due to the convexity of $f$.
-- Zero self-divergence: $D\_{f}(P|P) = 0$, due to that $f(1)=0$.
+- Non-negativity: $D_{f}(P\|Q) \ge 0$, due to the convexity of $f$.
+- Zero self-divergence: $D_{f}(P\|P) = 0$, due to that $f(1)=0$.

@@ -4,7 +4,7 @@ aliases:
   - Bayesian Statistics
 created: 2022-05-28T03:34:22
 modified: 2025-07-30T03:13:02
-published: 2026-01-06T20:10:17.000-05:00
+published: 2026-01-06T20:10:17.999-05:00
 tags:
   - pub-stat
 type: note
@@ -32,12 +32,14 @@ Bayesian statistics is primarily concerned with inferring the underlying model (
 ## Calculating Posterior
 
 For simplicity and without loss of rigor, we use a unified notation $p(\cdot)$ to denote any distribution (PDF or PMF), and the specific distribution should be clear from its argument. $p(y\given z)$ is the [[Conditional Probability|conditional distribution]] of $y$ given $z$.
-Therefore, consider a parameter space $\Theta$ and sample $X = (X\_{1},\dots,X\_{n})$, our prior is $p(\theta)$, the [[Likelihood]] is $p(x\given \theta)$, and the posterior is $p(\theta\given x)$.
+Therefore, consider a parameter space $\Theta$ and sample $X = (X_{1},\dots,X_{n})$, our prior is $p(\theta)$, the [[Likelihood]] is $p(x\given \theta)$, and the posterior is $p(\theta\given x)$.
 
 By the [[Bayes' theorem]], the posterior is given by
+
 $$
-p(\theta\given X) = \frac{p(X\given\theta)p(\theta)}{\int \_{\Theta} p(X\given\theta)p(\theta) , \d \theta } \propto p(X\given\theta)p(\theta).
+p(\theta\given X) = \frac{p(X\given\theta)p(\theta)}{\int _{\Theta} p(X\given\theta)p(\theta) \, \d \theta } \propto p(X\given\theta)p(\theta).
 $$
+
 The posterior density at $\theta$ is proportional to $p(X\given \theta)p(\theta)$ as the denominator is a constant with respect to $\theta$.
 
 ### Sequential Update
@@ -59,8 +61,8 @@ Such distributions are called the ==conjugate prior==.
 In the following list of example conjugate priors, we write $\text{prior dist.} \overset{ \text{model param.} }{ \to } \text{data-gen. dist.} = \text{post. dist.}$.
 
 - [[Beta Distribution]] is the conjugate prior of [[Binomial Distribution]]: $\operatorname{Beta}(a,b)\overset{ p }{ \to }\operatorname{Binom}(n,p) = \operatorname{Beta}(a+x,b+n-x)$
-- [[Gamma Distribution]] is the conjugate prior of [[Poisson Distribution]]: $\operatorname{Gamma}(\alpha,\beta)\overset{ \lambda }{ \to }\operatorname{Poisson}(\lambda) = \operatorname{Gamma}(\alpha+n,\beta+\sum x \_i)$
-- [[Normal Distribution]] is the conjugate prior of [[Normal Distribution]]: $\operatorname{Normal}(\mu\_{0},\tau ^{2})\overset{ x }{ \to }\operatorname{Normal}(\mu,\sigma^{2}) = \operatorname{Normal}((1-B)\overline{X}+B \mu\_{0},(1-B)\sigma^{2} /n)$, where $B = \frac{\sigma^{2} /n}{\sigma^{2} /n+\tau^{2}}$.
+- [[Gamma Distribution]] is the conjugate prior of [[Poisson Distribution]]: $\operatorname{Gamma}(\alpha,\beta)\overset{ \lambda }{ \to }\operatorname{Poisson}(\lambda) = \operatorname{Gamma}(\alpha+n,\beta+\sum x _i)$
+- [[Normal Distribution]] is the conjugate prior of [[Normal Distribution]]: $\operatorname{Normal}(\mu_{0},\tau ^{2})\overset{ x }{ \to }\operatorname{Normal}(\mu,\sigma^{2}) = \operatorname{Normal}((1-B)\overline{X}+B \mu_{0},(1-B)\sigma^{2} /n)$, where $B = \frac{\sigma^{2} /n}{\sigma^{2} /n+\tau^{2}}$.
 - Inverse Gamma distribution is the conjugate prior for the variance of a univariate [[Normal Distribution]] with unknown mean and variance
 - Inverse Wishart distribution is the conjugate prior for the covariance matrix of multi-variate [[Normal Distribution]] with unknown mean and covariance matrix
 
@@ -74,22 +76,26 @@ Sometimes $\Theta$ may not possess a [[Sigma Field]] that allows us to define a 
 This leads us to consider general [[Measure]]s as priors. Luckily, the [[Bayes' theorem]] and the calculation in [[#Calculating Posterior]] still hold.
 
 - The [[Borel Sigma Field|Lebesgue Measure]] and counting measure are the _uniform_ measure on a [[Borel Sigma Field|Borel Set]] and a countable set, respectively.
-- $\operatorname{Unif}\[0,1] = \operatorname{Beta}(1,1)$ and $\operatorname{Unif}(-\infty,\infty)=\mathcal{N}(0,\infty)$.
+- $\operatorname{Unif}[0,1] = \operatorname{Beta}(1,1)$ and $\operatorname{Unif}(-\infty,\infty)=\mathcal{N}(0,\infty)$.
 
-When the prior measure is not integrable, i.e., $\int \_{\Theta}p(\theta)\d \theta = \infty$, we call it an ==improper prior==.
+When the prior measure is not integrable, i.e., $\int _{\Theta}p(\theta)\d \theta = \infty$, we call it an ==improper prior==.
 
 - Importantly, non-informative priors reduce the Bayesian statistics to frequentist statistics.
 
 ### Jeffreys Prior
 
 The Jeffreys prior,
+
 $$
 p(\theta) \propto \sqrt{ \det I(\theta) },
 $$
+
 where $I(\theta)$ is the [[Fisher Information]] matrix, enjoys the **reparametrization invariance principle**: if $\eta = \phi(\theta)$ is a reparametrization of $\theta$, then the distribution of $\eta$ satisfies
+
 $$
 p(\eta) \propto \sqrt{ \det \tilde{I}(\eta) },
 $$
+
 where $\tilde{I}(\eta)$ is the Fisher information matrix of the statistical model parametrized by $\eta$ instead of $\theta$.
 
 ## Bayesian Estimation
@@ -109,9 +115,11 @@ For point estimators, we have
 ^bayes-est-comp
 
 For set estimators, we have Bayesian confidence regions. A ==Bayesian confidence region== $C \subset \Theta$ if of level $1-\alpha$ if
+
 $$
 P(\theta\in C \given X) \ge 1-\alpha.
 $$
+
 We remark that Bayesian confidence regions depend on the prior. If the prior is highly deterministic, the Bayesian confidence region will largely be determined by the prior, with small influence from the data.
 
 ## Bayesian vs Frequentist

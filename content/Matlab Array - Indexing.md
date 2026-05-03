@@ -3,7 +3,7 @@ publish: true
 title: Matlab Array - Indexing
 created: 2021-08-17T21:58:15
 modified: 2021-12-26T10:57:30
-published: 2026-05-01T00:08:21.748-04:00
+published: 2026-05-01T00:08:21.000-04:00
 tags:
   - pub-matlab
 aliases:

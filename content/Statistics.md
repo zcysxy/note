@@ -3,7 +3,7 @@ publish: true
 title: "*Sufficient* of Statistics"
 created: 2023-10-17T21:41:50
 modified: 2025-08-25T19:56:53
-published: 2026-01-06T20:10:18.000-05:00
+published: 2026-01-06T20:10:18.288-05:00
 tags:
   - pub-stat
 type: index

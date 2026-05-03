@@ -3,7 +3,7 @@ publish: true
 title: Statistic
 created: 2025-05-21T19:18:56
 modified: 2025-06-28T18:01:58
-published: 2026-01-06T20:10:18.000-05:00
+published: 2026-01-06T20:10:18.285-05:00
 tags:
   - pub-stat
 state: done
@@ -22,13 +22,13 @@ Notably, a statistic acts on the sample, but not the underlying distribution. An
 
 > [!example]
 >
-> The sample average $T(X\_{1},\dots,X\_n) = \frac{1}{n}\sum\_{i=1}^{n}X\_{i}$, is a statistic, which approximates the [[Expectation|Mean]] of the underlying distribution.
+> The sample average $T(X_{1},\dots,X_n) = \frac{1}{n}\sum_{i=1}^{n}X_{i}$, is a statistic, which approximates the [[Expectation|Mean]] of the underlying distribution.
 
 **First generalization**. A statistic can be a measurable functional: $T : \mathcal{X}\to \mathcal{T}$, where $\mathcal{T}$ is some function space.
 
 > [!example]
 >
-> The empirical CDF $T(X\_{1},\dots,X\_n) = \frac{1}{n}\sum\_{i=1}^{n}\mathbb{1} { x \le  X\_i }$, is a statistic, which is a function on $\R$ and approximates the CDF of the underlying distribution.
+> The empirical CDF $T(X_{1},\dots,X_n) = \frac{1}{n}\sum_{i=1}^{n}\mathbb{1} \{ x \le  X_i \}$, is a statistic, which is a function on $\R$ and approximates the CDF of the underlying distribution.
 
 **Second generalization**. A statistic can be regarded as a [[Statistical Functional]] evaluated at the empirical distribution. Similarly, a statistical functional is some _measurement_ taken from the underlying distribution. See [[Statistical Functional]] for more details.
 
