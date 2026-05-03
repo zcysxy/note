@@ -9,7 +9,7 @@ import { FixBlockLatex } from "./quartz/plugins/transformers/fix_block_latex"
  */
 const config: QuartzConfig = {
   configuration: {
-    pageTitle: "Sufficient Statistics",
+    pageTitle: "Note Box",
     pageTitleSuffix: "",
     tagTitle: {
       "pub-stat": "Sufficient Statistics",
