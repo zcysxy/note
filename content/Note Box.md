@@ -22,11 +22,12 @@ type: output
 
 ## 🪴 Live!
 
-|banner3|link|
+|banner4|link|
 |---|---|
 |![](https://raw.githubusercontent.com/zcysxy/Figurebed/master/img/stat-icon.svg)|🔮 [[Statistics\|Statistics]]|
 |![](https://raw.githubusercontent.com/zcysxy/Figurebed/master/img/prob-icon.svg)|🎲 [[Probability\|Probability]]|
 |![](https://raw.githubusercontent.com/zcysxy/Figurebed/master/img/network-icon.svg)|🌐 [[Network\|Network]]|
+|![](https://raw.githubusercontent.com/zcysxy/Figurebed/master/img/matlab-icon.svg)|📐 [[MATLAB\|MATLAB]]|
 
 ## 🔜 Coming Soon!
 
