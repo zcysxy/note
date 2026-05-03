@@ -2,10 +2,10 @@
 publish: true
 aliases:
   - Network Science
-title: Network
+title: "*Networked* Networks"
 created: 2026-03-27T17:35:19
-modified: 2026-04-30T15:31:56
-published: 2026-04-30T23:50:41.000-04:00
+modified: 2026-05-03T18:24:45
+published: 2026-05-03T18:24:47.543-04:00
 tags:
   - pub-network
 state: "[[%wip]]"
@@ -22,7 +22,7 @@ pub-banner: https://raw.githubusercontent.com/zcysxy/Figurebed/master/img/networ
 
 A network is a [[Graph]], but imagine there are _real_ entities and relationships.
 
-> [!rmk] Network Science and [[Graph Theory]]
+> [!rmk]- Network Science and [[Graph Theory]]
 >
 > [[Graph Theory]] is a subfield of [[Math]] while network science is an engineering or interdisciplinary subject. Underneath, they share the same model, graphs or networks. But they focus on different research questions and adopt different approaches.
 > Graph theory focuses on proving the (combinatorial) properties of graphs, while network science focuses on quantifying the structure and dynamics of complex systems on networks, and make predictions.
@@ -57,3 +57,4 @@ A network is a [[Graph]], but imagine there are _real_ entities and relationship
 - M. Jackson. _Social and Economic Networks_. Princeton University Press, 2008.
 - R. Durrett. _Random graph dynamics_. Cambridge University Press, 2007.
 - M. Newman. _Networks_. Oxford University Press, second edition, 2018.
+- MIT 6.7260 w/ Prof. Patrick Jaillet, Spring 2026.
