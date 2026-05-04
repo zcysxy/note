@@ -4,8 +4,8 @@ aliases:
   - Clustering
 title: Transitivity
 created: 2026-03-27T20:51:41
-modified: 2026-03-30T21:46:20
-published: 2026-04-30T16:13:47.870-04:00
+modified: 2026-05-03T19:52:58
+published: 2026-05-03T19:54:03.893-04:00
 tags:
   - pub-network
 state: done
@@ -25,7 +25,7 @@ C_{i} = \frac{\text{number of triangles connected to }i}{\text{number of triples
 $$
 
 We use the convention that $C_i = 0$ if $\deg(i) < 2$.
-Then, we can define the average clustering coefficient of the graph as $\overline{C} = \frac{1}{n}\sum_{i}C_{i}$.
+Then, we can define the ==average clustering coefficient== of the graph as $\overline{C} = \frac{1}{n}\sum_{i}C_{i}$.
 
 A quite different measure of clustering is the global/overall clustering coefficient, also known as the fraction of transitive triples, is defined as
 
