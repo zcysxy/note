@@ -4,8 +4,8 @@ aliases:
   - Network Science
 title: "*Networked* Networks"
 created: 2026-03-27T17:35:19
-modified: 2026-05-03T18:24:45
-published: 2026-05-05T00:03:15.369-04:00
+modified: 2026-05-05T00:04:42
+published: 2026-05-05T00:04:54.042-04:00
 tags:
   - pub-network
 state: "[[%wip]]"
@@ -52,6 +52,7 @@ A network is a [[Graph]], but imagine there are _real_ entities and relationship
   - Question: What is the network effect and how does the network structure manifest?
   - [[Network Propagation]]: $X=$ (status, dynamics)
   - [[Network Game]]: $X=$ (payoff, strategy)
+  - Network Learning/Optimization: $X=$ (objective, decision, data)
 
 ## References
 
