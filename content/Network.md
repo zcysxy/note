@@ -5,7 +5,7 @@ aliases:
 title: "*Networked* Networks"
 created: 2026-03-27T17:35:19
 modified: 2026-05-03T18:24:45
-published: 2026-05-03T19:52:46.435-04:00
+published: 2026-05-05T00:03:15.369-04:00
 tags:
   - pub-network
 state: "[[%wip]]"
@@ -40,6 +40,7 @@ A network is a [[Graph]], but imagine there are _real_ entities and relationship
 - [[Random Graph Model]]s
   - [[Erdos-Renyi Random Graph]]
   - [[Configuration Model]]
+  - [[Chung–Lu Model]]
   - [[Stochastic Block Model]]
   - [[Random Geometric Graph]]
   - [[Watts-Strogatz Model]]
