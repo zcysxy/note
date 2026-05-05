@@ -2,8 +2,8 @@
 publish: true
 title: Configuration Model
 created: 2026-04-02T17:38:46
-modified: 2026-04-20T17:52:25
-published: 2026-04-30T16:13:48.174-04:00
+modified: 2026-05-04T23:55:06
+published: 2026-05-04T23:55:07.149-04:00
 tags:
   - pub-network
 state: done
@@ -44,6 +44,7 @@ Generally, the configuration model is the family of random graph models that ge
 People also categorize the models into ==microcanonical== and ==canonical (soft)== configuration models, referring to the first and second degree specification levels respectively.
 [[Chung–Lu Model]] is the _canonical_  canonical configuration model.
 Customarily, the configuration model refers a specific process of generating a random graph with a fixed degree sequence, which is the focus of this note.
+The properties in this note also hold _in expectation_ when the fixed degree sequence is a realization of a degree distribution (the third specification).
 
 > [!thm] Graphic sequence
 >
@@ -62,10 +63,15 @@ Customarily, the configuration model refers a specific process of generating a r
 3. Repeat step 2 until no stubs are left.
 
 - Possible to generate a multigraph with self-loops and multiple edges.
-  - Under suitable assumptions on the degree sequence and as $n$ grows,
-  - we can work directly with the generated multigraph, and show it has essentially the same properties as a randomly selected graph with the same degree sequence;
-  - or we can delete self-links and duplicate links in the generated multigraph, and show the proportion of deletions is suitably small, and we end up with a graph with a degree distribution close to the specification.
 - Cumbersome to generate and does not scale with $n$.
+
+### Multi-edges and Self-loops
+
+Under suitable assumptions on the degree sequence and as $n$ grows,
+we can work directly with the generated multigraph, and show it has essentially the same properties as a randomly selected graph with the same degree sequence;
+or we can delete self-links and duplicate links in the generated multigraph, and show the proportion of deletions is suitably small, and we end up with a graph with a degree distribution close to the specification.
+
+The justification is the following two propositions.
 
 > [!prop]
 >
@@ -87,7 +93,32 @@ Customarily, the configuration model refers a specific process of generating a r
 > > \prod_{k=1}^{d_{i}} \left( 1 - \frac{j\hat{d}_{n}}{n\bar{d}_{n}-\hat{d}_{n}} \right) \ge \left( 1 - \frac{\hat{d}_{n}^{2}}{n\bar{d}_{n}-\hat{d}_{n}} \right)^{\hat{d}_{n}} \approx \exp\left( - \frac{\hat{d}_{n}^{3}}{n\bar{d}_{n}-\hat{d}_{n}} \right) \to 1.
 > > $$
 
-- The above proposition does not imply that the process will generate no self-links or duplicate links. When one aggregates across many nodes, there will tend to be some duplicate and self-links in this process, except under more extreme assumptions on the degree sequences.
+The above proposition does not imply that the process will generate no self-links or duplicate links. When one aggregates across many nodes, there will tend to be some duplicate and self-links in this process, except under more extreme assumptions on the degree sequences.
+We now calculate the expected total number of multi-edges and self-loops.
+
+> [!prop]
+>
+> The expected total number of self-loops is $\frac{\langle d^{2} \rangle-\langle d \rangle}{2\langle d \rangle}$ and the expected total number of multi-edges is $\frac{1}{2}\left( \frac{\langle d^{2} \rangle-\langle d \rangle}{\langle d \rangle} \right)^{2}$.
+>
+> > [!pf]-
+> >
+> > For node $i$, the probability it has a self link is ${d_{i}\choose 2} \cdot \frac{1}{2m-1}$. Thus, the expected total number of self-loops is
+> >
+> > $$
+> > \sum_{i} \frac{{d_i \choose 2}}{2m-1} \approx  \frac{\sum _id_i(d_i-1)}{4m} = \frac{\langle d^{2} \rangle -\langle d \rangle }{2\langle d \rangle }.
+> > $$
+> >
+> > Note that under the uniform stub-matching process, the probability of a link between two nodes $i$ and $j$ is $\frac{d_{i}d_{j}}{2m-1}$, where $m = \frac{1}{2}\sum_{i} d_{i}$ is the total number of edges.
+> > Conditioned on that $i,j$ are connected by a first link, they form a second link with probability $\frac{(d_i-1)(d_j-1)}{2m-3}$.
+> > The product of the two probabilities is the probability of a multi-edge between $i$ and $j$ (more than two links count as one multi-edge).
+> > Suppose $m \gtrsim n\to \infty$.
+> > Then, the expected number of multi-edges is
+> >
+> > $$
+> > \sum_{i<j} \frac{d_id_j(d_i-1)(d_j-1)}{(2m-1)(2m -3)} \approx  \frac{(\sum_{i}d_{i}(d_{i}-1))(\sum_{j}d_{j}(d_{j}-1))- \sum_{i}d_{i}^{2}(d_{i}-1)^{2}}{8m^{2}}  \approx \frac{1}{2}\left( \frac{\langle d^{2} \rangle-\langle d \rangle}{\langle d \rangle} \right)^{2},
+> > $$
+>
+> where we assumed that all involved moments exist and grow slower than $n$.
 
 ## Algorithm 2: Sampling
 

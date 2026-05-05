@@ -5,8 +5,8 @@ aliases:
   - Poisson random graph
 title: Erdős–Rényi Random Graph
 created: 2026-03-31T19:11:22
-modified: 2026-05-03T23:21:01
-published: 2026-05-03T23:21:02.772-04:00
+modified: 2026-05-04T22:47:40
+published: 2026-05-04T22:47:55.834-04:00
 tags:
   - pub-network
 state: done
@@ -29,7 +29,8 @@ type: note
   - Edge existence: $t(n) = \frac{1}{n^2}$
   - Connectivity: $t(n) = \frac{\log n}{n}$
   - [[Network Phenomena#Giant Component|Giant component]]: $t(n) = \frac{1}{n}$
-- [[Network Phenomena#Small-World Effect|Diameter]]
+- [[Network Phenomena#Small-World Effect|Diameter]]: $\Theta(\ln n / \ln \lambda)$
+  - see [[Configuration Model#Diameter]]
 - [[#Sparse ER]]: $p_{n} = \lambda / n$
   - $D_{i} \approx \operatorname{Poisson}(\lambda)$
   - Number of $k$-cycles: $\Theta(1)$
@@ -116,9 +117,74 @@ That is, the typical size of a component is $\frac{1}{1-\lambda}$, and the size 
 Let $C_{1}$ be the largest component and $C_{2}$ be the second largest component. Let $\eta(\lambda)$ be the extinction probability of a [[Branching]] process with offspring distribution $\operatorname{Poisson}(\lambda)$. Then,
 
 $$
-P(|C_{1}| = \Theta((1-\eta(\lambda))n)) \to 1 \quad \text{and}\quad P(|C_{2}| = O(\ln n)) \to 1.
+P(|C_{1}| = \Theta((1-\eta(\lambda))n)) \to 1, \quad  P(|C_{2}| = O(\ln n)) \to 1,\quad\text{and}\quad \mathbb{E}|C(i)| \to \frac{1}{1-\eta(\lambda)\lambda}.
 $$
 
-That is, a giant component emerges with size $\Theta(n)$, and the size of the second largest component is $\Theta(\ln n)$.
+That is, a giant component emerges with size $\Theta(n)$, the size of the second largest component is $\Theta(\ln n)$, and the typical size of a small component is $\frac{1}{1-\eta(\lambda)\lambda}$.
 
-![image.png|300](https://raw.githubusercontent.com/zcysxy/Figurebed/master/img/20260331191129.png)
+## Proofs
+
+### Supercritical regime, giant component
+
+Let $u$ be the probability that a random node $i$ does not belong to the giant component.
+Then $(1-u)n$ is the expected size of the giant component.
+We have the recursion
+
+$$
+u = (1-p + pu)^{n-1},
+$$
+
+where for any other node $j$, w.p. $1-p$, $i$ is not connected to $j$, and if they are connected, w.p. approximately $u$, $j$ does not belong to the giant component.
+Plugging $p = \lambda /n$ gives
+
+$$
+u = \left( 1+\frac{\lambda(u-1)}{n} \right)^{n-1}\to \exp(\lambda (u-1)) = g(u),
+$$
+
+where $g$ is the PGF of $\operatorname{Poisson}(\lambda)$.
+
+![Regimes|300](https://raw.githubusercontent.com/zcysxy/Figurebed/master/img/20260331191129.png)
+
+### Supercritical regime, uniqueness of the giant component
+
+Before proving the second largest component in the supercritical regime is _small_, we can easily show that there cannot be two giant components.
+For any $v_{1},v_{2}\in(0,1]$, suppose there are two giant components of sizes at least $v_{1}n$ and $v_{2}n$. The probability that they are not connected is at most $(1-p)^{v_{1}n\cdot v_{2}n} \to \exp(-\lambda v_{1}v_{2}n)$. Then, one can calculate the upper bound of the probability that there are two giant components using a similar equation in $(1)$.
+
+Another easier approach is called _sprinkling_. Consider the ER model is generated in two steps: first generate links i.i.d. with probability $p$, and then _sprinkle_ additional links with probability $n^{-\epsilon} p$ for some small $\epsilon \in (0,1)$.
+Then, this model is equivalent to $G(n,(1+n^{-\epsilon})p)\to G(n,p)$.
+
+Now suppose in the first step there are two giant components with sizes at least $v_{1}n$ and $v_{2}n$. Then, the probability that they are not connected in the second step is at most $(1-n^{-\epsilon}p)^{v_{1}n\cdot v_{2}n} \to \exp(-\lambda v_{1}v_{2}n^{1-\epsilon})\to 0$. Thus, w.p.1, $G(n,p)$ has only one giant component.
+
+### Supercritical regime, the second largest component
+
+### All regimes, typical size of a small component
+
+We have proved in all regimes, there is at most one giant component with size $\Theta((1-\eta(\lambda))n)$, with $\eta(\lambda)=1$ when $\lambda < 1$.
+For a random node $i$ not in the giant component, let $C(i)$ be the small component containing $i$.
+We have also proved that $|C(i)| = O(\ln n)$ almost surely and $C(i)$ is a [[Configuration Model#Local Branching|tree almost surely]].
+Thus, removing $i$ breaks $C(i)$ into $D_{i}$ subtrees, denoted by $\{ C'(j_{k}) \}_{k=1}^{D_{i}}$.
+We have
+
+$$
+|C(i)| = 1 + \sum_{k=1}^{D_{i}} |C'(j_{k})|,
+$$
+
+which gives
+
+$$
+\mathbb{E}|C(i)| = 1 + \mathbb{E}[D_{i}\mathbb{E} [C'(j_{1})\given D_{i}]],
+$$
+
+where we use the symmetry of the subtrees.
+In analogy to the [[Branching]] process, we have $\mathbb{E} [C'(j_{1})\given D_{i}] = \mathbb{E}|C(i)|$.
+Additionally, note that $D_{i}$ links can only connect to nodes not in the giant component. Thus, $\mathbb{E}D_{i} = \eta n p$. Together, we have
+
+$$
+\mathbb{E}|C(i)| \to \frac{1}{1 - \eta(\lambda)\lambda}.
+$$
+
+See [[Configuration Model#Local Branching]] for a more formal treatment.
+
+> [!rmk] Average size of small components
+>
+> The above quantity is the expected size of a small component to which a random node belongs. It is not equivalent to the expected size of a randomly chosen small component. Since nodes in _larger_ small components are more likely to be chosen, the above is larger than the average size of a randomly chosen small component.
