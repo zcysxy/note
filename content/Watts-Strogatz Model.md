@@ -4,8 +4,8 @@ aliases:
   - Small World Model
 title: Watts-Strogatz Model
 created: 2026-04-05T01:12:52
-modified: 2026-04-20T21:08:12
-published: 2026-04-30T16:13:47.960-04:00
+modified: 2026-05-05T22:24:05
+published: 2026-05-05T22:38:17.804-04:00
 tags:
   - pub-network
 state: done
@@ -50,4 +50,29 @@ Letting $\delta = n^{-1}$ gives the desired result.
 
 $$
 \Theta ( \underbrace{ m }_{ \text{within each segment} }\cdot\underbrace{ \ln n m^{-1} }_{ \text{between super-nodes} } ) = \Theta(\ln n).
+$$
+
+### A Continuum Model
+
+We can also prove the result using a continuum (mean field) model.
+Consider a continuum of nodes on the unit circle, with $n\beta k$ shortcuts added uniformly at random. Let $L$ be the expected distance between two random nodes in the continuum model.
+Because we normalize the original circumstance $n/k$ to 1, the expected distance between two random nodes on the original network is $Ln /k$.
+
+Let $u=n\beta k$. Evenly partition the unit circle into $u$ segments. Since $u$ shortcuts are added, two segments are connected by a shortcut with probability
+
+$$
+\frac{u}{{u \choose 2}} \approx  \frac{2}{u}.
+$$
+
+Thus, the network between segments is a [[Erdos-Renyi Random Graph|ER]] model with edge probability $2 /u$, which has a giant component. We know that the expected distance between two random notes in a giant component of an ER model is $\Theta (\ln u)$.
+For a segment not in the giant component, similar to Case I above, it takes a constant number of steps to reach a segment in the giant component. Thus,
+
+$$
+L = \Theta\left( \frac{1}{u} \cdot (\ln u + c) \right).
+$$
+
+And the expected diameter of the original network is
+
+$$
+\Theta\left( \frac{n}{k} \cdot  \frac{\ln u}{u} \right) = \Theta(\ln n).
 $$
