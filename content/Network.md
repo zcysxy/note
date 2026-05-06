@@ -5,7 +5,7 @@ aliases:
 title: "*Networked* Networks"
 created: 2026-03-27T17:35:19
 modified: 2026-05-05T22:58:45
-published: 2026-05-05T23:07:25.000-04:00
+published: 2026-05-06T04:54:39.857-04:00
 tags:
   - pub-network
 state: "[[%wip]]"
@@ -33,10 +33,12 @@ A network is a [[Graph]], but imagine there are _real_ entities and relationship
   - [[Graph]]
     - [[Spectral Graph Theory]]
   - [[Branching]]
+  - [[Markov Chain]]
 - Properties
   - [[Transitivity]]
   - [[Centrality]]
   - [[Assortativity]]
+  - [[Conductance]]
 - [[Random Graph Model]]s
   - [[Erdos-Renyi Random Graph]]
   - [[Configuration Model]]

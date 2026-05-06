@@ -5,8 +5,8 @@ aliases:
   - MRP
 title: Markov Chain
 created: 2023-04-24T02:15:56
-modified: 2024-12-14T18:33:31
-published: 2026-05-06T03:53:48.606-04:00
+modified: 2026-05-06T04:12:33
+published: 2026-05-06T04:12:35.092-04:00
 tags:
   - pub-prob
 type: note
@@ -135,6 +135,7 @@ We define the
 - ==transient probability== (or density for continuous cases) from $x$ to $y$ as $p_{xy}^{(n)} = \Pr(X_{n}=y\given X_{0} = x)$. Given a transition matrix $P$, we have $p_{xy}^{(n)} = (P^{n})_{xy}$;
 - ==accessible times== of state $x$ as $I_{x} = \{ n\ge 1: p_{xx}^{(n)} >0 \}$, which is a non-empty set for recurrent states and is closed under addition: $m,n\in I_{x} \implies m+n\in I_{x}$;
 - ==period== of state $x$ as $d_{x}=\operatorname{gcd}(I_{x})$.
+- All states in the same recurrent class have the same period.
 - A recurrent class is called ==periodic== if its period is greater than 1; otherwise, it is called ==aperiodic==.
 
 ^period-def

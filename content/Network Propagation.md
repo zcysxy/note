@@ -2,8 +2,8 @@
 publish: true
 title: Network Propagation
 created: 2026-04-05T03:56:10
-modified: 2026-05-06T01:39:47
-published: 2026-05-06T01:58:47.683-04:00
+modified: 2026-05-06T05:33:21
+published: 2026-05-06T05:33:22.664-04:00
 tags:
   - pub-network
 state: done
@@ -163,3 +163,26 @@ $$
 r(0) &= 0,\quad s(t) + x(t) + r(t) = 1.
 \end{aligned}
 $$
+
+## Voter Model
+
+Consider a binary opinion $\{ -1,1 \}$ held by each agent on a network. Agent $i$ switches its opinion after time $\d t$ with probability
+
+$$
+\d t \cdot \underbrace{ \beta  }_{ \text{adoption rate} } \cdot \underbrace{N^{(- x_{i}(t))}_{i}(t+\d t)}_{\# \text{neighbors with different opinion}} \cdot d_{i}^{-1}.
+$$
+
+Equivalently, each agent has a "Poisson clock" $T_{i} \sim \operatorname{Exp}(\beta)$ such that it switches its opinion to a randomly chosen neighbor's opinion at time $T_{i}$.
+Suppose $x_{i}(0)=-1$; then
+
+$$
+\begin{aligned}
+P(x_{i}(\d t)=&1\given x_{i}(0)=-1) = P(T_{i}\le \d t) N_{i}^{(1)}(\d t)  /d_{i}\\
+=& (1-e^{-\beta \d t})N_{i}^{(1)}(\d t) \approx \beta N_{i}^{(1)}(\d t)/d_{i}\d t.
+\end{aligned}
+$$
+
+Interestingly, the opinion goes through a reverse [[Random Walk]]: when the process runs for a while, an agent must get its final opinion from some neighbor, who in turn gets that opinion from some neighbor, and so on.
+When two random walks meet, they coalesce and move together (an agent persuades two neighbors).
+Then, if a consensus is reached, all random walks must start from a set of nodes holding the same opinion initially.
+For a connected graph, if  the time is sufficiently long, all random walks will coalesce into one, and the "source" of the final opinion is distributed according to the stationary distribution, i.e., $d_{i} /(2m)$. The probability of reaching a consensus $+1$ or $-1$ can be calculated accordingly.
