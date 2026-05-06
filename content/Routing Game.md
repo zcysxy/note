@@ -5,7 +5,7 @@ aliases:
 title: Routing Game
 created: 2026-02-21T22:44:20
 modified: 2026-03-02T19:00:33
-published: 2026-05-05T23:07:43.245-04:00
+published: 2026-05-05T23:07:43.000-04:00
 tags:
   - pub-network
 state: done

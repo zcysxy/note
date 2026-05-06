@@ -2,8 +2,8 @@
 publish: true
 title: Network Propagation
 created: 2026-04-05T03:56:10
-modified: 2026-04-06T11:01:52
-published: 2026-04-30T16:13:47.835-04:00
+modified: 2026-05-06T01:39:47
+published: 2026-05-06T01:58:47.683-04:00
 tags:
   - pub-network
 state: done
@@ -56,16 +56,11 @@ When $\alpha<\beta$, we again get an S-shaped curve; when $\alpha \ge \beta$, th
 
 Now suppose there is a contact network but $\beta=1$. Then a node will infect its component.
 For a sparse [[Erdos-Renyi Random Graph|ER]] model $\mathrm{ER}(n,\lambda /n)$, if $\lambda<1$, then there is no giant component, so the disease dies out (number of infected nodes is $o(n)$).
-If $\lambda >1$, consider the local branching approximation and let $q$ be the extinction probability such that $q = \exp(\lambda (q-1))$. Then, with probability $q$, the node is in a small component and the disease dies out; with probability $1-q$, the disease spreads to a nontrivial portion of the population $(1-q)n$.
+If $\lambda >1$, we know the unique [[Erdos-Renyi Random Graph#Supercritical regime, giant component|giant component]] is of size $(1-\eta(\lambda))n$, where $\eta$ satisfying $\eta  = \exp(\lambda (\eta -1))$ is the extinction probability of a [[Branching]] process with $\operatorname{Poisson}(\lambda)$ offspring distribution. Then, with probability $\eta$, the node is in a small component and the disease dies out; with probability $1-\eta$, the disease spreads to a nontrivial portion of the population $(1-\eta)n$.
 
-We can also incorporate immunization. Suppose the probability of node not being immune is $\eta$.
-For a [[Configuration Model]] with degree distribution $(p_{d})_{d\in\N}$, again, by the local branching approximation, we know the expected number of infected offsprings of a node
-
-$$
-\eta \left( \sum_{d} \frac{dp_{d}}{\langle d \rangle }-1 \right) = \eta \frac{\langle d^{2} \rangle -\langle d \rangle }{\langle d \rangle }.
-$$
-
-Let $\eta _{c}\coloneqq \frac{\langle d \rangle}{\langle d^{2} \rangle-\langle d \rangle}$. Then, the contagion spread with a positive probability if $\eta > \eta _{c}$ and dies out with probability 1 if $\eta < \eta _{c}$.
+We can also incorporate immunization. Suppose the probability of node not being immune is $\varphi$.
+For a [[Configuration Model]] with degree distribution $(p_{d})_{d\in\N}$, again, by the local branching approximation, we know the expected number of infected offsprings of a node is $\varphi \langle \tilde{d} \rangle$, where $\langle \tilde{d} \rangle = \frac{\langle d^{2} \rangle -\langle d \rangle }{\langle d \rangle }$ is the mean excess degree.
+Let $\varphi _{c}\coloneqq \frac{\langle d \rangle}{\langle d^{2} \rangle-\langle d \rangle}$. Then, the contagion spread with a positive probability if $\varphi > \varphi _{c}$ and dies out with probability 1 if $\varphi < \varphi _{c}$.
 
 ### Rate
 
@@ -112,6 +107,12 @@ r(0) &= 0,\quad s(t) + x(t) + r(t) = 1.
 \end{aligned}
 $$
 
+The first and third condition give $s(t) = s(0)\exp(-\frac{\beta}{\gamma}r(t))$. Together with $x(t)=1-s(t)-r(t)$, we get
+
+$$
+\dot{r}(t) = \gamma \left(1-s(0)\exp\left(-\frac{\beta}{\gamma}r( t) \right) - r( t) \right).
+$$
+
 When $s(0)=1$, the stationary point of $r$ satisfies $r = 1 - \exp(-\frac{\beta}{\gamma}r)$.
 When $\beta \le \gamma$, the unique stationary point is $r=0$, i.e., infected nodes recover faster than susceptible nodes get infected, so the disease dies out; when $\beta > \gamma$, there is another nontrivial stationary point $r>0$, i.e., the disease spreads to a nontrivial portion of the population. $\beta=\gamma$ is called the ==epidemic threshold/transition==.
 
@@ -119,14 +120,14 @@ When $\beta \le \gamma$, the unique stationary point is $r=0$, i.e., infected no
 
 Start with one infected node. Each node, once infected, stays infected for $\tau$ units of time, and then recovers.
 For each $\d t$ unit of time, an infected node infects each of its susceptible neighbors with probability $\beta \d t + o(\d t)$.
-Suppose node $i$ gets infected from node $i_{0}$. Let $T_{i}$ be the time of infection of $i$ after $i_{0}$ gets infected. Then, we know $T_{i} \overset{ d }{ \sim } \operatorname{Exp}(\beta)$.
+Suppose node $i$ gets infected from node $i_{0}$. Let $T_{i}$ be the time of infection of $i$ after $i_{0}$ gets infected. Then, we know $T_{i} \overset{ d }{ \sim } \operatorname{Exp}(\beta)$ (see [[Exponential Distribution#Exponential Distribution and Poisson Distribution]]).
 Thus,
 
 $$
 P(i_{0} \text{ infects } i) = P(T_{i} < \tau) = 1 - \exp(-\beta \tau).
 $$
 
-Let $\phi\coloneqq_{1}-\exp(-\beta \tau)$. We get a [[Branching]] process with rate $\phi$.
+Let $\phi\coloneqq{1}-\exp(-\beta \tau)$. We get a [[Branching]] process with rate $\phi$.
 
 ## Susceptible-Infected-Susceptible (SIS)
 

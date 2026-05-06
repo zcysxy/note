@@ -6,7 +6,7 @@ aliases:
 title: Assortativity
 created: 2026-03-30T21:37:34
 modified: 2026-04-22T23:28:59
-published: 2026-04-30T15:36:09.699-04:00
+published: 2026-05-06T03:42:57.988-04:00
 tags:
   - pub-network
 state: done
@@ -49,10 +49,10 @@ $$
 |\mathcal{E}_{\mathrm{comm}}| = \frac{1}{2} \sum_{ij} A_{ij} \mathbb{1}\{ g_{i} = g_{j} \}.
 $$
 
-If we collect the $m$ edges and place them uniformly at random, the expected number of edges within communities is
+If we break the network into stubs and reconnect the stubs uniformly at random, the expected number of edges within communities is
 
 $$
-|\mathcal{E}_{\mathrm{comm}}| = \frac{1}{2} \sum_{ij} \mathbb{E}[\mathbb{1} \{ (i,j)\in \mathcal{E} \}] \cdot \mathbb{1}\{ g_{i} = g_{j} \} = \frac{1}{2} \sum_{ij} \frac{d_{i}d_{j}}{2m} \cdot \mathbb{1}\{ g_{i} = g_{j} \}.
+\mathbb{E}|\mathcal{E}_{\mathrm{comm}}| = \frac{1}{2} \sum_{ij} \mathbb{E}[\mathbb{1} \{ (i,j)\in \mathcal{E} \}] \cdot \mathbb{1}\{ g_{i} = g_{j} \} = \frac{1}{2} \sum_{ij} \frac{d_{i}d_{j}}{2m} \cdot \mathbb{1}\{ g_{i} = g_{j} \}.
 $$
 
 Thus,

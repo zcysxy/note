@@ -3,7 +3,7 @@ publish: true
 title: Testing for Regression
 created: 2025-08-05T21:59:56
 modified: 2025-08-05T23:34:37
-published: 2026-01-06T20:10:18.298-05:00
+published: 2026-01-06T20:10:18.000-05:00
 tags:
   - pub-stat
 state: done

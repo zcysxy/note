@@ -3,7 +3,7 @@ publish: true
 title: Constructing Confidence Interval
 created: 2025-05-26T20:56:19
 modified: 2026-01-03T07:59:24
-published: 2026-01-03T07:59:27.000-05:00
+published: 2026-01-03T07:59:27.515-05:00
 tags:
   - pub-stat
 state: done

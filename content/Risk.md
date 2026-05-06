@@ -5,7 +5,7 @@ aliases:
 title: Risk
 created: 2025-05-24T19:42:49
 modified: 2025-06-27T21:34:37
-published: 2026-01-06T20:10:18.269-05:00
+published: 2026-01-06T20:10:18.000-05:00
 tags:
   - pub-stat
 state: done

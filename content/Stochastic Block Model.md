@@ -5,7 +5,7 @@ aliases:
 title: Stochastic Block Model
 created: 2026-04-04T21:26:18
 modified: 2026-04-22T22:28:45
-published: 2026-04-30T16:13:48.090-04:00
+published: 2026-04-30T16:13:48.000-04:00
 tags:
   - pub-network
 state: done

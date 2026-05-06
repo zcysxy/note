@@ -3,7 +3,7 @@ publish: true
 title: Stochastic Asymptotic Notation
 created: 2024-12-17T15:39:07
 modified: 2024-12-17T15:54:21
-published: 2026-01-06T20:10:18.289-05:00
+published: 2026-01-06T20:10:18.000-05:00
 tags:
   - pub-stat
 state: done

@@ -3,7 +3,7 @@ publish: true
 title: Fictitious Play
 created: 2026-04-05T03:32:22
 modified: 2026-05-05T23:15:20
-published: 2026-05-05T23:15:47.779-04:00
+published: 2026-05-05T23:15:47.000-04:00
 tags:
   - pub-network
 state: "[[%watch]]"

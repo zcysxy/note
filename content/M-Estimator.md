@@ -3,7 +3,7 @@ publish: true
 title: M-Estimator
 created: 2025-06-04T01:17:30
 modified: 2025-08-19T22:46:02
-published: 2026-01-06T20:10:18.136-05:00
+published: 2026-01-06T20:10:18.000-05:00
 tags:
   - pub-stat
 state: done

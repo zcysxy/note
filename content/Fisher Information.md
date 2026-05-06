@@ -3,7 +3,7 @@ publish: true
 title: Fisher Information
 created: 2023-10-15T23:48:38
 modified: 2025-06-04T01:12:04
-published: 2026-01-06T20:10:18.081-05:00
+published: 2026-01-06T20:10:18.000-05:00
 tags:
   - pub-stat
 aliases:

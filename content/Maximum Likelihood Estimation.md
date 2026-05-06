@@ -5,7 +5,7 @@ aliases:
 title: Maximum Likelihood Estimation
 created: 2022-05-28T03:34:23
 modified: 2025-06-18T17:08:24
-published: 2026-01-06T20:10:18.186-05:00
+published: 2026-01-06T20:10:18.000-05:00
 tags:
   - pub-stat
 type: note

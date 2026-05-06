@@ -3,7 +3,7 @@ publish: true
 title: Bayes Optimality
 created: 2023-09-20T21:26:09
 modified: 2025-06-27T23:04:22
-published: 2026-01-06T20:10:17.998-05:00
+published: 2026-01-06T20:10:17.000-05:00
 tags:
   - pub-stat
 aliases:

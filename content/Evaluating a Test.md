@@ -3,7 +3,7 @@ publish: true
 title: Evaluating a Test
 created: 2025-05-30T02:48:39
 modified: 2025-07-15T14:19:33
-published: 2026-01-06T20:10:18.070-05:00
+published: 2026-01-06T20:10:18.000-05:00
 tags:
   - pub-stat
 state: done

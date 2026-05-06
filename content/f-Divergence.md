@@ -3,7 +3,7 @@ publish: true
 title: f-Divergence
 created: 2023-05-09T21:45:32
 modified: 2025-06-06T01:33:01
-published: 2026-01-06T20:10:18.368-05:00
+published: 2026-01-06T20:10:18.000-05:00
 tags:
   - pub-stat
 type: note

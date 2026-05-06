@@ -5,7 +5,7 @@ aliases:
 title: Note Box
 created: 2025-08-24T22:52:59
 modified: 2026-04-30T23:50:44
-published: 2026-04-30T23:50:46.000-04:00
+published: 2026-04-30T23:50:46.100-04:00
 cssclasses:
   - cards
   - cards-cover

@@ -5,7 +5,7 @@ aliases:
 title: Expectation Maximization
 created: 2023-04-13T16:33:44
 modified: 2025-06-19T00:53:42
-published: 2026-01-06T20:10:18.071-05:00
+published: 2026-01-06T20:10:18.000-05:00
 tags:
   - pub-stat
 type: note

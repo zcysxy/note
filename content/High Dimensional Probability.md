@@ -3,7 +3,7 @@ publish: true
 title: High Dimensional Probability
 created: 2023-05-09T19:38:43
 modified: 2025-08-05T01:24:05
-published: 2026-01-06T20:10:18.096-05:00
+published: 2026-01-06T20:10:18.000-05:00
 tags:
   - pub-stat
 aliases:

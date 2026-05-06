@@ -3,7 +3,7 @@ publish: true
 title: Bowl-Shaped Loss
 created: 2025-06-27T21:39:32
 modified: 2025-07-27T19:33:45
-published: 2026-01-06T20:10:18.008-05:00
+published: 2026-01-06T20:10:18.000-05:00
 tags:
   - pub-stat
 state: done

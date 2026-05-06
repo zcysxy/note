@@ -3,7 +3,7 @@ publish: true
 aliases: Overdetermined System
 created: 2022-02-22T20:20:09
 modified: 2025-08-05T21:56:05
-published: 2026-01-06T20:10:18.130-05:00
+published: 2026-01-06T20:10:18.000-05:00
 tags:
   - pub-stat
 type: note

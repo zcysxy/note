@@ -2,8 +2,8 @@
 publish: true
 title: Kleinberg Model
 created: 2026-04-09T14:57:53
-modified: 2026-04-22T03:07:20
-published: 2026-04-30T16:13:48.037-04:00
+modified: 2026-05-06T03:21:47
+published: 2026-05-06T03:21:49.292-04:00
 tags:
   - pub-network
 state: done
@@ -17,7 +17,7 @@ type: note
 # Kleinberg Model
 
 - Motivation: [[Watts-Strogatz Model]] captures the [[Network Phenomena#Small-World Effect]], but it fails to explain the efficient decentralized search in social networks.
-  - Lower bound of decentralized search: $\mathbb{E}[N_{A}] = \Omega(\sqrt{ n })$ ^prop-lower
+  - Lower bound of 1D decentralized search: $\mathbb{E}[N_{A}] = \Omega(\sqrt{ n })$
     - Decentralized: agents know the _locations_ of other agents (geographical, before adding long-range edges), their neighbors, can distinguish a long-range neighbor from a local neighbor, and can even know if their neighbors have long-range neighbors, but they **do not know the locations** of long-range neighbors of a neighbor.
     - $N_{A}$: the number of steps of a decentralized search algorithm $A$ to find a target node $t$ from a source node $s$, with $s,t$ chosen uniformly at random.
 - Model 1D
@@ -163,7 +163,8 @@ recovering the same result as the Kleinberg model.
 
 ## Lower Bound
 
-Proof of [[#^prop-lower]]:
+### One Dimensional
+
 Given $s$ ant $t$, we partition all nodes into three classes $T_{0}$, $T_r$, and $N\setminus (T_{0}\cup T_{w})$, where $T_{0}$, $T_{w}$ are the 1-hop long-range neighborhood and $w$-hop short-range neighborhood of $t$, respectively. $w>0$ is to be determined later.
 For simplicity, consider a [[Watts-Strogatz Model]] where $k=1$ (ring graph) we $n\beta$ random long-range edges are added instead of rewiring.
 Then, since $s$ is uniformly random, we have
@@ -207,3 +208,22 @@ setting whose derivative with respect to $w$ to zero gives $w = \sqrt{ n }$ and
 $$
 \mathbb{E}[N_{A}] \gtrsim \sqrt{ n }.
 $$
+
+### Two Dimensional
+
+**Case I. $\alpha<2$.**
+Similarly, let $T_w$ be the $w$-diamond around $t$, which contains $2 w (w+1)$ nodes. Suppose $1\ll w\ll n$, then $s$ is outside of $T_{w}$ w.h.p.
+Then, the "success rate", i.e., the probability of _any_ node outside of $T_{w}$ having a shortcut to $T_{w}$ is upper bounded by
+
+$$
+\sum_{i\in T_{w}} C \cdot  \dist(s,i)^{-\alpha} \lesssim w^{2} \cdot C \cdot 1^{-\alpha}\asymp Cw^{2}.
+$$
+
+Since, $\alpha<1$, $C \asymp n^{-(2-\alpha)}$. Then, the expected number of total steps is of order
+
+$$
+\frac{n^{2-\alpha}}{w^{2}} + w \gtrsim n^{\frac{2-\alpha}{3}}
+$$
+
+**Case II. $\alpha\ge{3}$.** $\Omega(n)$. See [[6-7260-HW5#Problem 1 Navigation]]
+**Case III. $2< \alpha <3$.** $\Omega( n^{\frac{\alpha-2}{\alpha-1}})$. See Kleinberg 2000.

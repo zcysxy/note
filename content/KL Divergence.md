@@ -4,7 +4,7 @@ aliases:
   - KL
 created: 2022-05-28T03:34:21
 modified: 2025-06-01T03:56:26
-published: 2026-01-06T20:10:18.120-05:00
+published: 2026-01-06T20:10:18.000-05:00
 tags:
   - pub-stat
 type: note

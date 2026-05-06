@@ -3,7 +3,7 @@ publish: true
 title: Matlab Operator
 created: 2026-01-06T20:10:18
 modified: 2026-05-01T00:09:34
-published: 2026-05-01T00:11:41.000-04:00
+published: 2026-05-01T00:11:41.228-04:00
 tags:
   - pub-matlab
 aliases:

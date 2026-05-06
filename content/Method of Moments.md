@@ -5,7 +5,7 @@ aliases:
 title: Method of Moments
 created: 2023-10-19T16:39:52
 modified: 2025-06-02T22:25:36
-published: 2026-01-06T20:10:18.190-05:00
+published: 2026-01-06T20:10:18.000-05:00
 tags:
   - pub-stat
 type: note

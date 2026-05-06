@@ -3,7 +3,7 @@ publish: true
 title: Delta Method
 created: 2025-05-21T21:18:39
 modified: 2025-06-09T21:33:39
-published: 2025-08-19T11:19:51.387-04:00
+published: 2025-08-19T11:19:51.000-04:00
 tags:
   - pub-stat
 state: done

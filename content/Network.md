@@ -5,7 +5,7 @@ aliases:
 title: "*Networked* Networks"
 created: 2026-03-27T17:35:19
 modified: 2026-05-05T22:58:45
-published: 2026-05-05T23:07:25.928-04:00
+published: 2026-05-05T23:07:25.000-04:00
 tags:
   - pub-network
 state: "[[%wip]]"

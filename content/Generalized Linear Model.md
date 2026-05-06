@@ -4,7 +4,7 @@ aliases: GLM
 title: Generalized Linear Model
 created: 2023-11-12T21:11:03
 modified: 2025-08-07T03:07:05
-published: 2026-01-06T20:10:18.088-05:00
+published: 2026-01-06T20:10:18.000-05:00
 tags:
   - pub-stat
 type: note

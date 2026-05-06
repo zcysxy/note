@@ -3,7 +3,7 @@ publish: true
 title: Confidence Interval and Hypothesis Test Duality
 created: 2025-05-27T14:51:17
 modified: 2025-05-31T23:12:33
-published: 2026-01-06T20:10:18.034-05:00
+published: 2026-01-06T20:10:18.000-05:00
 tags:
   - pub-stat
 state: done

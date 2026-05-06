@@ -3,7 +3,7 @@ publish: true
 title: Potential Games
 created: 2026-04-05T03:21:55
 modified: 2026-04-05T03:32:11
-published: 2026-05-05T23:07:48.839-04:00
+published: 2026-05-05T23:07:48.000-04:00
 tags:
   - pub-network
 state: "[[%watch]]"
