@@ -3,7 +3,7 @@ publish: true
 title: Configuration Model
 created: 2026-04-02T17:38:46
 modified: 2026-05-04T23:55:06
-published: 2026-05-04T23:55:07.000-04:00
+published: 2026-05-06T18:58:32.070-04:00
 tags:
   - pub-network
 state: done
@@ -195,7 +195,7 @@ Note that the excess degrees of $j$ and $k$ are independent of $i$ and they rand
 
 $$
 \begin{aligned}
-C =& \mathbb{E}[P((j,k)\in E)\given \tilde{D}_{j}=d_{j},\tilde{D}_{k}=d_{k}] \\
+C =& \mathbb{E}[\mathbb{E}[P((j,k)\in E)\given \tilde{D}_{j}=d_{j},\tilde{D}_{k}=d_{k}]] \\
 \approx& \sum_{d_j=0, d_k=0}^{\infty} \frac{d_{j} d_{k}}{2m} \cdot \frac{(d_{j}+1) p_{d_{j}+1}(d_{k}+1) p_{d_{k}+1}}{\langle d \rangle ^{2}} \\
 =& \frac{1}{2m}\left( \frac{\langle d^{2} \rangle - \langle d \rangle }{\langle d \rangle } \right) ^{2} \\
 =& \frac{1}{n}\frac{(\langle d^{2} \rangle - \langle d \rangle )^{2}}{\langle d \rangle^{3} } .

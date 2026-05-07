@@ -4,8 +4,8 @@ aliases:
   - Barabási–Albert
 title: Preferential Attachment
 created: 2026-04-05T01:40:03
-modified: 2026-04-21T19:00:14
-published: 2026-04-30T16:13:48.000-04:00
+modified: 2026-05-06T16:23:41
+published: 2026-05-06T16:27:29.330-04:00
 tags:
   - pub-network
 state: done
@@ -61,12 +61,12 @@ We see that $x_{i}(t)$ is monotonically decreasing in $i$, showing a ==first-mov
 Solving $x_{i}(t)=d$ gives
 
 $$
-\frac{i}{t} = \left( 1 + \frac{1-p}{p}d \right)^{-1 /(1-p)},
+\frac{i}{t} = \left( 1 + \frac{1-p}{p}d \right)^{-1 /(1-p)} .
 $$
 
 ^eq-exp
 
-indicating that
+Note that $i(d) /t$ is exactly the fraction of nodes with expected degree at least $d$ at time $t$. Thus
 
 $$
 \frac{|\{ i: x_{i}(t) \ge d \}|}{t} \propto d^{-1 /(1-p)}, \quad\text{as } d\to \infty,
@@ -95,7 +95,7 @@ $$
 \frac{f(k)}{f(k-1)} = \frac{p+(1-p)(k-1)}{1+p+(1-p)k} = \frac{k + \frac{2p-1}{1-p}}{k + \frac{1+p}{1-p}}
 $$
 
-Note that for a discrete [[Power Law Distribution]] with parameter $\alpha=1$, when $k\gg 1$, we have
+Note that for a discrete [[Power Law Distribution]] with parameter $\alpha+1$, when $k\gg 1$, we have
 
 $$
 \frac{p(k)}{p(k-1)} = \frac{c k^{-\alpha} - c(k+1)^{-\alpha}}{c(k-1)^{-\alpha}-ck^{-\alpha}}
@@ -104,7 +104,17 @@ $$
 = \frac{k - \frac{\alpha+1}{2}}{k + \frac{\alpha+1}{2}}.
 $$
 
-Thus, $\gamma = \alpha+1 = 2+\frac{p}{1-p} > 2$.
+- We cannot simply equal the numerators/denominators. As adding any constants to both the numerator and denominator does not change the limit of the ratio as $k\to \infty$.
+
+When $k\to \infty$, we have
+
+$$
+\frac{f(k)}{f(k-1)}\approx \left( 1- \frac{1+p}{1-p} \big/ k \right) \left( 1 + \frac{2p-1}{1-p} \big / k \right) 
+\approx  1 - \frac{\frac{1+p}{1-p} - \frac{2p-1}{1-p}}{k}.
+$$
+
+Similarly, we have $\frac{p(k)}{p(k-1)} \approx 1 - \frac{\frac{\alpha+1}{2}- \left( - \frac{\alpha+1}{2} \right)}{k}$.
+Equaling the two approximations gives $\gamma = \alpha+1 = \frac{2-p}{1-p} = 2+\frac{p}{1-p} > 2$.
 
 One can also observe the above equivalence by calculating that
 

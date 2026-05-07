@@ -2,8 +2,8 @@
 publish: true
 title: Branching
 created: 2024-12-13T13:34:25
-modified: 2026-05-03T21:10:38
-published: 2026-05-03T21:10:40.000-04:00
+modified: 2026-05-06T17:17:54
+published: 2026-05-06T17:17:56.301-04:00
 tags:
   - pub-network
 state: done
@@ -136,3 +136,5 @@ Let $T$ be the number of generations until extinction, i.e., $T = \min \{ i : Z_
 $$
 P(T > k) = P(Z_{k}>0) = P(Z_{k}\ge 1) \le \mathbb{E}[Z_{k}] = \mu ^{k}.
 $$
+
+See [[6-7260-HW1#Problem 1]] for an alternative method.

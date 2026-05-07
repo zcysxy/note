@@ -5,7 +5,7 @@ aliases:
 title: Transitivity
 created: 2026-03-27T20:51:41
 modified: 2026-05-03T19:52:58
-published: 2026-05-03T19:54:03.000-04:00
+published: 2026-05-06T06:50:01.614-04:00
 tags:
   - pub-network
 state: done

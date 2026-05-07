@@ -3,7 +3,7 @@ publish: true
 title: Centrality
 created: 2026-03-27T22:26:33
 modified: 2026-04-21T21:30:17
-published: 2026-04-30T16:13:47.000-04:00
+published: 2026-05-06T14:19:21.050-04:00
 tags:
   - pub-network
 state: done
@@ -148,7 +148,7 @@ $$
 
 - We can also assign a high centrality to a node if it is key to connecting other nodes.
 
-The between centrality of a node is the proportion of shortest paths between pairs of nodes that pass through it. Formally, let $S(i,j)$ be the set of shortest paths between nodes $i$ and $j$, and $S(i,j|k)$ be the set of those paths that pass through node $k$. Then the betweenness centrality of node $k$ is defined as:
+The betweenness centrality of a node is the proportion of shortest paths between pairs of nodes that pass through it. Formally, let $S(i,j)$ be the set of shortest paths between nodes $i$ and $j$, and $S(i,j|k)$ be the set of those paths that pass through node $k$. Then the betweenness centrality of node $k$ is defined as:
 
 $$
 C_B(i) = \sum_{i \neq j \neq k} \frac{|S(j,k|i)| /|S(j,k)|}{(n-1)(n-2) /2}.

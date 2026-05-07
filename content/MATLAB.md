@@ -2,8 +2,8 @@
 publish: true
 title: "*My Map* of MATLAB"
 created: 2022-02-22T20:20:09
-modified: 2026-05-01T00:15:58
-published: 2026-05-03T19:18:59.000-04:00
+modified: 2026-05-07T16:46:10
+published: 2026-05-07T16:46:10.167-04:00
 tags:
   - pub-matlab
 type: index
@@ -52,22 +52,3 @@ pub-banner: https://raw.githubusercontent.com/zcysxy/Figurebed/master/img/matlab
 - [[Matlab Compatible Array Sizes]]
 - [[Matlab Variable Scope]]
 - [[Matlab Timing]]
-
-## Self Teaching
-
-1. Matlab语言、功能、环境基本介绍
-2. 表达式、数组和矩阵的基本运算
-3. 高维数组及运算
-4. 字符串、元胞、结构体
-5. Matlab程序设计
-6. 数值计算
-7. 可视化
-8. 图形界面、输入输出
-
-## [[!todo#A]]
-
-- 文件 I/O (WZL CH12)
-- 字符
-  - string
-  - [[Matlab Types - Character]]
-- Table
