@@ -1,50 +1,50 @@
 ---
 publish: true
-created: 2024-02-02T04:44:24.183-05:00
-modified: 2026-05-01T00:08:28.394-04:00
-published: 2026-05-01T00:08:28.394-04:00
+created: 2026-05-07T17:29:44
+modified: 2026-05-07T17:57:53
+published: 2026-05-07T17:57:55.053-04:00
 tags:
   - pub-matlab
+state: done
+type: note
+sup:
+  - "[[Matlab Types]]"
 ---
 
 # Numeric
 
-[[Matlab Types]]
-
----
-
 ## Basics
 
-- Numeric array 数值数组是 MATLAB 中最基本, 最常用, 最重要的数据类型, 可以说 MATLAB 就是为了处理数值数组而创造出来的
-- 数值默认储存为 (占用 64 位内存的) 双精度  double
-  - 此类数值的 class 就是 **double**
-  - 之后默认++数值就是 double 类++
-  - double 相对精度是 _eps_ (MATLAB 的一个预定义变量)，大约保持16 位有效数字
-- 数值默认表示为十进制，短表示 (`format short`, 保留小数点后 4 位)
-  - 可在 [[Matlab Desktop|Command Window]] 中用 `format long` 命令显示长表示 (保留小数点后 15 位)
-- 数值绝对值允许范围大致为 $[10^{-308}, 10^{308}]$
-- 合法数值记述:
-  - 整数 `-99`
-    - 允许前面有多余的零, 如 `03` = `3`
-  - 小数 `9. 456`
-  - 科学计数法 `1. 3e-3` 或 `1E3`
+- The numeric array is the most fundamental, common, and important data type in MATLAB; one could say MATLAB exists to work with numeric arrays
+- Numeric values are stored by default as **double precision** (occupying 64 bits of memory)
+  - The class of such a value is **`double`**
+  - From here on, a numeric value is assumed to be of class `double`
+  - The relative precision of `double` is `eps` (a predefined MATLAB variable), giving roughly 16 significant digits
+- Numbers are displayed by default in decimal short form (`format short`, 4 decimal places)
+  - In the [[Matlab Desktop|Command Window]], `format long` switches to long form (15 decimal places)
+- The representable range of absolute values is roughly $[10^{-308}, 10^{308}]$
+- Valid numeric literals:
+  - Integers: `-99`
+    - Leading zeros are allowed, e.g. `03` = `3`
+  - Decimals: `9.456`
+  - Scientific notation: `1.3e-3` or `1E3`
 
-## 整数
+## Integers
 
-- 可通过函数 _int8_, _uint16_ 等将浮点数转换为整数, 转换规则为**远离 0 的四舍五入**
-  - ==这是 MATLAB 中默认的取整方式==
-- 整数与整数之间的运算只有相同类型时才能进行, 结果仍然是这种整数类型
-- 任何类型整数可以和 **double** 浮点数 (single 不行) 进行运算, 结果是这种**整数类型**, 取整采用默认取整方式
-- 新版本 MATLAB 中取整相关函数, 如 _floor_, _round_ 等返回的是 **double** 类而非整数类
+- Functions such as `int8` and `uint16` convert floating-point values to integers; the conversion rule is **half-away-from-zero rounding**
+  - This is MATLAB's default rounding mode
+- Integer-with-integer arithmetic is permitted only between identical integer types; the result keeps that type
+- Any integer type can be combined with a **`double`** floating-point value (but not with `single`); the result has the **integer** type and uses the default rounding rule
+- In modern MATLAB, rounding-related functions such as `floor` and `round` return **`double`** values, not integer types
 
-## 浮点数
+## Floating-Point Numbers
 
-- 浮点数默认为 double 类, 可通过函数 _single_ 和 _double_ 进行与 single 类之间的转换
-- double 类与其他类运算结果结果类型
-  - 与逻辑类, 字符类返回结果为 **double** 类
-  - 与整数类返回结果为相应的**整数**类
-  - 与 single 类返回结果为 **single** 类
-- single 类与**整数**之外类型计算结果均为 **single** 类
-- 常数 _NaN_ 和 _Inf_ 也是 double 类
-  - `NaN == NaN` = 0
-  - `Inf == Inf` = 1
+- Floating-point values default to `double`; convert between `single` and `double` with the functions `single` and `double`
+- Result types when combining `double` with other types:
+  - With a `logical` or `char`: result is **`double`**
+  - With an integer: result is the corresponding **integer** type
+  - With a `single`: result is **`single`**
+- A `single` combined with anything other than an **integer** type produces a **`single`**
+- The constants `NaN` and `Inf` are also of class `double`
+  - `NaN == NaN` evaluates to `0`
+  - `Inf == Inf` evaluates to `1`

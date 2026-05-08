@@ -1,40 +1,42 @@
 ---
 publish: true
-created: 2024-02-02T04:44:24.170-05:00
-modified: 2026-05-01T00:08:21.721-04:00
-published: 2026-05-01T00:08:21.721-04:00
+created: 2026-05-07T16:38:51
+modified: 2026-05-07T17:23:42
+published: 2026-05-07T17:23:44.157-04:00
 tags:
   - pub-matlab
+type: note
+sup:
+  - "[[Matlab Array]]"
+state: done
 ---
 
 # Matlab Array - Concatenating
 
-sup: [[Matlab Array]]
+- All operations below return a **new array**.
 
----
+## General Concatenation
 
-!! 以下所有操作均返回**新数组**
+- Each input array's size must match the chosen concatenation axis, otherwise an error is raised.
 
-## 一般连接
-
-!! 所有被连接的数组的大小都要与连接方式匹配, 否则报错
-
-- 水平连接
+- Horizontal concatenation
   - `[A1 A2 ...]`
-  - 函数 _horcat_: `horzcat(A1,A2,...)`
-- 竖直连接
+  - Function `horzcat(A1,A2,...)`
+
+- Vertical concatenation
   - `[A1; A2; ...]`
-  - 函数 _vertcat_: `vertcat(A1,A2,...)`
-- 任意维数连接
-  - 函数 _cat_: `cat(dim,A1,A2,...)` concatenates _A1, ..., An_ along dimension _dim_
-    - _dim_ 可以大于被连接数组的维数, 从而创建**高维数组**, 且未被指定的中间维数自动为 1
+  - Function `vertcat(A1,A2,...)`
 
-!! 对于多维数组, 水平连接相当于 _dim = 1_, 竖直连接相当于 _dim = 2_
+- Concatenation along an arbitrary dimension
+  - Function `cat(dim,A1,A2,...)` concatenates _A1, ..., An_ along dimension _dim_
+    - _dim_ may exceed the input arrays' dimensionality, in which case a **higher-dimensional array** is created; any unspecified intermediate dimensions are filled with size 1
 
-## Block Operation
+- Horizontal concatenation corresponds to _dim = 2_, and vertical concatenation to _dim = 1_.
 
-以下函数一般以 **matrix** 为参数, 将它们作为块矩阵, 运算生成新数组
+## Block Operations
 
-- 块对角矩阵 [[Matlab Functions - blkdiag|blkdiag]]
-- 复制块矩阵 [[Matlab Functions - repmat|repmat]]
-- [[Kronecker Tensor Product]] _kron_: `kron(A,B)`
+The functions below take **matrices** as inputs and treat them as building blocks of a larger array:
+
+- Block-diagonal: [[Matlab Functions - blkdiag|blkdiag]]
+- Tile a block: [[Matlab Functions - repmat|repmat]]
+- [[Kronecker Tensor Product]] `kron(A,B)`

@@ -3,7 +3,7 @@ publish: true
 title: Matlab Array - Indexing
 created: 2021-08-17T21:58:15
 modified: 2021-12-26T10:57:30
-published: 2026-05-01T00:08:21.748-04:00
+published: 2026-05-07T17:22:25.147-04:00
 tags:
   - pub-matlab
 aliases:
@@ -15,25 +15,25 @@ state: done
 
 # Matlab Array - Indexing
 
-MATLAB 的数组结构适于访问,修改和增提案其中元素. 数组有 [**Position Indexing**](#position-indexing), [**Linear Indexing**](#linear-indexing), [**Logical Indexing**](#logical-indexing) 三种索引方式
+MATLAB's array structure is well suited to accessing, modifying, and extending elements. There are three indexing modes: [**Position Indexing**](#position-indexing), [**Linear Indexing**](#linear-indexing), and [**Logical Indexing**](#logical-indexing).
 
-#R 对应 [[Python]], MATLAB 中的数组都是 **"可变对象"**
+- Compared with [[Python]], MATLAB arrays are also **mutable objects**.
 
 ## Position Indexing
 
-语法: `A(ind_1,...,ind_n)`
+Syntax: `A(ind_1,...,ind_n)`
 
-- 其中 _n_ 为数组的维数
-- _ind\_i_ 为对应维数需要访问/引用元素的索引
-  - 可以为 scalar, vector
-  - operator `:`
-    - `:` 相当于 [[Python Slice]]
-      - 若只有单独的 `:`, 表示取**所有**可以取到的元素
-    - 同时多了 _end_ 参数
-  - 需要符合对应维数范围
-- 本质上填入的是一个**索引数组**, 访问/引用的是将索引数组对应的 _A_ 的元素提取出来, 按原**相对位置** 组成的新数组
+- _n_ equals the number of dimensions of the array
+- Each _ind\_i_ indexes the corresponding dimension
+  - Can be a scalar or a vector
+  - Or the operator `:`
+    - Acts like a [[Python Slice]]
+      - A bare `:` selects **all** elements along that dimension
+    - Adds a special _end_ keyword
+  - Must lie within the valid range for that dimension
+- Effectively, each _ind\_i_ is an **index array**; the result is the array of _A_'s elements at those indices, arranged in the same **relative positions**
 
-例子:
+Example:
 
 ```octave
 >> A = rand(3,3,3)
@@ -78,13 +78,13 @@ ans =
 
 ## Linear Indexing
 
-同样通过位置索引, Linear Indexing 是在传递参数小于数组维数时, 将剩余维数元素**并置为一维**进行索引.
+Linear indexing is also positional, but it applies when fewer indices than dimensions are passed: the remaining dimensions are flattened into a **single dimension**.
 
-特别的, 此索引方法可以通过一个指标访问到所有元素.
+In particular, a single index can reach every element.
 
-#R While MATLAB displays arrays according to their defined sizes and shapes, they are actually stored in memory as a **single column** of elements
+- While MATLAB displays arrays according to their defined sizes and shapes, they are actually stored in memory as a **single column** of elements.
 
-剩余 (所有) 元素并置的顺序按照如下规则 (设为 2-2-2-... 数组):
+The flattening order, illustrated for a 2-2-2-... array, is:
 
 1. 1-1-1-...
 2. 2-1-1-...
@@ -95,9 +95,9 @@ ans =
 7. 1-2-2-...
 8. 2-2-2-...
 
-特别的对于 matrix, 可简述为 "先列后行".
+For matrices in particular, this is "column-major order".
 
-例子 1:
+Example 1:
 
 ```octave
 >> B = rand(1,1,2,2,2) 
@@ -122,7 +122,7 @@ C =
     0.3500    0.1966    0.2511    0.6160    0.4733    0.3517    0.8308    0.5853
 ```
 
-例子 2:
+Example 2:
 
 ```octave
 >> A = rand(3,3,3)
@@ -146,16 +146,16 @@ ans =
     0.9649
 ```
 
-## 相关函数
+## Related Functions
 
-- 可用 [[Matlab Functions - sum|sum]] 函数直接求 matrix 所有元素之和: `sum(A(:))`
+- Use [[Matlab Functions - sum|sum]] to add every element of a matrix: `sum(A(:))`
 - [[Matlab Functions - sub2ind, ind2sub|sub2ind, ind2sub]]
 
 ## Logical Indexing
 
-通过条件表达式可以返回一个跟原数组同样大小的**逻辑值数组**; 同样的与被索引数组大小相同的**逻辑值数组**可以作为其 logical index.
+A conditional expression returns a **logical array** of the same size as the original; conversely, any logical array of matching size can be used as a logical index into the array.
 
-例子:
+Example:
 
 ```octave
 >> A = rand(3)

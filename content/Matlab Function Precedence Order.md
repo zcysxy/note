@@ -1,8 +1,8 @@
 ---
 publish: true
-created: 2026-01-06T20:10:18.000-05:00
-modified: 2026-05-01T00:08:27.164-04:00
-published: 2026-05-01T00:08:27.164-04:00
+created: 2026-05-07T20:28:46.723-04:00
+modified: 2026-05-07T20:28:46.723-04:00
+published: 2026-05-07T20:28:46.723-04:00
 tags:
   - pub-matlab
 sup: "[[MATLAB]]"
@@ -12,14 +12,14 @@ source: https://www.mathworks.com/help/matlab/matlab_prog/function-precedence-or
 
 # Function Precedence Order
 
-调用一个对象时, MATLAB 程序的搜索域为
+When MATLAB resolves an identifier in a call, it searches
 
 - the current file
 - an optional private subfolder relative to the currently running function
 - the current folder
 - the MATLAB path
 
-具体的搜索顺序为
+in this order:
 
 1. Variables in the Workspace
 2. Function or class whose name matches an explicitly imported name [[!tocheck]]

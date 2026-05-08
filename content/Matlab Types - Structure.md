@@ -1,8 +1,8 @@
 ---
 publish: true
 created: 2022-02-22T20:20:09
-modified: 2022-05-07T20:32:51
-published: 2026-05-01T00:08:28.399-04:00
+modified: 2026-05-07T17:54:57
+published: 2026-05-07T17:55:57.737-04:00
 tags:
   - pub-matlab
 type: note
@@ -13,32 +13,32 @@ state: done
 
 # Structure
 
-MATLAB 中 sturcture 类和 [[Matlab Types - Cell|cell]] 类称为 heterogeneous containers, 它们是特殊的**数组 array**, 与一般 [[Matlab Array|数组]]不同, 可以储存不同类型数据.
+In MATLAB, `structure` and [[Matlab Types - Cell|cell]] are called _heterogeneous containers_: special **arrays** that, unlike a regular [[Matlab Array|array]], can hold elements of different types.
 
-- 一个 structure 像一个数据容器 data container, 通过字段 field 存储多个不同类型的数据
-  - field 自然还可以是 structure 类, 构成 [nested structure](#嵌套)
-- 一个 structure 就是一个 1\*1 的 structure array
-- 例子: ![20210126173230](https://raw.githubusercontent.com/zcysxy/Figurebed/master/img/20210126173230.png)
-- 句号 `.` 是 structure 的识别符
+- A structure works like a _data container_: it holds multiple values of possibly different types under named _fields_
+  - A field may itself be a structure, producing a [nested structure](#nesting)
+- A single structure is itself a 1×1 structure array
+- Example:  ![|200](https://raw.githubusercontent.com/zcysxy/Figurebed/master/img/20210126173230.png)
+- The dot `.` is the structure delimiter
 
-## 属性
+## Properties
 
 - Identity test functions
-  - _isstruct_
-  - _isfield_: `isfield(S,F)` 判断 _F_ 是否为 _S_ 某个 field 的**名字**
-    - _S_ 为 struct, _F_ 为 char vector 才有可能返回逻辑真
-- 函数 _fieldnames_ 返回以 struct 所有 fields 名字为元素的 **cell**
+  - `isstruct`
+  - `isfield(S,F)` — checks whether _F_ is the **name** of one of _S_'s fields
+    - The result can be true only when _S_ is a `struct` and _F_ is a char vector
+- `fieldnames` returns a **cell** whose elements are the names of every field of a `struct`
 
-## 创建
+## Creation
 
-- 赋值语句 `struct.field = x`
-  - 用句号 `.` 连接 structure name 和 field name
-  - 创建更大尺寸 structrue 可利用数组索引: `struct(i).field = x`
-    - 一个 structure array 中所有 structure 具有**相同**的 field(S)
-    - 未赋值的 field 默认为 empty array
-- 函数 [[Matlab Functions - struct|struct]]
+- Assignment: `struct.field = x`
+  - Connect the structure name and field name with a dot `.`
+  - To create a larger structure array, use array indexing: `struct(i).field = x`
+    - Every structure in a structure array shares the **same** fields
+    - Unassigned fields default to an empty array
+- Function [[Matlab Functions - struct|struct]]
 
-赋值语句创建 structure array 例子:
+Example using assignment to build a structure array:
 
 ```octave
 >> lover.name = 'Josh';
@@ -72,16 +72,16 @@ ans =
   lover      1x2               568  struct
 ```
 
-## 访问
+## Access
 
-Structure array 可以通过**索引**访问其中 structures 和它们的 fields, 用法见 [[Matlab Array - Indexing]], 基本语法为: `struct(I1).field(I2)`
+A structure array uses **indexing** to reach the structures inside and their fields; see [[Matlab Array - Indexing]]. The basic syntax is `struct(I1).field(I2)`.
 
-- 其中索引 _I1_ 访问的是 structure array _struct_ 中的 structure(s)
-  - 只有在无字段访问时才可以填入多个 structures 的索引, 否则报错
+- _I1_ indexes into the structure(s) of the structure array _struct_
+  - You may pass an index spanning multiple structures **only when no field access follows**, otherwise it raises an error
   - > You can index into part of a field only when you refer to a **single** element of a structure array
-- _I2_ 访问的是上述 structures 的字段 _field_ 中的元素
+- _I2_ indexes into the elements of the field _field_ of those structures
 
-例:
+Example:
 
 ```octave
 >> lover(2).score([1,3]) 
@@ -99,10 +99,10 @@ ans =
 
 ### Dynamic Fields
 
-当访问/创建字段名也是**变量**时, 就要用到动态字段 dynamic fileds, 语法为用圆括号 `()` 包裹字段名变量, 如下例
+When the field name is itself a **variable**, use _dynamic fields_: wrap the variable in parentheses `()`.
 
 ```octave
->> S.(char(100+rand*10)) = [] % 以随机变量作为字段名创建字段
+>> S.(char(100+rand*10)) = [] % use a random value as the field name
 S =
   struct with fields:
     m: []
@@ -113,21 +113,21 @@ S =
     e: []
 
 >> S1.a = 1; S1.b = 2; F = 'ab';
->> S1.(F(randi(2))) % 随机访问字段
+>> S1.(F(randi(2))) % access a randomly chosen field
 ans =
      1
 ```
 
-## 删减
+## Removal
 
-通过函数 _rmfield_ 删除 struct 中某些 field(s), 返回删减后的 structure
+`rmfield` deletes selected fields from a structure and returns the trimmed structure.
 
-- 语法: `rmfield(S,fieldname)`
-  - 其中 _fieldname_ 可以为 char vector 或 cell array of char vectors
+- Syntax: `rmfield(S,fieldname)`
+  - _fieldname_ may be a char vector or a cell array of char vectors
 
-## 嵌套
+## Nesting
 
-Structure 的 field 自然可以为 structure 类, 这样就构成 nested structure. 其创建, 访问等过程与一般 structure 一致. 见下例
+A field of a structure may itself be a structure, producing a _nested structure_. Construction and access follow the same rules as for an ordinary structure.
 
 ```octave
 >> S.A.a = rand(2)
@@ -143,4 +143,4 @@ ans =
     0.8491
 ```
 
-\~~ 以句号 `.` 为分层符号的嵌套表示非常清晰: `S.layer1.layer2...`
+- Dot-separated nesting reads naturally as a path: `S.layer1.layer2...`

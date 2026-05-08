@@ -3,7 +3,7 @@ publish: true
 title: Matlab Operator
 created: 2026-01-06T20:10:18
 modified: 2026-05-01T00:09:34
-published: 2026-05-01T00:11:41.228-04:00
+published: 2026-05-07T20:28:43.480-04:00
 tags:
   - pub-matlab
 aliases:
@@ -85,7 +85,7 @@ state: done
 
 ## Other
 
-- 以下与上面重合的符号指叙述其与上面不同的作用
+- Symbols that also appear in the tables above are listed here only for roles distinct from those above.
 
 | Symbol  | Role(s)                                       |
 |:-------:| --------------------------------------------- |

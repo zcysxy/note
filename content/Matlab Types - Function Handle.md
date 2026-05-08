@@ -1,71 +1,71 @@
 ---
 publish: true
-created: 2026-01-06T20:10:18.000-05:00
-modified: 2026-05-01T00:08:28.355-04:00
-published: 2026-05-01T00:08:28.355-04:00
+created: 2026-05-07T17:29:25
+modified: 2026-05-07T17:59:06
+published: 2026-05-07T17:59:08.826-04:00
 tags:
   - pub-matlab
+type: note
+sup:
+  - "[[Matlab Types]]"
+state: done
 ---
 
 # Function Handle
 
-[[Matlab Types]]
+A function handle is a data type that represents a [[Matlab Function]]. It lets you assign a function to a **variable** and use functions more flexibly. When invoked, a function handle behaves the same as the function it points to.
 
----
+Note, however, that a function handle is only a **reference** to the original function; it does not store the function's body. If the original function is removed, every handle pointing to it becomes invalid.
 
-函数句柄 function handle 是用来表示 [[Matlab Function]] 的一种数据类型. 它的作用就是将函数赋值给**变量**, 更灵活的应用各种函数. 作为函数时函数句柄与一般函数的用法一致.
+## Properties
 
-但是注意, 函数句柄只是原函数的一种**表示**, 本身并不储存原函数信息. 所以若原函数代码被删除后, 指向这个函数的所有函数句柄也就失效了.
+- `functions` returns detailed information about the function referenced by a handle
+- [[Matlab Functions - isequal|isequal]] can compare two function handles
+  - Operators such as `==` are not supported on function handles
 
-## 属性
-
-- 函数 _functions_ 返回函数句柄表示的函数的详细信息
-- 函数 [[Matlab Functions - isequal|isequal]] 可以比较两个函数句柄
-  - 注意 `==` 等操作不支持函数句柄作为运算对象
-
-## 创建语法
+## Creation Syntax
 
 ```octave
 fhandle = @funName
 ```
 
-以上操作符 `@` 将函数 _funName_ 变成 function handle 类赋值给了变量 %fhandle%
+The operator `@` converts the function _funName_ into a function-handle value and assigns it to the variable _fhandle_.
 
-!! `@` 后可有空格
+- A space is allowed after `@`.
 
-## 匿名函数
+## Anonymous Functions
 
-函数句柄一个重要应用就是创建单行的**匿名函数**, 见 [[Matlab Anonymous Function]].
+A common use of function handles is to create single-line **anonymous functions**; see [[Matlab Anonymous Function]].
 
-## 作为数据类型
+## As a Data Type
 
-要形成 "函数数组", "函数结构体", 就需要用到函数句柄是一种数据类的特定. 如下例
+To build "function arrays" or "function structures", you rely on the fact that a function handle is itself a data type. For example:
 
 ```octave
-disp('sin',pi/2) % 显示 1
+disp('sin',pi/2) % displays 1
 
 function y = fun(which_fun,x)
-s.sin = @sin; % 将函数作为函数句柄保存在结构体中
+s.sin = @sin; % store functions as handles inside a structure
 s.cos = @cos;
 y = s.(which_fun)(x);
 end
 ```
 
-又比如一些函数接收函数作为参数 (_function functions_), 则需要先将被作用函数转换为函数句柄, 在传递给作用于它的函数. 如下例
+Some functions accept a function as an argument (_function functions_); the input function must first be converted to a handle before being passed in:
 
 ```octave
 Sin = @sin
-disp(integral(Sin,0,pi)) % 显示 2.0000
+disp(integral(Sin,0,pi)) % displays 2.0000
 ```
 
-注意以上性质是[[Matlab Types|数据类型]]的特点, 所以不一定需要将 function handle赋值给变量, 也可以直接作为 function handle 类使用. 如下例
+This is a property of the [[Matlab Types|data type]] itself, so the handle does not have to be assigned to a variable — it can be used directly as a function-handle value:
 
 ```octave
-disp(integral(@sin,0,pi)) % 显示 2.0000
-disp(integral(@(x) x.^2,0,1)) % 显示 0.3333
+disp(integral(@sin,0,pi)) % displays 2.0000
+disp(integral(@(x) x.^2,0,1)) % displays 0.3333
 ```
 
-对于无输入参数匿名函数, 不能像一般函数那样省略圆括号 `()`, 否则返回的是其作为**变量**的信息. 如下例
+For an anonymous function with no input arguments, you cannot omit the parentheses `()` the way you can with ordinary functions; otherwise the result is the handle's **variable** information rather than a call:
 
 ```octave
 >> f = @() disp('hello');

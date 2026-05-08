@@ -1,8 +1,8 @@
 ---
 publish: true
 created: 2022-05-28T03:34:21
-modified: 2023-02-09T13:25:40
-published: 2026-05-01T00:08:21.734-04:00
+modified: 2026-05-07T17:19:57
+published: 2026-05-07T17:20:05.165-04:00
 tags:
   - pub-matlab
 type: note
@@ -15,33 +15,33 @@ state: done
 
 ## Creating
 
-- 以下方法为直接创建新数组的方法, 不包括组合, 连接, 裁剪已有数组产生新数组的方法
+- The methods below create new arrays directly; they do not include constructing a new array by combining, concatenating, or slicing an existing one.
 
-### 直接创建
+### Direct Construction
 
-一般使用方括号 `[]`, 逗号 `,` 或空格, 以及分号 `;` 来创建数组
+Use square brackets `[]` together with commas `,` (or spaces) and semicolons `;`:
 
-- `[]` 中给出数组的所有元素
-- 同**一行**中的元素间用 `,` 或空格分隔
-- 不同行之间用 `;` 分隔
+- List all elements inside `[]`
+- Within a **row**, separate elements with `,` or whitespace
+- Separate rows with `;`
 
-### 行向量
+### Row Vectors
 
-- 等差数列
+- Arithmetic sequences
   - Operator `:`: `<[start:<step>:end]>`
-    - 三个参数为 double 类型
-    - _step_ 默认为 1
-    - _end_ 无需大于等于 _start_, 不过此时需要 _step_ 需为负数, 否则生成空数组
-    - 生成数组第一个元素为 _start_, 最后一个元素为 (_start_ + \[(_end_ - _start_) / _step_] \* _step_)
-  - 函数 [[Matlab Functions - linspace|linspace]]
-- 等比数列
-  - 函数 [[Matlab Functions - logspace|logspace]]
+    - All three operands are `double`
+    - _step_ defaults to 1
+    - _end_ need not be ≥ _start_; in that case _step_ must be negative, otherwise the result is empty
+    - The first element of the result is _start_; the last is `start + floor((end - start) / step) * step`
+  - Function [[Matlab Functions - linspace|linspace]]
+- Geometric sequences
+  - Function [[Matlab Functions - logspace|logspace]]
 
-### 列向量
+### Column Vectors
 
-- 转置 operator `'`
+- Transpose operator `'`
 
-### 二维数组
+### 2-D Arrays
 
 ```octave
 A = [1 2 3; 2 5 6; 1 4 5];
@@ -49,21 +49,21 @@ B = [1:5; linspace(3, 10, 5); 3 5 2 6 4];
 C = [[1:3]' linspace(2, 3, 3)' [3 5 6]'];
 ```
 
-### 特殊数组
+### Special Arrays
 
-- 0-数组: 函数 [[Matlab Functions - zeros]]
-- 1-数组: 函数 _ones_
-  - 用法完全同 [[Matlab Functions - zeros|zeros]], 0 换成 1
-- 单位数组: 函数 _eye_
-  - 用法完全同 [[Matlab Functions - zeros|zeros]], 主对角线上为 1, 其余为 0
-  - 但不能生成多维 (高于二维) 数组
-- 均匀分布随机数组: 函数 _rand_
-  - 用法完全同 [[Matlab Functions - zeros|zeros]], 0 换成 $[0,1]$ 上**均匀分布**的随机数
-  - 但 _typename_ 只能为 _single_ 或 _double_
-- 正态分布随机数组: 函数 _randn_
-  - 用法完全同 _rand_, $[0,1]$ 上均匀分布的随机数换成 $\mathbb{R}$ 上**正太分布**的随机数
-- 逻辑数组: 函数 _true_ 和 _false_
-  - 用法完全同 [[Matlab Functions - zeros|zeros]], 0 换成逻辑值 1/0, 因此生成的是逻辑值数组
-  - 于是没有 _typename_ 参数
-- 对角数组: 函数 [[Matlab Functions - diag|diag]]
-- 魔方数组: 函数 [[Matlab Functions - magic|magic]]
+- Zero array: function [[Matlab Functions - zeros]]
+- Ones array: function`ones`
+  - Same syntax as [[Matlab Functions - zeros|zeros]], with 0 replaced by 1
+- Identity array: function`eye`
+  - Same syntax as [[Matlab Functions - zeros|zeros]]; 1 on the main diagonal, 0 elsewhere
+  - Cannot create N-D (more than 2-D) arrays
+- Uniformly distributed random array: function`rand`
+  - Same syntax as [[Matlab Functions - zeros|zeros]], with 0 replaced by samples drawn **uniformly** on $[0,1]$
+  - However,`typename` may only be`single` or`double`
+- Normally distributed random array: function`randn`
+  - Same as`rand`, with the uniform distribution on $[0,1]$ replaced by the **standard normal** distribution on $\mathbb{R}$
+- Logical array: functions`true` and`false`
+  - Same syntax as [[Matlab Functions - zeros|zeros]], with 0 replaced by logical 1/0; produces a logical array
+  - Therefore there is no`typename` parameter
+- Diagonal array: function [[Matlab Functions - diag|diag]]
+- Magic square: function [[Matlab Functions - magic|magic]]

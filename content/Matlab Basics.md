@@ -1,8 +1,8 @@
 ---
 publish: true
 created: 2023-08-03T06:42:38
-modified: 2024-02-02T01:09:53
-published: 2026-05-01T00:08:21.780-04:00
+modified: 2026-05-07T17:02:30
+published: 2026-05-07T17:02:32.084-04:00
 tags:
   - pub-matlab
 type: note
@@ -15,27 +15,27 @@ state: done
 
 ## Basics
 
-- MATLAB 面向**双精度 double**, **复数 complex**, **数组 array** 设计
-- 需以 `;` 作为有运算结果的指令结尾, 以抑制结果显示, 特别是在 scripts 中
-- 注释符号为 `%`
+- MATLAB is designed around **double precision**, **complex numbers**, and **arrays**
+- End any value-producing statement with `;` to suppress its result display, especially in scripts
+- The comment marker is `%`
   - `%{...%}` for multi-line comments
-- MATLAB **对缩进不敏感**, 其通过 _end_ 语句来指示语句块的结束
+- MATLAB is **insensitive to indentation**; the end of a block is marked by `end`
 
-## 基本数值常量
+## Numeric Constants
 
 | Constant     | Description                             |
 |--------------|-----------------------------------------|
 | `pi`         | $\pi$                                   |
-| `eps`        | 浮点数相对精度 $2.2204e-16$             |
-| `i`, `j`     | 虚单元 $\sqrt{-1}$                      |
-| `inf`, `Inf` | 无穷大, 如 $\frac{1}{0}$                |
-| `nan`, `NaN` | 不定值 (not a number), 如 $\frac{0}{0}$ |
-| `intmax`     | 可表达最大整数 $2147483647$             |
-| `intmin`     | 可表达最小整数 $2147483648$             |
-| `realmax`    | 可表达最大正实数 $1.7977e+308$          |
-| `realmin`    | 可表达最小正实数 $2.2251e-308$          |
+| `eps`        | Floating-point relative precision $2.2204e\text{-}16$ |
+| `i`, `j`     | Imaginary unit $\sqrt{-1}$              |
+| `inf`, `Inf` | Infinity, e.g. $\frac{1}{0}$            |
+| `nan`, `NaN` | Indeterminate (not a number), e.g. $\frac{0}{0}$ |
+| `intmax`     | Largest representable integer $2147483647$ |
+| `intmin`     | Smallest representable integer $-2147483648$ |
+| `realmax`    | Largest representable positive real $1.7977e\text{+}308$ |
+| `realmin`    | Smallest representable positive real $2.2251e\text{-}308$ |
 
-## 关键字
+## Keywords
 
 | Keyword | Usage |
 |-|-|
@@ -60,29 +60,28 @@ state: done
 | try |
 | while |
 
-## 变量
+## Variables
 
-跟 [[Python]] 一样, MATLAB 中变量无须事先定义, 也无需预先声明变量类型
+Like [[Python]], MATLAB does not require variable declarations or type annotations.
 
-### 变量命名规则
+### Variable Naming Rules
 
-1. 只能由**字母, 数字, 下划线**组成, 且须以**字母**开头
-2. 区分大小写
-3. 长度不得超过 ++31 位++
-4. 不可为[**关键字**](#关键字)
-5. 可为常量名, 函数名
-   - 则之后该变量名不再代表原先常量, 函数
+1. Must consist only of **letters, digits, and underscores**, and must begin with a **letter**
+2. Case-sensitive
+3. Length must not exceed **31 characters**
+4. Must not be a [**keyword**](#keywords)
+5. May reuse a constant or function name
+   - After such reuse, the name no longer refers to the original constant or function
 
-#### 变量名检验
+#### Validating Variable Names
 
-- 可用函数 [[Matlab Functions - iskeyword]] 检验变量名是否为关键字
-- 可用函数 [[Matlab Functions - exist]] 检验变量名是否为现有变量名, 函数名, 文件名, 文件夹名等
-  [[Matlab Functions - exist]]
+- Use [[Matlab Functions - iskeyword]] to check whether a name is a keyword
+- Use [[Matlab Functions - exist]] to check whether a name is already in use as a variable, function, file, or folder
 
-### 预定义变量
+### Predefined Variables
 
-| Variable  | Description                    |
-|-----------|--------------------------------|
-| `ans`     | 无赋值符号时接受运算结果的变量 |
-| `nargin`  | 函数实际输入参数个数           |
-| `nargout` | 函数实际输出参数个数           |
+| Variable  | Description                                              |
+|-----------|----------------------------------------------------------|
+| `ans`     | Default variable that receives a result when no assignment is given |
+| `nargin`  | Number of input arguments actually passed to a function  |
+| `nargout` | Number of output arguments actually requested            |

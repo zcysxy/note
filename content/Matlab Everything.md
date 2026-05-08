@@ -1,44 +1,44 @@
 ---
 publish: true
-created: 2024-02-02T04:44:24.173-05:00
-modified: 2026-05-01T00:08:27.068-04:00
-published: 2026-05-01T00:08:27.068-04:00
+created: 2026-05-07T16:36:58
+modified: 2026-05-07T17:23:10
+published: 2026-05-07T17:23:12.127-04:00
 tags:
   - pub-matlab
+type: note
+sup:
+  - "[[MATLAB]]"
+state: done
 ---
 
 # Matlab Everything
 
-[[MATLAB]]
-
----
-
 ## Basic Remarks
 
-- 设计哲学:
-  1. 面向[[Matlab Array|数组 array]]设计
-  2. 面向 double 类复数设计
-  3. 面向对象 object 设计
-- 所有数值默认为 **double** 类
-  - 包括各种取整方法产生的 "整数"
-- 空数组 `[]` 也为 double 类
-- 数组索引从 ++1++ 开始
-- 默认取整方式为 **rounding half up away from 0**
-  - 这也是函数 _round_ 的取整方式
-- MATLAB 中有返回值的操作都会默认输出到 Command Window 中, 用分号 `;` 可以抑制输出, 尤其是在 scripts 中
-  - 且可以利用分号 `;` 在一行内写任意多条语句
-  - 如 `a = 1; b = 2; a + b` 返回 `ans = 3`
-- 程序控制语句通过关键词 `end` 标志结束
-- 两种函数调用语法: [[Matlab Command-Function Duality]]
+- Design philosophy:
+  1. Designed around [[Matlab Array|arrays]]
+  2. Designed around `double`-precision complex numbers
+  3. Object-oriented design
+- All numeric values are `double` by default
+  - This includes the "integers" produced by various rounding methods
+- The empty array `[]` is also of class `double`
+- Array indices start from ++1++
+- The default rounding mode is **rounding half up away from 0**
+  - This is also the rounding mode used by _round_
+- Any operation in MATLAB that returns a value will print to the Command Window by default; use a semicolon `;` to suppress output, especially in scripts
+  - `;` also lets you place multiple statements on a single line
+  - For example, `a = 1; b = 2; a + b` returns `ans = 3`
+- Control-flow blocks are terminated with the keyword `end`
+- Two function-call syntaxes: [[Matlab Command-Function Duality]]
 
 ## Function Inputs
 
-> MATLAB 的函数输入非常奇怪, 有很多规则, 有更多特例
+> MATLAB's rules for function inputs are unusual — many rules, even more exceptions.
 
-- 对于 binary operation, 输入 arrays 需满足 [[Matlab Compatible Array Sizes]]
-- 一般作用于 matrices 的函数往往也可以作用于 N-D arrays, 且往往就是在它们的一二维形成的平面上操作
-- 一般接受数值参数的函数也可以接受**字符**参数
+- For binary operations, input arrays must satisfy [[Matlab Compatible Array Sizes]]
+- Functions designed for matrices typically also work on N-D arrays, usually operating on the plane spanned by the first two dimensions
+- Functions that accept numeric arguments often also accept **character** arguments
 
 ## Basic Syntax
 
-- 标志着数组的方括号 `[]` 一般不能省, 只有在用冒号运算符 `:` 生成 vector 时可省
+- The square brackets `[]` that delimit an array generally cannot be omitted; they may only be dropped when generating a vector with the colon operator `:`

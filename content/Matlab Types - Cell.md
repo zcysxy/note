@@ -1,47 +1,48 @@
 ---
 publish: true
-created: 2024-02-02T04:44:24.182-05:00
-modified: 2026-05-01T00:08:28.222-04:00
-published: 2026-05-01T00:08:28.222-04:00
+created: 2026-05-07T17:28:52
+modified: 2026-05-07T18:01:32
+published: 2026-05-07T18:01:34.977-04:00
 tags:
   - pub-matlab
+type: note
+sup:
+  - "[[Matlab Types]]"
+state: done
 ---
 
 # Cell
 
-[[Matlab Types]]
+In MATLAB, cell and [[Matlab Types - Structure|structure]] are _heterogeneous containers_: special **arrays** that, unlike a regular [[Matlab Array|array]], can hold elements of different types.
 
----
+- A cell array directly extends the regular array — each element (called a _cell_) may be of a different data type
+  - A single-element cell is therefore not very meaningful; "cell array" by default refers to one with multiple elements
+  - A cell may itself be a cell array, forming a _nested cell array_
+- Example: ![|200](https://raw.githubusercontent.com/zcysxy/Figurebed/master/img/20210126185629.png)
+- Curly braces `{}` are the cell delimiter
 
-MATLAB 中 cell 类和 [[Matlab Types - Structure|structure]] 类称为 heterogeneous containers, 它们是特殊的**数组 array**, 与一般 [[Matlab Array|数组]]不同, 可以储存不同类型数据.
+## Properties and Display
 
-- Cell array 是对一般 array 的直接扩展, 即其中元素 (称为元胞 cell) 可以为不同数据类型
-  - 所以只含一个元素的 cell 类是没有意义的, 所以一般说 cell array 并默认其包含多个元素
-  - Cell array 中元素自然还可以是 cell 类, 构成 nested cell array
-- 例子: ![20210126185629](https://raw.githubusercontent.com/zcysxy/Figurebed/master/img/20210126185629.png)
-- 花括号 `{}` 是 cell 的识别符
+- `iscell`
+- Display
+  - `celldisp` prints the contents of every cell of a cell array
+  - `cellplot` shows the **structural diagram** of a cell array
 
-## 属性与显示
+## Creation
 
-- 函数 _iscell_
-- 显示
-  - 函数 _celldisp_ 逐个显示 cell array 每个 cell 具体内容
-  - 函数 _cellplot_ 显示 cell array 的**结构图**
-
-## 创建
-
-- 赋值语句
+- Assignment statements
   1. `C(ind) = {x}`
   2. `C{ind} = x`
-  - 其中 _ind_ 即一般的数组索引
-  - 以上赋值语句也适用于**扩展** cell array
-- 函数 _cell_: `cell(<[sz1,...,szn]>)`
-  - 返回 _sz1_-...-_szn_ 维 cell array, 其中每个 cell 都为空 `[]`
-  - 只有一个参数 _sz1_ 时, 返回 _sz1_-_sz1_ 方 cell array
+  - _ind_ is an ordinary array index
+  - These also serve to **expand** a cell array
 
-!! 以上方法生成 "矩形" cell array, 未被赋值的 cell 默认为空 `[]`
+- Function `cell(<[sz1,...,szn]>)`
+  - Returns an _sz1_-by-...-by-_szn_ cell array, with every cell empty (`[]`)
+  - With a single argument _sz1_, returns an _sz1_-by-_sz1_ square cell array
 
-例子:
+- These methods always produce a "rectangular" cell array; unassigned cells default to empty `[]`.
+
+Example:
 
 ```octave
 >> A = cell(2,3)
@@ -67,13 +68,13 @@ A =
     {0x0 double}    {0x0 double}    {2x1 double}
 ```
 
-## 访问与删减
+## Access and Removal
 
-Cell array 的访问完全通过 [[Matlab Array - Indexing]], 只不过用圆括号 `()` 包裹索引时返回的是**子 cell array** (为 cell 类), 用花括号 `{}` 包裹索引时返回的才是其中元素本身
+A cell array is accessed via [[Matlab Array - Indexing]]; the only twist is that wrapping the index in **parentheses `()` returns a cell sub-array** (still of class `cell`), whereas wrapping the index in **curly braces `{}` returns the contents** themselves.
 
-!! 这也解释了为什么 cell array 的赋值语法有两种
+- This is also why cell-array assignment has two forms.
 
-例子:
+Example:
 
 ```octave
 >> A{2,3}
@@ -85,16 +86,16 @@ ans =
     {[123]}
 ```
 
-通过索引就可以删除和切除 cell array
+You can also delete or slice from a cell array with indexing:
 
-- `A{ind} = []` 删除索引为 _ind_ 的元素 (赋空值)
-- `A(ind) = []` 切除 _A_
-  - 为保证 cell array 为 "矩形", _ind_ 只能有一个分量不是引号 `:`
-  - 即只能 "整行/整列" 地切除
+- `A{ind} = []` clears the element at _ind_ (assigns it the empty value)
+- `A(ind) = []` removes a slice from _A_
+  - To keep _A_ rectangular, only one component of _ind_ may differ from `:`
+  - In other words, you can only remove **whole rows or columns**
 
-## 嵌套
+## Nesting
 
-Cell array 的 cell 自然可以为 cell array, 这样就构成 nested cell array. 其创建, 访问等过程与一般 array 一致. 见下例
+A cell of a cell array can itself be a cell array, producing a _nested cell array_. Construction and access follow the rules of an ordinary array.
 
 ```octave
 >> A{2,2} = {1, 2;'hello', cell(2)}
@@ -116,4 +117,4 @@ ans =
     'sub'
 ```
 
-!! 一般来说 nested cell array 的中间指标都是花括号 `{}`
+- In a nested cell array, the intermediate indices typically use curly braces `{}`.

@@ -2,8 +2,8 @@
 publish: true
 title: Matlab Characters and Strings
 created: 2022-02-22T20:20:09
-modified: 2022-05-07T20:53:27
-published: 2026-05-01T00:08:26.765-04:00
+modified: 2026-05-07T19:11:11
+published: 2026-05-07T20:24:47.825-04:00
 tags:
   - pub-matlab
 aliases:
@@ -16,20 +16,33 @@ source: https://www.mathworks.com/help/matlab/characters-and-strings.html
 
 # Characters and Strings
 
-字符 [[Matlab Types - Character|character]] 和字符串 string 都是储存文本的数据类型, string 在 R2016b 版本中引入
+[[Matlab Types - Character|character]] and `string` are both data types for storing text; `string` was introduced in R2016b.
 
-## 储存方式不同
+## Different Storage Models
 
-- Character 可类比数值类型中的数值, 每个字符严格为 2 bytes, size 为字符个数
-- String 可类比数值数组整体, 占据内存远大于包含相同字符的 character, size 为 1
+- A character is analogous to a single value in a numeric array: every character is exactly 2 bytes, and its `size` equals the number of characters
+- A string is analogous to a numeric array taken as a whole: it consumes far more memory than a `char` containing the same characters, and its `size` is 1
 
-![20210124163250](https://raw.githubusercontent.com/zcysxy/Figurebed/master/img/20210124163250.png)
+```
+a = 'hello'
+% a =
+%     'hello'
 
-## 创建方式不同
+b = "hello"
+% b =
+%     "hello"
 
-- Character 用单引号 `''` 创建
-- String 用双引号 `""`, 或函数 _string_ 创建
+whos
+%   Name      Size            Bytes  Class     Attributes
+%   a         1x5                10  char
+%   b         1x1               164  string
+```
 
-## 处理方法不同
+## Different Construction Syntax
 
-作为不同的类, character 和 string 有不同的处理方法, 适应于它们的数据特性. 如想知道字符串的长度, character 可用函数 _length_, 而 string 需用函数 _strlength_
+- A character is created with single quotes `''`
+- A string is created with double quotes `""`, or with the `string` function
+
+## Different Methods
+
+Because they are different classes, character and string have different methods, each tailored to their data layout. For instance, to get a text's length, use `length` for a character and `strlength` for a string.
