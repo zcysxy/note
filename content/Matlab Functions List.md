@@ -2,8 +2,8 @@
 publish: true
 title: Matlab Functions List
 created: 2021-08-17T21:58:15
-modified: 2026-05-07T18:24:43
-published: 2026-05-07T18:24:55.527-04:00
+modified: 2026-05-07T22:21:34
+published: 2026-05-07T22:21:35.699-04:00
 tags:
   - pub-matlab
 aliases:
@@ -67,6 +67,10 @@ state: "[[%wip]]"
 ### Matrix Manipulation
 
 - [[Matlab Function - spdiags]]
+
+## Data Type Construction
+
+- [[Matlab Functions - struct|struct]]
 
 ## Identity Test
 

@@ -2,7 +2,7 @@
 publish: true
 created: 2022-02-22T20:20:09
 modified: 2026-05-07T21:15:19
-published: 2026-05-07T21:15:21.950-04:00
+published: 2026-05-07T22:21:54.507-04:00
 tags:
   - pub-matlab
 type: index
@@ -30,6 +30,7 @@ MATLAB ships with a powerful graphics GUI that makes it easy to add, remove, and
 
 - [[Matlab Graphics - Axes]]
 - [[Matlab Graphics - Text]]
+- [[MATLAB Graphics Colormap]]
 
 ### Title, Axis Labels, and Legend
 
