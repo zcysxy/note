@@ -1,22 +1,22 @@
 ---
 publish: true
-created: 2024-02-02T04:44:24.175-05:00
-modified: 2026-05-01T00:08:27.493-04:00
-published: 2026-05-01T00:08:27.493-04:00
+created: 2026-05-07T21:20:27
+modified: 2026-05-07T21:25:27
+published: 2026-05-07T21:25:29.031-04:00
 tags:
   - pub-matlab
+type: note
+sup:
+  - "[[Matlab Functions List]]"
+state: done
 ---
 
 # logspace
 
-[[Matlab Functions List]]
-
----
-
-- `y = logspace(a,b)` generates a row vector _y_ of ++50++ logarithmically (等比的) spaced points between decades $10^a$ and $10^b$
+- `y = logspace(a,b)` generates a row vector _y_ of ++50++ logarithmically (geometrically) spaced points between decades $10^a$ and $10^b$
 - `y = logspace(a,b,n)` generates _n_ points between decades $10^a$ and $10^b$
 
-<!--endList-->
+<!-- endlist -->
 
-- 生成数组总是包含 _start_ ($10^a$) 和 _end_ ($10^b$)
-- 生成数组长度为 _n_
+- The result always includes _start_ ($10^a$) and _end_ ($10^b$)
+- The output has length _n_

@@ -1,21 +1,21 @@
 ---
 publish: true
-created: 2026-01-06T20:10:18.000-05:00
-modified: 2026-05-01T00:08:27.772-04:00
-published: 2026-05-01T00:08:27.772-04:00
+created: 2026-05-07T20:29:00.648-04:00
+modified: 2026-05-07T20:45:23.419-04:00
+published: 2026-05-07T20:45:23.419-04:00
 tags:
   - pub-matlab
+type: note
+sup:
+  - "[[Matlab Function]]"
+state: done
 ---
 
 # Matlab Functions Types
 
-[[Matlab Function]]
+- For function-call resolution order, see [[Matlab Function Precedence Order]].
 
----
-
-!! 以下函数调用顺序见 [[Matlab Function Precedence Order]]
-
-除[主函数](#main-function)外, 函数分为以下四类:
+Aside from the [main function](#main-function), functions fall into the following categories:
 
 - [Main Function](#main-function)
 - [Nested Function](#nested-function)
@@ -25,31 +25,31 @@ tags:
 
 ## Main Function
 
-主函数, 指**函数文件**中**第一个**函数, 是相对[局部函数](#local-function)和[嵌套函数](#nested-function)而言的. 主函数一般与函数文件名相同.
+The main function is the **first** function defined in a **function file**; the term is meaningful only relative to [local functions](#local-function) and [nested functions](#nested-function). Conventionally the main function shares its name with the file.
 
 ## Nested Function
 
-见 [[Matlab Nested Function]]
+See [[Matlab Nested Function]].
 
 ## Local Function
 
-局部函数, 指**脚本文件**中定义的任意函数 (需放在最后), 或**函数文件**中主函数之后的非[嵌套](#nested-function)函数.
+A local function is any function defined inside a **script file** (placed at the end of the file), or any non-[nested](#nested-function) function defined after the main function in a **function file**.
 
-- 局部函数之间地位相等, 都可以被脚本文件中的指令或函数文件中的主文件调用, 也可以**互相调用**
-- 局部函数之间的顺序**无任何影响**
-- 局部函数无法从其他文件或 Command Window 中调用
-  - 但可以通过命令 `help myFun > myFun_local` 查看主函数文件 `myFun.m` 中的局部函数  _myFun\_local_ 的帮助注释
-- 局部函数不能与文件名同名
+- All local functions in a file are peers: any of them can be called from the script's commands or from the main function in a function file, and they may also call **each other**
+- Their **order has no effect**
+- Local functions cannot be called from another file or from the Command Window
+  - You can, however, view the help comment of a local function with `help myFun > myFun_local`, where _myFun\_local_ lives inside the file `myFun.m`
+- A local function may not share its name with the file
 
 ## Private Function
 
-- 私有函数是具有**限制性访问权限**的函数, 它们对应的 M 文件需要保存在名为 `private` 的子文件夹下, 则其中的私有函数只能在该子文件夹的**直接父目录**的 **M 文件**中被调用
-  - 子文件夹的直接父目录应是 Current Folder 或某个 MATLAB path
-  - 私有函数无法被 Command Window 调用
-  - 当然 "私有函数" 还可以被本文件, 同目录下文件和同目录 Command Window 调用, 但此时它不再是 "私有函数"
-- 这些私有函数代码编写上和普通的函数没有什么区别, 也可以在一个 M 文件中编写一个主函数和多个子函数, 以及嵌套函数
-- 但可以通过命令 `help private/private_fun` 获取私有函数 _private\_fun_ 的帮助注释
+- A private function has **restricted accessibility**: its `.m` file must live in a subfolder named `private`. Private functions can only be called from `.m` files in the **immediate parent folder** of that `private` folder
+  - That immediate parent folder must be the Current Folder or a folder on the MATLAB path
+  - Private functions cannot be called from the Command Window
+  - The same code can also be invoked from the file itself, files in the same folder, or the Command Window in that folder — but in those contexts it is no longer "private"
+- The code of a private function is no different from an ordinary function; you can also have a main function with sub-functions and nested functions inside the same `.m` file
+- You can read the help comment of a private function with `help private/private_fun`
 
 ## Anonymous Function
 
-见 [[Matlab Anonymous Function]]
+See [[Matlab Anonymous Function]].

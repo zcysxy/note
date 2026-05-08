@@ -1,29 +1,30 @@
 ---
 publish: true
 created: 2022-02-22T20:20:09
-modified: 2022-04-01T17:34:13
-published: 2026-05-01T00:08:27.936-04:00
+modified: 2026-05-07T21:16:34
+published: 2026-05-07T21:16:38.033-04:00
 tags:
   - pub-matlab
 type: note
 sup:
   - "[[Matlab Graphics]]"
+state: done
 ---
 
 # Line Plots
 
-线图 line plots 是 MATLAB 中最基本的图形, class 为 `matlab.graphics.chart.primitive.Line`.
+Line plots are the most basic graph in MATLAB; their class is `matlab.graphics.chart.primitive.Line`.
 
 ## Functions
 
 - 2-D: [[Matlab Functions - plot|plot]]
-- 3-D: _plot3_, 用法同 [[Matlab Functions - plot|plot]]
-- log scale: _loglog_, 用法同 [[Matlab Functions - plot|plot]], 只是坐标轴范围为**log scale**
-- polar: _polarplot_, 用法同 [[Matlab Functions - plot|plot]]
+- 3-D: `plot3`, same usage as [[Matlab Functions - plot|plot]]
+- Log scale: `loglog`, same usage as [[Matlab Functions - plot|plot]], but the axes use a **log scale**
+- Polar: `polarplot`, same usage as [[Matlab Functions - plot|plot]]
 
 ## Line Properties
 
-线图性质 line properties 控制 **Line object** 的样貌和表现, 以 **structure** 类储存. 通过将图像以**对象 object**形式储存在变量中, 可以查看和修改其各种性质
+Line properties control the appearance and behavior of a **Line object** and are stored as a **structure**. Storing a plot as an **object** in a variable lets you inspect and edit each property:
 
 ```octave
 p =
@@ -43,7 +44,7 @@ p =
   Use GET to show all properties
 ```
 
-以下列出部分常用性质.
+A few common properties follow.
 
 ### Line
 
@@ -79,7 +80,7 @@ p =
 | `'-.'`     | Dash-dotted line |
 | `'none'`   | No line          |
 
-#### Line width
+#### Line Width
 
 - Field name: `.LineWidth`
 - Default: `0.5`
@@ -122,13 +123,13 @@ p =
 
 - Field name: `.MarkerEdgeColor`
 - Default: `'auto'` (same as `.Color`)
-- Inputs: 同 [Line Color](#line-color)
+- Inputs: same as [Line Color](#line-color)
 
 #### Marker Fill Color
 
 - Field name: `.MarkerFaceColor`
 - Default: `'none'`
-- Inputs: 同 [Line Color](#line-color)
+- Inputs: same as [Line Color](#line-color)
 
 ## Examples
 

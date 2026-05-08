@@ -3,20 +3,21 @@ publish: true
 aliases:
   - try/catch Statement
 created: 2023-08-02T18:42:38
-modified: 2023-10-01T22:07:57
-published: 2026-05-01T00:08:27.031-04:00
+modified: 2026-05-07T21:07:49
+published: 2026-05-07T21:07:51.151-04:00
 tags:
   - pub-matlab
 type: note
 sup:
   - "[[Matlab Control Statements]]"
+state: done
 ---
 
 # Error Handling
 
-错误控制语句,即 _try_, _catch_ 语句, 是 MATLAB 四大**程序结构控制语句**之一.
+The error-handling statement—`try`/`catch`—is one of MATLAB's four **flow-control statements**.
 
-最基本语法:
+Basic syntax:
 
 ```octave
 try
@@ -26,4 +27,4 @@ catch
 end
 ```
 
-程序运行时, 首先尝试执行 _try_ 语句下 _try\_block_, 如果没有错误发生, 则程序通过, 不执行 _catch_ 语句下 _catch\_block_; 若发生错误, 则立刻转而执行 _catch_ 语句下 _catch\_block_.
+When this runs, MATLAB first attempts the _try\_block_ under `try`; if no error occurs, the program proceeds and the _catch\_block_ under `catch` is skipped. If an error is raised, control immediately transfers to the _catch\_block_.

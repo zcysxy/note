@@ -3,7 +3,7 @@ publish: true
 title: Matlab Functions - sum
 created: 2021-12-26T10:56:31
 modified: 2021-12-26T11:06:46
-published: 2026-05-01T00:08:27.702-04:00
+published: 2026-05-07T21:42:30.793-04:00
 tags:
   - pub-matlab
 aliases:
@@ -28,7 +28,7 @@ state: done
     - For example, if `A` is a matrix, then `sum(A,[1 2])` is the sum of all elements in A, since every element of a matrix is contained in the array slice defined by dimensions 1 and 2.
 - `sum(A,'all')`
   - computes the sum of all elements of A.
-    - #R This syntax is valid for versions R2018b and later.
+    - This syntax is valid for versions R2018b and later.
 - `sum(_,outtype)`
   - returns the sum with a specified data type, using any of the input arguments in the previous syntaxes.
   - `outtype` can be `'default'`, `'double'`, or `'native'`.

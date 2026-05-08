@@ -1,20 +1,18 @@
 ---
 publish: true
-created: 2024-02-02T04:44:24.171-05:00
-modified: 2026-05-01T00:08:26.849-04:00
-published: 2026-05-01T00:08:26.849-04:00
+created: 2026-05-07T21:40:39.117-04:00
+modified: 2026-05-07T21:40:39.117-04:00
+published: 2026-05-07T21:40:39.117-04:00
 tags:
   - pub-matlab
+type: note
+sup:
+  - "[[Matlab Array]]"
+source: https://www.mathworks.com/help/matlab/matlab_prog/compatible-array-sizes-for-basic-operations.html
+state: done
 ---
 
 # Compatible Array Sizes
-
-[[Matlab Array]]
-
-src: [Compatible Array Sizes for Basic Operations
-](https://www.mathworks.com/help/matlab/matlab_prog/compatible-array-sizes-for-basic-operations.html)
-
----
 
 - _Most_ **binary** (two-input) operators and functions in MATLAB support arrays that have **compatible sizes**
 - Two inputs have compatible sizes if, ==for every dimension, the dimension sizes of the inputs are either the same or one of them is 1==
@@ -52,11 +50,11 @@ Examples:
 - The rules are the same for empty arrays or arrays that have a dimension size of **zero**
   - rule: ==The size of the dimension that is not equal to 1 determines the size of the output==
 - This means that dimensions with a size of zero must be paired with a dimension of size 1 or 0 in the other array, and that the output has a dimension size of 0 (for 0\*1=1)
-- Example: size of $\text{bi}(A_{1\times0}, B_{3\times1})$is 3-0
+- Example: size of $\text{bi}(A_{1\times0}, B_{3\times1})$ is 3-0
 
 ## Examples
 
-To simplify vector-matrix operations, use implicit expansion with dimensional functions such as _sum_, _mean_, _min_, and others.
+To simplify vector-matrix operations, use implicit expansion with dimensional functions such as `sum`, `mean`, `min`, and others.
 
 ### Subtract Vector from Matrix
 

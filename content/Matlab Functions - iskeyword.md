@@ -2,7 +2,7 @@
 publish: true
 created: 2023-07-26T15:50:25
 modified: 2023-07-26T17:16:20
-published: 2026-05-01T00:08:27.392-04:00
+published: 2026-05-07T21:20:18.636-04:00
 tags:
   - pub-matlab
 type: note
@@ -11,6 +11,6 @@ sup: "[[Matlab Functions List]]"
 
 # iskeyword
 
-1. 可直接输入 `iskeyword` 命令显示所有关键字
-2. `iskeyword variable` 返回 %variable% 是否为关键字的 [[Matlab Types - Logical|逻辑值]]
-3. `iskeyword('variable')` 同上
+1. Typing `iskeyword` with no arguments lists every keyword
+2. `iskeyword variable` returns a [[Matlab Types - Logical|logical value]] indicating whether _variable_ is a keyword
+3. `iskeyword('variable')` is equivalent

@@ -1,30 +1,35 @@
 ---
 publish: true
-created: 2024-02-02T04:44:24.177-05:00
-modified: 2026-05-01T00:08:27.568-04:00
-published: 2026-05-01T00:08:27.568-04:00
+created: 2026-05-07T21:28:14.268-04:00
+modified: 2026-05-07T21:28:14.268-04:00
+published: 2026-05-07T21:28:14.268-04:00
 tags:
   - pub-matlab
+type: note
+sup:
+  - "[[Matlab Functions List]]"
+state: done
 ---
 
 # scatter
 
-[[Matlab Functions List]]
+- For examples, see [[Matlab Graphics - Scatter Plots]].
 
----
-
-!! 例子请见 [[Matlab Graphics - Scatter Plots]]
-
-- `scatter(x,y,<sz>,<c>)` creates a scatter plot with **circles** at the locations specified by the vectors _x_ and _y_, in the size and color specified by _sz_ and _c_
+- `scatter(x,y,<sz>,<c>)` creates a scatter plot with **circles** at the locations specified by the vectors _x_ and _y_, sized by _sz_ and colored by _c_
   - Size:
-    - To plot each circle with equal size, specify _sz_ as a scalar
-    - To plot each circle with a different size, specify _sz_ as a vector with length equal to the length of _x_ and _y_
+    - To plot every circle at the same size, specify _sz_ as a scalar
+    - To use a different size per point, specify _sz_ as a vector with the same length as _x_ and _y_
   - Color:
-    - To plot all circles with the same color, specify _c_ as a color name or an RGB triplet
-    - To use varying color, specify _c_ as a **vector** or a three-column matrix of RGB triplets
-      - 这里的 vector 对应的是 [[MATLAB Graphics Colormap]] 中的颜色的索引
+    - To use a single color for every circle, specify _c_ as a color name or an RGB triplet
+    - For varying colors, specify _c_ as a **vector** or a three-column matrix of RGB triplets
+      - Here a vector indexes into the [[MATLAB Graphics Colormap]]
+
 - `scatter(___,'filled')` fills in the circles
+
 - `scatter(___,mkr)` specifies the marker type
-- `scatter(___,Name,Value)` modifies the scatter chart using one or more name-value pair arguments
-- `scatter(ax,___)` plots into the axes specified by ax instead of into the current axes
+
+- `scatter(___,Name,Value)` modifies the chart using one or more name-value pair arguments
+
+- `scatter(ax,___)` plots into the axes specified by _ax_ instead of the current axes
+
 - `s = scatter(___)` returns the **Scatter object**

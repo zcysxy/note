@@ -1,17 +1,17 @@
 ---
 publish: true
-created: 2024-02-02T04:44:24.173-05:00
-modified: 2026-05-01T00:08:27.218-04:00
-published: 2026-05-01T00:08:27.218-04:00
+created: 2026-05-07T21:40:46.560-04:00
+modified: 2026-05-07T21:40:46.560-04:00
+published: 2026-05-07T21:40:46.560-04:00
 tags:
   - pub-matlab
+type: note
+sup:
+  - "[[Matlab Functions List]]"
+state: done
 ---
 
 # blkdiag
-
-[[Matlab Functions List]]
-
----
 
 - `B = blkdiag(A1,...,AN)` returns the **block diagonal matrix** created by aligning the input matrices _A1, ..., AN_ along the diagonal of _B_
 

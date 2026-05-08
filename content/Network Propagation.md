@@ -2,8 +2,8 @@
 publish: true
 title: Network Propagation
 created: 2026-04-05T03:56:10
-modified: 2026-05-06T05:33:21
-published: 2026-05-06T05:33:22.664-04:00
+modified: 2026-05-06T18:52:45
+published: 2026-05-06T18:52:48.137-04:00
 tags:
   - pub-network
 state: done
@@ -186,3 +186,7 @@ Interestingly, the opinion goes through a reverse [[Random Walk]]: when the proc
 When two random walks meet, they coalesce and move together (an agent persuades two neighbors).
 Then, if a consensus is reached, all random walks must start from a set of nodes holding the same opinion initially.
 For a connected graph, if  the time is sufficiently long, all random walks will coalesce into one, and the "source" of the final opinion is distributed according to the stationary distribution, i.e., $d_{i} /(2m)$. The probability of reaching a consensus $+1$ or $-1$ can be calculated accordingly.
+
+## Contagion
+
+- Contagion (last four slides) [[!todo]]

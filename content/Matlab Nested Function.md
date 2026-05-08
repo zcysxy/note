@@ -1,40 +1,41 @@
 ---
 publish: true
-created: 2024-02-02T04:44:24.181-05:00
-modified: 2026-05-01T00:08:28.045-04:00
-published: 2026-05-01T00:08:28.045-04:00
+created: 2026-05-07T20:29:21
+modified: 2026-05-07T20:44:34
+published: 2026-05-07T20:44:40.163-04:00
 tags:
   - pub-matlab
+type: note
+sup:
+  - "[[Matlab Function]]"
+  - "[[Matlab Functions Types]]"
+state: done
 ---
 
 # Nested Function
 
-[[Matlab Function]] | [[Matlab Functions Types]]
-
----
-
-嵌套函数, 实际指的是**被嵌套函数**, 即完全定义在另一个函数内部的函数. 嵌套函数内也可以有嵌套函数.
+A nested function—strictly, an _inner-nested function_—is a function defined entirely inside another function. A nested function may itself contain nested functions.
 
 ## Requirements
 
-1. 出现嵌套函数的文件所有函数定义都要用 _end_ 结尾
-2. 嵌套函数可以出现在函数定义的任意位置 (无需再为最后), 但不能再任何 [[Matlab Control Statements]] 中
+1. In any file that contains a nested function, every function definition must end with `end`
+2. A nested function can appear anywhere within its parent's body (it is no longer required to be last), but cannot appear inside any [[Matlab Control Statements]]
 
-涉及嵌套函数的调用关系:
+Calling rules involving nested functions:
 
-- 外层的函数可以调用**向内一层**直接嵌套的函数, 而**不能**调用**更深层**的嵌套函数
-- 嵌套函数可以调用与自已具有相同父函数的其他**同层**嵌套函数
-- 嵌套函数也可以调用其上溯**任意层**的**父函数**, 或与该父函数具有相同父函数的其他嵌套函数, 但不能调用与该父函数具有相同父函数的其他嵌套函数内深层嵌套的函数
+- An outer function can call functions nested **one level inward**, but **cannot** call functions at **deeper** levels
+- A nested function can call other nested functions at the **same level** that share the same parent
+- A nested function can also call any of its **ancestor** functions at any depth, or other nested functions sharing one of those ancestors as parent — but it cannot reach into nested functions that are themselves more deeply nested inside such siblings
 
 ## Sharing Variables
 
-- 嵌套函数可以直接使用上溯任意层父函数中, 不是在它其他嵌套函数中定义的变量
+- A nested function can directly use any variable defined in any of its **ancestor** functions, provided that variable was not defined inside a sibling nested function
 
 ## Examples
 
 [[!todo#A]]
 
-合法例子:
+A valid example:
 
 ```octave
 function A()

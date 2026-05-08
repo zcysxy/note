@@ -1,27 +1,27 @@
 ---
 publish: true
-created: 2024-02-02T04:44:24.182-05:00
-modified: 2026-05-01T00:08:28.190-04:00
-published: 2026-05-01T00:08:28.190-04:00
+created: 2026-05-07T21:11:44
+modified: 2026-05-07T21:14:46
+published: 2026-05-07T21:14:48.099-04:00
 tags:
   - pub-matlab
+type: note
+sup:
+  - "[[MATLAB]]"
+state: done
 ---
 
 # Timing
 
-[[MATLAB]]
-
----
-
-MATLAB 中程序运行计时有以下方法
+Several methods exist for timing program execution in MATLAB.
 
 ## cputime Method
 
-函数 _cputime_ 返回 MATLAB 启动后 CPU 运行时间, 做差的程序 CPU 运行时间
+`cputime` returns the CPU time used since MATLAB started; subtracting two values gives the CPU time spent on the code in between.
 
 ## tic/toc Method
 
-_tic_, _toc_ 作为**一对**函数称为 stopwatch timer functions. 基本语法如下
+`tic` and `toc` form a **pair** of stopwatch timer functions. Basic syntax:
 
 ```octave
 tic
@@ -29,18 +29,18 @@ tic
 toc
 ```
 
-_tic_ 记录的时间自动传递给 _toc_, _toc_ 再返回差值.
+`tic` records the start time and passes it to `toc` automatically; `toc` then returns the elapsed time.
 
-当有多对 _tic_/_toc_ 时, 需要手动记录 _tic_ 并传递给 _toc_.
+When multiple `tic`/`toc` pairs are needed, you must capture the value of `tic` manually and feed it into the corresponding `toc`.
 
 ## timeit
 
-函数 _timeit_ 返回函数运行多次后的平均运行时间, 输入参数为**函数句柄**.
+`timeit` returns the average elapsed time after running the input function repeatedly; it takes a **function handle** as input.
 
 ## Remarks
 
-- _cputime_ 返回的是 CPU 时间; _timeit_ 和 _tic_/_toc_ 返回的是 wall-clock 时间
+- `cputime` returns CPU time, while `timeit` and `tic`/`toc` return wall-clock time
   - CPU time for the pause function is typically small, but the wall-clock time accounts for the actual time that MATLAB execution is paused
-  - The _cputime_ function measures the total CPU time and sums across all threads
+  - The `cputime` function measures the total CPU time and sums across all threads
     - If your function uses four processing cores equally, the CPU time could be approximately four times higher than the wall-clock time
-- Unlike _tic_/_toc_, the _timeit_ function calls your code multiple times, and, therefore, considers **first-time costs**
+- Unlike `tic`/`toc`, the `timeit` function calls your code multiple times, and therefore considers **first-time costs**

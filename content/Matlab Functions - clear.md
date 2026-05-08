@@ -1,19 +1,19 @@
 ---
 publish: true
-created: 2024-02-02T04:44:24.174-05:00
-modified: 2026-05-01T00:08:27.287-04:00
-published: 2026-05-01T00:08:27.287-04:00
+created: 2026-05-07T21:13:01
+modified: 2026-05-07T21:17:29
+published: 2026-05-07T21:17:31.724-04:00
 tags:
   - pub-matlab
+type: note
+sup:
+  - "[[Matlab Functions List]]"
+state: done
 ---
 
 # clear
 
-[[Matlab Functions List]]
-
----
-
-- `clear` 清除 Workspace 所有变量
-- `clear all` 清除 Workspace 所有变量与函数
-- `clear(vars)`, `clear vars` 清除变量 %vars%
-- `clear -regexp pattern` 清除变量名符合 [[Regular Expression]] _pattern_ 的所有变量
+- `clear` clears every variable from the Workspace
+- `clear all` clears every variable and function from the Workspace
+- `clear(vars)`, `clear vars` clears the variables _vars_
+- `clear -regexp pattern` clears every variable whose name matches the [[Regular Expression]] _pattern_

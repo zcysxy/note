@@ -1,23 +1,22 @@
 ---
 publish: true
-created: 2024-02-02T04:44:24.174-05:00
-modified: 2026-05-01T00:08:27.352-04:00
-published: 2026-05-01T00:08:27.352-04:00
+created: 2026-05-07T21:20:11.046-04:00
+modified: 2026-05-07T21:20:11.046-04:00
+published: 2026-05-07T21:20:11.046-04:00
 tags:
   - pub-matlab
+type: note
+sup:
+  - "[[Matlab Functions List]]"
 ---
 
 # flip
 
-[[Matlab Functions List]]
-
----
-
 - `flip(A,<dim>)`
-  - 沿着维&#x6570;_&#x64;i&#x6D;_&#x7FFB;转数&#x7EC4;_&#x41;_
-  - _dim_ 默认为大小**不为 1** 的第一个维数
-    \*如 vector 就是沿着**长度方向**反转
-    - 如 (非 vector) matrix 就是**上下翻转**, 即行向量顺序颠倒
-  - 特别的, 对于非 vector matrix
+  - Flips array _A_ along dimension _dim_
+  - _dim_ defaults to the first dimension whose size is **not 1**
+    - For a vector, this flips along the **length direction**
+    - For a (non-vector) matrix, this is a **top-bottom flip**—row order is reversed
+  - In particular, for a non-vector matrix
     - `flip(A,1)` = `flipud(A)`
     - `flip(A,2)` = `fliplr(A)`

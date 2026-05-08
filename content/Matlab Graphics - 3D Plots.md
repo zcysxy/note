@@ -3,7 +3,7 @@ publish: true
 title: Matlab Graphics - 3D Plots
 created: 2023-07-30T21:35:29
 modified: 2023-07-30T23:29:07
-published: 2026-05-01T00:08:27.850-04:00
+published: 2026-05-07T21:42:31.859-04:00
 tags:
   - pub-matlab
 aliases:
@@ -22,7 +22,7 @@ state: done
 ```octave
 % For existing x and y
 [X, Y] = meshgrid(x, y);
-% Squre grid
+% Square grid
 [x, y] = meshgrid(-10:0.5:10);
 ```
 

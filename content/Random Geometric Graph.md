@@ -2,8 +2,8 @@
 publish: true
 title: Random Geometric Graph
 created: 2026-04-04T22:13:10
-modified: 2026-04-05T01:08:27
-published: 2026-05-05T22:05:03.000-04:00
+modified: 2026-05-06T18:53:05
+published: 2026-05-06T18:53:08.446-04:00
 tags:
   - pub-network
 state: done
@@ -46,7 +46,8 @@ Analyzing a random geometric graph using a Poisson point process with parameter 
 ## Connectivity
 
 We evenly partition $[0,1]^{2}$ into $m^{2}$ squares.
-Then, a sufficient condition of connectivity is that each square has at least one node, and that of disconnectivity is that 8 squares around a center square are empty.
+Then, a sufficient condition of connectivity is that each square has at least one node and the largest distance between two squares ($\sqrt{5} /m$) is no larger than $r$, and that of disconnectivity is that 8 squares around a center square are empty.
+
 For any square to have no node, the probability is $\exp(-n /m^{2})$.
 Let $5 /m^{2} = r(n)^{2}-\epsilon$ for some $\epsilon>0$.
 Then, the probability of the complement of the first event is bounded above by
@@ -83,3 +84,7 @@ $$
 $$
 
 Since the number of such squares follows a [[Binomial Distribution]], its variance is smaller than its mean. Then, by the [[Moment Method]], we have the probability of having at least one such square, and thus the probability of disconnectivity, approaches 1. Thus, $c_{2} = \sqrt{0.1}$ works for disconnectivity.
+
+## Giant Component
+
+[[!todo]] (Gemini)

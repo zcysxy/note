@@ -1,33 +1,32 @@
 ---
 publish: true
-created: 2024-02-02T04:44:24.171-05:00
-modified: 2026-05-01T00:08:26.814-04:00
-published: 2026-05-01T00:08:26.814-04:00
+created: 2026-05-07T20:29:40.861-04:00
+modified: 2026-05-07T20:49:53.357-04:00
+published: 2026-05-07T20:49:53.357-04:00
 tags:
   - pub-matlab
+type: note
+sup:
+  - "[[MATLAB]]"
 ---
 
 # Matlab Command-Function Duality
 
-[[MATLAB]]
-
----
-
-MATLAB 语言不连贯的一个原因在于它既重视指令 Command, 又重视函数 Function. 特别的, 对于以 **[[Matlab Types - Character|char]] vectors** 为输入参数, 无输出参数的函数, 都有等价的**指令**语法, 即以下两条语句等价
+One reason MATLAB feels inconsistent is that it gives equal weight to both **commands** and **functions**. In particular, any function whose inputs are **[[Matlab Types - Character|char]] vectors** and that returns no outputs has an equivalent **command syntax**—the following two lines are equivalent:
 
 - `fun('argin_1',...,'argin_n')`
 - `fun argin_1 ... argin_n`
 
-注意**指令语法**的特殊之处:
+Note these peculiarities of the **command syntax**:
 
-- 后面要紧跟一个以上空格
-- 后面不能跟着 (无论隔着多少**空格**) 左括号 `(`, 一旦有则识别为**函数语法**
-- 不能有 char 类的单引号 `'`
-- 只能以**空格**为输入参数分隔符, 与函数语法正好相反.
-  - 因此 char 类 _arg\_i_ 不能包含空格
-- 除了可以用分号 `;` 在一行执行多个指令外, **指令语法**还可以用**逗号** `,` 分隔
+- The function name must be followed by at least one space
+- It cannot be followed (no matter how many **spaces** apart) by a left parenthesis `(`; if there is one, MATLAB treats the call as **function syntax**
+- It cannot contain the `char`-string single quote `'`
+- The only argument separator is **whitespace**—exactly the opposite of function syntax
+  - Therefore a `char` argument _arg\_i_ may not contain spaces
+- In addition to chaining multiple commands on a single line with `;`, the **command syntax** can also separate them with a comma `,`
 
-更重要的是, 以上二重性只对**直接的 [[Matlab Types - Character|char]] vectors** 成立, 即既不能是变量, 也不能是其他数据类型. 因为指令语法相当于直接对输入参数两边加上单引号 `'`, 如下例
+More importantly, this duality only applies to **direct [[Matlab Types - Character|char]] vectors**—the arguments may be neither variables nor any other data type. Command syntax effectively wraps each argument in single quotes `'`, as illustrated below:
 
 ```octave
 >> disp "123"
@@ -40,19 +39,21 @@ a
 a
 ```
 
-## 指令语法识别
+## Recognising Command Syntax
 
-在变量命名不规范的特殊情况下, 如 _disp_ 是用户定义的变量赋值为 1, 以下语句出现歧义
+When variable naming is sloppy — say _disp_ is a user-defined variable assigned the value 1 — the following statements are ambiguous:
 
-- `disp .* 1` 实际得到 `ans = 1`, 即 _disp_ 识别为变量
-- `disp .*1` 实际得到 `'.*1`, 即 _disp_ 识别为函数
+- `disp .* 1` actually yields `ans = 1` — _disp_ is treated as a variable
+- `disp .*1` actually yields `'.*1` — _disp_ is treated as a function
 
-一般的, 对于一个 identifier (可能是一个函数名, 也可能是一个变量名), MATLAB 根据其后面跟随的代码决定其类别, 具体规则如下:
+In general, given an identifier (which may name a function or a variable), MATLAB decides its kind from what follows:
 
-- 后面跟着赋值符 `=`, 则其为**变量**
-- 后面跟着括号 `()`, 则根据 [[Matlab Function Precedence Order]] 决定是变量索引还是函数
-- 后面跟着**二元运算符**
-  - 二元运算符后紧跟着有**空格**, 或着前面没有空格, 则其为**变量**
-  - 二元运算符后无空格, 且前面有空格, 则其为**函数**的指令语法
+- Followed by an assignment `=` — it is a **variable**
 
-!! 这是违背 MATLAB 对空格不敏感的极特殊情况
+- Followed by parentheses `()` — disambiguated by [[Matlab Function Precedence Order]] (variable indexing vs. function call)
+
+- Followed by a **binary operator**
+  - If the operator has a **trailing space**, or no leading space, the identifier is a **variable**
+  - If the operator has no trailing space but does have a leading space, the identifier is treated as the **command syntax** of a function
+
+- This is one of the rare cases in which MATLAB is sensitive to whitespace.

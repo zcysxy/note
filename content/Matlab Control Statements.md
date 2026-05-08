@@ -1,24 +1,24 @@
 ---
 publish: true
-created: 2026-01-06T20:10:18.000-05:00
-modified: 2026-05-01T00:08:26.905-04:00
-published: 2026-05-01T00:08:26.905-04:00
+created: 2026-05-07T20:54:57
+modified: 2026-05-07T21:08:16
+published: 2026-05-07T21:08:18.653-04:00
 tags:
   - pub-matlab
+type: note
+sup:
+  - "[[MATLAB]]"
+state: done
 ---
 
 # Control Statements
 
-[[MATLAB]]
+MATLAB has four major **flow-control statements**, each marked by its keywords and an `end`:
 
----
-
-MATLAB 有四大**程序结构控制语句**, 它们由相应关键词和 _end_ 语句表明:
-
-1. 分支控制语句 - _if_, _else_, _elseif_ / _switch_, _case_, _otherwise_
-2. 循环控制语句 - _for_ / _while_ + _continue_, _break_
-3. 错误控制语句 - _try_, _catch_
-4. 程序终止语句 - _return_
+1. Branching: `if`, `else`, `elseif` / `switch`, `case`, `otherwise`
+2. Looping: `for` / `while`, with `continue`, `break`
+3. Error handling: `try`, `catch`
+4. Termination: `return`
 
 ## Four Fundamental Control Statements
 

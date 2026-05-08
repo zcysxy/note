@@ -1,42 +1,42 @@
 ---
 publish: true
-created: 2024-02-02T04:44:24.179-05:00
-modified: 2026-05-01T00:08:27.886-04:00
-published: 2026-05-01T00:08:27.886-04:00
+created: 2026-05-07T21:12:02
+modified: 2026-05-07T21:16:53
+published: 2026-05-07T21:16:55.930-04:00
 tags:
   - pub-matlab
+type: note
+sup:
+  - "[[Matlab Graphics]]"
+state: done
 ---
 
 # Axes
 
-[[Matlab Graphics]]
-
----
-
-MATLAB 中坐标轴 axes 是一类特殊的**对象**, 包括 Axes object, PolarAxes object, GeographicAxes object 或 standalone visualization. 通过 `ax = gca` 可返回当前坐标轴.
+In MATLAB, axes are a special kind of **object**, including the Axes object, PolarAxes object, GeographicAxes object, and standalone visualizations. Use `ax = gca` to get a handle to the current axes.
 
 ## Specify Axis Limits
 
-用函数 _xlim_, _ylim_ 和 _zlim_ 指定坐标范围. 有如下语法
+Use `xlim`, `ylim`, and `zlim` to set the visible coordinate range. Common syntax:
 
 - `xlim([min max])`
 - `ylim([-inf max])`, `ylim([min inf])`
-  - The maximum or minimum limit will be automatically calculated
+  - The maximum or minimum limit is computed automatically
 - `zlim auto`
-  - Revert back to the default limits
+  - Revert to the default limits
 
 ## Specify Axis Tick Properties
 
-- `xticks(TickVector)` 指定显示的坐标值
-- `xticklabels(LabelCharCellArray)` 指定坐标值标签
-  - 若不指定, 则默认为原本数值
-  - 需和显示坐标值一一对应
-  - 接受 **cell array of char**
-  - 自动编译 $\TeX$
-- `xtickangle(angle)` 指定坐标值标签旋转角度 (角度制)
-- `xtickformat(format)` 指定坐标值单位
-  - 详见 [Specify x-axis tick label format - MATLAB xtickformat](https://www.mathworks.com/help/matlab/ref/xtickformat.html)
+- `xticks(TickVector)` sets the displayed tick locations
+- `xticklabels(LabelCharCellArray)` sets the labels of those ticks
+  - When unset, the labels default to the numeric values
+  - Labels must correspond one-to-one with the displayed tick locations
+  - Accepts a **cell array of char**
+  - $\TeX$ is rendered automatically
+- `xtickangle(angle)` rotates the tick labels by _angle_ (in degrees)
+- `xtickformat(format)` sets the format/unit of the tick labels
+  - See [Specify x-axis tick label format - MATLAB xtickformat](https://www.mathworks.com/help/matlab/ref/xtickformat.html) for details
 
 ## Axes Properties
 
-更详尽完全的调整坐标轴表现的方法就是修改坐标轴对象的 properties, 详见 [Axes appearance and behavior - MATLAB](https://www.mathworks.com/help/matlab/ref/matlab.graphics.axis.axes-properties.html)
+For full control over axis appearance, modify the axes object's properties directly. See [Axes appearance and behavior - MATLAB](https://www.mathworks.com/help/matlab/ref/matlab.graphics.axis.axes-properties.html).

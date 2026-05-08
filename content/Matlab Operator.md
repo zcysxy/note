@@ -2,8 +2,8 @@
 publish: true
 title: Matlab Operator
 created: 2026-01-06T20:10:18
-modified: 2026-05-01T00:09:34
-published: 2026-05-07T20:28:43.480-04:00
+modified: 2026-05-07T20:42:12
+published: 2026-05-07T20:42:13.756-04:00
 tags:
   - pub-matlab
 aliases:
@@ -85,7 +85,7 @@ state: done
 
 ## Other
 
-- Symbols that also appear in the tables above are listed here only for roles distinct from those above.
+- Different functions of the same operator are listed as different rows.
 
 | Symbol  | Role(s)                                       |
 |:-------:| --------------------------------------------- |

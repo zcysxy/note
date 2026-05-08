@@ -1,24 +1,24 @@
 ---
 publish: true
-created: 2024-02-02T04:44:24.173-05:00
-modified: 2026-05-01T00:08:27.179-04:00
-published: 2026-05-01T00:08:27.179-04:00
+created: 2026-05-07T21:12:51
+modified: 2026-05-07T21:18:32
+published: 2026-05-07T21:18:34.537-04:00
 tags:
   - pub-matlab
+type: note
+sup:
+  - "[[Matlab Functions List]]"
+state: done
 ---
 
 # all
 
-[[Matlab Functions List]]
-
----
-
 - `all(A,<dimvec>)`
-  - 固定 _dimvec_ 指定维数之外维数的元素, 相应 _dimvec_ 指定维数的所有元素都为广义逻辑真时返回逻辑真 1
-    - _dimvec_ 默认为第一个长度非 1 的维数
-  - _A_ 为 empty array 时返回**逻辑真**
-- `all(A,'all')` 测试 _A_ **所有**元素, 都为真时返回逻辑真
-  - 相当于 `all(A(:))`
+  - For each combination of indices in the dimensions **not** named in _dimvec_, returns logical true `1` iff every element along the dimensions named in _dimvec_ is generalized-true
+    - _dimvec_ defaults to the first non-singleton dimension
+  - Returns **logical true** when _A_ is an empty array
+- `all(A,'all')` tests **every** element of _A_ and returns logical true iff all are true
+  - Equivalent to `all(A(:))`
 
 ## Example
 

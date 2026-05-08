@@ -2,22 +2,22 @@
 publish: true
 aliases:
   - Loop Control Flow
-created: 2025-05-26T19:23:15.000-04:00
-modified: 2026-05-01T00:08:28.013-04:00
-published: 2026-05-01T00:08:28.013-04:00
+created: 2026-05-07T20:55:27
+modified: 2026-05-07T21:05:17
+published: 2026-05-07T21:05:25.952-04:00
 tags:
   - pub-matlab
+type: note
+sup:
+  - "[[Matlab Control Statements]]"
+state: done
 ---
 
 # Loop Statement
 
-[[Matlab Control Statements]]
+- Loops are slow in MATLAB; whenever possible, replace them with array operations and built-in functions.
 
----
-
-!! MATLAB 循环效率低, 尽量用数组结构和内部函数代替循环
-
-循环语句 loop statement, 又可以称为循环控制语句, 是 MATLAB 四大**程序结构控制语句**之一, 包含两种循环结构 [for](#for-loop), [while](#while-loop) 和两个控制语句 [continue](#continue-statement), [break](#break-statement).
+The loop statement—also called the _loop control flow_—is one of MATLAB's four **flow-control statements**. It includes two loop constructs, [for](#for-loop) and [while](#while-loop), and two control statements, [continue](#continue-statement) and [break](#break-statement).
 
 ## for Loop
 
@@ -27,14 +27,15 @@ for i = <[start:<increment>:end]>
 end
 ```
 
-- 循环开始先将 _i_ 赋值为 _start_
-- "增量" _increment_ 默认为 1
-  - 为**正数**时, 每次判断 _i_ 是否**小于等于** _end_
-  - 为**负数**时, 每次判断 _i_ 是否**小于等于** _end_
+- _i_ is initialized to _start_ at the beginning of the loop
 
-!! 以上同 [[Matlab Array - Creating]], 就是 _i_ 遍历赋值为数组中元素
+- _increment_ defaults to 1
+  - When **positive**, each iteration checks whether _i_ is **≤** _end_
+  - When **negative**, each iteration checks whether _i_ is **≥** _end_
 
-所以特别地, 对于一般的数值数组 _A_ 可以有
+- As with [[Matlab Array - Creating]], _i_ iterates through the elements of an array.
+
+In particular, for an arbitrary numeric array _A_ you can write
 
 ```octave
 for i = A
@@ -42,7 +43,7 @@ for i = A
 end
 ```
 
-其中 _i_ 被赋值为 _A_ 中的**列向量**, 于是 _A_ 有多少列向量就循环多少轮. 例如对于 `A = rand(2,2,2)`, 上面代码输出如下 (4 个列向量   )
+where _i_ is bound to each **column vector** of _A_; the loop runs once per column. For example, with `A = rand(2,2,2)` the code above produces (4 column vectors):
 
 ```octave
     0.5060
@@ -66,11 +67,11 @@ while condExp
 end
 ```
 
-这里的**条件表达式** _condExp_ 判定完全同 [[Matlab Conditional Statement - if, else, elseif|if, else, elseif]] 语句
+The **conditional expression** _condExp_ is evaluated exactly as in [[Matlab Conditional Statement - if, else, elseif|if/else/elseif]].
 
 ## continue Statement
 
-_continue_ 语句用于退出**当层**, **当轮**循环, 进入下一轮. 例子如下
+`continue` exits the **current iteration** of the **innermost** loop and moves to the next iteration. Example:
 
 ```octave
 for i = 1:3
@@ -101,7 +102,7 @@ output:
 
 ## break Statement
 
-_break_ 语句用于退出**当层**循环. 例子如下
+`break` exits the **innermost** loop entirely. Example:
 
 ```octave
 for i = 1:3

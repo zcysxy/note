@@ -4,7 +4,7 @@ aliases: MATLAB Best Practice
 title: MATLAB Convention
 created: 2023-03-22T16:35:41
 modified: 2024-10-03T00:23:11
-published: 2026-05-01T00:08:26.929-04:00
+published: 2026-05-07T21:40:42.409-04:00
 tags:
   - pub-matlab
 type: note
@@ -31,7 +31,7 @@ fprintf("hello world")
 % Show process
 if mod(index, period) == 0, fprintf("index"), end
 % Apply default values
-if nargin < 5, maxiter == 50,  end
+if nargin < 5, maxiter = 50,  end
 if ~isfield(opts, 'maxiter'), opts.maxiter = 50; end
 ```
 
@@ -56,7 +56,7 @@ set(0, 'DefaultLegendInterpreter', 'latex')
 ```octave
 %% Lifecycle
 f = figure(1);
-semilogy(xx, yy, '-o', 'DisplayName', sprintf('$N = %d$', yylist(1))
+semilogy(xx, yy, '-o', 'DisplayName', sprintf('$N = %d$', yylist(1)))
 hold on
 plot(xx, yy1, xx, yy2)
 xlabel('iterations', 'FontSize', 20)

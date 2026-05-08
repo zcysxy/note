@@ -1,28 +1,30 @@
 ---
 publish: true
-created: 2024-02-02T04:44:24.180-05:00
-modified: 2026-05-01T00:08:27.965-04:00
-published: 2026-05-01T00:08:27.965-04:00
+created: 2026-05-07T21:12:43
+modified: 2026-05-07T21:15:55
+published: 2026-05-07T21:15:57.395-04:00
 tags:
   - pub-matlab
+type: note
+sup:
+  - "[[Matlab Graphics]]"
+related:
+state: done
+source:
 ---
 
 # Scatter Plots
 
-[[MATLAB Graphics]]
-
----
-
-散点图 scatter plots 是 MATLAB 中一基本图形, class 为 `matlab.graphics.chart.primitive.Scatter`
+Scatter plots are a basic graph type in MATLAB; their class is `matlab.graphics.chart.primitive.Scatter`.
 
 ## Functions
 
 - 2-D: [[Matlab Functions - scatter|scatter]]
-- 3-D: _scatter3_, 用法同 [[Matlab Functions - scatter|scatter]]
+- 3-D: `scatter3`—same usage as [[Matlab Functions - scatter|scatter]]
 
 ## Scatter Properties
 
-散点图性质 scatter properties 控制 **Scatter object** 的样貌和表现, 以 **structure** 类储存. 通过将图像以**对象 object** 形式储存在变量中, 可以查看和修改其各种性质
+Scatter properties control the appearance and behavior of a **Scatter object** and are stored as a **structure**. Storing a plot as an **object** in a variable lets you inspect and edit each property:
 
 ```octave
 p =
@@ -42,7 +44,7 @@ p =
   Use GET to show all properties
 ```
 
-以下列出部分 Marker 性质.
+A selection of marker properties follows.
 
 ### Marker Symbol
 
@@ -50,7 +52,7 @@ p =
 - Default: `'o'`
 - Inputs: same as [[Matlab Graphics - Line Plots#Marker Symbol]]
 
-### Width of marker edge
+### Width of Marker Edge
 
 - Field name: `.LineWidth`
 - Default: `0.5`
@@ -61,29 +63,29 @@ p =
 - Field name: `.MarkerEdgeColor`
 - Default: `'flat'`
 - Inputs: `'flat'`, an RGB triplet, a hexadecimal color code, a color name, or a short name
-  - The `'flat'` option uses the _CData_ values
-  - The 'auto' option uses the same color as the Color property for the axes
+  - `'flat'` uses the _CData_ values
+  - `'auto'` uses the same color as the _Color_ property of the axes
 
 ### Marker Fill Color
 
 - Field name: `.MarkerFaceColor`
 - Default: `'none'`
 - Inputs: `'flat'`, `'auto'`, an RGB triplet, a hexadecimal color code, a color name, or a short name
-  - The `'flat'` option uses the _CData_ values
-  - The `'auto'` option uses the same color as the _Color property_ for the **axes**
+  - `'flat'` uses the _CData_ values
+  - `'auto'` uses the same color as the _Color_ property of the **axes**
 
 ### Marker Edge Transparency
 
 - Field name: `.MarkerEdgeAlpha`
 - Default: 1
-- Inputs: scalar in range \[0,1], `'flat'`
-  - To set the edge transparency to a different value for each point in the plot, set the _AlphaData property_ to a vector the same size as the _XData property_, and set the _MarkerEdgeAlpha property_ to `'flat'`
+- Inputs: scalar in `[0,1]`, or `'flat'`
+  - To set per-point edge transparency, set _AlphaData_ to a vector the same size as _XData_ and set _MarkerEdgeAlpha_ to `'flat'`
 
 ### Marker Face Transparency
 
 - Field name: `.MarkerFaceAlpha`
 - Default: 1
-- Inputs: scalar in range \[0,1], `'flat'`
+- Inputs: scalar in `[0,1]`, or `'flat'`
 
 ## Examples
 

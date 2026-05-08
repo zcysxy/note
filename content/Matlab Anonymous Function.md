@@ -2,7 +2,7 @@
 publish: true
 created: 2022-05-28T03:34:22
 modified: 2023-02-09T14:37:33
-published: 2026-05-01T00:08:21.679-04:00
+published: 2026-05-07T20:29:12.374-04:00
 tags:
   - pub-matlab
 type: note
@@ -15,10 +15,10 @@ related:
 
 # Anonymous Function
 
-匿名函数, 是不需要储存在 M 文件中, 只含有**一个表达式**, 数据类型为 [[Matlab Types - Function Handle|function handle]] 的特殊函数
+An anonymous function is a special function that does not need to live in a `.m` file, contains exactly **one expression**, and has class [[Matlab Types - Function Handle|function handle]].
 
-- 不需要储存在 M 文件中, 意味着匿名函数可以在 Command Window 中创建和调用
-- 与一般函数一样, 匿名函数可以有多个输入/输出参数, 并且规则同 [[Matlab Functions Arguments]]
+- Because it does not need to live in a `.m` file, an anonymous function can be created and called from the Command Window
+- Like an ordinary function, an anonymous function may have multiple input/output arguments; the rules are those of [[Matlab Functions Arguments]]
 
 ## Creation
 
@@ -26,19 +26,19 @@ related:
 afun = @(arg1,...,argn) expression
 ```
 
-- 其中 _afun_ 就是该匿名函数的 [[Matlab Types - Function Handle|function handle]], 这也是函数句柄的创建语法
-- _arg1_, ..., _argn_ 为匿名函数的形式输入参数
-  - 因为不能用条件控制语句根据实际输入参数数目决定函数内容, 所以调用匿名函数时实际输入参数一般需要与形式输入参数一一对应
-    - "一般" 仍指的是所有参数都被 _expression_ 用到了
-  - 自然也可以没有输入参数
-- _expression_ 为以 _arg1_, ..., _argn_ 为运算对象的表达式
+- _afun_ is the [[Matlab Types - Function Handle|function handle]] of the anonymous function — this is also the standard syntax for creating a function handle
+- _arg1_, ..., _argn_ are the formal input parameters
+  - You cannot use a conditional statement to vary the body based on the actual argument count, so calls generally need to supply all formal arguments one-to-one
+    - "Generally" again refers to the formal arguments that the _expression_ actually uses
+  - Of course, an anonymous function may take no inputs at all
+- _expression_ is an expression in _arg1_, ..., _argn_
 
 ## Remarks
 
-- 匿名函数的表达式中可以调用其他函数, 还可以**嵌套**匿名函数
-- 不同于表示一般函数的 [[Matlab Types - Function Handle|function handle]], 匿名函数本身作为 function handle 储存了该函数的所有信息
-- 匿名函数也有自己的 function workspace, 但特别的是, 匿名函数可以使用 base workspace 的变量, 但是一旦创建, 这些变量就变为匿名函数 function workspace 中的**常量**, 与 base workspace 无关了
-  - 例:
+- The expression of an anonymous function may call other functions, and anonymous functions may even be **nested**
+- Unlike a [[Matlab Types - Function Handle|function handle]] for an ordinary function, an anonymous function's handle stores the entire definition of the function it represents
+- An anonymous function has its own function workspace; uniquely, it can read variables from the base workspace at creation time, but those values are then **frozen as constants** in its workspace and disconnected from the base workspace
+  - Example:
 
 ```octave
 >> a = 1;

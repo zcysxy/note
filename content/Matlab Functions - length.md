@@ -1,19 +1,18 @@
 ---
 publish: true
-created: 2024-02-02T04:44:24.175-05:00
-modified: 2026-05-01T00:08:27.438-04:00
-published: 2026-05-01T00:08:27.438-04:00
+created: 2026-05-07T21:20:24.215-04:00
+modified: 2026-05-07T21:20:24.215-04:00
+published: 2026-05-07T21:20:24.215-04:00
 tags:
   - pub-matlab
+type: note
+sup:
+  - "[[Matlab Functions List]]"
 ---
 
 # length
 
-[[Matlab Functions List]]
-
----
-
-- `L = length(X)` returns the length of the **largest array dimension** in _X_
+- `L = length(X)` returns the length of the **largest array dimension** of _X_
   - For **vectors**, the length is simply the number of elements
-  - For arrays with more dimensions, the length is `max(size(X))`
-  - 一般情况下 empty array 长度为 0, 但定义多维 empty array 可能有正长度
+  - For higher-dimensional arrays, the length is `max(size(X))`
+  - An empty array typically has length 0, but a multi-dimensional empty array can have a positive length

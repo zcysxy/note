@@ -1,17 +1,17 @@
 ---
 publish: true
-created: 2024-02-02T04:44:24.174-05:00
-modified: 2026-05-01T00:08:27.317-04:00
-published: 2026-05-01T00:08:27.317-04:00
+created: 2026-05-07T21:40:55.026-04:00
+modified: 2026-05-07T21:40:55.026-04:00
+published: 2026-05-07T21:40:55.026-04:00
 tags:
   - pub-matlab
+type: note
+sup:
+  - "[[Matlab Functions List]]"
+state: done
 ---
 
 # diag
-
-[[Matlab Functions List]]
-
----
 
 - `D = diag(v)` returns a **square diagonal matrix** with the elements of **vector** _v_ on the main diagonal
 - `D = diag(v,k)` places the elements of vector _v_ on the **_&#x6B;_&#x74;h diagonal**

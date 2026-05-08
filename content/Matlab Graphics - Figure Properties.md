@@ -1,9 +1,9 @@
 ---
 publish: true
-title: MATLAB Graphics - Window
+title: Matlab Graphics - Figure Properties
 created: 2022-04-01T22:23:24
 modified:
-published: 2026-05-01T00:08:27.920-04:00
+published: 2026-05-07T21:42:33.353-04:00
 tags:
   - pub-matlab
 aliases:
