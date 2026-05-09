@@ -2,7 +2,7 @@
 publish: true
 title: Exploratory Data Analysis and Visualization
 created: 2022-08-10T03:52:20
-modified: 2026-05-09T18:20:07
+modified: 2026-05-09T18:21:24
 published: 2022-10-18
 tags:
   - pub-edav
@@ -23,6 +23,7 @@ sup:
 sub:
   - "[[EDAV]]"
   - "[[edav-output-1]]"
+pub-banner: https://raw.githubusercontent.com/zcysxy/Figurebed/master/img/C923056B-F009-441B-B0F4-AEA4099A941B.jpeg
 ---
 
 # EDAV
