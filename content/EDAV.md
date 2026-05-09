@@ -1,5 +1,6 @@
 ---
 publish: true
+permalink: edav
 title: Exploratory Data Analysis and Visualization
 created: 2022-08-10T03:52:20
 modified: 2026-05-09T18:21:24
