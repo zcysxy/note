@@ -110,6 +110,10 @@ img[alt="Open In Colab"]+svg {
     background-image: var(--network-page-icon-svg);
   }
 
+  &:has(a[href$="edav"]):before {
+    background-image: url("https://raw.githubusercontent.com/zcysxy/edav-garden/main/logo-garden.svg")
+  }
+
   &:before {
     --page-icon-size: 4rem;
     content: "";
