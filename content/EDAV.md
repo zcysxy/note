@@ -1,9 +1,11 @@
 ---
 publish: true
 permalink: edav
+aliases:
+  - edav-garden
 title: Exploratory Data Analysis and Visualization
 created: 2022-08-10T03:52:20
-modified: 2026-05-09T18:32:14
+modified: 2026-05-09T19:21:06
 published: 2022-10-18
 tags:
   - pub-edav
