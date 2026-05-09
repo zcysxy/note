@@ -1,0 +1,46 @@
+---
+publish: true
+title: D3 Transition
+created: 2022-12-01T22:17:14
+modified: 2022-12-12T12:47:58
+published: 2026-05-09T18:09:40.849-04:00
+tags:
+  - pub-edav
+aliases:
+type: note
+dg-publish: true
+sup:
+  - "[[D3]]"
+state: done
+---
+
+# D3 Transition
+
+- `.transition().duration(time)` adds a transition to the change
+  - `time` should be a [[JS Types - Number|number]]; its unit is ms
+  - these two methods should be between the selection and the change
+    - `d3.select("svg").select("circle").transition().duration(2000).attr("cx", "400")`
+  - not all changes can be added with a transition
+    - changes in size and position can
+    - changes in font family cannot
+  - we can add multiple transitions by chaining them
+    - then the transitions will happen one by one
+    - `d3.select("svg").select("circle").transition().duration(2000).attr("cx", "400").transition().duration(2000).attr("cy","200")`
+
+## Do and Not
+
+Transitions in different statements run **simultaneously**. Therefore
+
+- **DO**
+  - Run simultaneous transitions on **different** selections
+  - Run sequential transitions on the same selection in **one chain**
+  - Transition from _something_ to _something_
+    - The attributes being transitioned should have an initial value before the transition
+- **DO NOT**
+  - Do not run two transitions on the same selection at the same time
+    - i.e., in two statements/chains
+  - Do not transition from _nothing_ to something
+  - Do not store a selection with a transition
+    - it is not a selection object anymore
+    - it becomes a `Transition` object
+  - Do not put a transition before a [[D3 Bind Data#Merge|merge]]

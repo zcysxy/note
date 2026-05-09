@@ -1,0 +1,52 @@
+---
+publish: true
+title: R Statement
+created: 2022-09-08T19:07:28
+modified: 2022-09-08T19:07:33
+published: 2026-05-09T18:10:22.983-04:00
+tags:
+  - pub-edav
+aliases:
+type: note
+dg-publish: true
+sup:
+  - "[[R]]"
+state: done
+---
+
+# Control Statement
+
+## for
+
+```r
+for (i in 1:4) {
+    print(i)
+}
+```
+
+## while
+
+```r
+a <- 10
+while (a > 4) {
+    cat(a, "...", sep = " ")
+    a <- a - 1
+}
+```
+
+> [!warning]
+> Keep in mind that for and while loops run slowly in [[R]].
+> Operations on entire vectors (i.e. a whole row, a whole column)
+> or `apply()`-type functions are preferred
+
+## if/else
+
+```r
+if (4 > 3) {
+    print("4 is greater than 3")
+} else if (4 == 3) {
+    print("4 is equal to 3")
+} else {
+    print("4 is less than 3")
+}
+```
