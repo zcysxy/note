@@ -3,7 +3,7 @@ publish: true
 permalink: edav
 title: Exploratory Data Analysis and Visualization
 created: 2022-08-10T03:52:20
-modified: 2026-05-09T18:21:24
+modified: 2026-05-09T18:32:14
 published: 2022-10-18
 tags:
   - pub-edav
@@ -24,7 +24,7 @@ sup:
 sub:
   - "[[EDAV]]"
   - "[[edav-output-1]]"
-pub-banner: https://raw.githubusercontent.com/zcysxy/Figurebed/master/img/C923056B-F009-441B-B0F4-AEA4099A941B.jpeg
+pub-banner: https://raw.githubusercontent.com/zcysxy/edav-garden/main/rainbow-logo.svg
 ---
 
 # EDAV
@@ -163,3 +163,18 @@ G --> H[Communicate]
   - Chacon, Scott, and Ben Straub. _[Pro Git](https://git-scm.com/book/en/v2)_. Springer Nature, 2014.
 - For [[EDAV#WebDev Garden|WebDev Garden]]
   - Robbins, Joyce. _[D3 for R Users](https://jtr13.github.io/d3book/)_. 2022.
+
+## License
+
+_EDAV Garden_ (c) by [Chenyu Zhang](https://github.com/zcysxy)
+
+This work is licensed under a
+[Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License][cc-by-nc-sa].
+
+[![CC BY-NC-SA 4.0][cc-by-nc-sa-image]][cc-by-nc-sa]
+
+[cc-by-nc-sa]: http://creativecommons.org/licenses/by-nc-sa/4.0/
+
+[cc-by-nc-sa-image]: https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png
+
+[cc-by-nc-sa-shield]: https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg

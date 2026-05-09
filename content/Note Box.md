@@ -22,8 +22,9 @@ type: output
 
 ## 🪴 Live!
 
-|banner4|link|
+|banner5|link|
 |---|---|
+|![](https://raw.githubusercontent.com/zcysxy/edav-garden/main/rainbow-logo.svg)|📊 [[EDAV\|EDAV]]|
 |![](https://raw.githubusercontent.com/zcysxy/Figurebed/master/img/stat-icon.svg)|🔮 [[Statistics\|Statistics]]|
 |![](https://raw.githubusercontent.com/zcysxy/Figurebed/master/img/prob-icon.svg)|🎲 [[Probability\|Probability]]|
 |![](https://raw.githubusercontent.com/zcysxy/Figurebed/master/img/network-icon.svg)|🌐 [[Network\|Network]]|
