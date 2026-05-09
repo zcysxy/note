@@ -1,9 +1,10 @@
 ---
 publish: true
+permalink: edav
 title: EDAV Garden
 created: 2022-10-14T23:53:34
 modified: 2022-11-18T02:35:10
-published: 2026-05-09T18:10:01.799-04:00
+published: 2026-05-09T18:13:15.868-04:00
 tags:
   - pub-edav
 type: output
