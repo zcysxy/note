@@ -4,7 +4,7 @@ aliases: Latitude & Longitude
 title: Geographic Coordinate
 created: 2022-11-10T19:15:08
 modified: 2022-12-12T01:28:28
-published: 2026-05-09T18:10:01.811-04:00
+published: 2026-05-09T18:20:04.900-04:00
 tags:
   - pub-edav
 type: note

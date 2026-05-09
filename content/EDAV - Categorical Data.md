@@ -4,7 +4,7 @@ aliases: Categorical Data,Categorical Variable
 title: Categorical Data
 created: 2022-10-12T22:41:56
 modified: 2022-12-11T17:23:32
-published: 2026-05-09T18:10:01.711-04:00
+published: 2026-05-09T18:20:04.363-04:00
 tags:
   - pub-edav
 type: note

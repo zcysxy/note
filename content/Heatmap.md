@@ -3,7 +3,7 @@ publish: true
 title: Heatmap
 created: 2022-09-22T17:06:10
 modified: 2022-12-11T20:16:38
-published: 2026-05-09T18:10:05.991-04:00
+published: 2026-05-09T18:20:05.002-04:00
 tags:
   - pub-edav
 aliases:

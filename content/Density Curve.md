@@ -4,7 +4,7 @@ aliases: Density Estimate
 title: Density Curve
 created: 2022-12-10T17:51:41
 modified: 2022-12-10T19:54:25
-published: 2026-05-09T18:09:54.290-04:00
+published: 2026-05-09T18:20:04.311-04:00
 tags:
   - pub-edav
 type: note

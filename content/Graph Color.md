@@ -3,7 +3,7 @@ publish: true
 title: Graph Color
 created: 2022-10-27T16:25:37
 modified: 2022-12-11T23:46:22
-published: 2026-05-09T18:10:05.985-04:00
+published: 2026-05-09T18:20:04.959-04:00
 tags:
   - pub-edav
 aliases:

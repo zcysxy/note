@@ -4,7 +4,7 @@ aliases: Continuous Variable
 title: EDAV - Continuous Variable
 created: 2022-09-26T00:35:53
 modified: 2022-12-11T01:07:55
-published: 2026-05-09T18:10:01.739-04:00
+published: 2026-05-09T18:20:04.388-04:00
 tags:
   - pub-edav
 type: note

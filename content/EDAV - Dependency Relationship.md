@@ -4,7 +4,7 @@ aliases: Dependency Relationship
 title: Dependency Relationship
 created: 2022-10-12T23:21:40
 modified: 2022-10-21T15:27:02
-published: 2026-05-09T18:10:01.743-04:00
+published: 2026-05-09T18:20:04.458-04:00
 tags:
   - pub-edav
 type: note

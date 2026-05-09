@@ -3,7 +3,7 @@ publish: true
 title: Scatterplot Matrix
 created: 2022-10-13T01:12:05
 modified: 2022-10-13T01:37:30
-published: 2026-05-09T18:10:23.285-04:00
+published: 2026-05-09T18:20:05.440-04:00
 tags:
   - pub-edav
 aliases:
