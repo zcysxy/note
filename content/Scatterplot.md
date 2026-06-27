@@ -3,7 +3,7 @@ publish: true
 title: Scatterplot
 created: 2022-10-12T23:24:08
 modified: 2022-12-11T20:14:21
-published: 2026-05-09T18:20:05.506-04:00
+published: 2026-05-11T15:41:06.519Z
 tags:
   - pub-edav
 aliases:

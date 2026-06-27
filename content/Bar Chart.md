@@ -4,7 +4,7 @@ aliases: Barchart,Bar Plot
 title: Bar Chart
 created: 2022-10-12T22:07:38
 modified: 2022-12-11T19:14:39
-published: 2026-05-09T18:20:03.866-04:00
+published: 2026-05-11T15:41:06.506Z
 tags:
   - pub-edav
 type: note

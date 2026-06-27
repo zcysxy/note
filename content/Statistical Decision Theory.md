@@ -5,7 +5,7 @@ aliases:
 title: Statistical Decision Theory
 created: 2025-05-21T18:44:38
 modified: 2025-05-24T19:42:37
-published: 2026-04-30T15:01:58.000-04:00
+published: 2026-04-30T19:01:58.000Z
 tags:
   - pub-stat
 state: done

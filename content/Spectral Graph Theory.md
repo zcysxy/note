@@ -3,7 +3,7 @@ publish: true
 title: Spectral Graph Theory
 created: 2026-04-22T16:36:13
 modified: 2026-05-06T04:58:33
-published: 2026-05-06T14:13:28.112-04:00
+published: 2026-05-06T18:13:28.000Z
 tags:
   - pub-network
 state: "[[%watch]]"

@@ -3,7 +3,7 @@ publish: true
 title: Configuration Model
 created: 2026-04-02T17:38:46
 modified: 2026-05-04T23:55:06
-published: 2026-05-06T18:58:32.070-04:00
+published: 2026-05-06T22:58:32.000Z
 tags:
   - pub-network
 state: done

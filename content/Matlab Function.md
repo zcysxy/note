@@ -3,7 +3,7 @@ publish: true
 title: Matlab Function
 created: 2021-08-17T21:58:15
 modified: 2021-10-22T14:30:20
-published: 2026-05-07T18:03:13.354-04:00
+published: 2026-05-07T22:03:13.000Z
 tags:
   - pub-matlab
 aliases:

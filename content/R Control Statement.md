@@ -3,7 +3,7 @@ publish: true
 title: R Statement
 created: 2022-09-08T19:07:28
 modified: 2022-09-08T19:07:33
-published: 2026-05-09T18:10:22.983-04:00
+published: 2026-05-11T15:41:06.516Z
 tags:
   - pub-edav
 aliases:

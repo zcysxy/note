@@ -3,7 +3,7 @@ publish: true
 title: Network Propagation
 created: 2026-04-05T03:56:10
 modified: 2026-05-06T18:52:45
-published: 2026-05-06T18:52:48.137-04:00
+published: 2026-05-06T22:52:48.000Z
 tags:
   - pub-network
 state: done

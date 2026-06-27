@@ -3,7 +3,7 @@ publish: true
 title: "*My Map* of MATLAB"
 created: 2022-02-22T20:20:09
 modified: 2026-05-07T16:46:10
-published: 2026-05-07T22:17:10.347-04:00
+published: 2026-05-08T02:17:10.000Z
 tags:
   - pub-matlab
 type: index

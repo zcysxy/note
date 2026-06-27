@@ -3,7 +3,7 @@ publish: true
 title: Best Estimator for Uniform Distribution Parameter
 created: 2022-12-06T00:26:27
 modified: 2025-06-27T21:52:59
-published: 2026-01-06T20:10:18.000-05:00
+published: 2026-01-07T01:10:18.002Z
 tags:
   - pub-stat
 aliases:

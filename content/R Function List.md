@@ -3,7 +3,7 @@ publish: true
 title: R Function List
 created: 2022-09-10T18:13:18
 modified: 2022-12-12T14:25:06
-published: 2026-05-09T18:10:23.069-04:00
+published: 2026-05-11T15:41:06.517Z
 tags:
   - pub-edav
 aliases:

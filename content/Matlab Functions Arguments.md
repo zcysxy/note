@@ -3,7 +3,7 @@ publish: true
 title: Matlab Functions Arguments
 created:
 modified: 2021-12-02T20:43:14
-published: 2026-05-07T17:30:58.679-04:00
+published: 2026-05-07T21:30:58.000Z
 tags:
   - pub-matlab
 aliases:

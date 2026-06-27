@@ -3,7 +3,7 @@ publish: true
 title: Kleinberg Model
 created: 2026-04-09T14:57:53
 modified: 2026-05-06T03:21:47
-published: 2026-05-06T03:21:49.292-04:00
+published: 2026-05-06T07:21:49.000Z
 tags:
   - pub-network
 state: done

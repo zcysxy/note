@@ -3,7 +3,7 @@ publish: true
 title: D3 Interactivity
 created: 2022-12-01T21:43:56
 modified: 2022-12-02T10:54:18
-published: 2026-05-09T18:09:34.101-04:00
+published: 2026-05-11T15:41:06.509Z
 tags:
   - pub-edav
 aliases:

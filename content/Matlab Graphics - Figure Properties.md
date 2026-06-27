@@ -3,7 +3,7 @@ publish: true
 title: Matlab Graphics - Figure Properties
 created: 2022-04-01T22:23:24
 modified:
-published: 2026-05-07T21:42:33.353-04:00
+published: 2026-05-08T01:42:33.000Z
 tags:
   - pub-matlab
 aliases:

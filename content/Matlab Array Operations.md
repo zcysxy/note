@@ -2,7 +2,7 @@
 publish: true
 created: 2026-05-07T16:39:02
 modified: 2026-05-07T17:14:31
-published: 2026-05-07T17:14:44.857-04:00
+published: 2026-05-07T21:14:44.000Z
 tags:
   - pub-matlab
 type: note

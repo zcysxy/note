@@ -3,7 +3,7 @@ publish: true
 title: Hardness of Simple Hypothesis Test Through Total Variation
 created: 2025-05-27T23:43:04
 modified: 2025-08-18T18:50:00
-published: 2026-01-06T20:10:18.000-05:00
+published: 2026-01-07T01:10:18.093Z
 tags:
   - pub-stat
 state: done

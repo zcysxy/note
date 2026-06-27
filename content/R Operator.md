@@ -3,7 +3,7 @@ publish: true
 title: R Operator
 created: 2022-09-08T18:33:13
 modified: 2022-09-22T17:33:42
-published: 2026-05-09T18:10:23.093-04:00
+published: 2026-05-11T15:41:06.518Z
 tags:
   - pub-edav
 type: note

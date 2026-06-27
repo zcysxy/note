@@ -3,7 +3,7 @@ publish: true
 title: Matlab Types - Character
 created: 2021-08-17T21:58:15
 modified: 2026-05-07T18:00:20
-published: 2026-05-07T18:00:20.336-04:00
+published: 2026-05-07T22:00:20.000Z
 tags:
   - pub-matlab
 aliases:

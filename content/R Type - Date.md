@@ -3,7 +3,7 @@ publish: true
 title: R Type - Date
 created: 2022-11-03T16:19:58
 modified: 2022-11-03T22:34:28
-published: 2026-05-09T18:10:23.183-04:00
+published: 2026-05-11T15:41:06.518Z
 tags:
   - pub-edav
 aliases:

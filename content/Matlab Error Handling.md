@@ -4,7 +4,7 @@ aliases:
   - try/catch Statement
 created: 2023-08-02T18:42:38
 modified: 2026-05-07T21:07:49
-published: 2026-05-07T21:07:51.151-04:00
+published: 2026-05-08T01:07:51.000Z
 tags:
   - pub-matlab
 type: note

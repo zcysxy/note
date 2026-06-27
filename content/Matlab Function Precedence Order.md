@@ -1,8 +1,8 @@
 ---
 publish: true
-created: 2026-05-07T20:28:46.723-04:00
-modified: 2026-05-07T20:28:46.723-04:00
-published: 2026-05-07T20:28:46.723-04:00
+created: 2026-05-08T00:28:46.000Z
+modified: 2026-05-08T00:28:46.000Z
+published: 2026-05-08T00:28:46.000Z
 tags:
   - pub-matlab
 sup: "[[MATLAB]]"

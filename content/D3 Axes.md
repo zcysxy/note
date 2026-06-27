@@ -3,7 +3,7 @@ publish: true
 title: D3 Axes
 created: 2022-12-01T16:35:19
 modified: 2022-12-01T20:13:33
-published: 2026-05-09T18:09:34.055-04:00
+published: 2026-05-11T15:41:06.509Z
 tags:
   - pub-edav
 aliases:

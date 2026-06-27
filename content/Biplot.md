@@ -3,7 +3,7 @@ publish: true
 title: Biplot
 created: 2022-10-25T16:20:42
 modified: 2022-12-11T23:27:22
-published: 2026-05-09T18:20:03.931-04:00
+published: 2026-05-11T15:41:06.507Z
 tags:
   - pub-edav
 aliases:

@@ -3,7 +3,7 @@ publish: true
 title: D3 Functions
 created: 2022-12-01T17:19:32
 modified: 2022-12-01T17:36:54
-published: 2026-05-09T18:09:34.090-04:00
+published: 2026-05-11T15:41:06.509Z
 tags:
   - pub-edav
 aliases:

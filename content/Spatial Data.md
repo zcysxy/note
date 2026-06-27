@@ -3,7 +3,7 @@ publish: true
 title: Spatial Data
 created: 2022-11-10T16:21:11
 modified: 2022-11-10T20:13:28
-published: 2026-05-09T18:20:05.577-04:00
+published: 2026-05-11T15:41:06.519Z
 tags:
   - pub-edav
 aliases:

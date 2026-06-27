@@ -4,11 +4,11 @@ aliases:
   - Network Science
 title: "*Networked* Networks"
 created: 2026-03-27T17:35:19
-modified: 2026-05-05T22:58:45
-published: 2026-05-06T04:54:39.857-04:00
+modified: 2026-05-13T19:36:10
+published: 2026-05-13T23:36:12.000Z
 tags:
   - pub-network
-state: "[[%wip]]"
+state: done
 sup:
   - "[[@Subjects]]"
 type: index

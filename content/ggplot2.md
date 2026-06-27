@@ -5,7 +5,7 @@ aliases:
 title: ggplot2
 created: 2022-09-08T17:04:00
 modified: 2026-05-09T18:15:04
-published: 2026-05-09T18:20:05.705-04:00
+published: 2026-05-11T15:41:06.524Z
 tags:
   - pub-edav
 alias: Grammar of Graphics

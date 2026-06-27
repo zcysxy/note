@@ -3,7 +3,7 @@ publish: true
 title: Statistic
 created: 2025-05-21T19:18:56
 modified: 2025-06-28T18:01:58
-published: 2026-01-06T20:10:18.000-05:00
+published: 2026-01-07T01:10:18.285Z
 tags:
   - pub-stat
 state: done

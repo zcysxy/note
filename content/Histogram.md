@@ -3,7 +3,7 @@ publish: true
 title: Histogram
 created: 2022-09-08T16:45:14
 modified: 2022-09-08T16:57:04
-published: 2026-05-09T18:20:05.068-04:00
+published: 2026-05-11T15:41:06.513Z
 tags:
   - pub-edav
 type: note

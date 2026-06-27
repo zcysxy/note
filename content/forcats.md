@@ -3,7 +3,7 @@ publish: true
 title: forcats
 created: 2022-10-12T21:59:31
 modified: 2022-12-11T19:07:19
-published: 2026-05-09T18:10:01.802-04:00
+published: 2026-05-11T15:41:06.523Z
 tags:
   - pub-edav
 aliases:

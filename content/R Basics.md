@@ -3,7 +3,7 @@ publish: true
 title: R Basics
 created: 2022-09-06T16:38:48
 modified: 2022-12-12T14:24:08
-published: 2026-05-09T18:10:22.963-04:00
+published: 2026-05-11T15:41:06.516Z
 tags:
   - pub-edav
 aliases:

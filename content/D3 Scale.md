@@ -3,7 +3,7 @@ publish: true
 title: D3 Scale
 created: 2022-12-01T00:27:42
 modified: 2022-12-12T13:11:22
-published: 2026-05-09T18:09:34.172-04:00
+published: 2026-05-11T15:41:06.510Z
 tags:
   - pub-edav
 aliases:

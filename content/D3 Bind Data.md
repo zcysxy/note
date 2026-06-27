@@ -3,7 +3,7 @@ publish: true
 title: D3 Bind Data
 created: 2022-12-01T20:45:08
 modified: 2022-12-12T15:17:15
-published: 2026-05-09T18:09:34.066-04:00
+published: 2026-05-11T15:41:06.509Z
 tags:
   - pub-edav
 aliases:

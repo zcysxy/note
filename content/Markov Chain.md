@@ -6,7 +6,7 @@ aliases:
 title: Markov Chain
 created: 2023-04-24T02:15:56
 modified: 2026-05-06T04:12:33
-published: 2026-05-06T04:12:35.092-04:00
+published: 2026-05-06T08:12:35.000Z
 tags:
   - pub-prob
 type: note

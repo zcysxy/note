@@ -5,7 +5,7 @@ aliases:
 title: Measure
 created: 2024-09-06T23:20:58
 modified: 2024-11-04T02:20:38
-published: 2026-01-06T20:10:18.000-05:00
+published: 2026-06-26T17:50:46.209Z
 tags:
   - pub-prob
 id: Measure
@@ -24,7 +24,7 @@ type: note
 A function $\mu : \mathcal{F} \to \overline{R}$, where $\mathcal{F}$ is a [[Sigma Field]], is a measure, if:
 
 1. $\mu(\emptyset)=0$
-2. (_countable additivity_) For disjoint $\{A_n \in \mathcal{F}\}_{n\ge 1}$: $\mu\left(U_{n \geqslant 1} A_n\right)=\sum_{n=1} \mu\left(A_n\right)$.
+2. (_countable additivity_) For disjoint $\{A_n \in \mathcal{F}\}_{n\ge 1}$: $\mu\left(\bigcup_{n \geqslant 1} A_n\right)=\sum_{n=1} \mu\left(A_n\right)$.
 
 A measure is called a _probability measure_ if $\mu(\Omega)=1$.
 

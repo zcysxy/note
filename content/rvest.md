@@ -3,7 +3,7 @@ publish: true
 title: rvest
 created: 2022-10-13T21:54:22
 modified: 2022-10-13T22:20:21
-published: 2026-05-09T18:10:23.219-04:00
+published: 2026-05-11T15:41:06.525Z
 tags:
   - pub-edav
 aliases:

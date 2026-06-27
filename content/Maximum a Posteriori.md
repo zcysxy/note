@@ -5,7 +5,7 @@ aliases:
 title: Maximum a Posteriori
 created: 2023-01-31T15:04:22
 modified: 2023-02-06T14:43:43
-published: 2026-01-06T20:10:18.000-05:00
+published: 2026-01-07T01:10:18.186Z
 tags:
   - pub-stat
 type: note

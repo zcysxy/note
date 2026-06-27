@@ -6,7 +6,7 @@ aliases:
 title: Q-Q Plot
 created: 2022-09-15T19:09:00
 modified: 2023-10-16T01:42:49
-published: 2026-05-09T18:20:05.300-04:00
+published: 2026-05-11T15:41:06.516Z
 tags:
   - pub-edav
 type: note

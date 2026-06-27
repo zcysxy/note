@@ -3,7 +3,7 @@ publish: true
 title: Parallel Coordinate
 created: 2022-10-13T02:36:23
 modified: 2022-12-11T21:44:09
-published: 2026-05-09T18:20:05.222-04:00
+published: 2026-05-11T15:41:06.515Z
 tags:
   - pub-edav
 aliases:

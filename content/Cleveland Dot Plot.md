@@ -3,7 +3,7 @@ publish: true
 title: Cleveland Dot Plot
 created: 2022-10-12T21:20:51
 modified: 2022-10-12T21:34:35
-published: 2026-05-09T18:20:04.151-04:00
+published: 2026-05-11T15:41:06.509Z
 tags:
   - pub-edav
 aliases:

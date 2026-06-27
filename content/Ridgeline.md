@@ -3,7 +3,7 @@ publish: true
 title: Ridgeline
 created: 2022-10-21T23:11:54
 modified: 2022-12-12T15:09:36
-published: 2026-05-09T18:20:05.378-04:00
+published: 2026-05-11T15:41:06.518Z
 tags:
   - pub-edav
 aliases:

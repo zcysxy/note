@@ -3,7 +3,7 @@ publish: true
 title: EDAV - Time Series
 created: 2022-11-01T16:53:01
 modified: 2022-11-03T15:56:36
-published: 2026-05-09T18:20:04.712-04:00
+published: 2026-05-11T15:41:06.512Z
 tags:
   - pub-edav
 aliases:

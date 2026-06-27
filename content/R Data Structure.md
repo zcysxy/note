@@ -3,7 +3,7 @@ publish: true
 title: R Data Structure
 created: 2022-09-08T19:22:59
 modified: 2022-12-12T14:11:39
-published: 2026-05-09T18:10:23.019-04:00
+published: 2026-05-11T15:41:06.517Z
 tags:
   - pub-edav
 aliases:

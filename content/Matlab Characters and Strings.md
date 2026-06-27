@@ -3,7 +3,7 @@ publish: true
 title: Matlab Characters and Strings
 created: 2022-02-22T20:20:09
 modified: 2026-05-07T19:11:11
-published: 2026-05-07T20:24:47.825-04:00
+published: 2026-05-08T00:24:47.000Z
 tags:
   - pub-matlab
 aliases:

@@ -3,7 +3,7 @@ publish: true
 title: Branching
 created: 2024-12-13T13:34:25
 modified: 2026-05-06T17:17:54
-published: 2026-05-06T17:17:56.301-04:00
+published: 2026-05-06T21:17:56.000Z
 tags:
   - pub-network
 state: done

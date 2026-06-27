@@ -4,7 +4,7 @@ aliases: Multivariate Categorical Data
 title: EDAV - Multivariate Categorical Data
 created: 2022-10-13T12:40:21
 modified: 2022-12-11T21:49:19
-published: 2026-05-09T18:20:04.588-04:00
+published: 2026-05-11T15:41:06.511Z
 tags:
   - pub-edav
 type: note

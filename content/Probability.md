@@ -4,8 +4,8 @@ aliases:
   - Probability Theory
 title: "*Almost All* of Probability"
 created: 2022-09-25T14:40:01
-modified: 2025-08-25T19:56:41
-published: 2026-01-06T20:10:18.000-05:00
+modified: 2026-06-26T11:38:59
+published: 2026-06-26T19:41:30.346Z
 tags:
   - pub-prob
 id: Probability
@@ -30,7 +30,7 @@ O("Space Ω") --> A
 F("Sigma field 𝓕") --> A
 F1@{shape: braces, label: "1\\. Empty set<br>2. Closure under complementation<br>3. Closure under countable unions"} --- F
 P("Probability measure 𝐏") --> A
-P1@{shape: braces, label: "1\\. Non-negativity<br>2. Countable addivity<br>3. Unit"} --- P
+P1@{shape: braces, label: "1\\. Non-negativity<br>2. Countable addivity<br>3. Normalization"} --- P
 style P1 text-align:left
 style F1 text-align:left
 ```
@@ -50,7 +50,7 @@ The three defining conditions of a probability measure are also called the ==pro
 - [[Random Variable]]
   - [[Cumulative Distribution Function|CDF]], [[Probability Mass Function|PMF]], [[Probability Density Function|PDF]]
   - [[Expectation|Mean]], [[Variance]], [[Moment]]
-  - [[Moment Generating Function|MGF]], [[Characteristic Function]]
+  - [[Moment Generating Function|MGF]], [[Characteristic Function|CF]], [[Probability Generating Function|PGF]]
   - [[Convergence of Random Variables]]
     - [[Law of Large Numbers]]
     - [[Central Limit Theorem]]
@@ -68,6 +68,7 @@ The three defining conditions of a probability measure are also called the ==pro
 - [[Abstract Integration]]
   - [[Fatou's Lemma]]
   - [[Fubini's Theorem]]
+- [[Extreme Value Theory]]
 
 ## Problems
 
