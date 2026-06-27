@@ -5,7 +5,7 @@ aliases:
 title: Sufficient Statistic
 created: 2025-05-20T19:13:46
 modified: 2025-08-18T18:23:51
-published: 2026-01-07T01:10:18.291Z
+published: 2026-06-27T22:21:45.435Z
 tags:
   - pub-stat
 state: done
@@ -156,7 +156,7 @@ $$
 \Var(A') = \Var\left( \frac{1}{n!} \sum_{\sigma} A \circ \sigma \right) = \frac{1}{(n!)^{2}}\Var\left(  \sum_{\sigma } A\circ \sigma \right) \le \frac{(n!)^{2}}{(n!)^{2}} \Var(A) = \Var(A),
 $$
 
-where the inequality is due to [[Cauchy-Schwartz Inequality]], and the equality holds if and only if
+where the inequality is due to [[Cauchy-Schwarz Inequality]], and the equality holds if and only if
 
 $$
 \begin{aligned}

@@ -6,7 +6,7 @@ aliases:
 title: Borel Sigma Field
 created: 2024-09-06T23:27:30
 modified: 2026-06-26T10:40:37
-published: 2026-06-26T17:41:20.339Z
+published: 2026-06-27T22:41:01.600Z
 tags:
   - pub-prob
 id: Borel Sigma Field
@@ -37,18 +37,21 @@ Note that the **Lebesgue measure** also refers to the [[Measure#Complete Measure
 
 To formally define the Lebesgue measure, we can use [[Caratheodory's Extension]]. We first define a field (closed under finite union)
 
-$$$
-\mathcal{F}_{0} = \left\{ \cup_{i=1}^{n}(a_i,b_i]: n\in\N, a_i,b_i\in\R  \right\}
-.$$
+$$
+\mathcal{F}_{0} = \left\{ \cup_{i=1}^{n}(a_i,b_i]: n\in\N, a_i,b_i\in\R  \right\}.
+$$
+
 It can be shown that
+
 - $\mathcal{F}_0$ is a field but not a [[Sigma Field]].
 - $\sigma(\mathcal{F}_{0}) = \sigma(\mathcal{C}) = \mathcal{B}$.
 
 Define $\P_{0}$ as
-$$$
 
-\P\_{0}(\cup\_{i=1}^{n}(a\_i,b\_i]) = \sum\_{i=1}^{n}(b\_i - a\_i)
-.\$\$
+$$
+\P_{0}(\cup_{i=1}^{n}(a_i,b_i]) = \sum_{i=1}^{n}(b_i - a_i).
+$$
+
 It can be proved (nontrivial) that $\P_{0}$ is countably additive.
 Then the Lebesgue measure is defined as the [[Caratheodory's Extension]] of $\P_{0}$.
 
@@ -56,20 +59,19 @@ Then the Lebesgue measure is defined as the [[Caratheodory's Extension]] of $\P_
 
 Using the **binary representation of real numbers**, the Lebesgue measure is equivalent to the uniform distribution on $\{0,1\}^{\infty}$, with the [[Sigma Field]] $\sigma(\mathcal{F}_{0})$, where
 
-$$$
+$$
 \mathcal{F}_{0} = \bigcup_{n=1}^{\infty} \mathcal{F}_{n}
-= \bigcup_{n=1}^{\infty} \left\{ B \times \left\{ 0,1 \right\}^{\infty} : B \subset \left\{ 0,1 \right\}^{n}   \right\}
-.$$
+= \bigcup_{n=1}^{\infty} \left\{ B \times \left\{ 0,1 \right\}^{\infty} : B \subset \left\{ 0,1 \right\}^{n}   \right\}.
+$$
+
 That is $\mathcal{F}_{n}$ is the collection of all events whose occurrence can be decided by looking at the results of the first $n$ digits. $\mathcal{F}_n$ is a $\sigma$-field while $\mathcal{F}_0$ is not.
 The uniform probability measure is consistent with $\P_{0}$ defined on $\mathcal{F}_{0}$:
-$$$
 
-\P\_{0}(A) = |B| / 2^{n} .
-
+$$
+\P_{0}(A) = |B| / 2^{n} .
 $$
 
 ## Related Problems
 
 - [[6-7700-hw1#Exercise 3 (Borel $ sigma$-field)]]
 - [[6-7700-hw2#Exercise 3]]
-$$
