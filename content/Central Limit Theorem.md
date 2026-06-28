@@ -4,8 +4,8 @@ aliases:
   - CLT
 title: Central Limit Theorem
 created: 2022-11-04T12:18:06
-modified: 2025-08-05T00:55:20
-published: 2026-06-27T23:08:36.470Z
+modified: 2026-06-27T23:59:09
+published: 2026-06-28T06:59:10.882Z
 tags:
   - pub-stat
 type: note
@@ -25,6 +25,7 @@ $$
 where $\overset{ d }{ \to }$ means [[Convergence of Random Variables#Convergence in Probability|convergence in probability]].
 
 - Also holds for multi-variate distributions: $\sqrt{ n }(\overline{X}-\mu)\overset{ d }{ \to }\mathcal{N}(0,\Sigma)$.
+- [[Central Limit Theorem Fails for Cauchy Distribution]] or any distribution with infinite variance.
 
 > [!rmk] CLT and LLN
 >
