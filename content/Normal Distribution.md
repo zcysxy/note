@@ -5,8 +5,8 @@ aliases:
   - Gaussian
   - Gaussian distribution
 created: 2022-05-28T03:34:22
-modified: 2024-12-16T16:00:42
-published: 2026-01-07T01:10:18.201Z
+modified: 2026-06-28T01:43:51
+published: 2026-06-28T08:43:52.897Z
 tags:
   - pub-stat
 type: note
@@ -123,6 +123,8 @@ X = \begin{bmatrix} Y\\Z \end{bmatrix}
 
 ## Properties
 
+See [[Gaussian Properties]] for more.
+
 - (**Sufficiency**) The mean and covariance of a multivariate normal distribution consist of a [[Sufficient Statistic]]. ^prop-suff
     - In other words, the distribution of a multivariate normal random vector is completely determined by its mean and covariance
     - [&] See [[#Sufficiency]] for proof
@@ -143,6 +145,7 @@ X = \begin{bmatrix} Y\\Z \end{bmatrix}
     - We write the CDF of a standard normal distribution $\Phi$
 - (**Symmetry**). $\Phi(-x) = 1 - \Phi(x)$
 - Let $\R^{p} \ni X \sim \mathcal{N}(\mu,\Sigma)$; then, $(X-\mu)^{T} \Sigma ^{-1}(X-\mu) \sim \chi^{2}_{p}$ (see [[Chi-Square Distribution]])
+
 
 ### Proofs
 
