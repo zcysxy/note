@@ -5,8 +5,8 @@ aliases:
   - Gaussian
   - Gaussian distribution
 created: 2022-05-28T03:34:22
-modified: 2026-06-28T01:43:51
-published: 2026-06-28T08:43:52.897Z
+modified: 2026-06-28T16:03:55
+published: 2026-06-28T23:06:01.733Z
 tags:
   - pub-stat
 type: note
@@ -123,7 +123,7 @@ X = \begin{bmatrix} Y\\Z \end{bmatrix}
 
 ## Properties
 
-See [[Gaussian Properties]] for more.
+See [[Gaussian Properties]] for more advanced properties.
 
 - (**Sufficiency**) The mean and covariance of a multivariate normal distribution consist of a [[Sufficient Statistic]]. ^prop-suff
     - In other words, the distribution of a multivariate normal random vector is completely determined by its mean and covariance
@@ -189,6 +189,7 @@ As we can see, the mean and variance are sufficient to determine the MGF, and th
 > $$
 > \Cov(X,Y) = \mathbb{E}[XY] - \mathbb{E}[X]\mathbb{E}[Y] = \mathbb{E}[X^{3}] - 0 = 0.
 > $$
+> This is a special case of the example in [[Covariance and Independence]] (with $X$ and $Y$ switched).
 
 ## Sample Mean and Sample Variance
 
@@ -210,7 +211,7 @@ $$$
 \begin{bmatrix} X \ Y \end{bmatrix} \sim \mathcal{N}\left( \begin{bmatrix} \mu\_{X} \ \mu\_{Y} \end{bmatrix}, \begin{bmatrix} \Sigma\_{XX} & \Sigma\_{XY} \ \Sigma\_{YX} & \Sigma\_{YY} \end{bmatrix} \right).
 
 $$
-Suppose $\Sigma_{YY} >0$ (PSD). We have
+Suppose $\Sigma_{YY} \succ 0$ (PD). We have
 
 - $\mathbb{E}[X\given Y] = \mu_{X} + \Sigma_{XY}\Sigma_{YY}^{-1}(Y-\mu_{Y})$.
 - $\tilde{X} \coloneqq X - \mathbb{E}[X\given Y]$ is independent of $Y$, and thus independent of any function of $Y$.

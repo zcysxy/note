@@ -3,7 +3,7 @@ publish: true
 title: Exponential Distribution
 created: 2022-12-05T16:39:36
 modified: 2024-11-13T02:50:52
-published: 2026-06-28T06:43:30.261Z
+published: 2026-06-28T23:26:52.403Z
 tags:
   - pub-prob
 aliases:
@@ -50,7 +50,7 @@ Then $P(Y \le t) = 1 - e^{-\lambda t}$, i.e., $Y \sim \exp(\lambda)$.
 Exponential distribution can be viewed as the "limit", or a continuous version, of a [[Geometric Distribution]]:
 
 $$
-F_{\exp }(n \delta  ) = 1-e^{-\lambda n \delta  } = 1 - (e^{-\lambda \delta })^{n} = F_{\mathrm{geo}}(n),
+F_{\mathrm{Exp}}(n \delta  ) = 1-e^{-\lambda n \delta  } = 1 - (e^{-\lambda \delta })^{n} = F_{\mathrm{Geo}}(n),
 $$
 
 where the geometric distribution has a parameter $q = e^{-\lambda\delta}$.

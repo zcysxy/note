@@ -3,10 +3,10 @@ publish: true
 title: Gaussian Properties
 created: 2025-05-20T18:58:54
 modified: 2025-05-21T01:13:06
-published: 2026-01-06T23:49:43.137Z
+published: 2026-06-28T23:15:17.532Z
 tags:
   - pub-stat
-state: "[[%wip]]"
+state: done
 sup:
   - "[[Normal Distribution]]"
 aliases:
@@ -83,7 +83,7 @@ $$
 So do its central absolute moments:
 
 $$
-\mathbb{E}\left[ (X-\mu)^{p} \right] =\sigma ^{p}(p-1)!!\cdot \begin{cases}
+\mathbb{E}\left[ |X-\mu|^{p} \right] =\sigma ^{p}(p-1)!!\cdot \begin{cases}
 \sqrt{ 2 / \pi } & \text{if } p \text{ is odd} \\
  1 & \text{if } p \text{ is even}
 \end{cases}

@@ -3,10 +3,9 @@ publish: true
 title: Binomial Distribution
 created: 2022-12-05T17:36:46
 modified: 2022-12-05T17:39:30
-published: 2026-06-28T06:40:56.562Z
+published: 2026-06-28T23:18:01.070Z
 tags:
   - pub-prob
-aliases:
 type: note
 sup:
   - "[[Probability]]"

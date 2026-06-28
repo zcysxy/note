@@ -2,8 +2,8 @@
 publish: true
 title: Geometric Distribution
 created: 2022-12-05T19:09:50
-modified: 2024-11-03T19:03:08
-published: 2026-06-28T06:42:12.969Z
+modified: 2026-06-28T16:31:24
+published: 2026-06-28T23:31:26.655Z
 tags:
   - pub-prob
 aliases:
