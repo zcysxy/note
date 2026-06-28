@@ -2,7 +2,7 @@
 publish: true
 created: 2023-10-15T22:20:54
 modified: 2025-08-04T23:49:53
-published: 2026-01-07T01:10:18.038Z
+published: 2026-06-27T22:55:12.351Z
 tags:
   - pub-stat
 type: note
@@ -146,7 +146,7 @@ $$
 
 Let $X_n$ be a sequence of random variables that converges **almost surely/ in probability/ in distribution** to $X$. Let $g$ be a continuous function. Then $g(X_n)$ converges to $g(X)$.
 
-- The continuous mapping theorem does not apply to convergence in  norm.
+- The continuous mapping theorem does not apply to convergence in norm.
 
 Further, if $g$ is continuous at $c$ and $X_n \overset{ P }{ \to } c$, then $g(X_n) \overset{ P }{ \to } g(c)$. $g$ need not be continuous in this case.
 

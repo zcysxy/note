@@ -3,7 +3,7 @@ publish: true
 title: Statistical Functional
 created: 2025-06-28T17:51:19
 modified: 2025-06-28T19:02:02
-published: 2026-01-07T01:10:18.286Z
+published: 2026-06-28T04:08:56.123Z
 tags:
   - pub-stat
 type: note

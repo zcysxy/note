@@ -5,7 +5,7 @@ aliases:
 title: Central Limit Theorem
 created: 2022-11-04T12:18:06
 modified: 2025-08-05T00:55:20
-published: 2026-01-07T01:10:18.025Z
+published: 2026-06-27T23:08:36.470Z
 tags:
   - pub-stat
 type: note
@@ -57,7 +57,7 @@ $$
 Then we have
 
 $$
-\lim_{ n \to \infty } \left| \phi\left( \frac{t}{\sqrt{ n }} \right)^{n} - \left( 1 - \frac{t^{2}}{2n} \right)^{n} \right|  \le \lim_{ t \to \infty } n\left| \phi\left( \frac{t}{\sqrt{ n }} \right) - \left( 1 - \frac{t^{2}}{2n} \right) \right| = \lim_{ n \to \infty } t^{2} \cdot 0 = 0.
+\lim_{ n \to \infty } \left| \phi\left( \frac{t}{\sqrt{ n }} \right)^{n} - \left( 1 - \frac{t^{2}}{2n} \right)^{n} \right|  \le \lim_{ n \to \infty } n\left| \phi\left( \frac{t}{\sqrt{ n }} \right) - \left( 1 - \frac{t^{2}}{2n} \right) \right| = \lim_{ n \to \infty } t^{2} \cdot 0 = 0.
 $$
 
 Therefore,
