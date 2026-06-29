@@ -2,8 +2,8 @@
 publish: true
 title: Poisson Distribution
 created: 2022-12-05T15:58:25
-modified: 2024-11-03T02:30:58
-published: 2026-06-28T06:42:24.336Z
+modified: 2026-06-28T16:43:17
+published: 2026-06-28T23:43:19.434Z
 tags:
   - pub-prob
 aliases:
@@ -22,7 +22,7 @@ A discrete [[Random Variable]] is of Poisson distribution if its range is $\math
 - [[Probability Mass Function|PMF]]
   - $\displaystyle p(n) = e^{-\lambda} \frac{\lambda ^{n}}{n!}$ ^pdf
   - The important part is $\lambda ^{n} / n!$; $e^{-\lambda}$ is just a constant to make if sum to 1
-  - Remember it as the **expansion** of the exponential
+  - Remember it as the **expansion** of the exponential $e^{\lambda}$
 - [[Expectation|Mean]]
   - $\lambda$ ^mean
 - [[Variance]]
@@ -54,7 +54,7 @@ $$
 
 i.e., $X \dot{\sim} \operatorname{Poisson}(np)$. Or, $\operatorname{Binom}(n,\lambda /n)\overset{ d }{ \longrightarrow } \operatorname{Poisson}(\lambda)$.
 
-- The Poisson approximation result can be shown to be valid under even more general conditions than those so far mentioned. For instance, suppose that n independent trials are to be performed, with the ith trial resulting in a success with probability $p_i, i = 1,...,n$. Then it can be shown that if n is large and each $p_i$ is small, then the number of successful trials is approximately Poisson distributed with mean equal to $\sum^n_{i=1}p_i$. In fact, this result will sometimes remain true even when the trials are not independent, provided that their dependence is “weak.” For instance, consider the following example.
+- The Poisson approximation result can be shown to be valid under even more general conditions than those so far mentioned. For instance, suppose that n independent trials are to be performed, with the ith trial resulting in a success with probability $p_i, i = 1,...,n$. Then it can be shown that if n is large and each $p_i$ is small, then the number of successful trials is approximately Poisson distributed with mean equal to $\sum^n_{i=1}p_i$. In fact, this result will sometimes remain true even when the trials are not independent, provided that their dependence is "weak".
 
 ## Splitting a Poisson Random Variable
 
@@ -69,7 +69,7 @@ p_{X,Y}(x,y) = p_{X,Y\given N}(x,y\given n=x+y) p_{N}(n=x+y)
 = e^{-\lambda}\frac{\lambda^{x+y}}{(x+y)!} \cdot {x+y \choose x}p^{x}(1-p)^{y}.
 $$
 
-Then, as $X$ is the marginal distribution of $X,N$, we have
+Then, as $X$ is the marginal distribution of $(X,N)$, we have
 
 $$
 p_{X}(x) = \sum_{n=0}^{\infty}p_{X,N}(x,n) = \sum_{n=0}^{\infty}p_{X\given N}(x\given n)p_{N}(n) = \sum_{n=x}^{\infty}{n \choose x}p^{x}(1-p)^{n-x}e^{-\lambda}\frac{\lambda^{n}}{n!}

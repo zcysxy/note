@@ -3,7 +3,7 @@ publish: true
 title: Statistical Functional
 created: 2025-06-28T17:51:19
 modified: 2025-06-28T19:02:02
-published: 2026-06-28T04:08:56.123Z
+published: 2026-06-29T00:07:17.475Z
 tags:
   - pub-stat
 type: note
@@ -38,7 +38,7 @@ Since all information about the sample is included in its empirical distribution
 
 - **Mean**. $T(P) =\int _{\mathcal{X}}x \, \d P(x)$; the reduced statistic is the sample mean $T(\hat{P}) = \frac{1}{n}\sum_{i=1}^{n}X_{i}$. ^853ce9
 - **Variance**. $T(P) = \int _{\mathcal{X}}x^{2}\,\d P(x) - (\int _{\mathcal{X}}x \, \d P(x))^{2}$; the reduced statistic is the sample variance $T(\hat{P}) = \frac{1}{n}\sum_{i=1}^{n}(X_{i} - \overline{X})^{2}$.
-- **Least squares**. $T(P) = \argmin_{\Theta}\mathbb{E}_{P}(Y-\theta ^T X)^{2}$; the reduced statistic is the [[Ordinary Least Squares]] $T(\hat{P}) = \argmin_{\Theta}\frac{1}{n}\sum_{i=1}^{n}(Y_{i}-\theta ^T X_{i})^{2}$.
+- **Least squares**. $T(P) = \argmin_{\Theta}\mathbb{E}_{P}(Y-\theta ^T X)^{2}$; the reduced statistic is the [[Linear Regression#Ordinary Least Squares]] $T(\hat{P}) = \argmin_{\Theta}\frac{1}{n}\sum_{i=1}^{n}(Y_{i}-\theta ^T X_{i})^{2}$.
 - **Quantiles and Order Statistics**. $T(P)=F_P^{-1}(q)$, where $F_P$ is the CDF of $P$ and $q\in[0,1]$; the $k$-th [[Order Statistics]] is reduced by choosing $q = k /n$ and then $X_{(k)} = T(\hat{P}) = F_{n}^{-1}( k /n)$.
 
 ## Linear Statistical Functional

@@ -3,7 +3,7 @@ publish: true
 title: Statistic
 created: 2025-05-21T19:18:56
 modified: 2025-06-28T18:01:58
-published: 2026-01-07T01:10:18.285Z
+published: 2026-06-29T00:02:46.302Z
 tags:
   - pub-stat
 state: done
@@ -18,7 +18,7 @@ type: note
 A ==statistic== is some _measurement_ taken directly from the sample.
 Formally, a statistic is a [[Measurable]] function $T: \mathcal{X}\to \R^{k}$.
 A statistic transforms the sample into some measurement of the sample.
-Notably, a statistic acts on the sample, but not the underlying distribution. And usually we want to use the statistic to infer something about the underlying distribution.
+Notably, a statistic acts on the sample, but not the underlying distribution. And usually we want to use the statistic to _infer_ something about the underlying distribution.
 
 > [!example]
 >

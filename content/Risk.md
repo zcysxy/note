@@ -5,7 +5,7 @@ aliases:
 title: Risk
 created: 2025-05-24T19:42:49
 modified: 2025-06-27T21:34:37
-published: 2026-01-07T01:10:18.269Z
+published: 2026-06-29T00:10:49.452Z
 tags:
   - pub-stat
 state: done
@@ -41,4 +41,4 @@ Unfortunately, in general, the risk cannot be minimized since it depends on the 
   - Suitable for deterministic parameters.
   - Can be understood as the _worst-case_ risk.
 
-A Bayes/minimax (optimal) estimator is a procedure that minimizes the Bayes/minimax risk, respectively. See also [[Bayes Optimality]]
+A Bayes/minimax (optimal) estimator is a procedure that minimizes the Bayes/minimax risk, respectively. See also [[Bayes Optimality]].
