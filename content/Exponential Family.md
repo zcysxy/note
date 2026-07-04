@@ -3,7 +3,7 @@ publish: true
 title: Exponential Family
 created: 2023-11-12T21:15:45
 modified: 2025-08-06T19:16:09
-published: 2026-01-07T01:10:18.073Z
+published: 2026-07-03T19:47:53.361Z
 tags:
   - pub-prob
 aliases:
@@ -72,7 +72,7 @@ To verify if some family of distributions is of exponential type, we must be abl
 | [[Exponential Distribution]]                | $\lambda \exp(-\lambda x)$                                                                       | $-\lambda$                                                          | $x$                     | $-\ln \lambda$                                            | $\1_{x \ge 0}$                         |
 | [[Bernoulli Distribution]]                  | $p^x (1 - p)^{1 - x}$                                                                            | $\ln(p /(1 - p))$                                                   | $x$                     | $-\ln(1/(1-p))$                                           | $\1_{x\in \{0,1\}}$                    |
 | [[Binomial Distribution]] with known $n$    | $\binom{n}{x} p^x (1 - p)^{n - x}$                                                               | $\ln(p /(1 - p))$                                                   | $x$                     | $-n \ln(1 /(1-p))$                                        | $\binom{n}{x}\1_{x \in \{0,\dots,n\}}$ |
-| [[Poisson Distribution]]                    | $\lambda^x e^{-\lambda} /x!$                                                                     | $\log \lambda$                                                      | $x$                     | $\lambda$                                                 | $1 / x!\1_{x \in \mathbb{N}}$          |
+| [[Poisson Distribution]]                    | $\lambda^x e^{-\lambda} /x!$                                                                     | $\ln \lambda$                                                       | $x$                     | $\lambda$                                                 | $1 / x!\1_{x \in \mathbb{N}}$          |
 | [[Chi-Square Distribution]]                 | $e^{-x/2}(x/2)^{\nu /2 -1} / (2\Gamma(\nu /2))$                                                  | $\nu /2 -1$                                                         | $\ln x$                 | $\ln\Gamma(\nu /2) + \ln 2\cdot \nu /2$                   | $e^{-x /2}(\nu/2)\1_{x>0}$             |
 | [[Gamma Distribution]]                      | $\beta e^{-\beta x} (\beta x)^{\alpha - 1} /\Gamma(\alpha)$                                      | $(\alpha-1, -\beta)$                                                | $(\ln x, x)$            | $\ln \Gamma(\alpha)-\alpha\ln \beta$                      | $\1_{x>0}$                             |
 | [[Beta Distribution]]                       | $x^{\alpha - 1} (1 - x)^{\beta - 1} \Gamma(\alpha+\beta)/(\Gamma(\alpha)\Gamma(\beta))$          | $(\alpha,\ \beta)$                                                  | $(\ln x,\ \ln(1 - x))$  | $\ln ( \Gamma(\alpha)\Gamma(\beta)/\Gamma(\alpha+\beta))$ | $\1_{x \in (0,1)} /(x(1-x))$           |

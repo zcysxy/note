@@ -3,7 +3,7 @@ publish: true
 title: Gaussian Linear Model
 created: 2025-07-26T02:29:39
 modified: 2025-07-27T00:26:11
-published: 2026-01-07T01:10:18.086Z
+published: 2026-07-02T23:07:37.000Z
 tags:
   - pub-stat
 state: done
@@ -65,7 +65,7 @@ $$
 where $\hat{\theta}_{\mathrm{post}} = (X^T X + \frac{\sigma^2}{\tau^2} I)^{-1} X^T Y$, $\hat{\Sigma}_{\mathrm{post}} = (\sigma^{-2} X^T X + \tau^{-2} I)^{-1}$
 
 By [[Anderson's Lemma]], $\hat{\theta}^{(\mathrm{Bayes})} = \hat{\theta}_{\mathrm{post}} = (X^T X + \frac{\sigma^2}{\tau^2} I)^{-1} X^T Y$,
-Moreover, the Bayes risk is $R_{B}^{*}(\Theta) = \mathbb{E}[\ell(X_{\mathrm{post}}^{1 /2} W)]$ where $W \sim \mathcal{N}(0, I)$.
+Moreover, the Bayes risk is $R_{B}^{*}(\Theta) = \mathbb{E}[\ell(\hat{\Sigma}_{\mathrm{post}}^{1 /2} W)]$ where $W \sim \mathcal{N}(0, I)$.
 
 ### 2nd Proof
 
@@ -98,7 +98,7 @@ $$
 Recall that $\hat{\theta}^{(\mathrm{LS})} \sim \mathcal{N}(\theta,(X^TX)^{-1}\sigma^{2})$. Thus, the risk is
 
 $$
-R(\lsq) = \mathbb{E}[\ell((\xx / \sigma^{2})^{-1}W)], \quad W \sim \mathcal{N}(0,I_{d}).
+R(\lsq) = \mathbb{E}[\ell((\xx / \sigma^{2})^{-1 /2}W)], \quad W \sim \mathcal{N}(0,I_{d}).
 $$
 
 **Case I. $d=n$ and $X=I$**.
@@ -150,7 +150,7 @@ We denote $\tilde{R}$ the risk of an estimator of $\eta$ w.r.t the new loss $\ti
 Then, applying Case I to $\hat{\eta}^{(\mathrm{LS})}$ gives
 
 $$
-\tilde{R}(\hat{\eta}^{(\mathrm{LS})}) = \tilde{R}_{M} (\hat{\eta}^{(\mathrm{LS})})\le \tilde{R}_{M}(X\hat{\theta}) = \sup_{\eta} R(X\hat{\theta}, \eta),
+\tilde{R}(\hat{\eta}^{(\mathrm{LS})}) = \tilde{R}_{M} (\hat{\eta}^{(\mathrm{LS})})\le \tilde{R}_{M}(X\hat{\theta}) = \sup_{\eta} \tilde{R}(X\hat{\theta}, \eta),
 $$
 
 where $\hat{\theta}$ is a general estimator of $\theta$. Since $X$ is invertible, we have

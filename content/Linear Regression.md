@@ -3,7 +3,7 @@ publish: true
 aliases: Overdetermined System
 created: 2022-02-22T20:20:09
 modified: 2025-08-05T21:56:05
-published: 2026-01-07T01:10:18.130Z
+published: 2026-06-29T20:30:17.000Z
 tags:
   - pub-stat
 type: note
@@ -27,7 +27,7 @@ $$
 Y_{i} = w^TX_{i} + \epsilon _{i},
 $$
 
-where $\epsilon _{i}$ is a zero-mean random noise. If the noise follows a [[Normal Distribution|Gauss distribution]], we get a [[Gaussian Linear Model]], whose estimator of $w$ have nice properties.
+where $\epsilon _{i}$ is a zero-mean random noise. If the noise follows a [[Normal Distribution|Gaussian distribution]], we get a [[Gaussian Linear Model]], whose estimator of $w$ have nice properties.
 
 Suppose we have collected $n$ sample points $(X_{i},Y_{i})$, the matrix form of the model is
 
@@ -63,7 +63,7 @@ When there are more features than samples, which is common in the high-dimension
 ### Misspecified Model
 
 Consider a general non-parametric statistical model, $(X_i, Y_i) \overset{\text{iid}}{ \sim } P \in \mathcal{P} \{ P : P \in \operatorname{dist}(\mathbb{R}^{d+1}) \text{ w/ finite fourth moment} \}$ .
-The least square solution is targeting $w^* = \operatorname*{argmin}_w \mathbb{E}[(Y_i - X_i^\top w)^2]$, i.e., *best* linear model of $Y_i$ given $Z_i$. By [[Law of Large Numbers|LLN]] and [[Convergence of Random Variables#Continuous Mapping Theorem|CMT]], $\hat{w}^{\mathrm{LS}} \xrightarrow{P} w^*$. Further $\hat{w}^{\mathrm{LS}}$ is asymptotically normal with some asymptotic variance $\Sigma$, which consists of the sample noise and misspecification noise.
+The least square solution is targeting $w^* = \operatorname*{argmin}_w \mathbb{E}[(Y_i - X_i^\top w)^2]$, i.e., *best* linear model of $Y_i$ given $X_i$. By [[Law of Large Numbers|LLN]] and [[Convergence of Random Variables#Continuous Mapping Theorem|CMT]], $\hat{w}^{\mathrm{LS}} \xrightarrow{P} w^*$. Further $\hat{w}^{\mathrm{LS}}$ is asymptotically normal with some asymptotic variance $\Sigma$, which consists of the sample noise and misspecification noise.
 
 More specifically, let's look at the expression of $w^{*}$. Similar to the derivation of the normal equation, we have
 $$$
@@ -89,7 +89,7 @@ a^{_}\b^{_}
 \end{pmatrix}.
 
 $$
-We can see that the slope measures the correlation between $Z$ and $Y$.
+We can see that the slope measures the correlation between $X$ and $Y$.
 
 Let's define the residual $\epsilon _{i} = Y_{i} - X_i^Tw^{*}$. Then, with the additional constant component, we have $\mathbb{E}\epsilon _{i} = 0$ and
 $$

@@ -3,7 +3,7 @@ publish: true
 title: Regression
 created: 2023-01-19T14:53:16
 modified: 2025-08-07T13:00:36
-published: 2026-01-07T01:10:18.244Z
+published: 2026-07-03T04:25:00.411Z
 tags:
   - pub-stat
 aliases:
@@ -11,7 +11,7 @@ type: note
 sup:
   - "[[Machine Learning]]"
   - "[[Statistics]]"
-state: "[[%wip]]"
+state: done
 related:
   - "[[Prediction]]"
 ---

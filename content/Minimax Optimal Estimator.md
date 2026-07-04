@@ -3,7 +3,7 @@ publish: true
 title: Minimax Optimal Estimator
 created: 2025-06-28T00:06:01
 modified: 2025-07-17T15:21:44
-published: 2026-01-07T01:10:18.192Z
+published: 2026-07-03T21:55:58.244Z
 tags:
   - pub-stat
 state: done
@@ -110,7 +110,7 @@ which indicates that $A_{M}$ is minimax.
 
 > [!rmk] Remarks
 >
-> - The bound for any $Q$; thus we only need to find one such $Q$.
+> - The bound is valid for any $Q$; thus we only need to find one such $Q$.
 > - We do not need $A_{M} = A^{*}$, but only that $R_{M}(A_{M}) = R_{B}(A^{*},Q)$.
 >   - However, quite often $A_{M}=A^{*}$.
 

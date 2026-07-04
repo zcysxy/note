@@ -4,7 +4,7 @@ aliases: GLM
 title: Generalized Linear Model
 created: 2023-11-12T21:11:03
 modified: 2025-08-07T03:07:05
-published: 2026-01-07T01:10:18.088Z
+published: 2026-07-03T19:31:50.744Z
 tags:
   - pub-stat
 type: note
@@ -107,7 +107,7 @@ $$
 
 ## Applications
 
-## Ordinary Least Squares by Gaussian Distribution
+### Ordinary Least Squares by Gaussian Distribution
 
 When the GLM is [[Gaussian Linear Model]] with canonical link, the MLE gives [[Linear Regression#Ordinary Least Squares]], the _first_ regression method. In this case, $Y$ is a continuous numerical.
 

@@ -4,8 +4,8 @@ aliases:
   - Total-Variation Metric
   - TV
 created: 2022-05-28T03:34:22
-modified: 2025-08-18T19:02:50
-published: 2026-01-07T01:10:18.303Z
+modified: 2026-06-28T20:39:52
+published: 2026-06-29T03:39:53.851Z
 tags:
   - pub-stat
 type: note
@@ -26,7 +26,7 @@ $$
 
 Informally, this is the largest possible difference between the probabilities that the two probability distributions can assign to the same event.
 
-One direct implication from the definition is that if two distributions have disjoint support, i.e., $\nu(\operatorname{supp}(P)\cap \operatorname{supp}(Q))=0$, where $m$ is the measure on the sigma field, then their TV distance is 1.
+One direct implication from the definition is that if two distributions have disjoint support, i.e., $\nu(\operatorname{supp}(P)\cap \operatorname{supp}(Q))=0$, where $\nu$ is the measure on the sigma field, then their TV distance is 1.
 For example, the TV distance between a discrete and a continuous distribution is 1, because on the common sample space, the support of the discrete distribution has measure 0.
 
 > [!rmk]

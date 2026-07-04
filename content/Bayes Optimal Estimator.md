@@ -3,7 +3,7 @@ publish: true
 title: Bayes Optimal Estimator
 created: 2025-06-27T22:22:59
 modified: 2025-06-28T00:04:40
-published: 2026-01-07T01:10:17.997Z
+published: 2026-07-04T01:01:57.912Z
 tags:
   - pub-stat
 state: done
@@ -49,7 +49,7 @@ $$
 F_{x}(a) \coloneqq \mathbb{E}[L(a,\theta)\given X=x],
 $$
 
-is also strictly convex due to the linearity of expectation, and is proper because of the assumption.
+is also strictly convex due to the linearity of expectation, and is [[Proper Convex Function|proper]] because of the assumption.
 Therefore,
 
 $$

@@ -4,8 +4,8 @@ aliases:
   - Sufficiency
 title: Sufficient Statistic
 created: 2025-05-20T19:13:46
-modified: 2025-08-18T18:23:51
-published: 2026-06-28T04:08:56.258Z
+modified: 2026-06-28T21:35:34
+published: 2026-06-29T04:38:42.387Z
 tags:
   - pub-stat
 state: done
@@ -50,7 +50,7 @@ $$
 p(x\given T=t) = \frac{p_{\theta}(x,t)}{\int p_{\theta}(x,t)\d x} = \frac{g(t,\theta)\cdot f(x) \cdot \1 \{ T(x)=t \}}{\int g(t,\theta) \cdot f(x) \cdot \1 \{ T(x)=t \} \d x} \propto f(x)\1 \{ T(x)=t \} \Perp \theta.
 $$
 
-- $f(x)$ can be a constant. Then, $g$, and thus $T$, is just a reformulation of $p_{\theta}$. See [[!todo]] homework 1.1.
+- $f(x)$ can be a constant. Then, $g$, and thus $T$, is just a reformulation of $p_{\theta}$. See [[#^mvn]].
 
 ## Examples
 
@@ -59,8 +59,26 @@ $$
 - [[Order Statistics]] $T(X)= (X_{(1)},\dots,X_{(n)})$ is sufficient.
 
 - For $n$ iid Gaussian r.v.s with unit variance, $p_{\theta} = (2\pi)^{-n/2} \exp\left(-1/2\left( -\theta \sum_{i=1}^{n}x_{i} + n\theta^{2} + \sum_{i=1}^{n}x_{i}^{2} \right)\right)$. Thus, $T = \sum_{i=1}^{n}X_{i}$ and $g(T,\theta) = \exp(-1 /2 (-\theta T + n\theta^{2}))$.
+  - Check this by calculating the conditional density $p_{\theta}(x) /p_{\theta}(\bar{x})$.
+  - Sample $X$ by sample $Z \sim \mathcal{N}^{n}(0,1)$ and let $X_{i} = \bar{X} + Z_{i}-\bar{Z}$. ^sym-samp
 
 - For iid Gaussian r.v.s with a known variance, the [[Order Statistics]] $(X_{(i)})\in\R^{n}$ is considered "bigger" than $\overline{X} = \frac{1}{n}\sum_{i=1}^{n}X_{i}\in\R$, and the latter is more "compressed".
+
+> [!ex] Multivariate Gaussian
+>
+> Consider $X_{i}\overset{ \text{i.i.d.} }{ \sim }\mathcal{N}(\mu,\Sigma)\in\R^{d}$ for $i=1,\dots,n$. The joint density is
+>
+> $$
+> \begin{aligned}
+> p_{\mu,\Sigma}(x) =& (2\pi )^{-nd /2}|\Sigma|^{-n /2} \exp\left( -\frac{1}{2}\sum_{i=1}^{n}(x_{i}-\mu)^{T}\Sigma^{-1}(x_{i}-\mu) \right) \\
+> =& (2\pi )^{-nd /2}|\Sigma|^{-n /2} \exp\left( -\frac{1}{2}\sum_{i=1}^{n}\tr\left(   (x_{i}-\mu)(x_{i}-\mu)^{T}\Sigma^{-1} \right)\right) \\
+> =& (2\pi )^{-nd /2}|\Sigma|^{-n /2} \exp\left( -\frac{1}{2}\tr\left( \left( \sum_{i=1}^{n}x_{i}x_{i}^T - 2\mu \sum_{i=1}^{n}x_{i} + n \mu \mu ^T \right)\Sigma^{-1} \right)\right).
+> \end{aligned}
+> $$
+>
+> Thus, we see $T(X) = (\sum_{i=1}^{n}X_{i}X_{i}^T, \sum_{i=1}^{n}X_{i})\in\R^{d^{2}+d}$ is sufficient for $(\mu,\Sigma)$.
+
+^mvn
 
 > [!ex] Gaussian Linear Model
 >
@@ -111,7 +129,7 @@ $$
 
 #### Gaussian Median
 
-Rao-Blackwell theorem gives a better estimator for the median of a Gaussian distribution with known variance than the sample median. Since $T=\overline{X}$ is sufficient, we can do a _symmetric sampling_ such that the new sample satisfies $\frac{1}{m}\sum_{j=1}^{m}X_{j}' = T = \overline{X}$. Then, we use the sample median of the new sample as the estimator.
+Rao-Blackwell theorem gives a better estimator for the median of a Gaussian distribution with known variance than the sample median. Since $T=\overline{X}$ is sufficient, we can do a _[[#^sym-samp|symmetric sampling]]_ such that the new sample satisfies $\frac{1}{m}\sum_{j=1}^{m}X_{j}' = T = \overline{X}$. Then, we use the sample median of the new sample as the estimator.
 
 #### Order Should Not Matter
 

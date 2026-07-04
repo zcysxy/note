@@ -4,8 +4,8 @@ aliases:
   - MAP
 title: Maximum a Posteriori
 created: 2023-01-31T15:04:22
-modified: 2023-02-06T14:43:43
-published: 2026-01-07T01:10:18.186Z
+modified: 2026-07-02T21:39:11
+published: 2026-07-03T04:40:15.377Z
 tags:
   - pub-stat
 type: note
@@ -32,12 +32,13 @@ w_{\mathrm{MAP}} & =\argmax _w \ln p(w \mid y, X) \\
 
 Note here, we are not [[Maximum Likelihood Estimation|maximizing the likelihood of the observation]]; we are maximizing the likelihood of the weight given the posterior distribution.
 
+- [~] The only difference between MAP and MLE is that MAP has a prior: $w_{\mathrm{MAP}}$ maximizes $p(w|D) = p(D|w)p(w)$ vs. $w_{\mathrm{MLE}}$ maximizes $p(D|w)$, where $D$ is the observation data.
+
 ## Relationship with Ridge Regression
 
 Just like [[Maximum Likelihood Estimation|MLE]] being the probability interpretation of [[Linear Regression|least square]] estimation, MAP is the probability interpretation of the [[Ridge Regression]]. 
 
 Assume the prior distribution of $w$ is $\mathcal{N}(0,\lambda ^{-1}I)$, then ^asmp
-
 $$$
 
 w\_{\mathrm{MAP}} =\arg \max \_w-\frac{1}{2 \sigma^2}(y-X w)^T(y-X w)-\frac{\lambda}{2} w^T w

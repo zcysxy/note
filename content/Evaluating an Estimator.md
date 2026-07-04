@@ -2,8 +2,8 @@
 publish: true
 title: Evaluating an Estimator
 created: 2025-06-06T02:05:38
-modified: 2025-06-06T03:50:21
-published: 2026-01-07T01:10:18.070Z
+modified: 2026-07-03T14:36:51
+published: 2026-07-03T21:36:52.314Z
 tags:
   - pub-stat
 state: done
@@ -105,7 +105,7 @@ Using $\hat{\mu}$ to denote the mean of the data, from the calculation in [[#Exa
 $$\operatorname{SE}(\hat{\mu}) = \frac{\sigma}{\sqrt{m}}$$
 where $\sigma$ is the **true** standard deviation of the data, and $m$ is the number of data points.
 
-Standard error is often combined with [[Central Limit Theorem|CLT]] to constrict [[Confidence Interval]]s.
+Standard error is often combined with [[Central Limit Theorem|CLT]] to construct [[Confidence Interval]]s.
 
 For example, in machine learning experiments, we often estimate the **generalization error** by computing the sample mean of the error on the test set. The number of examples in the test set determines the accuracy of this estimate. Taking advantage of the [[Central Limit Theorem]], which tells us that the mean will be approximately distributed with a normal distribution, we can use the standard error to compute the probability that the true expectation falls in any chosen interval. For example, the 95% [[confidence interval]] centered on the mean $\hat{\mu}_m$ is
 $$(\hat{\mu}_m − 1.96\operatorname{SE}(\hat{\mu}_m), \hat{\mu}_m + 1.96\operatorname{SE}(\hat{\mu}_m))$$
@@ -126,13 +126,19 @@ $$\hat{\theta}_m \overset{P}{\longrightarrow} \theta$$
 
 ### Consistency vs Asymptotic Unbiasedness
 
-$$\text{Consistency} \begin{aligned}\Longrightarrow\\[-2ex] \not\Longleftarrow\end{aligned} \text{Asymptotic Unbiasedness}$$
+$$\text{Consistency} \begin{aligned}\not\Rightarrow\\[-2ex] \not\Leftarrow\end{aligned} \text{Asymptotic Unbiasedness}$$
 
 > [!thm]
 >
-> If $\operatorname{bias}(\hat{\theta}_{n})\to 0$ and $\operatorname{SE}(\hat{\theta}_{n})\to 0$, then $\hat{\theta}_{n}$ is a consistant estimator.
+> Consistency, and uniform integrability of $\hat{\theta}_{n}$, implies asymptotic unbiasedness.
 
-The above can be proved using [[Chebyshev Inequality]] or the [[Convergence of Random Variables#Relation between Convergence Modes]] ($L_2$ convergence implies convergence in probability).
+Prove by $\mathbb{E}|\hat{\theta}_{n}-\theta| \le \epsilon P(|\hat{\theta}_{n}-\theta|\le \epsilon) +\int _{|\hat{\theta}_{n}-\theta|>\epsilon}|\hat{\theta} _{n}-\theta|\d \hat{\theta}_{n}$. Uniform integrability implies the second term goes to $0$ as the probability measure $P(|\hat{\theta}_{n}-\theta|>\epsilon)$ goes to $0$.
+
+> [!thm]
+>
+> Asymptotic unbiasedness, and $\operatorname{SE}(\hat{\theta}_{n})\to 0$, implies consistency.
+
+Prove using [[Chebyshev Inequality]] or the [[Convergence of Random Variables#Relation between Convergence Modes]] ($L_2$ convergence implies convergence in probability).
 
 ## Asymptotic Normality
 
