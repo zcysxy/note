@@ -1,85 +1,57 @@
-import { visit } from "unist-util-visit"
+import { Code, Root as MdRoot } from "mdast"
 import { QuartzTransformerPlugin } from "../types"
+import { visit } from "unist-util-visit"
+import { load, tex, dvi2svg } from "node-tikzjax"
+import { Argv } from "../../util/ctx"
 
-// Change in Markdown syntax tree from codeblock to script tag
-export const TikzTransformer: QuartzTransformerPlugin = () => {
+async function tex2svg(input: string, argv: Argv) {
+  await load()
+  const dvi = await tex(input, { showConsole: argv.verbose })
+  const svg = await dvi2svg(dvi)
+  return svg
+}
+
+interface TikzNode {
+  index: number
+  value: string
+  parent: MdRoot
+}
+
+export const TikzJax: QuartzTransformerPlugin = () => {
   return {
-    name: "TikzTransformer",
+    name: "TikzJax",
+    markdownPlugins({ argv }) {
+      return [
+        () => async (tree: MdRoot, _file) => {
+          const nodes: TikzNode[] = []
+          visit(tree, "code", (node: Code, index, parent) => {
+            if (node.lang === "tikz") {
+              nodes.push({ index: index as number, parent: parent as MdRoot, value: node.value })
+            }
+          })
+
+          for (let i = 0; i < nodes.length; i++) {
+            const { index, parent, value } = nodes[i]
+            let svg = await tex2svg(value, argv)
+            svg = svg
+              .replaceAll(/("#000"|"black")/g, `"currentColor"`)
+              .replaceAll(/("#fff"|"white")/g, `"var(--background-primary)"`)
+            parent.children.splice(index, 1, {
+              type: "html",
+              value: `<div class="tikz">${svg}</div>`,
+            })
+          }
+        },
+      ]
+    },
     externalResources() {
       return {
-        js: [
-          {
-            src: "https://zcysxy.github.io/quartz/static/tikzjax/tikzjax.js",
-            loadTime: "beforeDOMReady",
-            contentType: "external",
-            async: true,
-						attribute: {"data-tex-packages": '{ "array": "", "pgfplots": "" }'}
-          },
-        ],
         css: [
           {
-            src: "https://zcysxy.github.io/quartz/static/tikzjax/fonts.css",
-            loadTime: "beforeDOMReady",
-            contentType: "external",
+            content: "https://cdn.jsdelivr.net/npm/node-tikzjax@latest/css/fonts.css",
           },
         ],
       }
-    },
-    markdownPlugins() {
-      return [
-        () => {
-          return (tree, file) => {
-            visit(tree, "code", (node) => {
-              if (node.lang === "tikz") {
-                // Clean up Latex code
-                const remove = "&nbsp;"
-                node.value = node.value.replaceAll(remove, "")
-
-                let lines = node.value.split("\n")
-
-                // Trim whitespace that is inserted when pasting in code, otherwise TikZJax complains
-                lines = lines.map((line) => line.trim())
-
-                // Remove empty lines
-                lines = lines.filter((line) => line)
-
-                node.value = lines.join("\n")
-                node.type = "html"
-                node.value = `<script type="text/tikz"'>${node.value}</script>`
-              }
-            })
-          }
-        },
-      ]
-    },
-    htmlPlugins() {
-      return [
-        () => {
-          return (tree, file) => {
-            // Change node to include raw HTML before parsing to JSX
-            visit(tree, "element", (node, index, parent) => {
-              if (node.tagName === "script" && node.properties?.type === "text/tikz") {
-                const divNode = {
-                  type: "element",
-                  tagName: "div",
-                  properties: {
-                    dangerouslySetInnerHTML: {
-                      __html: '<script type="text/tikz">'.concat(
-                        node.children[0].value,
-                        "</script>",
-                      ),
-                    },
-                  },
-                  children: [],
-                }
-                parent.children[index] = divNode
-              }
-            })
-
-            // Add the TikZJax stylesheet and script tag to the head
-          }
-        },
-      ]
     },
   }
 }
