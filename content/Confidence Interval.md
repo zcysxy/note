@@ -3,7 +3,7 @@ publish: true
 title: Confidence Interval
 created: 2023-10-17T22:44:28
 modified: 2025-05-27T11:36:43
-published: 2026-01-07T01:10:18.035Z
+published: 2026-07-04T21:02:22.546Z
 tags:
   - pub-stat
 aliases:
@@ -114,10 +114,10 @@ $$
 For bounded r.v.s $X_{i}\in[a,b]$, [[Hoeffding's Inequality]] gives
 
 $$
-P\left( \left| \overline{X}-\mu \right| \ge t \right) \le 2\exp\left( -\frac{2 n t^{2}}{(b-a)^{2}} \right). 
+P\left( \left| \overline{X}-\mu \right| \ge s \right) \le 2\exp\left( -\frac{2 n s^{2}}{(b-a)^{2}} \right). 
 $$
 
-Letting the RHS be $\alpha$ gives $t=\frac{(b-a)}{\sqrt{2 n }}\sqrt{\log(2/\alpha)}$, which further gives a $1-\alpha$ level CI:
+Letting the RHS be $\alpha$ gives $s=\frac{(b-a)}{\sqrt{2 n }}\sqrt{\log(2/\alpha)}$, which further gives a $1-\alpha$ level CI:
 
 $$
 C^{(\mathrm{Hoeff})}(\overline{X}) = \overline{X} \pm (b-a) \sqrt{ \frac{\log (2 /\alpha)}{2n} }.

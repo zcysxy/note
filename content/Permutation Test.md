@@ -2,8 +2,8 @@
 publish: true
 title: Permutation Test
 created: 2025-07-27T19:01:13
-modified: 2025-07-27T19:27:40
-published: 2026-01-07T01:10:18.219Z
+modified: 2026-07-04T18:58:46
+published: 2026-07-05T01:58:48.458Z
 tags:
   - pub-stat
 state: done

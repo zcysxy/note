@@ -3,7 +3,7 @@ publish: true
 title: Z-Estimator
 created: 2025-06-06T16:34:37
 modified: 2025-06-11T19:23:01
-published: 2026-01-07T01:10:18.351Z
+published: 2026-07-04T20:17:57.651Z
 tags:
   - pub-stat
 state: done
@@ -22,7 +22,7 @@ $$
 $$
 
 where in this case, $\psi$ is the derivative of $m$ in the definition of M-estimator.
-For example, [[Maximum Likelihood Estimation|MLE]] is an estimator w.r.t the [[Likelihood#Score Function]] $\psi _{\theta} = \frac{ \partial  }{ \partial \theta }\log p_{\theta }(X)$.
+For example, [[Maximum Likelihood Estimation|MLE]] is a Z-estimator w.r.t the [[Likelihood#Score Function]] $\psi _{\theta} = \frac{ \partial  }{ \partial \theta }\log p_{\theta }(X)$.
 
 However, $\psi$ can be more general without necessarily corresponding to an optimization problem. For example, recall that for a [[Method of Moments|Moment Estimator]], we solve a system
 
@@ -97,7 +97,7 @@ $$
 \sqrt{ n }(\hat{\theta} - \theta ^*) \overset{ P }{ \to } -\dot{\Psi}_{n}(\theta ^*)^{-1}(\sqrt{ n }\Psi _{n}(\theta ^*)).
 $$
 
-By [[Law of Large Numbers|LLN]], $\dot{\psi}_n(\theta ^*)^{-1}\to \dot{\psi}(\theta ^*)^{-1}$; by [[Central Limit Theorem|CLT]],
+By [[Law of Large Numbers|LLN]], $\dot{\Psi}_n(\theta ^*)^{-1}\to \dot{\Psi}(\theta ^*)^{-1}$; by [[Central Limit Theorem|CLT]],
 
 $$
 \sqrt{ n  }\Psi _{n}(\theta ^*) \overset{ d }{ \to } \mathcal{N}(0,\mathbb{E}[\psi _{\theta ^*}\psi _{\theta ^*}^T]).
@@ -106,12 +106,12 @@ $$
 Thus, by Slutsky's theorem,
 
 $$
-\sqrt{ n }(\hat{\theta}-\theta ^*) \overset{ d }{ \to } \mathcal{N}l(0,\dot{\Psi}(\theta ^*)^{-1}\mathbb{E}[\psi _{\theta ^*}\psi _{\theta ^*}^T]\dot{\Psi}(\theta ^*)^{-1}).
+\sqrt{ n }(\hat{\theta}-\theta ^*) \overset{ d }{ \to } \mathcal{N}(0,\dot{\Psi}(\theta ^*)^{-1}\mathbb{E}[\psi _{\theta ^*}\psi _{\theta ^*}^T]\dot{\Psi}(\theta ^*)^{-1}).
 $$
 
 #### Asymptotic Normality of Least Squares
 
-We cast [[Ordinary Least Squares]] as a Z-estimator and verify the asymptotic normality conditions. The cost function is $m_{\theta}(x,y) = (y-\theta ^Tx)^{2}$, which gives the z-function $\psi _{\theta}(x,y) = 2x(y-x^T\theta )$.
+We cast [[Linear Regression#Ordinary Least Squares]] as a Z-estimator and verify the asymptotic normality conditions. The cost function is $m_{\theta}(x,y) = (y-\theta ^Tx)^{2}$, which gives the z-function $\psi _{\theta}(x,y) = 2x(y-x^T\theta )$.
 
 For the first condition, we verify its alternative Lipschitz condition:
 

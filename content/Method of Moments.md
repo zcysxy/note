@@ -5,7 +5,7 @@ aliases:
 title: Method of Moments
 created: 2023-10-19T16:39:52
 modified: 2025-06-02T22:25:36
-published: 2026-01-07T01:10:18.190Z
+published: 2026-07-04T02:47:25.825Z
 tags:
   - pub-stat
 type: note
@@ -30,7 +30,7 @@ $$
 $$
 
 This gives us a system of $m$ equations with $m$ unknowns, which can be solved to obtain the estimates $\hat{\theta}_1,\ldots,\hat{\theta}_{m}$.
-If we denote the RHS of the system compactly as $M(\theta) = (\mu_{1},\dots,\mu _{m})$ and assume $M$ is one to one, then $\theta ^{(\mathrm{MM})} = M^{-1}(\hat{\mu}_{1},\dots, \hat{\mu}_{m})$.
+If we denote the LHS of the system compactly as $M(\theta) = (\mu_{1},\dots,\mu _{m})$ and assume $M$ is one to one, then $\theta ^{(\mathrm{MM})} = M^{-1}(\hat{\mu}_{1},\dots, \hat{\mu}_{m})$.
 
 - The simplest example is that $\mu_1 = \theta_{1}$, and then $\hat{\theta}_{1} = \bar{x}$. For variance, we have $\hat{\theta}_2 =\sqrt{ \overline{x^{2}} - \overline{x}^{2} }$.
 

@@ -6,7 +6,7 @@ aliases:
 title: Cumulative Distribution Function
 created: 2022-09-25T14:47:10
 modified: 2024-11-02T23:43:32
-published: 2026-06-26T19:02:17.506Z
+published: 2026-07-04T23:01:17.895Z
 tags:
   - pub-prob
 type: note
@@ -46,7 +46,7 @@ The next section shows that any distribution function defines a [[Random Variabl
 
 ## Simulate Any Distribution
 
-To simulate an arbitrary distribution $F$, let $X \sim \mathcal{U}(0,1)$, then let $Y = F^{-1}(X) \coloneqq \inf\{ y: F(y)\ge X \}$. Then we have
+To simulate an arbitrary distribution $F$, let $X \sim \mathcal{U}(0,1)$, then let $Y = F^{-1}(X) \coloneqq \inf\{ y: F(y)\ge X \}$. Note that $F^{-1}$ is left-continuous. Then we have
 
 $$
 P(Y\le y) = P(F^{-1}(X) \le y) = P(X \le F(y)) = F_{\mathcal{U}(0,1)}(F(y)) = F(y),

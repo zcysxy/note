@@ -5,8 +5,8 @@ aliases:
   - UMP
 title: Uniformly Most Powerful Test
 created: 2025-05-30T02:48:16
-modified: 2025-08-18T19:19:52
-published: 2026-01-07T01:10:18.308Z
+modified: 2026-07-04T18:41:26
+published: 2026-07-05T01:41:32.052Z
 tags:
   - pub-stat
 state: done
@@ -75,11 +75,88 @@ For a statistical model with monotone likelihood ratio and a composite HT $\Thet
    \end{cases}
    $$
    where $\gamma\in[0,1]$, and $c$, $\gamma$ are **uniquely** determined by the significance level constraint $\alpha$.
-2. The power function $\beta(\theta)=\mathbb{E}_{\theta}A(X)$ is strictly increasing on $\{ \theta: \beta(\theta)\in(0,1) \}$.
-3. Among all size-$\alpha$ tests, $A^{(\mathrm{UMP})}$ minimizes $\mathbb{E}_{\theta}A(X)$ for $\theta\in(-\infty,\theta_{0})$.
-4. For any $\theta'$, $A^{(\mathrm{UMP})}$ determines a test that is UMP for $\Theta_{0}' = (-\infty,\theta']$, $\Theta_{1}' = (\theta',\infty)$ at level $\alpha' = \beta(\theta')$.
+2. The power function $\beta(\theta)=\mathbb{E}_{\theta}A^{\mathrm{UMP}}(X)$ is strictly increasing on $\{ \theta: \beta(\theta)\in(0,1) \}$.
+3. For any $\theta'$, $A^{(\mathrm{UMP})}$ determines a test that is UMP for $\Theta_{0}' = (-\infty,\theta']$, $\Theta_{1}' = (\theta',\infty)$ at level $\alpha' = \beta(\theta')$.
+4. Among all size-$\alpha$ tests, $A^{(\mathrm{UMP})}$ minimizes $\mathbb{E}_{\theta}A(X)$ for $\theta\in(-\infty,\theta_{0})$.
 
 - We note that $A^{(\mathrm{UMP})}$ is independent of $\theta_{1}$.
+
+### Proof
+
+- This proof covers the [[#Neyman-Pearson]] lemma.
+
+**(Simple).**
+We first consider simple-simple HT for $\theta_{0}$ and an arbitrary $\theta_{1}\in \Theta_{1}$. Let $F_{T}(t) = P_{0}(T(X)\le t)$ be the [[Cumulative Distribution Function|CDF]] of $T(X)$ under $\theta_{0}$.
+For any $\alpha\in(0,1)$, let $c \coloneqq F_{T}^{-1}(1-\alpha) = \inf_{t} \{ F_{T}(t)\ge 1-\alpha \}$.
+Note that for any $c'<c$, we have $F_{T}(c')< 1-\alpha$. Thus,
+
+$$
+1-F_T(c)\le \alpha \le 1-F_{T}(c^{-}).
+$$
+
+Let
+
+$$
+A(x) = \begin{cases}
+1,T(x)>c;\\
+\gamma, T(x)=c;\\
+0, T(x)<c.
+\end{cases}
+$$
+
+We calculate the size of this test:
+
+$$
+\mathbb{E}_{0}[A(X)] = P_{0}(T(X)>c) + \gamma P_{0}(T(X)=c)
+= 1-F_{T}(c) + \gamma (F_{T}(c)-F_{T}(c^{-})).
+$$
+
+Therefore, we let $\gamma = \frac{\alpha-\alpha(c)}{\alpha(c^{-})-\alpha(c)}$, where $\alpha(c) = 1-F_{T}(c)$, which is between $[0,1]$ as argued above.
+
+**(Sufficient).**
+We then show that $A$ maximizes the power for $\theta_{1}$. For any other test $A'$ such that $\mathbb{E}_{0}[A'(X)]\le \alpha$, let $S^{+}\coloneqq \{ A > A' \}$ and $S^{-}\coloneqq \{ A < A' \}$. We see that on $S^{+}$, we must have $A(x)>0$ and thus $T(x)\ge c$; and on $S^{-}$, we must have $A(x)<1$ and thus $T(x)\le c$.
+Let $k = g_{1}(c)/g_{0}(c)$.
+Thus,
+
+$$
+\begin{aligned}
+\int _{\mathcal{X}}(A(x) - A'(x))(f_{1}(x) - kf_{0}(x))\d x
+=& \int _{\mathcal{X}}(A(x) - A'(x))\left(1 - \frac{g_{0}(T(x))}{g_{1}(T(x))} \frac{g_{1}(c)}{g_{0}(c)} \right)f_{1}(x)\d x\\
+=& \int _{S^{+}}(\underbrace{ A(x) - A'(x) }_{ >0 })\Biggl(1 - \underbrace{ \frac{g_{0}(T(x))}{g_{1}(T(x))} \frac{g_{1}(c)}{g_{0}(c)} }_{ \le 1 } \Biggr)f_{1}(x)\d x\\
+&+ \int _{S^{-}}(\underbrace{ A(x) - A'(x) }_{ <0 })\Biggl(1 - \underbrace{ \frac{g_{0}(T(x))}{g_{1}(T(x))} \frac{g_{1}(c)}{g_{0}(c)} }_{ \ge 1 } \Biggr)f_{1}(x)\d x \\
+\ge& 0.
+\end{aligned}
+$$
+
+Therefore,
+
+$$
+\mathbb{E}_{1}[A(X)-A'(X)] \ge k \mathbb{E}_{0}[A(x)-A'(X)] = k\alpha - k\mathbb{E}_{0}[A'(X)] \ge 0.
+$$
+
+So $A$ is most powerful.
+
+**(Necessary).** We also show that for any MP test $A'$, $S'\coloneqq\{A(x)\ne A'(x)\}\cap \{ f_{1}(x)\ne kf_{0}(x) \}$ is of zero measure.
+If not, similarly, we have
+
+$$
+\int_{\mathcal{X}}(A(x)-A'(x)) (f_{1}(x)-k f_{0}(x))\d x
+= \int_{S'}(A(x)-A'(x)) (f_{1}(x)-k f_{0}(x))\d x > 0,
+$$
+
+indicating that $A$ is more powerful, which is a contradiction.
+Further, if $\mathbb{E}_{0}[A'(X)]<\alpha$ and $\mathbb{E}_{1}[A'(X)]<1$, we can add points to the rejection region of $A'$ to increase the power without violating the size constraint. Therefore, any MP test satisfies either $\mathbb{E}_{0}[A'(X)]=\alpha$ or $\mathbb{E}_{1}[A'(X)]=1$.
+
+**(Composite).** First, since $A$ is independent of $\theta_{1}$, it is UMP for $(\{ \theta_{0} \},\Theta_{1})$.
+We then need to show Property (2), and the $A$ is UMP for $(\Theta_{0},\Theta_{1})$. This is because no UMP $A'$ for $(\Theta_{0},\Theta_{1})$ would have a larger power than a UMP for $(\{\theta_{0}\},\Theta_{1})$ (less constraint), and thus $A$ has the largest power for $(\Theta_{0},\Theta_{1})$ as well (power is independent of $\Theta_{0}$).
+
+**(Property 2).** For any $\theta$ such that $\beta(\theta)\in(0,1)$, we see that the above Neyman-Pearson test is UMP for $(\{ \theta \}, \{ \theta' \})$ with size $\beta(\theta)$ for any $\theta' > \theta$. We now show that the power of the test $\beta(\theta')$ is strictly larger than its size $\beta(\theta)$, hence proving the property.
+First, the constant test $A'(x)\equiv \beta(\theta)$ has a size $\beta(\theta)$ and power $\beta(\theta)$. Since $A$ is UMP, it must have a power no less than $\beta(\theta)$.
+Now suppose $\beta(\theta') = \beta(\theta)$. Then, the constant test $A'$ is also UMP. By the (Necessary) condition, we have $T(x)\equiv c$, and thus $P_{\theta}\dot{=}P_{\theta'}$, contradicting the assumption that two distributions are distinct. Therefore, $\beta(\theta')>\beta(\theta)$.
+
+**(Property 3).** Note that $c$ depends on $\theta$ and $\alpha$, and for a fixed $c$, the same test $A$ if UMP for $(-\infty,\theta'],(\theta',\infty)$ with size $\beta(\theta')$.
+
+**(Property 4).** One obtains a test that minimizes the power by flipping the rejection region of the UMP test. Therefore, $A$ maximizes the power for $\theta\in(\theta_{0},\infty)$ and minimizes the power for $\theta\in(-\infty,\theta_{0})$.
 
 ### Exponential Family
 

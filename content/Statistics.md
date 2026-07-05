@@ -2,8 +2,8 @@
 publish: true
 title: "*Sufficient* of Statistics"
 created: 2023-10-17T21:41:50
-modified: 2025-08-25T19:56:53
-published: 2026-01-07T01:10:18.288Z
+modified: 2026-07-04T00:23:46
+published: 2026-07-05T02:08:36.207Z
 tags:
   - pub-stat
 type: index
@@ -53,7 +53,7 @@ AA --- BB --- CC
     - [[Evaluating an Estimator]]
     - [[Maximum Likelihood Estimation]]
     - [[Method of Moments]]
-    - [[Mean Squared Error]]
+    - [[Mean Squared Error|Least Squares]]
     - [[M-Estimator]]
     - [[Z-Estimator]]
   - Interval Estimation: [[Confidence Interval]]
@@ -83,6 +83,7 @@ AA --- BB --- CC
   - [[Sufficient Statistic]]
   - [[Statistical Functional]]
   - [[Admissibility]]
+- [[Bootstrap]]
 - [[Inference for CDFs]]
 - [[Expectation Maximization]]
 - More on hypothesis testing

@@ -9,7 +9,7 @@ aliases:
 title: Inference for CDFs
 created: 2025-07-23T02:31:36
 modified: 2025-07-23T22:39:01
-published: 2026-01-07T01:10:18.108Z
+published: 2026-07-05T02:10:52.689Z
 tags:
   - pub-stat
 state: "[[%watch]]"
@@ -25,7 +25,7 @@ type: note
 Suppose we have iid data $X_{i} \sim P$. The empirical CDF is defined as the step function:
 
 $$
-\hat{F}_{n}(t) = \frac{1}{n} \sum_{i=1}^{n} \1_{\{ t \ge X_{i} \}}.
+\hat{F}_{n}(t) = \frac{1}{n} \sum_{i=1}^{n} \1_{\{ X_{i}\le t \}}.
 $$
 
 One can verify that $\hat{F}_{n}$ is a valid CDF as it's monotonic, right continuous, and has limits $0$ and $1$.

@@ -5,8 +5,8 @@ aliases:
   - chi-square test
 title: Goodness of Fit Test
 created: 2025-07-22T21:17:40
-modified: 2025-07-23T22:46:02
-published: 2026-01-07T01:10:18.089Z
+modified: 2026-07-04T19:04:23
+published: 2026-07-05T02:04:24.827Z
 tags:
   - pub-stat
 state: done
@@ -23,7 +23,7 @@ The general idea is to test the empirical [[Probability Mass Function|PMF]]/[[Pr
 ## Discrete Case
 
 A discrete distribution with a finite sample space is a general Bernoulli distribution, or termed a ==categorical distribution==, determined by the PMF $P(X=k)=p_{k}$, where $\{ k \}_{k=1}^{K}$ are the categories.
-The collection of all categorical distribution with $n$ categories is actually a parametrized model with parameter space $\Delta ^{n}$, the -dimensional simplex. And this parameter space is of dimension $K-1$.
+The collection of all categorical distribution with $K$ categories is actually a parametrized model with parameter space $\Delta ^{K}$, the $K$-dimensional simplex. And this parameter space is of dimension $K-1$.
 This implies the following theorem:
 
 > [!thm]

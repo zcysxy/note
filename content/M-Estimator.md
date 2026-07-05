@@ -2,8 +2,8 @@
 publish: true
 title: M-Estimator
 created: 2025-06-04T01:17:30
-modified: 2025-08-19T22:46:02
-published: 2026-01-07T01:10:18.136Z
+modified: 2026-07-04T13:27:24
+published: 2026-07-04T20:37:28.052Z
 tags:
   - pub-stat
 state: done
@@ -38,7 +38,7 @@ $$
 We only need to specify the $m$ function to get different M-estimators.
 
 - [[Maximum Likelihood Estimation]]: $m_{\theta}(x) = -\log p_{\theta}(x)$.
-- [[Ordinary Least Squares]]: $m_{\theta}(x) = (y - x^T\theta)^2$.
+- [[Linear Regression#Ordinary Least Squares]]: $m_{\theta}(x) = (y - x^T\theta)^2$.
 - [[Ridge Regression]]: $m_{\theta}(x) = (y - x^T\theta)^2 + \lambda \|\theta\|^2$.
 - Median regression: $m_{\theta}(x) = |y - x^T\theta|$.
 - Quantile regression: $m_{\theta}(x) = -(\theta-x)(\tau - \mathbb{1}(\theta-x >0))$.
@@ -104,6 +104,16 @@ M(\hat{\theta})- M(\theta ^*) \le& M(\hat{\theta}) - (M_{n}(\hat{\theta}) - o_{P
 \end{aligned}
 $$
 
+> [!info] Simpler version
+>
+> $$
+> \begin{aligned}
+> M(\hat{\theta})-M(\theta ^*) =& M(\hat{\theta})- M_{n}(\hat{\theta}) + M_n(\hat{\theta})-M_n(\theta ^*)+ M_n(\theta ^*)-M(\theta ^*) \\
+> \le & 2\sup_{\theta\in\Theta}|M_n(\theta)-M(\theta)| + M_n(\hat{\theta})-M_n(\theta ^*) \\
+> \le & 2\sup_{\theta\in\Theta}|M_n(\theta)-M(\theta)| \overset{ P }{ \to } 0.
+> \end{aligned}
+> $$
+
 Then, since no other parameter can yield a value of $M(\theta)$ close to $M(\theta ^*)$ by the separation condition, we know $\hat{\theta}\overset{ P }{ \to }\theta ^*$. More specifically, for any $\epsilon>0$, we have
 
 $$
@@ -164,7 +174,7 @@ $$
 which is invertible. Thus, by [[Convergence of Random Variables#Continuous Mapping Theorem|CMT]], we have
 
 $$
-\sqrt{ n }(\hat{\theta} - \theta ^*) \overset{ P }{ \to } V_{\theta ^*}^{-1} (\sqrt{ n } \dot{M}_n(\theta ^*)).
+\sqrt{ n }(\hat{\theta} - \theta ^*) \overset{ P }{ \to } -V_{\theta ^*}^{-1} (\sqrt{ n } \dot{M}_n(\theta ^*)).
 $$
 
 Finally, since $\theta ^*$ minimizes the population objective $M$, $\dot{M}(\theta ^*) =0$. By [[Central Limit Theorem|CLT]],
@@ -216,13 +226,13 @@ $$
 By integration by parts,
 
 $$
-e(\theta ) = q(\theta-\mu) + \theta F(\theta ) - \left( xF(x)|^{\theta}_{-\infty} -\int _{-\infty}^{\theta}F(x)\d x \right) = q(\theta-\mu) +\int _{-\infty}^{\theta}F(x)\d x.
+e(\theta ) = -q(\theta-\mu) + \theta F(\theta ) - \left( xF(x)|^{\theta}_{-\infty} -\int _{-\infty}^{\theta}F(x)\d x \right) = -q(\theta-\mu) +\int _{-\infty}^{\theta}F(x)\d x.
 $$
 
 Thus,
 
 $$
-\dot{e}(\theta ) = q + F(\theta),\quad \dot{e}(\theta )= p(\theta).
+\dot{e}(\theta ) = -q + F(\theta),\quad \ddot{e}(\theta )= p(\theta).
 $$
 
 We need $p(\theta ^*) >0$.

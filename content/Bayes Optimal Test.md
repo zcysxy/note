@@ -2,8 +2,8 @@
 publish: true
 title: Bayes Optimal Test
 created: 2025-05-27T23:48:18
-modified: 2025-05-31T20:00:05
-published: 2026-01-07T01:10:17.997Z
+modified: 2026-07-04T15:01:23
+published: 2026-07-04T22:01:31.459Z
 tags:
   - pub-stat
 state: done
@@ -52,6 +52,8 @@ $$
 A^{*}(x) = \mathbb{1} \{ p_{1}(x) /p_{0}(x) > (\pi_{0}c_{\mathrm{FP}}) / (\pi_{1}c_{\mathrm{FN}}) \}
 = \mathbb{1}\{ p_{1}\pi_{1}c_{\mathrm{FN}} > f_{0}\pi_{0}c_{\mathrm{FP}} \}.
 $$
+
+That is, reject if _evidence_ outweighs _prior_ and potential _cost_.
 
 ### Proof
 

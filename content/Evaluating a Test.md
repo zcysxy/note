@@ -2,8 +2,8 @@
 publish: true
 title: Evaluating a Test
 created: 2025-05-30T02:48:39
-modified: 2025-07-15T14:19:33
-published: 2026-01-07T01:10:18.070Z
+modified: 2026-07-04T14:48:44
+published: 2026-07-04T21:48:45.560Z
 tags:
   - pub-stat
 state: done
@@ -57,6 +57,10 @@ We summarize the above metrics into a confusion matrix:
 | $H_{1}$           | False Negative<br>Type II Error<br>$\beta$ | True Positive<br>Power<br>$1-\beta$                                      |
 
 ^confusion
+
+> [!rmk] FPR and FDR
+>
+> Don't confuse the false positive rate (FPR) with the [[Multiple Hypothesis Testing#^aa9781|false discovery rate (FDR)]]: the former is $\mathrm{FP} / (\mathrm{FP}+\mathrm{TN})$ and the latter is $\mathrm{FP}/(\mathrm{FP}+\mathrm{TP})$. That is, FPR is FP rate with respect to the _ground truth_ (true nulls), while FDR is FP rate with respect to the _test result_ (rejected nulls).
 
 ## Balanced Evaluation
 

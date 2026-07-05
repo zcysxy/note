@@ -4,7 +4,7 @@ aliases: LRT
 title: Likelihood Hypothesis Test
 created: 2023-10-17T19:15:35
 modified: 2025-07-22T20:34:40
-published: 2026-01-07T01:10:18.128Z
+published: 2026-07-05T01:52:00.871Z
 tags:
   - pub-stat
 type: note
@@ -52,13 +52,13 @@ For a simple null hypothesis, $\operatorname{dim}(\Theta_{0}) = 0$, and the resu
 
 $$
 \begin{aligned}
--2 \log \Lambda(X) =& 2\left( \ell(\hat{\theta}) - \ell(\theta_{0}) \right)\\
-\approx & 2 \cdot  \left(-\frac{1}{2} \left( \hat{\theta} - \theta_{0} \right) ^T \ddot{\ell}_{\theta_{0}} \left( \hat{\theta}- \theta_{0} \right) \right)\\
-=& \left( \hat{\theta} - \theta \right)^T I(\theta_{0}) \left( \hat{\theta}-\theta_{0} \right) \\
+-2 \log \Lambda(X) =& 2\left( \ell _n(\hat{\theta}) - \ell _n(\theta_{0}) \right)\\
+\approx & 2 \cdot  \left(-\frac{n}{2} \left( \hat{\theta} - \theta_{0} \right) ^T \ddot{\ell}_{\theta_{0}} \left( \hat{\theta}- \theta_{0} \right) \right)\\
+=& n\left( \hat{\theta} - \theta \right)^T I(\theta_{0}) \left( \hat{\theta}-\theta_{0} \right) \\
 \to& \chi^{2}_{k},
 \end{aligned}
 $$
 
 where $\ell$ is the log-likelihood, the approximation follows the [[M-Estimator#Proof of Consistency]] of the asymptotic normality of M-Estimators.
 
-- LRT is useful to find a convenient **test statistic**. For instance, we can transform the inequality $\Lambda \le$ into an inequality in $-2 \log \Lambda$, which is a convenient test statistic because of the theorem of asymptotic LRT.
+- LRT is useful to find a convenient **test statistic**. For instance, we can transform the inequality $\Lambda \le k$ into an inequality in $-2 \log \Lambda$, which is a convenient test statistic because of the theorem of asymptotic LRT.

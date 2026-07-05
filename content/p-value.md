@@ -3,7 +3,7 @@ publish: true
 title: p-value
 created: 2025-05-29T17:32:33
 modified: 2025-06-06T14:22:17
-published: 2026-01-07T01:10:18.375Z
+published: 2026-07-04T21:33:42.282Z
 tags:
   - pub-stat
 aliases:
@@ -25,7 +25,7 @@ Consider an observed test-statistic $t$ from unknown distribution $T$. Then t
 
 - $p=\Pr(T≥t|H_0)$ for a one-sided right-tail test,
 - $p=\Pr(T≤t|H_0)$ for a one-sided left-tail test,
-- $p=2\min\{\Pr(T\geq t\mid H_{0}),\Pr(T\leq t\mid H_{0})$ for a two-sided test.
+- $p=2\min\{\Pr(T\geq t\mid H_{0}),\Pr(T\leq t\mid H_{0})\}$ for a two-sided test.
   - If the distribution of $T$ is symmetric about zero, then $p=\Pr(|T|\geq |t|\mid H_{0})$
 
 > [!ex] [[Hypothesis Testing#CLT Test Statistic]]

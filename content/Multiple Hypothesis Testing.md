@@ -62,6 +62,8 @@ We consider the following two error metrics:
 > We want to return an $R$ such that at most an $\alpha$-fraction of the rejected hypotheses are null.
 > Equivalently, we want to control $\mathbb{E}_{H_{0}}\left[|R\cap \{ H_{0,i} \text{ is true} \}| /|R| \right] \le \alpha$. The elements in $R$ are called ==discoveries==.
 
+^aa9781
+
 FWER obeys the [[Uniformly Most Powerful Test|Neyman-Pearson]] paradigm which controls the Type-I error, which can be too conservative in high-dimensional settings.
 Instead, FDR restricts the scope of discoveries and consider a relative error rate
 
